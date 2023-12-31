@@ -2,16 +2,21 @@
 
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Logo from './Logo/Logo';
 import Button from '../UI/Button/Button';
-import styles from './AppHeader.module.css';
+import styles from './AppHeader.module.scss';
+import LogoImg from "../../assets/images/Logo.svg";
 
 const AppHeader = () => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
 
-        <Logo />
+        <span>
+          <img
+            src={LogoImg}
+            alt="Логотип"
+          />
+        </span>
 
         <nav className={styles['nav-links']}>
           <Link to="/" className={styles.navLink}>Главная</Link>

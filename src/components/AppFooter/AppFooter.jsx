@@ -1,22 +1,23 @@
-// AppFooter.jsx
-
 import React from 'react';
-import FooterLogo from './FooterLogo/FooterLogo';
-import styles from './AppFooter.module.css';
+import styles from './AppFooter.module.scss';
+import FooterLogoImg from '../../assets/images/Logo-footer.svg';
 
 const AppFooter = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
-
-        <FooterLogo />
+        <span>
+          <img src={FooterLogoImg} alt="Логотип футера" />
+        </span>
 
         <div className={styles.textBlock}>
-          <p>г. Москва, Цветной б-р, 40</p>
+          <span className={styles.textMoskow}>г. Москва, </span>
+          <span>Цветной б-р, 40</span>
           <p>+7 495 771 21 11</p>
           <p>info@skan.ru</p>
+          <br />
+          <span className={styles.textCopyright}>Copyright. 2022</span>
         </div>
-
       </div>
     </footer>
   );

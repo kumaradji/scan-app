@@ -7,7 +7,27 @@
     background: #FFF;
 }
 
+// Миксин для общих стилей текста
+@mixin textStyles {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+}
+
+// Миксин для стилей ссылок
+@mixin link {
+    text-decoration: none;
+    color: #888;
+
+    &:hover {
+        text-decoration: underline;
+        color: #000;
+    }
+}
+
 .content {
+    @include textStyles;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,27 +35,16 @@
     padding-right: 60px;
     background-color: #fff;
     color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.14px;
 }
 
 .nav-links a,
 .nav-links span {
-    margin-right: 49px;
-    text-decoration: none;
-    color: #888;
-}
-
-.nav-links a + span,
-.nav-links span + span {
+    @include link;
     margin-right: 49px;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
-    color: #000;
+    @include link;
 }
 
 .nav-links span:hover {
@@ -48,15 +57,13 @@
 }
 
 .auth a {
+    @include link;
     margin-right: 10px;
-    text-decoration: none;
-    color: #888;
 }
 
 .auth a:hover {
+    @include link;
     margin-right: 10px;
-    text-decoration: underline;
-    color: #000;
 }
 
 .disabled {
