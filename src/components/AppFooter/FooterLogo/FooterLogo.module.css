@@ -1,0 +1,13 @@
+/* FooterLogo.module.css */
+
+
+.logoImage {
+    /* Установите стили для изображения логотипа футера, например, размеры и отступы */
+}
+
+.footerLogo {
+    width: 100px;
+    height: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+}

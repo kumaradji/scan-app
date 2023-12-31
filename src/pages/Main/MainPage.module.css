@@ -1,0 +1,10 @@
+/* MainPage.module.css */
+
+.mainPage {
+    display: flex;
+    width: 1440px;
+    height: 2867px;
+    flex-shrink: 0;
+    background: #FFF;
+
+}

@@ -1,0 +1,66 @@
+/* AppHeader.module.css */
+
+.header {
+    width: 1440px;
+    height: 93px;
+    flex-shrink: 0;
+    background: #FFF;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+}
+
+.nav-links a,
+.nav-links span {
+    margin-right: 49px;
+    text-decoration: none;
+    color: #888;
+}
+
+.nav-links a + span,
+.nav-links span + span {
+    margin-right: 49px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.nav-links span:hover {
+    text-decoration: underline;
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+}
+
+.auth a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #888;
+}
+
+.auth a:hover {
+    margin-right: 10px;
+    text-decoration: underline;
+    color: #000;
+}
+
+.disabled {
+    color: #888;
+    cursor: not-allowed;
+    text-decoration: none;
+}

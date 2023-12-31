@@ -1,0 +1,30 @@
+/* AppFooter.module.css */
+
+.footer {
+    width: 1440px;
+    height: 137px;
+    flex-shrink: 0;
+    background-color: #029491; /* Установите желаемый цвет фона */
+    color: #FFF;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Установите желаемый внутренний отступ */
+}
+
+.textBlock {
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.14px;
+}
+
+.textBlock p {
+    margin: 0; /* Убираем внешний отступ у параграфов */
+}

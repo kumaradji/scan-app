@@ -1,0 +1,14 @@
+/* fonts.css */
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/Inter-Regular.woff') format('woff');
+    src: url('/public/fonts/Inter-Medium.woff') format('woff');
+    /* Добавьте остальные начертания шрифта и форматы, если они есть */
+}
+
+@font-face {
+    font-family: 'FerryBlack';
+    src: url('/public/fonts/ferry_black.woff') format('woff');
+    /* Добавьте остальные начертания шрифта и форматы, если они есть */
+}
