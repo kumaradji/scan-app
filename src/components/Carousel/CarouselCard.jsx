@@ -1,7 +1,7 @@
 // components/CarouselCard.jsx
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Carousel.module.scss';
+import styles from './Carousel.module.scss'; // Импорт стилей
 
 function CarouselCard({ icon, text }) {
   return (

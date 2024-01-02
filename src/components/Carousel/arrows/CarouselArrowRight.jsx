@@ -1,6 +1,7 @@
 // CarouselArrowRight.jsx
 import React from 'react';
 import { ReactComponent as RightArrowIcon } from '../../../assets/icons/icons8-шеврон-вправо.svg';
+import styles from './CarouselArrow.module.scss'; // Импорт стилей
 
 function CarouselArrowRight({ onClick }) {
   const handleClick = () => {
@@ -9,7 +10,7 @@ function CarouselArrowRight({ onClick }) {
   };
 
   return (
-    <div className="arrow-right" onClick={handleClick}>
+    <div className={`${styles.arrow} ${styles.right}`} onClick={handleClick}>
       <RightArrowIcon />
     </div>
   );

@@ -1,6 +1,6 @@
-// data/cardsData.js
+// data.js
 
-export const cardsData = [
+const cards = [
   {
     icon: '/src/assets/icons/card_01.png',
     text: 'Высокая и оперативная скорость обработки заявки',
@@ -18,3 +18,7 @@ export const cardsData = [
     text: 'Удобство в использовании.',
   },
 ];
+
+const allCards = [...cards, ...cards];
+
+export { cards, allCards };

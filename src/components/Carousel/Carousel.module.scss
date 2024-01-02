@@ -3,19 +3,22 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: 100%;
-    overflow: hidden;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+    height: 260px;
+    overflow: visible;
 }
 
 .cards {
     display: flex;
     flex-flow: row;
-    transition: transform 0.3s;
+    transition: transform 0.5s ease;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;
-    overflow: hidden;// Добавлено
+    overflow: visible;
 }
 
 .card {
@@ -26,36 +29,24 @@
     border-radius: 10px;
     background: #FFF;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
-    position: relative;
-    overflow: hidden;
 }
 
-.image {
+.icon {
     width: 65px;
     height: 79px;
     flex-shrink: 0;
-    background: #029491;
+    //background: #029491;
 }
 
 .textBlock {
     // ...
 }
 
-.arrow {
-    width: 39px;
-    height: 39px;
-    flex-shrink: 0;
-    opacity: 0.2;
-    position: fixed; // Изменили на fixed
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-}
-
+// Remove arrow styles from here
 .prev {
-    left: 20px; // Подберите значение отступа слева
+    left: -20px;
 }
 
 .next {
-    right: 20px; // Подберите значение отступа справа
+    right: -20px;
 }
