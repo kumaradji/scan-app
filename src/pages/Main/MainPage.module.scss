@@ -1,11 +1,16 @@
-/* MainPage.module.css */
+/* MainPage.module.scss */
 
 .mainPage {
     display: flex;
+    flex-direction: column; /* Устанавливаем направление flex-контейнера на вертикальное */
     justify-content: flex-start;
     width: 1440px;
     height: 2867px;
     flex-shrink: 0;
     background: #FFF;
+}
 
+.upperBlocks {
+    display: flex;
+    justify-content: space-between;
 }

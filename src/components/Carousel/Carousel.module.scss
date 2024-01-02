@@ -1,0 +1,53 @@
+// Carousel.module.scss
+.carousel {
+    position: relative;
+    width: 1440px;
+    overflow: hidden;
+}
+
+.cards {
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.card {
+    width: 400px;
+    height: 225px;
+    margin-right: 30px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    width: 65px;
+    height: 79px;
+    flex-shrink: 0;
+    background: #029491;
+}
+
+.icon {
+    // ...
+}
+
+.textBlock {
+    // ...
+}
+
+.arrow {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    opacity: 0.2;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}

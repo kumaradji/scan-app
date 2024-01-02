@@ -2,20 +2,33 @@
 
 import React from 'react';
 import styles from './LeftTextBlock.module.scss';
+import Button from '../../../components/UI/Button/Button';
 
 const LeftTextBlock = () => {
   return (
-    <div className={styles.leftTextBlock}>
+    <section className={styles.leftTextBlock}>
       <div className={styles.leftText}>
         <p>
           сервис по поиску публикаций
-          <br/>
+          <br />
           о компании
-          <br/>
+          <br />
           по его ИНН
         </p>
       </div>
-    </div>
+      <div className={styles.leftTextUnderBlock}>
+        <div className={styles.leftSmallText}>
+          Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
+        </div>
+
+        <Button className={styles.buttonBlueUnder}>
+          <div className={styles.buttonBlueUnderText}>
+            Запросить данные
+          </div>
+        </Button>
+      </div>
+
+    </section>
   );
 };
 

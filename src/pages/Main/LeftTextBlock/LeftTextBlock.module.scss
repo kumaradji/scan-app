@@ -1,7 +1,7 @@
 /* LeftTextBlock/LeftTextBlock.module.css */
 
 .leftTextBlock {
-    display: flex;
+    display: block;
     margin-top: 69px;
     min-width: 743px;
     max-width: 950px;
@@ -21,5 +21,39 @@
     font-weight: 900;
     line-height: normal;
     letter-spacing: 0.6px;
+}
+
+.leftTextUnderBlock {
+    width: 534px;
+}
+
+.leftSmallText {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+
+.buttonBlueUnder {
+    width: 335px;
+    height: 59px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #5970FF;
+    margin-top: 70px;
+}
+
+.buttonBlueUnderText {
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.22px;
+
 }
 
