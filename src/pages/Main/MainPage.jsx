@@ -3,13 +3,14 @@
 import React from 'react';
 import LeftTextBlock from './LeftTextBlock/LeftTextBlock';
 import ImageRightBlock from './ImageRightBlock/ImageRightBlock';
-import TitleTextBlock from './TitleTextBlock/TitleTextBlock';
+import TitleTextBlock from './TitleTextBlock-01/TitleTextBlock-01';
 import Carousel from '../../components/Carousel/Carousel';
 
 import styles from './MainPage.module.scss';
 import '../../fonts.scss';
 import BlueCloudImage from "./BlueCloudImage/BlueCloudImage";
-import MainTitleTextBlock from "./TitleTextBlock/TitleTextBlock";
+import MainTitleTextBlock from "./TitleTextBlock-01/TitleTextBlock-01";
+import TitleTextBlock02 from "./TitleTextBlock-02/TitleTextBlock-02";
 
 const MainPage = () => {
   return (
@@ -24,7 +25,7 @@ const MainPage = () => {
 
       <BlueCloudImage />
       {/* Пример использования без кастомных стилей */}
-      <TitleTextBlock text="Некоторый текст" />
+      <TitleTextBlock02 />
 
     </div>
   );
