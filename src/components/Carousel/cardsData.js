@@ -1,20 +1,26 @@
-// data.js
+// cardsData.js
+
+import icon1 from '../../assets/icons/card_01.png';
+import icon2 from '../../assets/icons/card_02.png';
+import icon3 from '../../assets/icons/card_03.png';
+import icon4 from '../../assets/icons/Vector.svg';
+
 
 const cards = [
   {
-    icon: '/src/assets/icons/card_01.png',
+    icon: icon1,
     text: 'Высокая и оперативная скорость обработки заявки',
   },
   {
-    icon: '/src/assets/icons/card_02.png',
+    icon: icon2,
     text: 'Огромная комплексная база данных, обеспечивающая объективный ответ на запрос',
   },
   {
-    icon: '/src/assets/icons/card_03.png',
+    icon: icon3,
     text: 'Защита конфеденциальных сведений, не подлежащих разглашению по федеральному законодательству',
   },
   {
-    icon: '/src/assets/icons/card_03.png',
+    icon: icon4,
     text: 'Удобство в использовании.',
   },
 ];

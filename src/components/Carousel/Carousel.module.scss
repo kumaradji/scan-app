@@ -1,22 +1,22 @@
-// Carousel.module.scss
 .carousel {
     position: relative;
     display: flex;
     align-items: center;
     max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 60px;
+    margin-left: 60px;
+    margin-right: 60px;
     height: 260px;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .cards {
     display: flex;
     flex-flow: row;
     transition: transform 0.5s ease;
-    justify-content: center;
+    justify-content: flex-start;  // Изменено на flex-start
     align-items: center;
     width: 100%;
+    max-width: 1440px;
     position: relative;
     overflow: visible;
 }
@@ -35,18 +35,36 @@
     width: 65px;
     height: 79px;
     flex-shrink: 0;
-    //background: #029491;
+    margin-left: 20px;
+    margin-top: 22px;
+    //background: lightgray 50% / cover no-repeat;
 }
 
 .textBlock {
-    // ...
+    margin-left: 20px;
+    margin-bottom: 46px;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.18px;
 }
 
-// Remove arrow styles from here
-.prev {
-    left: -20px;
-}
-
+.prev,
 .next {
-    right: -20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    opacity: 0.2;
+    background: lightgray 50% / cover no-repeat;
+    cursor: pointer;
+}
+
+.firstCard .prev {
+    visibility: hidden;
 }

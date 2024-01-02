@@ -1,16 +1,12 @@
 // CarouselArrow.module.scss
 .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 39px;
   height: 39px;
   flex-shrink: 0;
   opacity: 0.2;
   background: lightgray 50% / cover no-repeat;
-}
-
-.left {
-  transform: rotate(180deg); // Поворот стрелки влево
-}
-
-.right {
-  // Стили для стрелки вправо
+  cursor: pointer;
 }
