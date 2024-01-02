@@ -1,4 +1,5 @@
 // pages/Main/MainPage.jsx
+
 import React from 'react';
 import LeftTextBlock from './LeftTextBlock/LeftTextBlock';
 import ImageRightBlock from './ImageRightBlock/ImageRightBlock';
@@ -7,6 +8,8 @@ import Carousel from '../../components/Carousel/Carousel';
 
 import styles from './MainPage.module.scss';
 import '../../fonts.scss';
+import BlueCloudImage from "./BlueCloudImage/BlueCloudImage";
+import MainTitleTextBlock from "./TitleTextBlock/TitleTextBlock";
 
 const MainPage = () => {
   return (
@@ -16,8 +19,12 @@ const MainPage = () => {
         <ImageRightBlock />
       </div>
 
-      <TitleTextBlock />
+      <MainTitleTextBlock />
       <Carousel />
+
+      <BlueCloudImage />
+      {/* Пример использования без кастомных стилей */}
+      <TitleTextBlock text="Некоторый текст" />
 
     </div>
   );

@@ -1,14 +1,16 @@
 // Main/TitleTextBlock/TitleTextBlock.jsx
 
 import React from 'react';
-import styles from './TitleTextBlock.module.scss';
+import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';
+import styles from './TitleTextBlock-01.module.scss';
 
-const TitleTextBlock = () => {
+const MainTitleTextBlock = () => {
   return (
-      <div className={styles.titleTextBlock}>
-        Почему именно мы
-      </div>
+    <TitleTextBlock
+      text="Почему именно мы"
+      additionalStyles={styles.titleTextBlock}
+    />
   );
 };
 
-export default TitleTextBlock;
+export default MainTitleTextBlock;
