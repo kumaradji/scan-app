@@ -1,13 +1,21 @@
 // Carousel.module.scss
 .carousel {
     position: relative;
-    width: 1440px;
+    display: flex;
+    align-items: center;
+    width: 100%;
     overflow: hidden;
 }
 
 .cards {
     display: flex;
+    flex-flow: row;
     transition: transform 0.3s;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;// Добавлено
 }
 
 .card {
@@ -29,10 +37,6 @@
     background: #029491;
 }
 
-.icon {
-    // ...
-}
-
 .textBlock {
     // ...
 }
@@ -42,12 +46,16 @@
     height: 39px;
     flex-shrink: 0;
     opacity: 0.2;
+    position: fixed; // Изменили на fixed
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 }
 
 .prev {
-    left: 0;
+    left: 20px; // Подберите значение отступа слева
 }
 
 .next {
-    right: 0;
+    right: 20px; // Подберите значение отступа справа
 }
