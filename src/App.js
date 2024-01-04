@@ -12,9 +12,9 @@ function App() {
   return (
     <Router>
       <AppHeader />
-      <Routes> {/* Используйте Routes для определения маршрутов */}
+      <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/login" element={<LoginPage />} /> {/* Новая страница для авторизации */}
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       <AppFooter />
     </Router>

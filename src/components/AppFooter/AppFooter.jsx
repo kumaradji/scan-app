@@ -11,12 +11,15 @@ const AppFooter = () => {
         </span>
 
         <div className={styles.textBlock}>
-          <span className={styles.textMoskow}>г. Москва, </span>
-          <span>Цветной б-р, 40</span>
-          <p>+7 495 771 21 11</p>
-          <p>info@skan.ru</p>
-          <br />
-          <span className={styles.textCopyright}>Copyright. 2022</span>
+          <div style={{ width: '100%', textAlign: 'right' }}>
+            <span className={styles.textMoskow}>г. Москва, </span>
+            <>
+              Цветной б-р, 40 <br />
+              +7 495 771 21 11 <br />
+              info@skan.ru
+            </>
+            <p className={styles.textCopyright}>Copyright. 2022</p>
+          </div>
         </div>
       </div>
     </footer>

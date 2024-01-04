@@ -5,8 +5,9 @@ import { Link, NavLink } from 'react-router-dom';
 import Button from '../UI/Button/Button';
 import styles from './AppHeader.module.scss';
 import LogoImg from '../../assets/images/Logo.svg';
-import AvatarImg from '../../assets/images/Avatar.svg'; // Замените на путь к изображению аватара
-import { logout, getUserInfo } from '../../api/auth'; // Замените на вашу логику аутентификации
+import AvatarImg from '../../assets/images/Avatar.svg';
+import SlashImg from '../../assets/images/Slash.svg';
+import { logout, getUserInfo } from '../../api/auth';
 
 const AppHeader = () => {
   const [loading, setLoading] = useState(true);
@@ -79,10 +80,18 @@ const AppHeader = () => {
           ) : (
             <>
               <NavLink to="/login" className={styles.navLink}>Зарегистрироваться</NavLink>
+
+              <span>
+                <img
+                  src={SlashImg}
+                  alt="Slash"
+                  className={styles.slash}
+                />
+              </span>
+
               <Link to="/login">
                 <Button>Войти</Button>
               </Link>
-
             </>
           )}
         </div>
