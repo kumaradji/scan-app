@@ -1,3 +1,14 @@
+// TariffCard/TariffCard.module.scss
+
+@mixin labelStyles {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  margin-top: 5px;
+}
+
 .container {
   width: 415px;
   height: 540px;
@@ -20,6 +31,15 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.iconLightBulb {
+  width: 93px;
+  height: 84px;
+  position: absolute;
+  top: 11px;
+  left: 310px;
+
 }
 
 .blueStripe {
@@ -91,6 +111,7 @@
 }
 
 .includedItems {
+
   width: 341px;
   height: 110px;
   background: white;
@@ -100,26 +121,30 @@
   left: 30px;
 
   .item {
+    display: flex;
+    align-items: center;
     color: black;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     letter-spacing: 0.20px;
     word-wrap: break-word;
-    position: absolute;
   }
 
   .item1 {
+    @include labelStyles;
     top: 0;
     left: 28px;
   }
 
   .item2 {
+    @include labelStyles;
     top: 34px;
     left: 28px;
   }
 
   .item3 {
+    @include labelStyles;
     top: 61px;
     left: 28px;
   }
@@ -139,7 +164,8 @@
   .icon {
     width: 20px;
     height: 20px;
-    position: absolute;
+    margin-right: 10px;
+    margin-top: 5px;
   }
 
   .icon1 {

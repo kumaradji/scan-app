@@ -1,5 +1,8 @@
-const { override, addSassLoader } = require('customize-cra');
+const {override, addWebpackModuleRule} = require("customize-cra");
 
 module.exports = override(
-  addSassLoader()
+  addWebpackModuleRule({
+    test: /\.svg$/,
+    use: ["@svgr/webpack"]
+  })
 );

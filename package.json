@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "customize-cra": "^1.0.0",
-    "node-sass": "^7.0.3",
+    "node-sass": "^9.0.0",
     "react-app-rewired": "^2.2.1",
     "sass": "^1.69.6",
     "sass-loader": "^13.3.3"
