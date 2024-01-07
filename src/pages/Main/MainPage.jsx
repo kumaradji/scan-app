@@ -10,6 +10,7 @@ import styles from './MainPage.module.scss';
 import '../../fonts.scss';
 import BlueCloudImage from "./BlueCloudImage/BlueCloudImage";
 import TitleTextBlock02 from "./TitleTextBlock-02/TitleTextBlock-02";
+import TariffCard from "./TariffCard.module/TariffCard.module";
 
 const MainPage = () => {
   return (
@@ -24,6 +25,8 @@ const MainPage = () => {
 
       <BlueCloudImage />
       <TitleTextBlock02 />
+
+      <TariffCard />
 
     </div>
   );

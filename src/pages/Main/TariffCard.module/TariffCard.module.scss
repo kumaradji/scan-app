@@ -1,0 +1,159 @@
+.container {
+  width: 415px;
+  height: 540px;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: 2px #FFB64F solid;
+  position: relative;
+  margin-right: 141px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.orangeTop {
+  width: 415px;
+  height: 132px;
+  background: #FFB64F;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.blueStripe {
+  width: 134px;
+  height: 24px;
+  background: #3BA5E0;
+  border-radius: 10px;
+  position: absolute;
+  top: 144px;
+  left: 271px;
+}
+
+.personalCabinetButton {
+  width: 355px;
+  height: 59px;
+  background: #D2D2D2;
+  border-radius: 5px;
+  position: absolute;
+  top: 457px;
+  left: 30px;
+
+  .text {
+    color: black;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+    position: absolute;
+    top: 18px;
+    left: 45px;
+  }
+}
+
+.title {
+  color: black;
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.30px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.infoText {
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 76px;
+  left: 30px;
+}
+
+.currentTariffLabel {
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 147px;
+  left: 284px;
+}
+
+.includedItems {
+  width: 341px;
+  height: 110px;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 292px;
+  left: 30px;
+
+  .item {
+    color: black;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+    position: absolute;
+  }
+
+  .item1 {
+    top: 0;
+    left: 28px;
+  }
+
+  .item2 {
+    top: 34px;
+    left: 28px;
+  }
+
+  .item3 {
+    top: 61px;
+    left: 28px;
+  }
+
+  .supportLabel {
+    color: black;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.18px;
+    word-wrap: break-word;
+    position: absolute;
+    top: 88px;
+    left: 28px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+  }
+
+  .icon1 {
+    top: 35px;
+    left: 0;
+  }
+
+  .icon2 {
+    top: 62px;
+    left: 0;
+  }
+
+  .icon3 {
+    top: 89px;
+    left: 0;
+  }
+}
