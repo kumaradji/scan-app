@@ -19,37 +19,42 @@ function TariffCard() {
           Перейти в личный кабинет
         </div>
       </div>
-      <div className={styles.infoText}>Для небольшого исследования</div>
+      <div className={styles.infoTextTitle}>
+        Для небольшого исследования
+      </div>
       <div className={styles.currentTariffLabel}>Текущий тариф</div>
 
-
       <div className={styles.includedItems}>
-        <div className={styles.item}>В тариф входит:</div>
+        <div className={styles.item}>
+          В тариф входит:
+        </div>
         <div>
           <img className={styles.icon} src={icon1} alt="icon" />
-          <span className={styles.item1} >Безлимитная история запросов</span>
+          <span className={styles.item1} >
+            Безлимитная история запросов
+          </span>
         </div>
-
         <div>
           <img className={styles.icon} src={icon2} alt="icon" />
-          <span className={styles.item2}>Безопасная сделка</span>
+          <span className={styles.item2}>
+            Безопасная сделка
+          </span>
         </div>
-
         <div>
           <img className={styles.icon} src={icon3} alt="icon" />
-          <span className={styles.item3}>Поддержка 24/7</span>
+          <span className={styles.item3}>
+            Поддержка 24/7
+          </span>
         </div>
       </div>
       <div className={styles.title}>Beginner</div>
-      <div className={styles.decorativeElements}>
-        <div className={styles.triangle}></div>
-        <div className={styles.line}></div>
-        <div className={styles.smallRectangle}></div>
-        <div className={styles.bigRectangle}></div>
-        <div className={styles.ellipse}></div>
-        <div className={styles.blueRectangle}></div>
-        <div className={styles.whiteRectangle}></div>
-        <div className={styles.additionalRectangle}></div>
+      <div className={styles.infoText}>
+        <span className={styles.price}>799 ₽</span>
+        <span className={styles.priceHigh}>1 200 ₽</span>
+        <p className={styles.currency}>
+          или 150 ₽/мес. при рассрочке на 24 мес.
+        </p>
+
       </div>
     </div>
   );

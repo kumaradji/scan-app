@@ -61,7 +61,7 @@
   top: 457px;
   left: 30px;
 
-  .text {
+  .personalCabinetText {
     color: black;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
@@ -86,7 +86,7 @@
   left: 30px;
 }
 
-.infoText {
+.infoTextTitle {
   color: black;
   font-size: 18px;
   font-family: 'Inter', sans-serif;
@@ -96,6 +96,49 @@
   position: absolute;
   top: 76px;
   left: 30px;
+}
+
+.infoText {
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 165px;
+  left: 30px;
+
+  .price {
+    margin-top: 33px;
+    color: black;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.30px;
+    word-wrap: break-word;
+  }
+
+  .priceHigh {
+    margin-top: 168px;
+    margin-left: 19px;
+    color: black;
+    opacity: 0.50;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    word-wrap: break-word;
+  }
+
+  .currency {
+    color: black;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.18px;
+    word-wrap: break-word;
+  }
 }
 
 .currentTariffLabel {
