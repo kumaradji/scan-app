@@ -10,7 +10,9 @@ import styles from './MainPage.module.scss';
 import '../../fonts.scss';
 import BlueCloudImage from "./BlueCloudImage/BlueCloudImage";
 import TitleTextBlock02 from "./TitleTextBlock-02/TitleTextBlock-02";
-import TariffCard from "./TariffCard.module/TariffCard.module";
+import BeginnerTariffCard from "./BeginnerTariffCard/BeginnerTariffCard";
+import BusinessTariffCard from "./BusinessTariffCard/BusinessTariffCard";
+import ProTariffCard from "./ProTariffCard/ProTariffCard";
 
 const MainPage = () => {
   return (
@@ -26,7 +28,11 @@ const MainPage = () => {
       <BlueCloudImage />
       <TitleTextBlock02 />
 
-      <TariffCard />
+      <section className={styles.tariffCardSection}>
+        <BeginnerTariffCard />
+        <ProTariffCard />
+        <BusinessTariffCard />
+      </section>
 
     </div>
   );
