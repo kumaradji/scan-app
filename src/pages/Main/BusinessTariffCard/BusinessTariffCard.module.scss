@@ -1,0 +1,221 @@
+// BusinessTariffCard/BusinessTariffCard.module.scss
+
+@mixin labelStyles {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  margin-top: 5px;
+}
+
+.container {
+  width: 415px;
+  height: 540px;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: 2px #000000 solid;
+  position: relative;
+  margin-top: 70px;
+  margin-bottom: 118px;
+}
+
+.blackTop {
+  width: 415px;
+  height: 132px;
+  background: #000000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.iconNotebook {
+  width: 93px;
+  height: 84px;
+  position: absolute;
+  top: 11px;
+  left: 310px;
+
+}
+
+.blueStripe {
+  width: 134px;
+  height: 24px;
+  background: #3BA5E0;
+  border-radius: 10px;
+  position: absolute;
+  top: 144px;
+  left: 271px;
+}
+
+.moreBusinessButton {
+  width: 355px;
+  height: 59px;
+  background: #5970ff;
+  border-radius: 5px;
+  position: absolute;
+  top: 457px;
+  left: 30px;
+
+
+  .moreText {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+    position: absolute;
+    top: 18px;
+    left: 45px;
+  }
+}
+
+.title {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.30px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.infoTextTitle {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 76px;
+  left: 30px;
+}
+
+.infoText {
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 165px;
+  left: 30px;
+
+  .price {
+    margin-top: 33px;
+    color: black;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.30px;
+    word-wrap: break-word;
+  }
+
+  .priceHigh {
+    margin-top: 168px;
+    margin-left: 19px;
+    color: black;
+    opacity: 0.50;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-style: inherit;
+    letter-spacing: 0.25px;
+    word-wrap: break-word;
+  }
+
+}
+
+.currentTariffLabel {
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 147px;
+  left: 284px;
+}
+
+.includedItems {
+
+  width: 341px;
+  height: 110px;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 292px;
+  left: 30px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+  }
+
+  .item1 {
+    @include labelStyles;
+    top: 0;
+    left: 28px;
+  }
+
+  .item2 {
+    @include labelStyles;
+    top: 34px;
+    left: 28px;
+  }
+
+  .item3 {
+    @include labelStyles;
+    top: 61px;
+    left: 28px;
+  }
+
+  .supportLabel {
+    color: black;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.18px;
+    word-wrap: break-word;
+    position: absolute;
+    top: 88px;
+    left: 28px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+
+  .icon1 {
+    top: 35px;
+    left: 0;
+  }
+
+  .icon2 {
+    top: 62px;
+    left: 0;
+  }
+
+  .icon3 {
+    top: 89px;
+    left: 0;
+  }
+}
