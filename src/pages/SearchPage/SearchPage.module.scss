@@ -10,3 +10,30 @@
   background: #FFF;
 }
 
+.document {
+  width: 91px;
+  height: 111px;
+  margin-left: 905px;
+  margin-bottom: 180px;
+}
+
+.leftTextUnderTitleBlock {
+  width: 534px;
+  display: block;
+  margin-top: 25px;
+  min-width: 743px;
+  max-width: 950px;
+  padding-left: 60px;
+  position: relative;
+  right: -5px;
+}
+
+.leftSmallText {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}

@@ -6,7 +6,7 @@ import imgSearchPageCharacters from '../../../../src/assets/images/SearchPageCha
 
 const SearchPageCharacters: string = () => {
   return (
-    <div className={styles.imgLoginPageCharacters}>
+    <div className={styles.imgSearchPageCharacters}>
       <img src={imgSearchPageCharacters} alt="SearchPageCharacters-Image" />
     </div>
   );

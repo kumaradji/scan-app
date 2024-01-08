@@ -1,5 +1,6 @@
-// SearchTitleTextBlock-01.module.scss
-.titleTextBlock {
+// SearchTitleTextBlock.module.scss
+
+.titleSearchTextBlock {
   width: 743px;
   color: #000;
   font-family: 'FerryBlack', sans-serif;
@@ -9,6 +10,5 @@
   line-height: normal;
   letter-spacing: 0.45px;
   margin-left: 60px;
-  margin-top: 158px;
-  margin-bottom: 60px;
+  margin-top: 40px;
 }

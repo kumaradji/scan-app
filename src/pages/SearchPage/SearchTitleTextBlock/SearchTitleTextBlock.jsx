@@ -7,8 +7,8 @@ import styles from './SearchTitleTextBlock.module.scss';
 const SearchTitleTextBlock = () => {
   return (
     <TitleTextBlock
-      text="Почему именно мы"
-      additionalStyles={styles.titleTextBlock}
+      text="Найдите необходимые данные в пару кликов."
+      additionalStyles={styles.titleSearchTextBlock}
     />
   );
 };
