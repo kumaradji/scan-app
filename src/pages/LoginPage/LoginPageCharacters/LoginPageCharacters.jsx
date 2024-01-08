@@ -1,4 +1,4 @@
-// LoginPageCharacters.jsx
+// SearchPageCharacters.jsx
 import React from 'react';
 import styles from './LoginPageCharacters.module.scss';
 import imgLoginPageCharacters from '../../../../src/assets/images/LoginPageCharacters.svg';

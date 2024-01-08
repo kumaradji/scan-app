@@ -1,10 +1,10 @@
-// Main/TitleTextBlock-01/TitleTextBlock-01.jsx
+// Main/SearchTitleTextBlock/SearchTitleTextBlock.jsx
 
 import React from 'react';
 import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';
-import styles from './TitleTextBlock-01.module.scss';
+import styles from './SearchTitleTextBlock.module.scss';
 
-const MainTitleTextBlock = () => {
+const SearchTitleTextBlock = () => {
   return (
     <TitleTextBlock
       text="Почему именно мы"
@@ -13,4 +13,4 @@ const MainTitleTextBlock = () => {
   );
 };
 
-export default MainTitleTextBlock;
+export default SearchTitleTextBlock;

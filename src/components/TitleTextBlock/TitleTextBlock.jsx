@@ -1,4 +1,4 @@
-// components/TitleTextBlock-01/TitleTextBlock-01.jsx
+// components/SearchTitleTextBlock/SearchTitleTextBlock.jsx
 
 import React from 'react';
 import PropTypes from 'prop-types';

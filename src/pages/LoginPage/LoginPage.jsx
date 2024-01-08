@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './LoginPage.module.scss';
 import '../../fonts.scss';
 import LoginForm from './LoginForm/LoginForm';
-import TitleTextBlock03 from './TitleTextBlock-03/TitleTextBlock-03';
+import TitleTextBlock03 from './TitleTextBlock03/TitleTextBlock03';
 import LoginPageCharacters from './LoginPageCharacters/LoginPageCharacters';
 
 const LoginPage = () => {

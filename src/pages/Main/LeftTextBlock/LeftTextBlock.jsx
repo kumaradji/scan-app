@@ -3,8 +3,13 @@
 import React from 'react';
 import styles from './LeftTextBlock.module.scss';
 import Button from '../../../components/UI/Button/Button';
+import { Link } from 'react-router-dom';
+import { RequireAuth } from '../../../components/RequireAuth/RequireAuth';
+import { useAuth } from '../../LoginPage/Auth/AuthContext';
 
 const LeftTextBlock = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <section className={styles.leftTextBlock}>
       <div className={styles.leftText}>
@@ -21,13 +26,16 @@ const LeftTextBlock = () => {
           Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
         </div>
 
-        <Button className={styles.buttonBlueUnder}>
-          <div className={styles.buttonBlueUnderText}>
-            Запросить данные
-          </div>
-        </Button>
+        <RequireAuth isAuthenticated={isAuthenticated}>
+          <Link to="/search">
+            <Button className={styles.buttonBlueUnder}>
+              <div className={styles.buttonBlueUnderText}>
+                Запросить данные
+              </div>
+            </Button>
+          </Link>
+        </RequireAuth>
       </div>
-
     </section>
   );
 };

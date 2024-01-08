@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Используйте useNavigate вместо useHistory
 import axios from 'axios';
+import { useAuth } from '../Auth/AuthContext';
 
 const AuthForm = () => {
-  const navigate = useNavigate(); // Используйте useNavigate вместо useHistory
+  const navigate = useNavigate();
+  const { isAuthenticated, login, logout } = useAuth();
   const [credentials, setCredentials] = useState({
     login: '',
     password: '',
@@ -44,6 +46,9 @@ const AuthForm = () => {
     } catch (error) {
       console.error('Error during login:', error);
       setError('Неверный логин или пароль');
+      setTimeout(() => {
+        setError('');
+      }, 5000); // Сброс ошибки через 5 секунд (или другой период)
     } finally {
       setLoading(false);
     }

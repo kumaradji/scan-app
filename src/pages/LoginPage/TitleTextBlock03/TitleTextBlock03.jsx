@@ -1,8 +1,8 @@
-// LoginPage/TitleTextBlock-03/TitleTextBlock-03.jsx
+// LoginPage/TitleTextBlock03/TitleTextBlock03.jsx
 
 import React from 'react';
 import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';
-import styles from './TitleTextBlock-03.module.scss';
+import styles from './TitleTextBlock03.module.scss';
 
 const TitleTextBlock03 = () => {
   return (
