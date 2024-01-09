@@ -1,13 +1,12 @@
 // AuthContext.jsx
-
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext } from 'react';
+import { useAuthState } from './AuthState';
+import { isDevelopment } from '../../../config';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setAuthenticated] = useState(
-    process.env.NODE_ENV === 'development' ? true : false
-  );
+  const { isAuthenticated, setAuthenticated } = useAuthState(isDevelopment || process.env.NODE_ENV === 'development');
 
   const login = () => {
     // Фактическая логика входа

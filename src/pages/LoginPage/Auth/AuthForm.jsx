@@ -1,92 +1,36 @@
-// AuthForm.jsx
-
+// Auth/AuthForm.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Используйте useNavigate вместо useHistory
-import axios from 'axios';
-import { useAuth } from '../Auth/AuthContext';
+import { useAuth } from './AuthContext';
 
-const AuthForm = () => {
-  const navigate = useNavigate();
-  const { isAuthenticated, login, logout } = useAuth();
-  const [credentials, setCredentials] = useState({
-    login: '',
-    password: '',
-  });
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+const AuthForm = ({ onSuccess }) => {
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const { store } = useAuth();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const response = await axios.post(
-        'https://gateway.scan-interfax.ru/api/v1/account/login',
-        credentials
-      );
-
-      const { accessToken, expire } = response.data;
-
-      // Сохраняем токен и время его истечения в localStorage
-      localStorage.setItem('accessToken', accessToken);
-      localStorage.setItem('tokenExpire', expire);
-
-      console.log('Перед переходом');
-      // Переадресация на другую страницу (например, домашнюю страницу)
-      navigate('/');
-      console.log('После перехода');
-    } catch (error) {
-      console.error('Error during login:', error);
-      setError('Неверный логин или пароль');
-      setTimeout(() => {
-        setError('');
-      }, 5000); // Сброс ошибки через 5 секунд (или другой период)
-    } finally {
-      setLoading(false);
+  const handleLogin = async () => {
+    await store.handleLogin(login, password);
+    // Проверяем, был ли успешный вход, и вызываем колбэк onSuccess
+    if (store.isAuth) {
+      onSuccess();
     }
   };
 
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="login">Логин:</label>
-        <input
-          type="text"
-          id="login"
-          name="login"
-          value={credentials.login}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div>
-        <label htmlFor="password">Пароль:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={credentials.password}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-
-      <button type="submit" disabled={loading || !credentials.login || !credentials.password}>
-        {loading ? 'Вход...' : 'Войти'}
+    <div>
+      <label>
+        Login:
+        <input type="text" value={login} onChange={(e) => setLogin(e.target.value)} />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </label>
+      <br />
+      <button type="button" onClick={handleLogin}>
+        Login
       </button>
-    </form>
+    </div>
   );
 };
 

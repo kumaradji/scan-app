@@ -9,20 +9,15 @@ export const getUserInfo = async () => {
     throw new Error('Токен доступа не найден');
   }
 
-  try {
-    const response = await axios.get(`${BASE_URL}/user`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+  return await axios.get(`${BASE_URL}/user`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 };
 
-export const logout = () => {
-  // Ваша логика выхода, например, очистка localStorage
+export const logout = (callback) => {
   localStorage.removeItem('accessToken');
+
+  callback();
 };

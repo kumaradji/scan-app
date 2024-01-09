@@ -1,6 +1,6 @@
 // pages/Main/MainPage.jsx
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import LeftTextBlock from './LeftTextBlock/LeftTextBlock';
 import ImageRightBlock from './ImageRightBlock/ImageRightBlock';
 import MainTitleTextBlock from './MainTitleTextBlock/MainTitleTextBlock';
@@ -13,8 +13,25 @@ import TitleTextBlock02 from "./SecondTitleTextBlock/SecondTitleTextBlock";
 import BeginnerTariffCard from "./BeginnerTariffCard/BeginnerTariffCard";
 import BusinessTariffCard from "./BusinessTariffCard/BusinessTariffCard";
 import ProTariffCard from "./ProTariffCard/ProTariffCard";
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../LoginPage/Auth/AuthContext";
 
 const MainPage = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    // Вызываем navigate() внутри useEffect
+    if (!isAuthenticated) {
+      navigate('/login');
+    }
+  }, [isAuthenticated, navigate]);
+
+  if (!isAuthenticated) {
+    // Если пользователь не аутентифицирован, выводим сообщение
+    return <p>Вы не аутентифицированы. Перенаправление на страницу входа...</p>;
+  }
+
   return (
     <div className={styles.mainPage}>
       <div className={styles.upperBlocks}>

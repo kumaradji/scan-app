@@ -8,11 +8,14 @@ import icon2 from '../../../assets/icons/SmallVectorTariff.svg';
 import icon3 from '../../../assets/icons/SmallVectorTariff.svg';
 
 function ProTariffCard() {
+  const handleMoreButtonClick = () => {
+    // Пустая функция-заглушка для события клика кнопки
+  };
   return (
     <div className={styles.container}>
       <div className={styles.greenTop}/>
       <img className={styles.iconTarget} src={TargetTariffIcon} alt="=TargetTariff-Icon"/>
-      <div className={styles.moreButton}>
+      <div className={styles.moreButton} onClick={handleMoreButtonClick}>
         <div className={styles.moreText}>
           Подробнее
         </div>

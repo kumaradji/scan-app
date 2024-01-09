@@ -59,6 +59,11 @@
   position: absolute;
   top: 457px;
   left: 30px;
+  transition: background-color 0.3s ease;  // Добавляем анимацию перехода цвета фона
+
+  &:active {
+    background-color: darken(#5970ff, 10%);  // Затемняем цвет при нажатии
+  }
 
   .moreText {
     color: #ffffff;

@@ -8,11 +8,15 @@ import icon2 from '../../../assets/icons/SmallVectorTariff.svg';
 import icon3 from '../../../assets/icons/SmallVectorTariff.svg';
 
 function BusinessTariffCard() {
+  const handleMoreButtonClick = () => {
+    // Пустая функция-заглушка для события клика кнопки
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.blackTop}/>
-      <img className={styles.iconNotebook} src={NotebookTariffIcon} alt="=TargetTariff-Icon"/>
-      <div className={styles.moreBusinessButton}>
+      <div className={styles.blackTop} />
+      <img className={styles.iconNotebook} src={NotebookTariffIcon} alt="=TargetTariff-Icon" />
+      <div className={styles.moreBusinessButton} onClick={handleMoreButtonClick}>
         <div className={styles.moreText}>
           Подробнее
         </div>
