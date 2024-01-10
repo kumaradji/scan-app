@@ -47,9 +47,15 @@ const AppHeader = () => {
         </span>
 
         <nav className={styles['nav-links']}>
-          <Link to="/" className={styles.navLink}>Главная</Link>
-          <span className={`${styles.navLink} ${styles.disabled}`}>Тарифы</span>
-          <span className={`${styles.navLink} ${styles.disabled}`}>FAQ</span>
+          <Link to="/" className={styles.navLink}>
+            Главная
+          </Link>
+          <span className={`${styles.navLink} ${styles.disabled}`}>
+            Тарифы
+          </span>
+          <span className={`${styles.navLink} ${styles.disabled}`}>
+            FAQ
+          </span>
         </nav>
 
         <div className={styles.auth}>

@@ -1,16 +1,82 @@
 // LoginForm.module.scss
 
+
 .container {
   width: 429px;
   height: 523px;
   left: 0;
   top: 0;
+  margin-top: 65px;
   background: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   position: relative;
-  margin-right: 141px;
-  margin-top: 50px;
-  margin-bottom: 80px;
 
 }
+
+.enter {
+  display: flex;
+  position: relative;
+}
+
+.enter1 {
+  color: #029491;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  word-wrap: break-word;
+  margin-left: 77px;
+  margin-top: 25px;
+}
+
+.enter2 {
+  color: #c7c7c7;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  word-wrap: break-word;
+  margin-left: 77px;
+  margin-top: 25px;
+}
+
+.input {
+  width: 379px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  //background: #c7c7c7;
+  margin-left: 25px;
+  margin-top: 28px;
+}
+
+.button {
+  width: 379px;
+  height: 59px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #5970ff;
+  margin-left: 25px;
+  margin-top: 88px;
+}
+
+.buttonText {
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.22px;
+  word-wrap: break-word;
+}
+
+.enterText {
+  color: #029491;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.32px;
+  word-wrap: break-word;
+  margin-left: 28px;
+}
+

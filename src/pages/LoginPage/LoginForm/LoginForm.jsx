@@ -1,6 +1,9 @@
 // LoginForm.jsx
 import React, { useState } from 'react';
 import { useAuth } from '../Auth/AuthContext';
+import styles from './LoginForm.module.scss';
+import Button from '../../../components/UI/Button/Button';
+
 
 const LoginForm = ({ onSuccess }) => {
   const [login, setLogin] = useState('');
@@ -14,29 +17,50 @@ const LoginForm = ({ onSuccess }) => {
     }
 
     await handleLogin(login, password);
-
-    // Проверяем, был ли успешный вход, и вызываем колбэк onSuccess
     if (onSuccess) {
       onSuccess();
     }
   };
 
   return (
-    <div>
-      <label>
-        Login:
-        <input type="text" value={login} onChange={(e) => setLogin(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <br />
-      <button type="button" onClick={handleLoginClick}>
-        Login
-      </button>
-    </div>
+    <section>
+      <div className={styles.container}>
+
+        <div className={styles.enter}>
+          <div className={styles.enter1}>
+            Войти
+          </div>
+          <div className={styles.enter2}>
+            Зарегистрироваться
+          </div>
+        </div>
+
+        <label >
+          <span className={styles.enterText}>
+            Логин или номер телефона:
+          </span>
+          <input type="text" className={styles.input} value={login} onChange={(e) => setLogin(e.target.value)}/>
+        </label>
+
+        <br/>
+        <label>
+          <span className={styles.enterText}>
+            Пароль:
+          </span>
+          <input type="password" className={styles.input} value={password}
+                 onChange={(e) => setPassword(e.target.value)}/>
+        </label>
+        <br/>
+
+
+        <Button type="button" className={styles.button} onClick={handleLoginClick}>
+        <span className={styles.buttonText}>
+          Войти
+        </span>
+        </Button>
+      </div>
+    </section>
+
   );
 };
 
