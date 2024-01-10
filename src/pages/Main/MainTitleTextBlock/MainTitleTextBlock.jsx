@@ -1,4 +1,4 @@
-// Main/SearchTitleTextBlock/SearchTitleTextBlock.jsx
+// Main/MainTitleTextBlock/MainTitleTextBlock.jsx
 
 import React from 'react';
 import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';

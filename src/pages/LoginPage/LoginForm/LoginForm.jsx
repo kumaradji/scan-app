@@ -1,26 +1,43 @@
-// LoginForm/LoginForm.jsx
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import AuthForm from '../Auth/AuthForm';
-import styles from './LoginForm.module.scss';
+// LoginForm.jsx
+import React, { useState } from 'react';
+import { useAuth } from '../Auth/AuthContext';
 
-function LoginForm() {
-  const navigate = useNavigate();
+const LoginForm = ({ onSuccess }) => {
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const { handleLogin } = useAuth();
 
-  const handleLoginSuccess = () => {
-    navigate('/');
+  const handleLoginClick = async () => {
+    if (!handleLogin) {
+      console.error('handleLogin method is not defined.');
+      return;
+    }
+
+    await handleLogin(login, password);
+
+    // Проверяем, был ли успешный вход, и вызываем колбэк onSuccess
+    if (onSuccess) {
+      onSuccess();
+    }
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.form}>
-        {/* Передаем колбэк handleLoginSuccess в AuthForm */}
-        <AuthForm onSuccess={handleLoginSuccess} />
-      </div>
-
-      {/* Остальные части компонента LoginForm */}
+    <div>
+      <label>
+        Login:
+        <input type="text" value={login} onChange={(e) => setLogin(e.target.value)} />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </label>
+      <br />
+      <button type="button" onClick={handleLoginClick}>
+        Login
+      </button>
     </div>
   );
-}
+};
 
 export default LoginForm;

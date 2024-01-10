@@ -1,13 +1,21 @@
 // LoginPage.jsx
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './LoginPage.module.scss';
-import '../../fonts.scss';
 import LoginForm from './LoginForm/LoginForm';
 import TitleTextBlock03 from './TitleTextBlock03/TitleTextBlock03';
 import LoginPageCharacters from './LoginPageCharacters/LoginPageCharacters';
 
 const LoginPage = () => {
+  console.log('Rendering LoginPage');
+  const navigate = useNavigate();
+
+  const handleLoginSuccess = () => {
+    console.log('Login successful. Redirecting to /');
+    // Перенаправляем пользователя на главную страницу после успешного входа
+    navigate('/');
+  };
+
   return (
     <div className={styles.loginPage}>
       <div>
@@ -18,7 +26,8 @@ const LoginPage = () => {
       </div>
 
       <div>
-        <LoginForm />
+        {/* Передаем колбэк handleLoginSuccess в LoginForm */}
+        <LoginForm onSuccess={handleLoginSuccess} />
       </div>
     </div>
   );

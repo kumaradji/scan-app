@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { useAuth } from '../Auth/AuthContext';
 
-const AuthForm = ({ onSuccess }) => {
+const AuthForm = ({ onLoginSuccess }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const { handleLogin } = useAuth();
+  const { handleLogin, isAuth } = useAuth();
 
   const handleLoginClick = async () => {
     if (!handleLogin) {
@@ -14,8 +14,11 @@ const AuthForm = ({ onSuccess }) => {
     }
 
     await handleLogin(login, password);
-    // После успешного входа вызывайте колбэк onSuccess
-    onSuccess();
+
+    // После успешного входа вызываем onLoginSuccess, если пользователь аутентифицирован
+    if (isAuth) {
+      onLoginSuccess();
+    }
   };
 
   return (
