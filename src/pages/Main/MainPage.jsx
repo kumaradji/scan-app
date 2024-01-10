@@ -21,14 +21,12 @@ const MainPage = () => {
   const { isAuthenticated } = useAuth();
 
   useEffect(() => {
-    // Вызываем navigate() внутри useEffect
     if (!isAuthenticated) {
       navigate('/login');
     }
   }, [isAuthenticated, navigate]);
 
   if (!isAuthenticated) {
-    // Если пользователь не аутентифицирован, выводим сообщение
     return <p>Вы не аутентифицированы. Перенаправление на страницу входа...</p>;
   }
 

@@ -2,8 +2,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../Auth/AuthContext';
 import styles from './LoginForm.module.scss';
-import Input from "./Input/Input";
-
+import LoginInput from "./LoginInput/LoginInput";
+import PasswordInput from "./PasswordInput/PasswordInput";
+import Button from "../../../components/UI/Button";
+import BoldLine from '../../../assets/icons/BoldLine.svg';
+import Line from "../../../assets/icons/Line.svg";
 
 const LoginForm = ({ onSuccess }) => {
   const [login, setLogin] = useState('');
@@ -22,48 +25,55 @@ const LoginForm = ({ onSuccess }) => {
     }
   };
 
+  const handleLoginInputChange = (e) => {
+    setLogin(e.target.value);
+  };
+
+  const handlePasswordInputChange = (e) => {
+    setPassword(e.target.value);
+  };
 
   return (
     <div className={styles.cardContainer}>
       <div className={styles.contentContainer}>
-
         <div className={styles.enter}>
           <div className={styles.enter1}>
             Войти
           </div>
+          <img className={styles.boldLine}
+               src={BoldLine}
+               alt="Line"
+          />
           <div className={styles.enter2}>
             Зарегистрироваться
           </div>
-        </div>
-
-        <div className={styles.enterHr}>
-          <div className={styles.enter1Hr}>
-            <hr/>
-          </div>
-          <div className={styles.enter2Hr}>
-            <hr/>
-          </div>
+          <img className={styles.line}
+               src={Line}
+               alt="line"
+          />
         </div>
 
         <label>
-          Логин или номер телефона:
-          <Input/>
+          <div className={styles.enterLoginText}>
+            Логин или номер телефона:
+          </div>
+          <LoginInput value={login} onChange={handleLoginInputChange} />
         </label>
-        {/*<label>*/}
-        {/*  Логин или номер телефона:*/}
-        {/*  <input type="text" value={login} onChange={(e) => setLogin(e.target.value)}/>*/}
-        {/*</label>*/}
-        <br/>
+        <br />
         <label>
-          Пароль:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+          <div className={styles.enterPasswordText}>
+            Пароль:
+          </div>
+          <PasswordInput value={password} onChange={handlePasswordInputChange} />
         </label>
-        <br/>
-        <button type="button" onClick={handleLoginClick}>
-          Войти
-        </button>
+        <br />
+
+        <Button className={styles.button} onClick={handleLoginClick}>
+          <div className={styles.buttonText}>
+            Войти
+          </div>
+        </Button>
       </div>
-
     </div>
   );
 };

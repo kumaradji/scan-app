@@ -1,15 +1,15 @@
 // components/UI/Button/Button.jsx
 
 import React from 'react';
-import classNames from 'classnames'; // Если не установлен, установите через npm install classnames
+import classNames from 'classnames';
 import styles from './Button.module.scss';
 
-const Button = ({ children, className }) => {
-  // Используйте classNames для объединения классов
+const Button = ({ children, className, onClick }) => {
+  // classNames для объединения классов
   const buttonClasses = classNames(styles.button, className);
 
   return (
-    <button className={buttonClasses}>
+    <button className={buttonClasses} onClick={onClick}>
       {children}
     </button>
   );
