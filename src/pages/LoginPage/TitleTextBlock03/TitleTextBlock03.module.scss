@@ -5,11 +5,14 @@
   font-size: 40px;
   font-style: normal;
   font-weight: 900;
-  width: 817px;
+  width: 800px;
   position: relative;
   line-height: normal;
   letter-spacing: 0.45px;
   margin-top: 69px;
   margin-left: 60px;
-  z-index: 1;
+
+  .title-text {
+    white-space: pre-wrap;
+  }
 }

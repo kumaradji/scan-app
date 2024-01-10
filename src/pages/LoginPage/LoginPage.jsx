@@ -5,13 +5,12 @@ import styles from './LoginPage.module.scss';
 import LoginForm from './LoginForm/LoginForm';
 import TitleTextBlock03 from './TitleTextBlock03/TitleTextBlock03';
 import LoginPageCharacters from './LoginPageCharacters/LoginPageCharacters';
+import PadLock from '../../../src/components/UI/PadLock/PadLock';
 
 const LoginPage = () => {
-  console.log('Rendering LoginPage');
   const navigate = useNavigate();
 
   const handleLoginSuccess = () => {
-    console.log('Login successful. Redirecting to /');
     // Перенаправляем пользователя на главную страницу после успешного входа
     navigate('/');
   };
@@ -25,8 +24,9 @@ const LoginPage = () => {
         </div>
       </div>
 
+      <PadLock />
+
       <div>
-        {/* Передаем колбэк handleLoginSuccess в LoginForm */}
         <LoginForm onSuccess={handleLoginSuccess} />
       </div>
     </div>
