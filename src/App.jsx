@@ -6,6 +6,7 @@ import AppFooter from './components/AppFooter/AppFooter';
 import LoginPage from './pages/LoginPage/LoginPage';
 import { AuthProvider } from './pages/LoginPage/Auth/AuthContext';
 import { useAuth } from './pages/LoginPage/Auth/AuthContext';
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 const PrivateRoute = ({ element, ...props }) => {
   const { isAuthenticated } = useAuth();
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PrivateRoute element={<MainPage />} />} />
           <Route path="/login" element={<LoginPage />} />
-          {/* Другие маршруты */}
+          <Route path="/search" element={<SearchPage />} />
         </Routes>
         <AppFooter />
       </AuthProvider>

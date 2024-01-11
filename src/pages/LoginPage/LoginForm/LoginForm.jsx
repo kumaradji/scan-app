@@ -7,6 +7,9 @@ import PasswordInput from "./PasswordInput/PasswordInput";
 import Button from "../../../components/UI/Button";
 import BoldLine from '../../../assets/icons/BoldLine.svg';
 import Line from "../../../assets/icons/Line.svg";
+import imgGoogle from "../../../assets/images/Google.svg";
+import imgFacebook from "../../../assets/images/imgFacebook.svg";
+import imgYandex from "../../../assets/images/imgYandex.svg";
 
 const LoginForm = ({ onSuccess }) => {
   const [login, setLogin] = useState('');
@@ -57,22 +60,46 @@ const LoginForm = ({ onSuccess }) => {
           <div className={styles.enterLoginText}>
             Логин или номер телефона:
           </div>
-          <LoginInput value={login} onChange={handleLoginInputChange} />
+          <LoginInput value={login} onChange={handleLoginInputChange}/>
         </label>
-        <br />
+        <br/>
         <label>
           <div className={styles.enterPasswordText}>
             Пароль:
           </div>
-          <PasswordInput value={password} onChange={handlePasswordInputChange} />
+          <PasswordInput value={password} onChange={handlePasswordInputChange}/>
         </label>
-        <br />
+        <br/>
 
         <Button className={styles.button} onClick={handleLoginClick}>
           <div className={styles.buttonText}>
             Войти
           </div>
         </Button>
+
+        <span className={`${styles.recoverPass} ${styles.disabled}`}>
+            Восстановить пароль
+        </span>
+
+        <div className={styles.enterText}>
+          Войти через
+        </div>
+
+        <div className={styles.socialIcons}>
+          <img className={styles.google}
+               src={imgGoogle}
+               alt="imgGoogle"
+          />
+          <img className={styles.facebook}
+               src={imgFacebook}
+               alt="imgFacebook"
+          />
+          <img className={styles.yandex}
+               src={imgYandex}
+               alt="imgYandex"
+          />
+
+        </div>
       </div>
     </div>
   );

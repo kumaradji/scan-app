@@ -1,19 +1,19 @@
 // SearchFormCard/SearchFormCard.module.scss
 
-$white: #FFFFFF;
+$white: #ffffff;
 $black: #000000;
 $gray-light: #C7C7C7;
 $gray-medium: #949494;
-$blue: #5970FF;
+$blue: #5970ff;
 $shadow: rgba(0, 0, 0, 0.20);
 $shadow-light: rgba(0, 0, 0, 0.05);
 
-.search-form-card {
+.searchFormCard {
   width: 100%;
   height: 100%;
   position: relative;
 
-  &__container {
+  .container {
     width: 872px;
     height: 543px;
     left: 0;
@@ -22,10 +22,14 @@ $shadow-light: rgba(0, 0, 0, 0.05);
     background: $white;
     box-shadow: 0 0 20px $shadow;
     border-radius: 10px;
+    margin-top: 38px;
+    margin-left: 53px;
+    display: flex;
+    align-items: center;
 
     &__inn {
       width: 242px;
-      height: 93px;
+      height: 43px;
       left: 44px;
       top: 21px;
       position: absolute;
@@ -81,8 +85,26 @@ $shadow-light: rgba(0, 0, 0, 0.05);
     }
   }
 
-}
+  .searchButton {
+    width: 305px;
+    height: 59px;
+    left: 580px;
+    top: 460px;
+    background: #5970FF;
+    position: absolute;
+    box-shadow: 0 0 20px $shadow-light;
+    border-radius: 5px;
+  }
 
-.search-button {
-  // Styles for the search button, if applicable
+    &__ButtonText {
+      left: 140px;
+      top: 0;
+      color: $white;
+      font-size: 22px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.66px;
+      word-wrap: break-word;
+    }
+
 }
