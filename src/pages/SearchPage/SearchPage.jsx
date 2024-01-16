@@ -13,8 +13,7 @@ const SearchPage = () => {
   return (
     <div className={styles.searchPage}>
       <div>
-
-          <SearchTitleTextBlock/>
+        <SearchTitleTextBlock/>
           <div className={styles.leftTextUnderTitleBlock}>
             <div className={styles.leftSmallText}>
               Задайте параметры поиска.

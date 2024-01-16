@@ -3,10 +3,23 @@ import React, { useState } from 'react';
 import styles from './SearchFormCard.module.scss';
 import Button from "../../../components/UI/Button";
 import * as SearchForm from "../../../api/search";
+import DateInput from "../DateInput/DateInput";
 
 function SearchFormCard() {
   const [inn, setInn] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [tonality, setTonality] = useState('');
+  const [documentCount, setDocumentCount] = useState('');
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
+  };
+
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+  };
 
   const handleSearchClick = async () => {
     try {
@@ -21,35 +34,63 @@ function SearchFormCard() {
     <div className={styles.searchFormCard}>
       <label className={styles.container}>
         <div className={styles.container__inn__label}>
-          Введите ИНН компании:
+          ИНН компании:
         </div>
-        <input className={styles.container__inn}
-               type="text"
-               value={inn}
-               onChange={(e) => setInn(e.target.value)}
+        <input
+          className={styles.container__inn}
+          type="text"
+          value={inn}
+          onChange={(e) => setInn(e.target.value)}
         />
+
+        <div className={styles.container__tonality__label}>
+          Тональность
+        </div>
+        <input
+          className={styles.container__tonality}
+          type="text"
+          value={tonality}
+          onChange={(e) => setTonality(e.target.value)}
+        />
+
+        <div className={styles.container__documentCount__label}>
+          Количество документов в выдаче
+        </div>
+        <input
+          className={styles.container__documentCount}
+          type="number"
+          value={documentCount}
+          onChange={(e) => setDocumentCount(e.target.value)}
+        />
+
+        <div className={styles.container__label}>
+          Диапазон поиска
+        </div>
+
+        <div className={styles.container__dateInputs}>
+          <div className={styles.container__dateInputs__label}>
+            <DateInput
+              selectedDate={startDate}
+              onChange={handleStartDateChange}
+              placeholder="Дата начала"
+            />
+          </div>
+
+          <div className={styles.container__dateInputs__label}>
+            <DateInput
+              selectedDate={endDate}
+              onChange={handleEndDateChange}
+              placeholder="Дата конца"
+            />
+          </div>
+        </div>
       </label>
 
-      <Button className={styles.searchButton} onClick={handleSearchClick}>
-        <div className={styles.searchFormCard__ButtonText}>
+      <Button className={styles.container__searchButton} onClick={handleSearchClick}>
+        <div className={styles.container__searchButton__text}>
           Поиск
         </div>
       </Button>
-
-
-      {/* Отображение результатов поиска */}
-      {/*{searchResults.length > 0 && (*/}
-      {/*  <div className={styles.searchResults}>*/}
-      {/*    <p>Результаты поиска:</p>*/}
-      {/*    <ul>*/}
-      {/*      {searchResults.map((company) => (*/}
-      {/*        <li key={company.sparkId}>*/}
-      {/*          {company.fullName} - {company.shortName} - {company.isBranch ? 'Филиал' : 'Головная компания'}*/}
-      {/*        </li>*/}
-      {/*      ))}*/}
-      {/*    </ul>*/}
-      {/*  </div>*/}
-      {/*)}*/}
     </div>
   );
 }

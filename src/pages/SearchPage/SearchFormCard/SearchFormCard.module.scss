@@ -1,5 +1,3 @@
-// SearchFormCard/SearchFormCard.module.scss
-
 $white: #ffffff;
 $black: #000000;
 $gray-light: #C7C7C7;
@@ -31,7 +29,7 @@ $shadow-light: rgba(0, 0, 0, 0.05);
       width: 242px;
       height: 43px;
       left: 44px;
-      top: 21px;
+      top: 71px;
       position: absolute;
 
       &__label {
@@ -56,6 +54,10 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         box-shadow: 0 0 20px $shadow-light;
         border-radius: 5px;
         border: 1px $gray-light solid;
+
+        &::placeholder {
+          color: $gray-medium;
+        }
       }
 
       &__hint {
@@ -90,15 +92,12 @@ $shadow-light: rgba(0, 0, 0, 0.05);
     height: 59px;
     left: 580px;
     top: 460px;
-    background: #5970FF;
+    background: $blue;
     position: absolute;
     box-shadow: 0 0 20px $shadow-light;
     border-radius: 5px;
-  }
 
     &__ButtonText {
-      left: 140px;
-      top: 0;
       color: $white;
       font-size: 22px;
       font-family: 'Inter', sans-serif;
@@ -106,5 +105,5 @@ $shadow-light: rgba(0, 0, 0, 0.05);
       letter-spacing: 0.66px;
       word-wrap: break-word;
     }
-
+  }
 }
