@@ -35,7 +35,7 @@ function SearchFormCard() {
       <label className={styles.leftBlock}>
 
         <div className={styles.leftBlock__inn__label}>
-          ИНН компании:
+          ИНН компании:*
         </div>
         <input
           className={styles.leftBlock__inn}
@@ -55,7 +55,7 @@ function SearchFormCard() {
         />
 
         <div className={styles.leftBlock__documentCount__label}>
-          Количество документов в выдаче
+          Количество документов в выдаче*
         </div>
         <input
           className={styles.leftBlock__documentCount}
@@ -65,11 +65,11 @@ function SearchFormCard() {
         />
 
         <div className={styles.leftBlockLabel}>
-          Диапазон поиска
+          Диапазон поиска*
         </div>
 
         <div className={styles.leftBlock__dateInputs}>
-          <div className={styles.leftBlock__dateInputs__label}>
+          <div className={styles.leftBlock__dateInputs__hint}>
             <DateInput
               selectedDate={startDate}
               onChange={handleStartDateChange}
@@ -77,24 +77,26 @@ function SearchFormCard() {
             />
           </div>
 
-          <div className={styles.leftBlock__dateInputs__label}>
+          <div className={styles.leftBlock__dateInputs__required}>
             <DateInput
               selectedDate={endDate}
               onChange={handleEndDateChange}
               placeholder="Дата конца"
             />
           </div>
+        </div>
+      </label>
 
+      <label className={styles.rightBlock}>
         <Button className={styles.searchButton} onClick={handleSearchClick}>
           <div className={styles.searchButton__ButtonText}>
             Поиск
           </div>
         </Button>
-        </div>
       </label>
 
     </div>
-  );
+);
 }
 
 export default SearchFormCard;

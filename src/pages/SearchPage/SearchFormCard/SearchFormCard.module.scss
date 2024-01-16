@@ -42,6 +42,7 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         letter-spacing: 0.54px;
         word-wrap: break-word;
         margin-top: 29px;
+        margin-left: 44px;
       }
 
       &__tonality {
@@ -103,7 +104,7 @@ $shadow-light: rgba(0, 0, 0, 0.05);
       width: 242px;
       height: 43px;
       left: 44px;
-      top: 200px;
+      top: 186px;
       position: absolute;
 
       &__label {
@@ -116,7 +117,8 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         font-weight: 400;
         letter-spacing: 0.54px;
         word-wrap: break-word;
-        margin-top: 143px;
+        margin-top: 144px;
+        margin-left: 44px;
       }
 
 
@@ -179,7 +181,8 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         font-weight: 400;
         letter-spacing: 0.54px;
         word-wrap: break-word;
-        margin-top: 238px;
+        margin-top: 259px;
+        margin-left: 44px;
       }
 
       &__input {
@@ -234,7 +237,8 @@ $shadow-light: rgba(0, 0, 0, 0.05);
       font-weight: 400;
       letter-spacing: 0.54px;
       word-wrap: break-word;
-      margin-top: 418px;
+      margin-top: 383px;
+      margin-left: 44px;
 
       &__label {
         left: 0;
@@ -247,40 +251,39 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         letter-spacing: 0.54px;
         word-wrap: break-word;
       }
-   }
+    }
 
+    &__dateInputs {
+      //width: 242px;
+      //height: 43px;
+      left: 0;
+      top: 425px;
+      display: flex;
+      margin-left: 0;
+      position: absolute;
+      background: $white;
+      box-shadow: 0 0 20px $shadow-light;
+      border-radius: 5px;
+      border: 1px $gray-light solid;
 
-      &__leftBlock__dateInputs {
-        width: 242px;
-        height: 43px;
-        left: 0;
-        top: 250px;
-        position: absolute;
-        background: $white;
-        box-shadow: 0 0 20px $shadow-light;
-        border-radius: 5px;
-        border: 1px $gray-light solid;
-
-        &::placeholder {
-          color: $gray-medium;
-        }
+      &::placeholder {
+        color: $gray-medium;
       }
 
       &__hint {
-        left: 92px;
-        top: 263px;
+        left: 44px;
+        top: 0;
         position: absolute;
-        opacity: 0.40;
-        color: $gray-medium;
-        font-size: 14px;
+        color: $black;
+        font-size: 25px;
         font-family: 'Inter', sans-serif;
         font-weight: 400;
-        letter-spacing: 0.42px;
+        letter-spacing: 0.75px;
         word-wrap: break-word;
       }
 
       &__required {
-        left: 140px;
+        left: 240px;
         top: 0;
         position: absolute;
         color: $black;
@@ -291,25 +294,34 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         word-wrap: break-word;
       }
     }
-
   }
 
-  .searchButton {
-    width: 305px;
-    height: 59px;
-    left: 580px;
-    top: 460px;
-    background: $blue;
+  .rightBlock {
+    width: 428px;
+    height: 589px;
+    left: 496px;
+    top: 0;
     position: absolute;
-    box-shadow: 0 0 20px $shadow-light;
-    border-radius: 5px;
 
-    &__ButtonText {
-      color: $white;
-      font-size: 22px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      letter-spacing: 0.66px;
-      word-wrap: break-word;
+
+    .searchButton {
+      width: 305px;
+      height: 59px;
+      right: 39px;
+      bottom: 59px;
+      background: $blue;
+      position: absolute;
+      box-shadow: 0 0 20px $shadow-light;
+      border-radius: 5px;
+
+      &__ButtonText {
+        color: $white;
+        font-size: 22px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.66px;
+        word-wrap: break-word;
+      }
     }
   }
+}
