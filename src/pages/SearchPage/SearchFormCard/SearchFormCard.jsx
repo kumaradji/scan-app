@@ -31,44 +31,45 @@ function SearchFormCard() {
   };
 
   return (
-    <div className={styles.searchFormCard}>
-      <label className={styles.container}>
-        <div className={styles.container__inn__label}>
+    <div className={styles.container}>
+      <label className={styles.leftBlock}>
+
+        <div className={styles.leftBlock__inn__label}>
           ИНН компании:
         </div>
         <input
-          className={styles.container__inn}
+          className={styles.leftBlock__inn}
           type="text"
           value={inn}
           onChange={(e) => setInn(e.target.value)}
         />
 
-        <div className={styles.container__tonality__label}>
+        <div className={styles.leftBlock__tonality__label}>
           Тональность
         </div>
         <input
-          className={styles.container__tonality}
+          className={styles.leftBlock__tonality}
           type="text"
           value={tonality}
           onChange={(e) => setTonality(e.target.value)}
         />
 
-        <div className={styles.container__documentCount__label}>
+        <div className={styles.leftBlock__documentCount__label}>
           Количество документов в выдаче
         </div>
         <input
-          className={styles.container__documentCount}
+          className={styles.leftBlock__documentCount}
           type="number"
           value={documentCount}
           onChange={(e) => setDocumentCount(e.target.value)}
         />
 
-        <div className={styles.container__label}>
+        <div className={styles.leftBlockLabel}>
           Диапазон поиска
         </div>
 
-        <div className={styles.container__dateInputs}>
-          <div className={styles.container__dateInputs__label}>
+        <div className={styles.leftBlock__dateInputs}>
+          <div className={styles.leftBlock__dateInputs__label}>
             <DateInput
               selectedDate={startDate}
               onChange={handleStartDateChange}
@@ -76,21 +77,22 @@ function SearchFormCard() {
             />
           </div>
 
-          <div className={styles.container__dateInputs__label}>
+          <div className={styles.leftBlock__dateInputs__label}>
             <DateInput
               selectedDate={endDate}
               onChange={handleEndDateChange}
               placeholder="Дата конца"
             />
           </div>
+
+        <Button className={styles.searchButton} onClick={handleSearchClick}>
+          <div className={styles.searchButton__ButtonText}>
+            Поиск
+          </div>
+        </Button>
         </div>
       </label>
 
-      <Button className={styles.container__searchButton} onClick={handleSearchClick}>
-        <div className={styles.container__searchButton__text}>
-          Поиск
-        </div>
-      </Button>
     </div>
   );
 }
