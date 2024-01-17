@@ -7,7 +7,8 @@ import LogoImg from '../../assets/images/Logo.svg';
 import AvatarImg from '../../assets/images/Avatar.svg';
 import SlashImg from '../../assets/images/Slash.svg';
 import { logout, getUserInfo } from '../../api/auth';
-import userPanelRect from "../../assets/icons/userPanelRect.svg";
+import UserPanel from "../AppHeader/UserPanel/UserPanel";
+import UserInfo from "../AppHeader/UserInfo/UserInfo";
 
 const AppHeader = () => {
   const [loading, setLoading] = useState(true);
@@ -52,91 +53,13 @@ const AppHeader = () => {
           </span>
         </nav>
 
+        <UserPanel userInfo={userInfo} loading={loading} />
+
+        <UserInfo userInfo={userInfo} handleLogout={handleLogout} />
+
         <div className={styles.auth}>
           {userInfo ? (
             <>
-              <div className={styles.userPanel}>
-                <img className={styles.userPanelRect}
-                     src={userPanelRect}
-                     alt="userPanelRect"
-                />
-                {loading ? (
-                  <div className={styles.loader}></div>
-                ) : (
-                  <>
-                    <div
-                      style={{
-                        width: 175,
-                        height: 63,
-                        left: 0,
-                        top: 0,
-                        position: 'absolute',
-                        opacity: 0.30,
-                        background: '#D9D9D9',
-                        borderRadius: 5,
-                      }}
-                    />
-                    <div
-                      style={{
-                        left: 140,
-                        top: 12,
-                        position: 'absolute',
-                        color: 'black',
-                        fontSize: 14,
-                        fontFamily: 'Inter',
-                        fontWeight: '700',
-                        wordWrap: 'break-word',
-                      }}
-                    >
-                      {userInfo.usedCompanies}
-                    </div>
-                    <div
-                      style={{
-                        left: 140,
-                        top: 31,
-                        position: 'absolute',
-                        color: '#8AC540',
-                        fontSize: 14,
-                        fontFamily: 'Inter',
-                        fontWeight: '700',
-                        wordWrap: 'break-word',
-                      }}
-                    >
-                      {userInfo.companyLimit}
-                    </div>
-                    <div
-                      style={{
-                        left: 10,
-                        top: 14,
-                        position: 'absolute',
-                        opacity: 0.40,
-                        color: 'black',
-                        fontSize: 10,
-                        fontFamily: 'Inter',
-                        fontWeight: '400',
-                        wordWrap: 'break-word',
-                      }}
-                    >
-                      Использовано компаний
-                    </div>
-                    <div
-                      style={{
-                        left: 27,
-                        top: 33,
-                        position: 'absolute',
-                        opacity: 0.40,
-                        color: 'black',
-                        fontSize: 10,
-                        fontFamily: 'Inter',
-                        fontWeight: '400',
-                        wordWrap: 'break-word',
-                      }}
-                    >
-                      Лимит по компаниям
-                    </div>
-                  </>
-                )}
-              </div>
               <img src={AvatarImg} alt="Аватар пользователя" className={styles.avatar}/>
               <Button onClick={handleLogout}>Выйти</Button>
             </>
