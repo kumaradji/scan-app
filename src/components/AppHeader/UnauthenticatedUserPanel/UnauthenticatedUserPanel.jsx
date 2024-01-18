@@ -1,7 +1,6 @@
 // UnauthenticatedUserPanel.jsx
 import React from 'react';
 import styles from './UnauthenticatedUserPanel.module.scss';
-import Button from '../../UI/Button/Button';
 import { NavLink, Link } from 'react-router-dom';
 import SlashImg from '../../../assets/images/Slash.svg';
 
@@ -15,10 +14,12 @@ const UnauthenticatedUserPanel = () => {
         <img src={SlashImg} alt="Slash" className={styles.slash} />
       </span>
       <Link to="/login">
-        <Button className={styles.button}>Войти</Button>
+        <button className={styles.button}>Войти</button>
       </Link>
     </div>
   );
 };
 
 export default UnauthenticatedUserPanel;
+
+
