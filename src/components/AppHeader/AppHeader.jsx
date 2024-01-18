@@ -1,14 +1,11 @@
 // AppHeader.jsx
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import Button from '../UI/Button/Button';
+import { Link } from 'react-router-dom';
 import styles from './AppHeader.module.scss';
 import LogoImg from '../../assets/images/Logo.svg';
-import AvatarImg from '../../assets/images/Avatar.svg';
-import SlashImg from '../../assets/images/Slash.svg';
 import { logout, getUserInfo } from '../../api/auth';
-import UserPanel from "../AppHeader/UserPanel/UserPanel";
-import UserInfo from "../AppHeader/UserInfo/UserInfo";
+import AuthenticatedUserInfo from './AuthenticatedUserInfo/AuthenticatedUserInfo';
+import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/UnauthenticatedUserPanel';
 
 const AppHeader = () => {
   const [loading, setLoading] = useState(true);
@@ -53,28 +50,11 @@ const AppHeader = () => {
           </span>
         </nav>
 
-        <UserPanel userInfo={userInfo} loading={loading} />
-
-        <UserInfo userInfo={userInfo} handleLogout={handleLogout} />
-
         <div className={styles.auth}>
           {userInfo ? (
-            <>
-              <img src={AvatarImg} alt="Аватар пользователя" className={styles.avatar}/>
-              <Button onClick={handleLogout}>Выйти</Button>
-            </>
+            <AuthenticatedUserInfo userInfo={userInfo} handleLogout={handleLogout} />
           ) : (
-            <>
-              <NavLink to="/login" className={styles.navLink}>
-                Зарегистрироваться
-              </NavLink>
-              <span>
-                <img src={SlashImg} alt="Slash" className={styles.slash} />
-              </span>
-              <Link to="/login">
-                <Button>Войти</Button>
-              </Link>
-            </>
+            <UnauthenticatedUserPanel />
           )}
         </div>
       </div>

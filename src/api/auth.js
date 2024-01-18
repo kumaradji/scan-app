@@ -1,4 +1,5 @@
 // api/auth.js
+
 import axios from 'axios';
 
 const BASE_URL = 'https://gateway.scan-interfax.ru/api/v1';
@@ -23,7 +24,16 @@ export const getUserInfo = async () => {
   }
 };
 
-export const logout = (callback) => {
-  localStorage.removeItem('accessToken');
-  callback();
+export const logout = async (callback) => {
+  try {
+    // Ваш код для разлогинивания
+    localStorage.removeItem('accessToken');
+    // Если успешно разлогинились, вызываем callback (если он передан)
+    if (typeof callback === 'function') {
+      callback();
+    }
+  } catch (error) {
+    console.error('Error during logout:', error);
+    throw error;
+  }
 };

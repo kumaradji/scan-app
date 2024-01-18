@@ -28,7 +28,7 @@ const LeftTextBlock = () => {
 
         <RequireAuth isAuthenticated={isAuthenticated}>
           <Link to="/search">
-            <Button className={styles.buttonBlueUnder}>
+            <Button >
               <div className={styles.buttonBlueUnderText}>
                 Запросить данные
               </div>
