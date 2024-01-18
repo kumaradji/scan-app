@@ -9,7 +9,7 @@ import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/Unauthenticated
 
 const AppHeader = () => {
   const [loading, setLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState(null);
+  const [userInfo, setUserInfo] = useState({username: 'sf_student1'});
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -27,8 +27,11 @@ const AppHeader = () => {
   }, []);
 
   const handleLogout = () => {
+    console.log("Logging out...");
     logout();
+    console.log("User info set to null");
     setUserInfo(null);
+    console.log("User info:", userInfo);
   };
 
   return (

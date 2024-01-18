@@ -1,12 +1,21 @@
 // AuthenticatedUserInfo.module.scss
 
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+
 .logoutText {
   color: black;
+  opacity: 0.40;
   font-size: 10px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   word-wrap: break-word;
-  cursor: pointer; /* Добавляем указатель мыши, чтобы пользователь понимал, что это интерактивный элемент */
+  cursor: pointer;
+  margin-right: 29px;
 }
 
 .userInfo {
