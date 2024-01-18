@@ -1,41 +1,22 @@
-// src/components/AppHeader/UnauthenticatedUserPanel/UnauthenticatedUserPanel.jsx
+// UnauthenticatedUserPanel.jsx
 import React from 'react';
 import styles from './UnauthenticatedUserPanel.module.scss';
-import Loader from '../../Loader/Loader';
-import userPanelRect from "../../../assets/icons/userPanelRect.svg";
+import Button from '../../UI/Button/Button';
+import { NavLink, Link } from 'react-router-dom';
+import SlashImg from '../../../assets/images/Slash.svg';
 
-const UnauthenticatedUserPanel = ({ userInfo, loading }) => {
-  const isLoggedIn = !!userInfo;
-
-  // Функция для выхода пользователя
-  const handleLogout = () => {
-    // Ваш код для выхода пользователя
-    console.log('Выход пользователя');
-  };
-
+const UnauthenticatedUserPanel = () => {
   return (
-    <div className={styles.userPanel}>
-      <img className={styles.userPanelRect} src={userPanelRect} alt="userPanelRect" />
-
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          {isLoggedIn ? (
-            <div className={styles.userInfoContainer}>
-              <img src={userInfo.avatar} alt="Аватар пользователя" className={styles.avatar}/>
-              <div onClick={handleLogout} className={styles.logoutText}>
-                Выйти
-              </div>
-            </div>
-          ) : (
-            <div className={styles.notLoggedInContainer}>
-              <button className={styles.loginButton}>Войти</button>
-              <span className={styles.registerText}>Зарегистрироваться</span>
-            </div>
-          )}
-        </>
-      )}
+    <div className={styles.unauthenticatedUserPanel}>
+      <NavLink to="/login" className={styles.navLink}>
+        Зарегистрироваться
+      </NavLink>
+      <span>
+        <img src={SlashImg} alt="Slash" className={styles.slash} />
+      </span>
+      <Link to="/login">
+        <Button className={styles.button}>Войти</Button>
+      </Link>
     </div>
   );
 };
