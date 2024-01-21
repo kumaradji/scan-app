@@ -1,75 +1,51 @@
-/* AppHeader.module.scss */
+// AppHeader.module.scss
+
+@import '../../styles/mixins/_mixins';
 
 .header {
     width: 1440px;
     height: 93px;
     flex-shrink: 0;
-    background: #FFF;
-}
+    background: #fff;
 
-// Миксин для общих стилей текста
-@mixin textStyles {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.14px;
-}
-
-// Миксин для стилей ссылок
-@mixin link {
-    text-decoration: none;
-    color: #888;
-
-    &:hover {
-        text-decoration: underline;
+    &__content {
+        @include textStyles;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 60px;
+        padding-right: 60px;
         color: #000;
     }
+
+    &__navLinks {
+        a,
+        span {
+            @include link;
+            margin-right: 49px;
+
+            &:hover {
+                @include link;
+            }
+        }
+
+        span:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__auth {
+        display: flex;
+        align-items: center;
+
+        a {
+            @include link;
+            margin-right: 10px;
+
+            &:hover {
+                @include link;
+            }
+        }
+    }
 }
-
-.content {
-    @include textStyles;
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 60px;
-    padding-right: 60px;
-    background-color: #fff;
-    color: #000;
-}
-
-.nav-links a,
-.nav-links span {
-    @include link;
-    margin-right: 49px;
-}
-
-.nav-links a:hover {
-    @include link;
-}
-
-.nav-links span:hover {
-    text-decoration: underline;
-}
-
-.auth {
-    display: flex;
-    align-items: center;
-}
-
-.auth a {
-    @include link;
-    margin-right: 10px;
-}
-
-.auth a:hover {
-    @include link;
-}
-
-.disabled {
-    color: #888;
-    cursor: not-allowed;
-    text-decoration: none;
-}
-
-

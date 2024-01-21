@@ -9,7 +9,7 @@ import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/Unauthenticated
 
 const AppHeader = () => {
   const [loading, setLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState({username: 'sf_student1'});
+  const [userInfo, setUserInfo] = useState({ username: 'sf_student1' });
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -27,33 +27,33 @@ const AppHeader = () => {
   }, []);
 
   const handleLogout = () => {
-    console.log("Logging out...");
+    console.log('Logging out...');
     logout();
-    console.log("User info set to null");
+    console.log('User info set to null');
     setUserInfo(null);
-    console.log("User info:", userInfo);
+    console.log('User info:', userInfo);
   };
 
   return (
     <header className={styles.header}>
-      <div className={styles.content}>
+      <div className={styles.header__content}>
         <span>
           <img src={LogoImg} alt="Логотип" />
         </span>
 
-        <nav className={styles['nav-links']}>
-          <Link to="/" className={styles.navLink}>
+        <nav className={styles.header__navLinks}>
+          <Link to="/" className={styles.header__navLink}>
             Главная
           </Link>
-          <span className={`${styles.navLink} ${styles.disabled}`}>
+          <span className={`${styles.header__navLink} ${styles.disabled}`}>
             Тарифы
           </span>
-          <span className={`${styles.navLink} ${styles.disabled}`}>
+          <span className={`${styles.header__navLink} ${styles.disabled}`}>
             FAQ
           </span>
         </nav>
 
-        <div className={styles.auth}>
+        <div className={styles.header__auth}>
           {userInfo ? (
             <AuthenticatedUserInfo userInfo={userInfo} handleLogout={handleLogout} />
           ) : (

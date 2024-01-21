@@ -1,0 +1,20 @@
+// _mixins.scss
+
+// Миксин для общих стилей текста
+@mixin textStyles {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+}
+
+// Миксин для стилей ссылок
+@mixin link {
+  text-decoration: none;
+  color: #888;
+
+  &:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+}
