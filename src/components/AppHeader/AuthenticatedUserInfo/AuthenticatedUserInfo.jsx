@@ -14,6 +14,14 @@ const AuthenticatedUserInfo = ({ userInfo, handleLogout }) => {
     <div className={styles.userInfo}>
       <div className={styles.userInfo__userPanel}>
         <div className={styles.userInfo__userPanelRect}>
+          {/* Фоновый прямоугольник */}
+          <img
+            className={styles.userInfo__userPanelRectImg}
+            src={userPanelRect}
+            alt="userPanelRect"
+          />
+
+          {/* Текстовые элементы внутри фонового прямоугольника */}
           {loading ? (
             <Loader />
           ) : (

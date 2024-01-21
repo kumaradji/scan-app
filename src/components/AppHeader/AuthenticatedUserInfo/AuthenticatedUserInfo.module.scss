@@ -16,6 +16,11 @@
       position: relative;
     }
 
+    .userInfo__userPanelRectImg {
+      width: 100%;  // Заполнить весь контейнер
+      height: 100%; // Заполнить весь контейнер
+    }
+
     /* Блок - контейнер информации о компании */
     .userInfo__companyInfo {
       display: flex;
