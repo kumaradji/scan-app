@@ -1,102 +1,84 @@
-// AuthenticatedUserInfo.module.scss
+/* AuthenticatedUserInfo.module.scss */
 
 /* Блок - пользовательская информация */
 .userInfo {
   display: flex;
   align-items: center;
-}
 
-/* Блок - панель пользователя */
-.userInfo__userPanel {
-  display: flex;
+  /* Блок - панель пользователя */
+  .userInfo__userPanel {
+    position: relative;
 
-  /* Элемент - прямоугольник панели */
-  .userInfo__userPanel-rect {
-    width: 165px;
-    height: 63px;
-    background: #D9D9D9;
-    border-radius: 5px;
-    margin-right: 20px;
-  }
-
-  /* Блок - контейнер информации о компании */
-  .userInfo__companyInfo {
-    display: flex;
-    flex-direction: column;
-
-    /* Элемент - фоновый прямоугольник */
-    .userInfo__companyInfo-background {
-      width: 175px;
+    /* Элемент - прямоугольник панели */
+    .userInfo__userPanelRect {
+      width: 165px;
       height: 63px;
-      left: 0;
-      top: 0;
-      position: absolute;
-      opacity: 0.30;
-      background: #D9D9D9;
-      border-radius: 5px;
+      position: relative;
     }
 
-    /* Элемент - использованные компании */
-    .userInfo__companyInfo-used {
-      left: 140px;
-      top: 12px;
-      position: absolute;
-      color: black;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      word-wrap: break-word;
-    }
+    /* Блок - контейнер информации о компании */
+    .userInfo__companyInfo {
+      display: flex;
+      flex-direction: column;
+      position: absolute; /* Переместил сюда */
 
-    /* Элемент - лимит компаний */
-    .userInfo__companyInfo-limit {
-      left: 140px;
-      top: 31px;
-      position: absolute;
-      color: #8AC540;
-      font-size: 14px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      word-wrap: break-word;
-    }
+      /* Элемент - использованные компании */
+      .userInfo__companyInfoUsed,
+      .userInfo__companyInfoLimit,
+      .userInfo__companyInfoTextUsed,
+      .userInfo__companyInfoTextLimit {
+        position: absolute;
+      }
 
-    /* Элемент - текст для исп. компаний */
-    .userInfo__companyInfo-usedText {
-      left: 10px;
-      top: 14px;
-      position: absolute;
-      opacity: 0.40;
-      color: black;
-      font-size: 10px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      word-wrap: break-word;
-    }
+      .userInfo__companyInfoUsed {
+        left: 10px;
+        top: 12px;
+        color: black;
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        word-wrap: break-word;
+      }
 
-    /* Элемент - текст для лимита */
-    .userInfo__companyInfo-limitText {
-      left: 27px;
-      top: 33px;
-      position: absolute;
-      opacity: 0.40;
-      color: black;
-      font-size: 10px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      word-wrap: break-word;
-    }
+      .userInfo__companyInfoLimit {
+        left: 10px;
+        top: 31px;
+        color: #8AC540;
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        word-wrap: break-word;
+      }
 
-    /* Элемент - текст для использованных компаний */
-    .userInfo__companyInfoTextUsed {
+      .userInfo__companyInfoTextUsed {
+        left: 10px;
+        top: 14px;
+        opacity: 0.40;
+        color: black;
+        font-size: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        word-wrap: break-word;
+      }
 
-    }
+      .userInfo__companyInfoTextLimit {
+        left: 10px;
+        top: 33px;
+        opacity: 0.40;
+        color: black;
+        font-size: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        word-wrap: break-word;
+      }
 
-    /* Элемент - текст для лимита */
-    .userInfo__companyInfoTextLimit {
+      /* Элемент - текст для использованных компаний */
+      .userInfo__companyInfoTextUsed {}
 
+      /* Элемент - текст для лимита */
+      .userInfo__companyInfoTextLimit {}
     }
   }
-
 }
 
 /* Блок - текст выхода */

@@ -13,34 +13,30 @@ const AuthenticatedUserInfo = ({ userInfo, handleLogout }) => {
   return (
     <div className={styles.userInfo}>
       <div className={styles.userInfo__userPanel}>
-        <img
-          className={styles.userInfo__userPanelRect}
-          src={userPanelRect}
-          alt="userPanelRect"
-        />
-
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            {isLoggedIn && (
-              <div className={styles.userInfo__companyInfo}>
-                <div className={styles.userInfo__companyInfoUsed}>
-                  {usedCompanies}
+        <div className={styles.userInfo__userPanelRect}>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              {isLoggedIn && (
+                <div className={styles.userInfo__companyInfo}>
+                  <div className={styles.userInfo__companyInfoUsed}>
+                    {usedCompanies}
+                  </div>
+                  <div className={styles.userInfo__companyInfoLimit}>
+                    {companyLimit}
+                  </div>
+                  <div className={styles.userInfo__companyInfoTextUsed}>
+                    Использовано компаний
+                  </div>
+                  <div className={styles.userInfo__companyInfoTextLimit}>
+                    Лимит по компаниям
+                  </div>
                 </div>
-                <div className={styles.userInfo__companyInfoLimit}>
-                  {companyLimit}
-                </div>
-                <div className={styles.userInfo__companyInfoTextUsed}>
-                  Использовано компаний
-                </div>
-                <div className={styles.userInfo__companyInfoTextLimit}>
-                  Лимит по компаниям
-                </div>
-              </div>
-            )}
-          </>
-        )}
+              )}
+            </>
+          )}
+        </div>
       </div>
 
       <div

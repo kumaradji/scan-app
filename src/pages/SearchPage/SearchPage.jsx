@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './SearchPage.module.scss';
-import '../../fonts.scss';
+import '../../styles/fonts.scss';
 import SearchTitleTextBlock from './SearchTitleTextBlock/SearchTitleTextBlock';
 import SearchPageCharacters from "./SearchPageCharacters/SearchPageCharacters";
 import SearchFormCard from "./SearchFormCard/SearchFormCard";
