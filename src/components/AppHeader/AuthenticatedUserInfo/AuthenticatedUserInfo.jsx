@@ -23,7 +23,7 @@ const AuthenticatedUserInfo = ({ userInfo, handleLogout }) => {
 
           {/* Текстовые элементы внутри фонового прямоугольника */}
           {loading ? (
-            <Loader />
+            <Loader/>
           ) : (
             <>
               {isLoggedIn && (
@@ -47,13 +47,17 @@ const AuthenticatedUserInfo = ({ userInfo, handleLogout }) => {
         </div>
       </div>
 
-      <div
-        onClick={handleLogout}
-        className={styles.userInfo__logoutText}
-      >
-        Выйти
+      <div className={styles.userInfo__userPanelTextContainer}>
+        <div className={styles.userInfo__userNameText}>
+          Алексей А.
+        </div>
+        <div
+          onClick={handleLogout}
+          className={styles.userInfo__logoutText}
+        >
+          Выйти
+        </div>
       </div>
-
       <img
         src={AvatarImg}
         alt="Аватар"

@@ -11,9 +11,9 @@
 
     /* Элемент - прямоугольник панели */
     .userInfo__userPanelRect {
-      width: 165px;
-      height: 63px;
+
       position: relative;
+      margin-right: 160px;
     }
 
     .userInfo__userPanelRectImg {
@@ -23,10 +23,6 @@
 
     /* Блок - контейнер информации о компании */
     .userInfo__companyInfo {
-      display: flex;
-      flex-direction: column;
-      position: absolute; /* Переместил сюда */
-
       /* Элемент - использованные компании */
       .userInfo__companyInfoUsed,
       .userInfo__companyInfoLimit,
@@ -36,7 +32,7 @@
       }
 
       .userInfo__companyInfoUsed {
-        left: 10px;
+        left: 140px;
         top: 12px;
         color: black;
         font-size: 14px;
@@ -46,7 +42,7 @@
       }
 
       .userInfo__companyInfoLimit {
-        left: 10px;
+        left: 140px;
         top: 31px;
         color: #8AC540;
         font-size: 14px;
@@ -67,7 +63,7 @@
       }
 
       .userInfo__companyInfoTextLimit {
-        left: 10px;
+        left: 27px;
         top: 33px;
         opacity: 0.40;
         color: black;
@@ -86,17 +82,30 @@
   }
 }
 
-/* Блок - текст выхода */
-.userInfo__logoutText {
-  color: black;
-  opacity: 0.40;
-  font-size: 10px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  word-wrap: break-word;
-  cursor: pointer;
-  margin-right: 29px;
+.userInfo__userPanelTextContainer {
+  /* Блок - текст юзера */
+  .userInfo__userNameText {
+    color: black;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+    word-wrap: break-word;
+
+  }
+  /* Блок - текст выхода */
+  .userInfo__logoutText {
+    color: black;
+    opacity: 0.40;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+    margin-right: 29px;
+  }
 }
+
 
 /* Блок - аватар */
 .userInfo__avatar {
