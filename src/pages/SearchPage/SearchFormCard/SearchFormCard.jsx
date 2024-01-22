@@ -4,6 +4,7 @@ import styles from './SearchFormCard.module.scss';
 import Button from "../../../components/UI/Button";
 import * as SearchForm from "../../../api/search";
 import DateInput from "../DateInput/DateInput";
+import CheckboxList from "./CheckboxList/CheckboxList";
 
 function SearchFormCard() {
   const [inn, setInn] = useState('');
@@ -12,6 +13,7 @@ function SearchFormCard() {
   const [documentCount, setDocumentCount] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [checkedItems, setCheckedItems] = useState(Array(7).fill(false));
 
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -19,6 +21,12 @@ function SearchFormCard() {
 
   const handleEndDateChange = (date) => {
     setEndDate(date);
+  };
+
+  const handleToggle = (index) => {
+    const newCheckedItems = [...checkedItems];
+    newCheckedItems[index] = !newCheckedItems[index];
+    setCheckedItems(newCheckedItems);
   };
 
   const handleSearchClick = async () => {
@@ -88,6 +96,22 @@ function SearchFormCard() {
       </label>
 
       <label className={styles.rightBlock}>
+
+        <CheckboxList
+          items={[
+            'Признак максимальной полноты',
+            'Упоминания в бизнес-контексте',
+            'Главная роль в публикации',
+            'Публикации только с риск-факторами',
+            'Включать технические новости рынков',
+            'Включать анонсы и календари',
+            'Включать сводки новостей',
+          ]}
+          checkedItems={checkedItems}
+          onToggle={handleToggle}
+        />
+
+
         <Button className={styles.searchButton} onClick={handleSearchClick}>
           <div className={styles.searchButton__ButtonText}>
             Поиск
