@@ -5,27 +5,22 @@ import React from 'react';
 import styles from './ResultPage.module.scss';
 import TitleTextBlock04 from "./TitleTextBlock04";
 import ImageRightBlock from "./ImageRightBlock";
+import LeftSmallText from "./LeftSmallText/LeftSmallText";
 
 const ResultPage = () => {
 
 
   return (
-    <div className={styles.resultPage}>
+    <section className={styles.resultPage}>
       <div className={styles.container}>
-        <TitleTextBlock04/>
-        <ImageRightBlock/>
-      </div>
+        <TitleTextBlock04 />
+        <ImageRightBlock />
 
-      <div className={styles.leftTextUnderTitleBlock}>
-        <div className={styles.leftSmallText}>
-          Поиск может занять некоторое время,
-          <br/>
-          просим сохранять терпение.
-        </div>
+        <LeftSmallText />
       </div>
 
 
-    </div>
+    </section>
   );
 };
 

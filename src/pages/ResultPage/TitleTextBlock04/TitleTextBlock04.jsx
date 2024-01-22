@@ -17,8 +17,7 @@ const TitleTextBlock04 = () => {
         {/* здесь текст не нужен */}
       </span>
     </TitleTextBlock>
-  );
-
+  )
 };
 
 export default TitleTextBlock04;

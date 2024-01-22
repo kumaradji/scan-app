@@ -1,9 +1,9 @@
 import React from 'react';
 import CheckboxItem from '../CheckboxItem/CheckboxItem';
-import styles from './CheckboxList.module.scss';
+import styles from '../SearchFormCard.module.scss';
 
 const CheckboxList = ({ items, checkedItems, onToggle }) => (
-  <ul>
+  <ul className={styles.checkboxList} >
     {items.map((item, index) => (
       <CheckboxItem
         key={index}

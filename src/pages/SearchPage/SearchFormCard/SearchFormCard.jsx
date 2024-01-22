@@ -111,13 +111,14 @@ function SearchFormCard() {
           onToggle={handleToggle}
         />
 
-
         <Button className={styles.searchButton} onClick={handleSearchClick}>
           <div className={styles.searchButton__ButtonText}>
             Поиск
           </div>
         </Button>
+
       </label>
+
 
     </div>
 );

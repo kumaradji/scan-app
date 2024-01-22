@@ -303,16 +303,29 @@ $shadow-light: rgba(0, 0, 0, 0.05);
     top: 0;
     position: absolute;
 
+    .checkboxList {
+      li {
+        label {
+          input {
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
 
 
 
     .searchButton {
       width: 305px;
       height: 59px;
-      right: 39px;
-      bottom: 59px;
+      right: -65px;
+      bottom: -15px;
       background: $blue;
-      position: absolute;
+      position: relative;
       box-shadow: 0 0 20px $shadow-light;
       border-radius: 5px;
 
