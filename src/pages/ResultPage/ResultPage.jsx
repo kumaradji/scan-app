@@ -15,7 +15,6 @@ const ResultPage = () => {
       <div className={styles.container}>
         <TitleTextBlock04 />
         <ImageRightBlock />
-
         <LeftSmallText />
       </div>
 
