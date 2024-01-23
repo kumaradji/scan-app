@@ -117,6 +117,10 @@ function SearchFormCard() {
           </div>
         </Button>
 
+        <div className={styles.rightBlockSmallText}>
+          * Обязательные к заполнению поля
+        </div>
+
       </label>
 
 

@@ -164,7 +164,7 @@
     width: 428px;
     height: 589px;
     left: 496px;
-    top: 0;
+    margin-top: 83px;
     position: absolute;
 
     .checkboxList {
@@ -186,8 +186,8 @@
     .searchButton {
       width: 305px;
       height: 59px;
-      right: -65px;
-      bottom: -15px;
+      right: -85px;
+      bottom: -75px;
       background: $blue;
       position: relative;
       box-shadow: 0 0 20px $shadow-light;
@@ -203,4 +203,16 @@
       }
     }
   }
+
+  .rightBlockSmallText {
+    font-size: 14px;
+    color: $gray-medium;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.42px;
+    word-wrap: break-word;
+    margin-top: 80px;
+    margin-left: 65px;
+  }
+
 }
