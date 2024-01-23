@@ -20,10 +20,11 @@ function DateInput({ selectedDate, onChange, placeholder }) {
       <DatePicker
         selected={selectedDate}
         onChange={onChange}
-        customInput={<input style={{opacity: 0, position: 'absolute'}} />}
+        customInput={<></>}
       />
     </div>
   );
 }
 
 export default DateInput;
+
