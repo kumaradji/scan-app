@@ -14,7 +14,7 @@ const TitleTextBlock = ({ text, additionalStyles }) => {
 
 TitleTextBlock.propTypes = {
   text: PropTypes.string.isRequired,
-  additionalStyles: PropTypes.string, // Дополнительные стили (необязательно)
+  additionalStyles: PropTypes.string,
 };
 
 export default TitleTextBlock;

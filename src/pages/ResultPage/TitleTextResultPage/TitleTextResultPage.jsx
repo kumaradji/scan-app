@@ -1,10 +1,10 @@
-// LoginPage/TitleTextBlock04/TitleTextBlock04.jsx
+// LoginPage/TitleTextResultPage/TitleTextResultPage.jsx
 
 import React from 'react';
 import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';
-import styles from './TitleTextBlock04.module.scss';
+import styles from './TitleTextResultPage.module.scss';
 
-const TitleTextBlock04 = () => {
+const TitleTextResultPage = () => {
 
   return (
     <TitleTextBlock
@@ -20,4 +20,4 @@ const TitleTextBlock04 = () => {
   )
 };
 
-export default TitleTextBlock04;
+export default TitleTextResultPage;

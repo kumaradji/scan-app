@@ -1,17 +1,16 @@
-// ResultPage/TitleTextBlock04/TitleTextBlock04.module.scss
+// ResultPage/TitleTextResultPage/TitleTextResultPage.module.scss
 
 .titleTextBlock04 {
-  width: 509px;
-  height: 69px;
+  max-width: 510px;
   color: #000;
   font-family: 'FerryBlack', sans-serif;
-  font-size: 40px;
+  font-size: clamp(24px, 4vw, 40px);
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   letter-spacing: 1.60px;
   padding-top: 69px;
-  padding-left: 60px;
+  margin-left: 60px;
 
   .title-text {
     white-space: pre-wrap;
