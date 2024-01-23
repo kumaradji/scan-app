@@ -40,6 +40,8 @@ function SearchFormCard() {
 
   return (
     <div className={styles.container}>
+
+      {/*левая часть карточки*/}
       <label className={styles.leftBlock}>
 
         <div className={styles.leftBlock__inn__label}>
@@ -76,25 +78,23 @@ function SearchFormCard() {
           Диапазон поиска*
         </div>
 
-        <div className={styles.leftBlock__dateInputs}>
-          <div className={styles.leftBlock__dateInputs__hint}>
-            <DateInput
-              selectedDate={startDate}
-              onChange={handleStartDateChange}
-              placeholder="Дата начала"
-            />
-          </div>
+        <div className={styles.leftBlock_dateInputs}>
+        <DateInput
+          selectedDate={startDate}
+          onChange={handleStartDateChange}
+          placeholder="Дата начала"
+        />
 
-          <div className={styles.leftBlock__dateInputs__required}>
-            <DateInput
-              selectedDate={endDate}
-              onChange={handleEndDateChange}
-              placeholder="Дата конца"
-            />
-          </div>
+        <DateInput
+          selectedDate={endDate}
+          onChange={handleEndDateChange}
+          placeholder="Дата конца"
+        />
         </div>
       </label>
 
+
+      {/*правая часть картоки*/}
       <label className={styles.rightBlock}>
 
         <CheckboxList

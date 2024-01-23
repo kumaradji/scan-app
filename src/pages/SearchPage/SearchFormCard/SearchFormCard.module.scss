@@ -22,7 +22,8 @@ $shadow-light: rgba(0, 0, 0, 0.05);
     background: $white;
     box-shadow: 0 0 20px $shadow;
     border-radius: 10px;
-    margin-top: 38px;
+    margin-top: 47px;
+    margin-bottom: 64px;
     margin-left: 53px;
     align-items: center;
 
@@ -72,25 +73,6 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         left: 44px;
       }
 
-      &__hint {
-        @include hint;
-
-        left: 92px;
-        top: 63px;
-
-      }
-
-      &__required {
-        left: 140px;
-        top: 0;
-        position: absolute;
-        color: $black;
-        font-size: 25px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.75px;
-        word-wrap: break-word;
-      }
     }
 
     &__tonality {
@@ -120,27 +102,6 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         top: 186px;
         left: 44px;
       }
-
-
-      &__hint {
-        @include hint;
-
-        left: 92px;
-        top: 63px;
-
-      }
-
-      &__required {
-        left: 140px;
-        top: 0;
-        position: absolute;
-        color: $black;
-        font-size: 25px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.75px;
-        word-wrap: break-word;
-      }
     }
 
     &__documentCount {
@@ -168,26 +129,6 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         @include input;
         top: 301px;
         left: 44px;
-      }
-
-
-      &__hint {
-        @include hint;
-        left: 92px;
-        top: 63px;
-
-      }
-
-      &__required {
-        left: 140px;
-        top: 0;
-        position: absolute;
-        color: $black;
-        font-size: 25px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.75px;
-        word-wrap: break-word;
       }
     }
 
@@ -217,47 +158,13 @@ $shadow-light: rgba(0, 0, 0, 0.05);
       }
     }
 
-    &__dateInputs {
-      //width: 242px;
-      //height: 43px;
-      left: 0;
-      top: 425px;
+    .leftBlock_dateInputs {
       display: flex;
-      margin-left: 0;
-      position: absolute;
-      background: $white;
-      box-shadow: 0 0 20px $shadow-light;
-      border-radius: 5px;
-      border: 1px $gray-light solid;
-
-      &::placeholder {
-        color: $gray-medium;
-      }
-
-      &__hint {
-        left: 44px;
-        top: 0;
-        position: absolute;
-        color: $black;
-        font-size: 25px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.75px;
-        word-wrap: break-word;
-      }
-
-      &__required {
-        left: 240px;
-        top: 0;
-        position: absolute;
-        color: $black;
-        font-size: 25px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.75px;
-        word-wrap: break-word;
-      }
+      flex-direction: row;
+      margin-left: 44px;
+      margin-top: 425px;
     }
+
   }
 
   .rightBlock {

@@ -34,13 +34,3 @@
   }
 }
 
-@mixin hint {
-  position: absolute;
-  opacity: 0.40;
-  color: #949494;
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.42px;
-  word-wrap: break-word;
-}

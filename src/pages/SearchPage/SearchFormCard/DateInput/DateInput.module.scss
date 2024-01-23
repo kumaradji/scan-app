@@ -1,25 +1,50 @@
 // DateInput.module.scss
-.customDateInput {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+@import "../../../../styles/mixins/_mixins";
+@import "../../../../styles/mixins/_var";
 
-  .inputContainer {
-    display: flex;
-    align-items: center;
+.customDateInput {
+  &__inputContainer {
+    @include input;
+    width: 176px;
+    position: relative;
+    margin-bottom: 20px; // Добавьте расстояние между полями ввода
+
+    &:hover {
+      border-color: $blue;
+    }
 
     input {
-      width: 150px;
-      height: 30px;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-right: 10px;
+      width: 100%;
+      height: 100%;
+      padding-right: 10px;
+      transition: border-color 0.3s ease;
     }
 
     img {
       width: 20px;
       height: 20px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+
+  .react-datepicker {
+    &__input-container {
+      //display: none;
+    }
+
+    &__portal {
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
     }
   }
 }

@@ -2,11 +2,10 @@
 
 .searchPage {
   display: flex;
-  height: 100vh;
   //justify-content: space-between;
-  width: 1440px;
-  //align-items: flex-start;
-  //flex-shrink: 0;
+  //width: 1440px;
+  align-items: flex-start;
+  flex-shrink: 0;
   background: #FFF;
 }
 

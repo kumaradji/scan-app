@@ -9,7 +9,7 @@ import styles from "./DateInput.module.scss";
 function DateInput({ selectedDate, onChange, placeholder }) {
   return (
     <div className={styles.customDateInput}>
-      <div className={styles.inputContainer}>
+      <div className={styles.customDateInput__inputContainer}>
         <input
           readOnly
           value={selectedDate}
@@ -20,7 +20,7 @@ function DateInput({ selectedDate, onChange, placeholder }) {
       <DatePicker
         selected={selectedDate}
         onChange={onChange}
-        customInput={<></>}
+        customInput={<input style={{opacity: 0, position: 'absolute'}} />}
       />
     </div>
   );
