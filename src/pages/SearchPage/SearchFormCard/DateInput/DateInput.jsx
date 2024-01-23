@@ -2,7 +2,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import CalendarIcon from "../../../assets/icons/calendar-icon.svg";
+import CalendarIcon from "../../../../assets/icons/calendar-icon.svg";
 
 import styles from "./DateInput.module.scss";
 

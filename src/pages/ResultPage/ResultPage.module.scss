@@ -1,13 +1,25 @@
 /* ResultPage.module.scss */
 
 .resultPage {
-  display: flex;
-  //justify-content: space-between;
-  //width: 1440px;
-  //height: auto;
   align-items: flex-start;
   flex-shrink: 0;
   background: #FFF;
+
+  .first_block {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background: #FFF;
+  }
+
+  .second_block {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+
+
+
 }
 
 

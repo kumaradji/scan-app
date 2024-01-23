@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from './SearchFormCard.module.scss';
 import Button from "../../../components/UI/Button";
 import * as SearchForm from "../../../api/search";
-import DateInput from "../DateInput/DateInput";
+import DateInput from "./DateInput/DateInput";
 import CheckboxList from "./CheckboxList/CheckboxList";
 
 function SearchFormCard() {
@@ -46,7 +46,7 @@ function SearchFormCard() {
           ИНН компании:*
         </div>
         <input
-          className={styles.leftBlock__inn}
+          className={styles.leftBlock__inn__input}
           type="text"
           value={inn}
           onChange={(e) => setInn(e.target.value)}
@@ -56,7 +56,7 @@ function SearchFormCard() {
           Тональность
         </div>
         <input
-          className={styles.leftBlock__tonality}
+          className={styles.leftBlock__tonality__input}
           type="text"
           value={tonality}
           onChange={(e) => setTonality(e.target.value)}
@@ -66,7 +66,7 @@ function SearchFormCard() {
           Количество документов в выдаче*
         </div>
         <input
-          className={styles.leftBlock__documentCount}
+          className={styles.leftBlock__documentCount__input}
           type="number"
           value={documentCount}
           onChange={(e) => setDocumentCount(e.target.value)}

@@ -1,3 +1,5 @@
+@import "../../../styles/mixins/_mixins";
+
 $white: #ffffff;
 $black: #000000;
 $gray-light: #C7C7C7;
@@ -45,46 +47,37 @@ $shadow-light: rgba(0, 0, 0, 0.05);
         margin-left: 44px;
       }
 
-      &__tonality {
-        left: 0;
-        top: 8px;
-        position: absolute;
-        color: $black;
-        font-size: 18px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.54px;
-        word-wrap: break-word;
+      &__input {
+        @include input;
+        top: 71px;
+        left: 44px;
       }
 
 
-      &__input {
-        width: 242px;
-        height: 43px;
-        left: 0;
-        top: 50px;
-        position: absolute;
-        background: $white;
-        box-shadow: 0 0 20px $shadow-light;
-        border-radius: 5px;
-        border: 1px $gray-light solid;
+      &__tonality {
+      left: 0;
+      top: 8px;
+      position: absolute;
+      color: $black;
+      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.54px;
+      word-wrap: break-word;
+    }
 
-        &::placeholder {
-          color: $gray-medium;
-        }
+      &__input {
+        @include input;
+        top: 71px;
+        left: 44px;
       }
 
       &__hint {
+        @include hint;
+
         left: 92px;
         top: 63px;
-        position: absolute;
-        opacity: 0.40;
-        color: $gray-medium;
-        font-size: 14px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.42px;
-        word-wrap: break-word;
+
       }
 
       &__required {
@@ -123,32 +116,18 @@ $shadow-light: rgba(0, 0, 0, 0.05);
 
 
       &__input {
-        width: 242px;
-        height: 43px;
-        left: 0;
-        top: 50px;
-        position: absolute;
-        background: $white;
-        box-shadow: 0 0 20px $shadow-light;
-        border-radius: 5px;
-        border: 1px $gray-light solid;
-
-        &::placeholder {
-          color: $gray-medium;
-        }
+        @include input;
+        top: 186px;
+        left: 44px;
       }
 
+
       &__hint {
+        @include hint;
+
         left: 92px;
         top: 63px;
-        position: absolute;
-        opacity: 0.40;
-        color: $gray-medium;
-        font-size: 14px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.42px;
-        word-wrap: break-word;
+
       }
 
       &__required {
@@ -186,32 +165,17 @@ $shadow-light: rgba(0, 0, 0, 0.05);
       }
 
       &__input {
-        width: 242px;
-        height: 43px;
-        left: 0;
-        top: 50px;
-        position: absolute;
-        background: $white;
-        box-shadow: 0 0 20px $shadow-light;
-        border-radius: 5px;
-        border: 1px $gray-light solid;
-
-        &::placeholder {
-          color: $gray-medium;
-        }
+        @include input;
+        top: 301px;
+        left: 44px;
       }
 
+
       &__hint {
+        @include hint;
         left: 92px;
         top: 63px;
-        position: absolute;
-        opacity: 0.40;
-        color: $gray-medium;
-        font-size: 14px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.42px;
-        word-wrap: break-word;
+
       }
 
       &__required {

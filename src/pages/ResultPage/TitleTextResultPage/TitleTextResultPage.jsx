@@ -11,7 +11,7 @@ const TitleTextResultPage = () => {
       text={`
         Ищем. Скоро будут результаты
       `}
-      additionalStyles={styles.titleTextBlock04}
+      additionalStyles={styles.titleTextResultPage}
     >
       <span className="title-text">
         {/* здесь текст не нужен */}
