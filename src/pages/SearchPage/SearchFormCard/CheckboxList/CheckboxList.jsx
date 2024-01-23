@@ -1,16 +1,29 @@
+// CheckboxList.jsx
 import React from 'react';
-import CheckboxItem from '../CheckboxItem/CheckboxItem';
-import styles from '../SearchFormCard.module.scss';
+import styles from './CheckboxList.module.scss';
+import imgTicket from '../../../../assets/icons/Vector.svg';
+
 
 const CheckboxList = ({ items, checkedItems, onToggle }) => (
-  <ul className={styles.checkboxList} >
+  <ul className={styles.checkboxList}>
     {items.map((item, index) => (
-      <CheckboxItem
-        key={index}
-        label={item}
-        checked={checkedItems[index]}
-        onChange={() => onToggle(index)}
-      />
+      <li key={index} style={{ opacity: checkedItems[index] ? 1 : 0.4 }}>
+        <label className={styles.checkboxList__item__label}>
+          <input
+            type="checkbox"
+            checked={checkedItems[index]}
+            onChange={() => onToggle(index)}
+          />
+          <span className={styles.checkboxList__item__label__text}>{item}</span>
+          {checkedItems[index] && (
+            <img
+              className={styles.checkboxList__item__label__icon}
+              src={imgTicket}
+              alt="Галочка"
+            />
+          )}
+        </label>
+      </li>
     ))}
   </ul>
 );

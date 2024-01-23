@@ -1,18 +1,30 @@
 // CheckboxList.module.scss
-$white: #ffffff;
-$black: #000000;
-$gray-light: #C7C7C7;
-$gray-medium: #949494;
-$blue: #5970ff;
-$shadow: rgba(0, 0, 0, 0.20);
-$shadow-light: rgba(0, 0, 0, 0.05);
+@import "../../../../styles/mixins/_var";
 
 .checkboxList {
-  li {
-    label {
-      input {
+  &__item {
+    &__label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px; /* Пример отступа между чекбоксами */
+
+      &__input {
         margin-right: 8px;
-        margin-top: 29px;
+        margin-top: 5px; /* Скорректирован отступ для более центрированного вида */
+      }
+
+      &__text {
+        font-size: 18px;
+        font-family: 'Inter', sans-serif;
+        color: $black; /* Замените $black на ваш цвет текста */
+        margin-left: 10px; /* Пример отступа между чекбоксом и текстом */
+      }
+
+      &__icon {
+        width: 14px;
+        height: 14px;
+        margin-left: 5px; /* Пример отступа между текстом и иконкой галочки */
       }
 
       &:hover {
