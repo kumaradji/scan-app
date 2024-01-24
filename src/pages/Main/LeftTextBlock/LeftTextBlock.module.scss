@@ -1,4 +1,4 @@
-/* LeftTextBlock/LeftTextBlock.module.css */
+// LeftTextBlock.module.scss
 
 .leftTextBlock {
     display: block;
@@ -9,44 +9,65 @@
     position: relative;
     right: -5px;
     z-index: 1;
+
+@media (max-width: 767px) {
+    // Стили для мобильных устройств
+    min-width: auto;
+    max-width: 100%;
+    //padding-left: 14px; // Подгоните под себя для меньших экранов
+    //margin-top: 20px; // Подгоните под себя для меньших экранов
 }
 
+    .leftText {
+        width: auto;
+        color: #000;
+        font-family: 'FerryBlack', sans-serif;
+        font-size: 3.75rem; // Используйте rem для более удобного масштабирования
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        letter-spacing: 0.6px;
 
-.leftText {
-    width: auto;
-    color: #000;
-    font-family: 'FerryBlack', sans-serif;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    letter-spacing: 0.6px;
+        @media (max-width: 767px) {
+            // Стили для мобильных устройств
+            display: flex;
+            //font-size: 28px; // Подгоните под себя для меньших экранов
+        }
+    }
+
+    .leftTextUnderBlock {
+        width: 534px;
+
+        @media (max-width: 375px) {
+            width: 100%; // Full width for mobile screens
+        }
+    }
+
+    .leftSmallText {
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.25rem; // Adjust font size using rem units
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.2px;
+
+        @media (max-width: 375px) {
+            font-size: 1rem; // Adjust font size for smaller screens
+        }
+    }
+
+    .buttonBlueUnderText {
+        color: #FFF;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.375rem; // Adjust font size using rem units
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.22px;
+
+        @media (max-width: 375px) {
+            font-size: 1.125rem; // Adjust font size for smaller screens
+        }
+    }
 }
-
-.leftTextUnderBlock {
-    width: 534px;
-}
-
-.leftSmallText {
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.2px;
-}
-
-
-
-.buttonBlueUnderText {
-    color: #FFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.22px;
-
-}
-
