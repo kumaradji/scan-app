@@ -1,13 +1,29 @@
 /* AuthenticatedUserInfo.module.scss */
-
 /* Блок - пользовательская информация */
 .userInfo {
   display: flex;
   align-items: center;
 
+  @media (max-width: 767px) {
+    // Стили для мобильных
+  }
+
+  @media (min-width: 768px) {
+    // Стили для планшетов и десктопов
+  }
+
   /* Блок - панель пользователя */
-  .userInfo__userPanel {
+  &__userPanel {
     position: relative;
+
+    // Адаптивные стили
+    @media (max-width: 767px) {
+      margin-right: 10px;
+    }
+
+    @media (min-width: 768px) {
+      margin-right: 160px;
+    }
 
     /* Элемент - прямоугольник панели */
     .userInfo__userPanelRect {

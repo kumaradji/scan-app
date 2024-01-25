@@ -1,7 +1,7 @@
-// _mixins.scss
-
+// _typography.scss
+@import '../../styles/mixins/_var';
 // Миксин для общих стилей текста
-@mixin textStyles {
+@mixin text-base {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -24,13 +24,13 @@
   width: 242px;
   height: 43px;
   position: absolute;
-  background: #ffffff;
+  background: var($white);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  border: 1px #C7C7C7 solid;
+  border: 1px var($gray-light) solid;
 
   &::placeholder {
-    color: #949494;
+    color: var($gray-medium);
   }
 }
 

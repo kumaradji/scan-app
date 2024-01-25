@@ -24,13 +24,13 @@ function App() {
     <Router>
       <AuthProvider>
         <AppHeader />
-        <Routes>
-          <Route path="/" element={<PrivateRoute element={<MainPage />} />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/results" element={<ResultPage />} />
-        </Routes>
-        <AppFooter />
+        {/*<Routes>*/}
+        {/*  <Route path="/" element={<PrivateRoute element={<MainPage />} />} />*/}
+        {/*  <Route path="/login" element={<LoginPage />} />*/}
+        {/*  <Route path="/search" element={<SearchPage />} />*/}
+        {/*  <Route path="/results" element={<ResultPage />} />*/}
+        {/*</Routes>*/}
+        {/*<AppFooter />*/}
       </AuthProvider>
     </Router>
   );

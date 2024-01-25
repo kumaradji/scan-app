@@ -1,51 +1,45 @@
 // AppHeader.module.scss
 
-@import '../../styles/mixins/_mixins';
+@import '../../styles/mixins/_media';
+@import '../../styles/mixins/_typography';
+@import '../../styles/mixins/_var';
 
 .header {
-    width: 1440px;
-    height: 93px;
-    flex-shrink: 0;
-    background: #fff;
+  display: flex;
+  height: 93px;
+  flex-shrink: 0;
+  background: var($white);
 
-    &__content {
-        @include textStyles;
-        display: flex;
-        position: relative;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 60px;
-        padding-right: 60px;
-        color: #000;
-    }
-
-    &__navLinks {
-        a,
-        span {
-            @include link;
-            margin-right: 49px;
-
-            &:hover {
-                @include link;
-            }
-        }
-
-        span:hover {
-            text-decoration: underline;
-        }
-    }
-
-    &__auth {
-        display: flex;
-        align-items: center;
-
-        a {
-            @include link;
-            margin-right: 10px;
-
-            &:hover {
-                @include link;
-            }
-        }
-    }
+  //&__content {
+  //  @include text-base;
+  //  display: flex;
+  //  position: relative;
+  //  justify-content: space-between;
+  //  align-items: center;
+  //  padding-left: 60px; // Добавим отступ слева
+  //  padding-right: 60px; // Добавим отступ справа
+  //  color: var($black);
+  //}
+  //
+  //&__logo {
+  //  width: 141px;
+  //  height: auto;
+  //}
+  //
+  //&__burger-menu {
+  //  display: none; // По умолчанию скрываем иконку бургер-меню
+  //}
+  //
+  //@include media-mobile {
+  //  padding-left: 15px; // Уменьшим отступ слева
+  //  padding-right: 15px; // Уменьшим отступ справа
+  //
+  //  &__logo {
+  //    display: none; // Скрываем логотип в мобильной версии
+  //  }
+  //
+  //  &__burger-menu {
+  //    display: block; // Показываем иконку бургер-меню в мобильной версии
+  //  }
+  //}
 }

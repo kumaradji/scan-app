@@ -1,0 +1,22 @@
+// _media.scss
+
+// Миксин для планшетов и десктопов
+@mixin media-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+// Миксин для мобильной версии
+@mixin media-mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+// Миксин для планшетов и десктопов
+@mixin media-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

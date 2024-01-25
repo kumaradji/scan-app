@@ -5,7 +5,6 @@ import LeftTextBlock from './LeftTextBlock/LeftTextBlock';
 import ImageRightBlock from './ImageRightBlock/ImageRightBlock';
 import MainTitleTextBlock from './MainTitleTextBlock/MainTitleTextBlock';
 import Carousel from '../../components/Carousel/Carousel';
-
 import styles from './MainPage.module.scss';
 import '../../styles/fonts.scss';
 import BlueCloudImage from "./BlueCloudImage/BlueCloudImage";

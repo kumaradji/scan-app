@@ -1,0 +1,65 @@
+// HeaderContent.module.scss
+
+@import '../../../styles/mixins/_typography';
+@import '../../../styles/mixins/_var';
+
+.header__content {
+  @include text-base;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background: var($white);
+  padding-left: 60px;
+
+  @media (max-width: 767px) {
+    padding-right: 26px;
+    padding-left: 15px; // Уменьшим отступ слева в мобильной версии
+    justify-content: space-between;
+  }
+
+  &_burger {
+    display: none;
+
+    @media (max-width: 767px) {
+      display: block;
+      width: 30px;
+      height: 25px;
+      margin-right: 26px;
+    }
+  }
+
+  &_logo {
+    width: 141px;
+    height: auto;
+    margin-left: 60px;
+
+    @media (max-width: 767px) {
+      width: 111px;
+      height: 111px;
+      margin-left: 14px;
+    }
+  }
+
+  /* Блок - навигационные ссылки */
+  &__navLinks {
+    a,
+    span {
+      @include link;
+      margin-right: 49px;
+
+      &:hover {
+        @include link;
+      }
+
+      // Адаптивные стили
+      @media (max-width: 767px) {
+        display: none; // Скрываем навигационные ссылки в мобильной версии
+      }
+    }
+
+    span:hover {
+      text-decoration: none;
+    }
+  }
+}

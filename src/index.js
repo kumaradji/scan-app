@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './styles/reset.css';
-import './styles/common.css';
+import './styles/global.css';
 
 import App from './App';
 import { AuthProvider } from './pages/LoginPage/Auth/AuthContext';
