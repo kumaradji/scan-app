@@ -1,7 +1,6 @@
 // HeaderContent.jsx
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './HeaderContent.module.scss';
 import LogoImg from '../../../assets/images/Logo.svg';
 import BurgerImg from '../../../assets/icons/BublikMenu-mobile.svg';

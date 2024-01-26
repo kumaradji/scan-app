@@ -2,11 +2,15 @@
 
 .searchPage {
   display: flex;
-  //justify-content: space-between;
-  //width: 1440px;
+
   align-items: flex-start;
   flex-shrink: 0;
   background: #FFF;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+
+  }
 }
 
 .leftColumn {
