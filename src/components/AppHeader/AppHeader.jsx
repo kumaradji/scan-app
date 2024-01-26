@@ -39,13 +39,13 @@ const AppHeader = () => {
     <header className={styles.header}>
       <>
         <HeaderContent />
-        <div className={styles.header__content}>
-          {userInfo ? (
-            <AuthenticatedUserInfo userInfo={userInfo} handleLogout={handleLogout} />
-          ) : (
-            <UnauthenticatedUserPanel />
-          )}
-        </div>
+
+        {userInfo ? (
+          <AuthenticatedUserInfo userInfo={userInfo} handleLogout={handleLogout} />
+        ) : (
+          <UnauthenticatedUserPanel />
+        )}
+
       </>
     </header>
   );

@@ -4,7 +4,7 @@ import AvatarImg from '../../../assets/images/Avatar.svg';
 import userPanelRect from '../../../assets/images/userPanelRect.svg';
 import Loader from "../../Loader/Loader";
 
-const AuthenticatedUserInfo = ({ userInfo, handleLogout }) => {
+const AuthenticatedUserInfo = ({userInfo, handleLogout}) => {
   const isLoggedIn = !!userInfo;
   const loading = false;
   const usedCompanies = 34;
@@ -58,11 +58,12 @@ const AuthenticatedUserInfo = ({ userInfo, handleLogout }) => {
           Выйти
         </div>
       </div>
-      <img
-        src={AvatarImg}
-        alt="Аватар"
-        className={styles.userInfo__avatar}
-      />
+
+        <img
+          src={AvatarImg}
+          alt="Аватар"
+          className={styles.userInfo__avatar}
+        />
     </div>
   );
 };

@@ -6,15 +6,15 @@ import SlashImg from '../../../assets/images/Slash.svg';
 
 const UnauthenticatedUserPanel = () => {
   return (
-    <div className={styles.unauthenticatedUserPanel}>
-      <NavLink to="/login" className={styles.navLink}>
+    <div className={styles.container}>
+      <NavLink to="/login" className={styles.container_link}>
         Зарегистрироваться
       </NavLink>
       <span>
-        <img src={SlashImg} alt="Slash" className={styles.slash} />
+        <img src={SlashImg} alt="Slash" className={styles.container_slash} />
       </span>
       <Link to="/login">
-        <button className={styles.button}>Войти</button>
+        <button className={styles.container_button}>Войти</button>
       </Link>
     </div>
   );

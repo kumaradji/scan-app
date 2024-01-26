@@ -1,45 +1,20 @@
 // AppHeader.module.scss
 
-@import '../../styles/mixins/_media';
-@import '../../styles/mixins/_typography';
 @import '../../styles/mixins/_var';
 
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
   height: 93px;
   flex-shrink: 0;
-  background: var($white);
+  padding-right: 60px;
+  padding-left: 60px;
 
-  //&__content {
-  //  @include text-base;
-  //  display: flex;
-  //  position: relative;
-  //  justify-content: space-between;
-  //  align-items: center;
-  //  padding-left: 60px; // Добавим отступ слева
-  //  padding-right: 60px; // Добавим отступ справа
-  //  color: var($black);
-  //}
-  //
-  //&__logo {
-  //  width: 141px;
-  //  height: auto;
-  //}
-  //
-  //&__burger-menu {
-  //  display: none; // По умолчанию скрываем иконку бургер-меню
-  //}
-  //
-  //@include media-mobile {
-  //  padding-left: 15px; // Уменьшим отступ слева
-  //  padding-right: 15px; // Уменьшим отступ справа
-  //
-  //  &__logo {
-  //    display: none; // Скрываем логотип в мобильной версии
-  //  }
-  //
-  //  &__burger-menu {
-  //    display: block; // Показываем иконку бургер-меню в мобильной версии
-  //  }
-  //}
+  @media (max-width: 767px) {
+
+    padding-right: 26px;
+    padding-left: 15px;
+  }
 }

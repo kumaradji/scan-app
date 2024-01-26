@@ -3,26 +3,20 @@
 .userInfo {
   display: flex;
   align-items: center;
+  margin-right: 60px;
 
   @media (max-width: 767px) {
-    // Стили для мобильных
-  }
-
-  @media (min-width: 768px) {
-    // Стили для планшетов и десктопов
+    display: none;
   }
 
   /* Блок - панель пользователя */
   &__userPanel {
     position: relative;
+    //margin-right: 60px;
 
     // Адаптивные стили
     @media (max-width: 767px) {
       margin-right: 10px;
-    }
-
-    @media (min-width: 768px) {
-      margin-right: 160px;
     }
 
     /* Элемент - прямоугольник панели */
@@ -99,6 +93,7 @@
 }
 
 .userInfo__userPanelTextContainer {
+
   /* Блок - текст юзера */
   .userInfo__userNameText {
     color: black;
@@ -120,10 +115,13 @@
     cursor: pointer;
     margin-right: 29px;
   }
-}
 
+
+}
 
 /* Блок - аватар */
 .userInfo__avatar {
   // Стили для аватара
 }
+
+
