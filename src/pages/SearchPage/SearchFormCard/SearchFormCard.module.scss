@@ -3,20 +3,18 @@
 @import "../../../styles/mixins/_media";
 
 .container {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  .desktopVersion {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
 
-  @media (max-width: 767px) {
-    .sharedStyles {
-      display: none;
-    }
-
-    .mobileStyles {
+  .mobileVersion {
+    @media (max-width: 767px) {
+      display: flex;
       flex-direction: column;
     }
   }
-
 
   .leftBlock {
     width: 872px;
@@ -31,6 +29,17 @@
     margin-bottom: 64px;
     margin-left: 53px;
     align-items: center;
+    // Общие стили для desktop
+
+    @media (max-width: 767px) {
+      width: 375px;
+      height: 688px;
+
+      margin-top: 35px;
+      margin-bottom: 164px;
+      align-items: center;
+    }
+
 
     &__inn {
       width: 242px;
@@ -38,6 +47,10 @@
       left: 44px;
       top: 71px;
       position: absolute;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
 
       &__label {
         left: 0;
@@ -51,12 +64,20 @@
         word-wrap: break-word;
         margin-top: 29px;
         margin-left: 44px;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
       }
 
       &__input {
         @include input;
         top: 71px;
         left: 44px;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
       }
 
 
@@ -70,12 +91,20 @@
       font-weight: 400;
       letter-spacing: 0.54px;
       word-wrap: break-word;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
     }
 
       &__input {
         @include input;
         top: 71px;
         left: 44px;
+
+				@media (max-width: 767px) {
+					display: none;
+				}
       }
 
 
@@ -88,6 +117,10 @@
       left: 44px;
       top: 186px;
       position: absolute;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
 
       &__label {
         left: 0;
@@ -108,6 +141,13 @@
         @include input;
         top: 186px;
         left: 44px;
+
+				@media (max-width: 767px) {
+					width: 242px;
+					height: 43px;
+					top: 26px;
+					left: 14px;
+				}
       }
     }
 
@@ -117,6 +157,10 @@
       left: 44px;
       top: 301px;
       position: absolute;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
 
       &__label {
         left: 0;
@@ -130,12 +174,20 @@
         word-wrap: break-word;
         margin-top: 259px;
         margin-left: 44px;
+
+				@media (max-width: 767px) {
+					display: none;
+				}
       }
 
       &__input {
         @include input;
         top: 301px;
         left: 44px;
+
+				@media (max-width: 767px) {
+					display: none;
+				}
       }
     }
 
@@ -152,6 +204,10 @@
       margin-top: 383px;
       margin-left: 44px;
 
+			@media (max-width: 767px) {
+				display: none;
+			}
+
       &__label {
         left: 0;
         top: 8px;
@@ -162,6 +218,10 @@
         font-weight: 400;
         letter-spacing: 0.54px;
         word-wrap: break-word;
+
+				@media (max-width: 767px) {
+					display: none;
+				}
       }
     }
 
@@ -170,6 +230,10 @@
       flex-direction: row;
       margin-left: 44px;
       margin-top: 425px;
+
+			@media (max-width: 767px) {
+				display: none;
+			}
     }
 
   }
@@ -180,6 +244,10 @@
     left: 496px;
     margin-top: 83px;
     position: absolute;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
 
     .checkboxList {
       li {
@@ -192,11 +260,8 @@
           }
         }
       }
-
-      @media (max-width: 767px) {
-        display: none;
-      }
     }
+
 
     .searchButton {
       width: 305px;
@@ -207,6 +272,16 @@
       position: relative;
       box-shadow: 0 0 20px $shadow-light;
       border-radius: 5px;
+
+      @media (max-width: 767px) {
+        width: 335px;
+        height: 59px;
+        right: 15px;
+        bottom: 15px;
+      }
+
+
+
 
       &__ButtonText {
         color: $white;

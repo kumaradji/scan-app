@@ -32,7 +32,7 @@ function SearchFormCard() {
   return (
     <div className={styles.container}>
 
-      <div className={styles.sharedStyles}>
+      <div className={styles.desktopVersion}>
         {/*Десктопная версия*/}
         {/*левая часть карточки*/}
         <label className={styles.leftBlock}>
@@ -114,10 +114,10 @@ function SearchFormCard() {
           </div>
         </label>
 
-        {/* Стили только для мобильного */}
-        <div className={styles.mobileStyles}>
-          <SearchFormCardMobile/>
-        </div>
+      </div>
+      {/* Стили только для мобильного */}
+      <div className={styles.mobileVersion}>
+        <SearchFormCardMobile/>
       </div>
     </div>
   );

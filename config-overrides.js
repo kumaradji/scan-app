@@ -1,8 +1,23 @@
-const {override, addWebpackModuleRule} = require("customize-cra");
+const { override, addWebpackModuleRule } = require("customize-cra");
 
 module.exports = override(
   addWebpackModuleRule({
-    test: /\.svg$/,
-    use: ["@svgr/webpack", "url-loader"]
+    test: /\.module\.scss$/,
+    use: [
+      {
+        loader: "style-loader",
+      },
+      {
+        loader: "css-loader",
+        options: {
+          modules: {
+            localIdentName: "[local]__[hash:base64:5]",
+          },
+        },
+      },
+      {
+        loader: "sass-loader",
+      },
+    ],
   })
 );
