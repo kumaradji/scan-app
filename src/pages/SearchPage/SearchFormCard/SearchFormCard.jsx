@@ -4,7 +4,6 @@ import useSearchFormHook from '../../../hooks/useSearchFormHook';
 import Button from '../../../components/UI/Button';
 import DateInput from './DateInput/DateInput';
 import CheckboxList from './CheckboxList/CheckboxList';
-import SearchFormCardMobile from './SearchFormCardMobile/SearchFormCardMobile';
 import styles from './SearchFormCard.module.scss';
 
 function SearchFormCard() {
@@ -102,22 +101,20 @@ function SearchFormCard() {
             checkedItems={checkedItems}
             onToggle={handleToggle}
           />
+        </label>
 
+
+        <section className={styles.searchButtonSection}>
           <Button className={styles.searchButton} onClick={handleSearchClick}>
             <div className={styles.searchButton__ButtonText}>
               Поиск
             </div>
           </Button>
-
           <div className={styles.rightBlockSmallText}>
             * Обязательные к заполнению поля
           </div>
-        </label>
+        </section>
 
-      </div>
-      {/* Стили только для мобильного */}
-      <div className={styles.mobileVersion}>
-        <SearchFormCardMobile/>
       </div>
     </div>
   );

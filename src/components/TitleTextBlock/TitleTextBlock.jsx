@@ -2,11 +2,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './TitleTextBlock.module.scss';
 
 const TitleTextBlock = ({ text, additionalStyles }) => {
   return (
-    <div className={`${styles.titleTextBlock} ${additionalStyles}`}>
+    <div className={`${additionalStyles}`}>
       {text}
     </div>
   );

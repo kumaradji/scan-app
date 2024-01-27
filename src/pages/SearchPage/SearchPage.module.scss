@@ -18,6 +18,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+
 }
 
 .rightColumn {
@@ -26,12 +27,24 @@
   margin-top: 115px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .document {
   width: 91px;
   height: 111px;
   margin-left: 138px;
+
+  @media (max-width: 767px) {
+    width: 59px;
+    height: 72px;
+    //position: absolute;
+    margin-left: 291px;
+    margin-top: -765px;
+  }
 }
 
 .folders {
@@ -39,6 +52,10 @@
   height: 111px;
   margin-left: 390px;
   margin-top: -85px;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .leftTextUnderTitleBlock {
@@ -53,7 +70,9 @@
   @media (max-width: 767px) {
     font-size: 18px;
     width: 100%;
-    margin-left: 14px;
+    padding-left: 14px;
+    right: 0;
+
   }
 }
 
@@ -65,4 +84,8 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.2px;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
 }

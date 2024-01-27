@@ -6,4 +6,11 @@
   height: 443px;
   margin-left: 200px;
   margin-top: 20px;
+
+  @media (max-width: 767px) {
+    width: 380px;
+    height: 403px;
+    margin-left: 36px;
+    margin-top: 25px;
+  }
 }
