@@ -9,7 +9,6 @@
 
   @media (max-width: 767px) {
     flex-direction: column;
-
   }
 }
 
@@ -29,33 +28,33 @@
   flex-direction: column;
 
   @media (max-width: 767px) {
-    display: none;
+    flex-direction: column;
   }
-}
 
-.document {
-  width: 91px;
-  height: 111px;
-  margin-left: 138px;
+  .document {
+    width: 91px;
+    height: 111px;
+    margin-left: 138px;
 
-  @media (max-width: 767px) {
-    width: 59px;
-    height: 72px;
-    //position: absolute;
-    margin-left: 291px;
-    margin-top: -765px;
+    @media (max-width: 767px) {
+      width: 59px;
+      height: 72px;
+      margin-left: 291px;
+      margin-top: -765px;
+    }
   }
-}
 
-.folders {
-  width: 91px;
-  height: 111px;
-  margin-left: 390px;
-  margin-top: -85px;
+  .folders {
+    width: 91px;
+    height: 111px;
+    margin-left: 390px;
+    margin-top: -85px;
 
-  @media (max-width: 767px) {
-    display: none;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
+
 }
 
 .leftTextUnderTitleBlock {

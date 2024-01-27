@@ -21,7 +21,7 @@ const SearchPage = () => {
             Чем больше заполните, тем точнее поиск
           </div>
         </div>
-        <div >
+        <div>
           <SearchFormCard/>
         </div>
       </div>
@@ -32,9 +32,10 @@ const SearchPage = () => {
         <div className={styles.folders}>
           <img src={Folders} alt="Folders"/>
         </div>
-        <div>
-          <SearchPageCharacters/>
-        </div>
+      </div>
+
+      <div>
+        <SearchPageCharacters/>
       </div>
     </div>
   );
