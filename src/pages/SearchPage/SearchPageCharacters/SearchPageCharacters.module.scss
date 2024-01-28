@@ -6,11 +6,13 @@
   height: 443px;
   margin-left: -266px;
   margin-top: 353px;
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
+  .imgSearchPageCharacters {
     width: 380px;
     height: 403px;
     margin-left: 36px;
-    margin-top: 20px;
+    margin-top: 284px;
   }
 }

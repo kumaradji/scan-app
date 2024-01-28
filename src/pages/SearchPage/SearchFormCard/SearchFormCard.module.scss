@@ -2,172 +2,28 @@
 @import "../../../styles/mixins/_var";
 @import "../../../styles/mixins/_media";
 
-.container {
-		width: 100%;
-		height: 100%;
-		position: relative;
+.leftBlock {
+	width: 872px;
+	height: 543px;
+	left: 0;
+	top: 0;
+	position: absolute;
+	background: $white;
+	box-shadow: 0 0 20px $shadow;
+	border-radius: 10px;
+	margin-top: 47px;
+	margin-bottom: 64px;
+	margin-left: 53px;
+	align-items: center;
 
-	.leftBlock {
-		width: 872px;
-		height: 543px;
-		left: 0;
-		top: 0;
+	&__inn {
+		width: 242px;
+		height: 43px;
+		left: 44px;
+		top: 71px;
 		position: absolute;
-		background: $white;
-		box-shadow: 0 0 20px $shadow;
-		border-radius: 10px;
-		margin-top: 47px;
-		margin-bottom: 64px;
-		margin-left: 53px;
-		align-items: center;
 
-		@media (max-width: 767px) {
-			width: 375px;
-			height: 688px;
-
-			margin-top: 35px;
-			margin-bottom: 164px;
-			margin-left: 0;
-			//margin-right: 0;
-			align-items: center;
-		}
-
-		&__inn {
-			width: 242px;
-			height: 43px;
-			left: 44px;
-			top: 71px;
-			position: absolute;
-
-			@media (max-width: 767px) {
-				display: none;
-			}
-
-			&__label {
-				left: 0;
-				top: 8px;
-				position: absolute;
-				color: $black;
-				font-size: 18px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 400;
-				letter-spacing: 0.54px;
-				word-wrap: break-word;
-				margin-top: 29px;
-				margin-left: 44px;
-
-				@media (max-width: 767px) {
-					margin-top: 32px;
-					margin-left: 14px;
-				}
-			}
-
-			&__input {
-				@include input;
-				top: 71px;
-				left: 44px;
-
-				@media (max-width: 767px) {
-					top: 74px;
-					left: 14px;
-				}
-			}
-		}
-
-
-		&__tonality {
-			width: 242px;
-			height: 43px;
-			left: 44px;
-			top: 186px;
-			position: absolute;
-			color: $black;
-			font-size: 18px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 400;
-			letter-spacing: 0.54px;
-			word-wrap: break-word;
-
-			@media (max-width: 767px) {
-				top: 93px;
-				margin-left: 14px;
-			}
-
-			&__label {
-				left: 0;
-				top: 8px;
-				position: absolute;
-				color: $black;
-				font-size: 18px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 400;
-				letter-spacing: 0.54px;
-				word-wrap: break-word;
-				margin-top: 144px;
-				margin-left: 44px;
-
-				@media (max-width: 767px) {
-					top: 14px;
-					margin-left: 14px;
-				}
-
-			}
-
-			&__input {
-				@include input;
-				top: 186px;
-				left: 44px;
-
-				@media (max-width: 767px) {
-					width: 242px;
-					height: 43px;
-					top: 189px;
-					left: 14px;
-				}
-			}
-		}
-
-		&__documentCount {
-			width: 242px;
-			height: 43px;
-			left: 44px;
-			top: 301px;
-			position: absolute;
-
-			@media (max-width: 767px) {
-				width: 335px;
-			}
-
-			&__label {
-				left: 0;
-				top: 8px;
-				position: absolute;
-				color: $black;
-				font-size: 18px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 400;
-				letter-spacing: 0.54px;
-				word-wrap: break-word;
-				margin-top: 259px;
-				margin-left: 44px;
-
-				@media (max-width: 767px) {
-					display: none;
-				}
-			}
-
-			&__input {
-				@include input;
-				top: 301px;
-				left: 44px;
-
-				@media (max-width: 767px) {
-					display: none;
-				}
-			}
-		}
-
-		.leftBlockLabel {
+		&__label {
 			left: 0;
 			top: 8px;
 			position: absolute;
@@ -177,125 +33,266 @@
 			font-weight: 400;
 			letter-spacing: 0.54px;
 			word-wrap: break-word;
-			margin-top: 383px;
+			margin-top: 29px;
 			margin-left: 44px;
+		}
 
-			@media (max-width: 767px) {
+		&__input {
+			@include input;
+			top: 71px;
+			left: 44px;
+		}
+	}
+
+	&__tonality {
+		width: 242px;
+		height: 43px;
+		left: 44px;
+		top: 186px;
+		position: absolute;
+		color: $black;
+		font-size: 18px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.54px;
+		word-wrap: break-word;
+
+		&__label {
+			left: 0;
+			top: 8px;
+			position: absolute;
+			color: $black;
+			font-size: 18px;
+			font-family: 'Inter', sans-serif;
+			font-weight: 400;
+			letter-spacing: 0.54px;
+			word-wrap: break-word;
+			margin-top: 144px;
+			margin-left: 44px;
+		}
+
+		&__input {
+			@include input;
+			top: 186px;
+			left: 44px;
+		}
+	}
+
+	&__documentCount {
+		width: 242px;
+		height: 43px;
+		left: 44px;
+		top: 301px;
+		position: absolute;
+
+		&__label {
+			left: 0;
+			top: 8px;
+			position: absolute;
+			color: $black;
+			font-size: 18px;
+			font-family: 'Inter', sans-serif;
+			font-weight: 400;
+			letter-spacing: 0.54px;
+			word-wrap: break-word;
+			margin-top: 259px;
+			margin-left: 44px;
+		}
+
+		&__input {
+			@include input;
+			top: 301px;
+			left: 44px;
+		}
+	}
+
+	// Диапазон поиска*
+	.leftBlockLabel {
+		left: 0;
+		top: 8px;
+		position: absolute;
+		color: $black;
+		font-size: 18px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.54px;
+		word-wrap: break-word;
+		margin-top: 383px;
+		margin-left: 44px;
+	}
+
+	.leftBlock_dateInputs {
+		display: flex;
+		flex-direction: row;
+		margin-left: 44px;
+		margin-top: 425px;
+	}
+}
+
+.rightBlock {
+	width: 428px;
+	height: auto;
+	left: 496px;
+	margin-top: 83px;
+	position: absolute;
+
+	.checkboxList {
+		li {
+			label {
+				input {
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+.searchButtonSection {
+	position: absolute;
+
+	&__rightBlockSmallText {
+		font-size: 14px;
+		color: $gray-medium;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.42px;
+		word-wrap: break-word;
+		margin-top: 524px;
+		margin-left: 560px;
+	}
+
+	&__searchButton {
+		width: 305px;
+		height: 59px;
+		background: $blue;
+		position: absolute;
+		box-shadow: 0 0 20px $shadow-light;
+		border-radius: 5px;
+		margin-top: 460px;
+		margin-left: 581px;
+
+		&__ButtonText {
+			color: $white;
+			font-size: 22px;
+			font-family: 'Inter', sans-serif;
+			font-weight: 500;
+			letter-spacing: 0.66px;
+			word-wrap: break-word;
+		}
+	}
+}
+
+
+// адаптивная верстка
+@media (max-width: 767px) {
+	.container {
+		.leftBlock {
+			width: 375px;
+			height: 688px;
+			margin-top: 35px;
+			margin-bottom: 164px;
+			margin-left: 0;
+			align-items: center;
+
+			&__inn {
 				display: none;
+
+				&__label {
+					margin-top: 32px;
+					margin-left: 14px;
+				}
+
+				&__input {
+					@include input;
+					top: 74px;
+					left: 14px;
+				}
 			}
 
-			&__label {
-				left: 0;
-				top: 8px;
-				position: absolute;
-				color: $black;
-				font-size: 18px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 400;
-				letter-spacing: 0.54px;
-				word-wrap: break-word;
+			&__tonality {
+				top: 93px;
+				margin-left: 14px;
 
-				@media (max-width: 767px) {
+				&__label {
+					top: 14px;
+					margin-left: 14px;
+				}
+
+				&__input {
+					@include input;
+					width: 242px;
+					height: 43px;
+					top: 189px;
+					left: 14px;
+				}
+			}
+
+			&__documentCount {
+				width: 335px;
+
+				&__label {
+					display: none;
+				}
+
+				&__input {
+					@include input;
+					top: 301px;
+					left: 44px;
+				}
+			}
+
+			.leftBlockLabel {
+				display: none;
+
+				&__label {
 					display: none;
 				}
 			}
-		}
 
-		.leftBlock_dateInputs {
-			display: flex;
-			flex-direction: row;
-			margin-left: 44px;
-			margin-top: 425px;
-
-			@media (max-width: 767px) {
-				//display: none;
+			.leftBlock_dateInputs {
 			}
 		}
 
-	}
-
-	.rightBlock {
-		width: 428px;
-		height: auto;
-		left: 496px;
-		margin-top: 83px;
-		position: absolute;
-
-
-		@media (max-width: 767px) {
+		.rightBlock {
 			display: none;
-		}
 
+			.checkboxList {
+				li {
+					label {
+						input {
+						}
 
-		.checkboxList {
-			li {
-				label {
-					input {
-					}
-
-					&:hover {
-						cursor: pointer;
+						&:hover {
+							cursor: pointer;
+						}
 					}
 				}
 			}
+
+
 		}
 
-}
+		.searchButtonSection {
+			&__searchButton {
+				width: 335px;
+				height: 59px;
+				margin-top: 565px;
+				margin-left: 15px;
 
-	.searchButtonSection {
-		position: absolute;
+				&__ButtonText {
+					font-size: 20px;
+				}
+			}
 
-
-		.rightBlockSmallText {
-			font-size: 14px;
-			color: $gray-medium;
-			font-family: 'Inter', sans-serif;
-			font-weight: 400;
-			letter-spacing: 0.42px;
-			word-wrap: break-word;
-			margin-top: 524px;
-			margin-left: 560px;
-
-			@media (max-width: 767px) {
-
+			&__rightBlockSmallText {
 				margin-top: 655px;
 				margin-left: 15px;
 				font-size: 14px;
 			}
 		}
-
-		.searchButton {
-			width: 305px;
-			height: 59px;
-			background: $blue;
-			position: absolute;
-			box-shadow: 0 0 20px $shadow-light;
-			border-radius: 5px;
-			margin-top: 460px;
-			margin-left: 581px;
-
-			@media (max-width: 767px) {
-				width: 335px;
-				height: 59px;
-				margin-top: 565px;
-				margin-left: 15px;
-			}
-
-			&__ButtonText {
-				color: $white;
-				font-size: 22px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 500;
-				letter-spacing: 0.66px;
-				word-wrap: break-word;
-
-				@media (max-width: 767px) {
-					font-size: 20px;
-
-
-				}
-			}
-		}
-
 	}
 }
+

@@ -1,126 +1,121 @@
 /* AuthenticatedUserInfo.module.scss */
 /* Блок - пользовательская информация */
 .userInfo {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  @media (max-width: 767px) {
-    display: none;
-  }
+	/* Блок - панель пользователя */
+	&__userPanel {
+		position: relative;
+	}
 
-  /* Блок - панель пользователя */
-  &__userPanel {
-    position: relative;
-    //margin-right: 60px;
+	/* Элемент - прямоугольник панели */
+	//.userInfo__userPanelRect {
+	//
+	//  position: relative;
+	//  margin-right: 160px;
+	//}
+	//
+	//.userInfo__userPanelRectImg {
+	//  width: 100%;  // Заполнить весь контейнер
+	//  height: 100%; // Заполнить весь контейнер
+	//}
+	//
+	///* Блок - контейнер информации о компании */
+	//.userInfo__companyInfo {
+	//  /* Элемент - использованные компании */
+	//  .userInfo__companyInfoUsed,
+	//  .userInfo__companyInfoLimit,
+	//  .userInfo__companyInfoTextUsed,
+	//  .userInfo__companyInfoTextLimit {
+	//    position: absolute;
+	//  }
+	//
+	//  .userInfo__companyInfoUsed {
+	//    left: 140px;
+	//    top: 12px;
+	//    color: black;
+	//    font-size: 14px;
+	//    font-family: 'Inter', sans-serif;
+	//    font-weight: 700;
+	//    word-wrap: break-word;
+	//  }
+	//
+	//  .userInfo__companyInfoLimit {
+	//    left: 140px;
+	//    top: 31px;
+	//    color: #8AC540;
+	//    font-size: 14px;
+	//    font-family: 'Inter', sans-serif;
+	//    font-weight: 700;
+	//    word-wrap: break-word;
+	//  }
+	//
+	//  .userInfo__companyInfoTextUsed {
+	//    left: 10px;
+	//    top: 14px;
+	//    opacity: 0.40;
+	//    color: black;
+	//    font-size: 10px;
+	//    font-family: 'Inter', sans-serif;
+	//    font-weight: 400;
+	//    word-wrap: break-word;
+	//  }
+	//
+	//  .userInfo__companyInfoTextLimit {
+	//    left: 27px;
+	//    top: 33px;
+	//    opacity: 0.40;
+	//    color: black;
+	//    font-size: 10px;
+	//    font-family: 'Inter', sans-serif;
+	//    font-weight: 400;
+	//    word-wrap: break-word;
+	//  }
 
-    // Адаптивные стили
-    @media (max-width: 767px) {
-      margin-right: 10px;
-    }
-
-    /* Элемент - прямоугольник панели */
-    .userInfo__userPanelRect {
-
-      position: relative;
-      margin-right: 160px;
-    }
-
-    .userInfo__userPanelRectImg {
-      width: 100%;  // Заполнить весь контейнер
-      height: 100%; // Заполнить весь контейнер
-    }
-
-    /* Блок - контейнер информации о компании */
-    .userInfo__companyInfo {
-      /* Элемент - использованные компании */
-      .userInfo__companyInfoUsed,
-      .userInfo__companyInfoLimit,
-      .userInfo__companyInfoTextUsed,
-      .userInfo__companyInfoTextLimit {
-        position: absolute;
-      }
-
-      .userInfo__companyInfoUsed {
-        left: 140px;
-        top: 12px;
-        color: black;
-        font-size: 14px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        word-wrap: break-word;
-      }
-
-      .userInfo__companyInfoLimit {
-        left: 140px;
-        top: 31px;
-        color: #8AC540;
-        font-size: 14px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        word-wrap: break-word;
-      }
-
-      .userInfo__companyInfoTextUsed {
-        left: 10px;
-        top: 14px;
-        opacity: 0.40;
-        color: black;
-        font-size: 10px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        word-wrap: break-word;
-      }
-
-      .userInfo__companyInfoTextLimit {
-        left: 27px;
-        top: 33px;
-        opacity: 0.40;
-        color: black;
-        font-size: 10px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        word-wrap: break-word;
-      }
-
-      /* Элемент - текст для использованных компаний */
-      .userInfo__companyInfoTextUsed {}
-
-      /* Элемент - текст для лимита */
-      .userInfo__companyInfoTextLimit {}
-    }
-  }
+	//  /* Элемент - текст для использованных компаний */
+	//  .userInfo__companyInfoTextUsed {}
+	//
+	//  /* Элемент - текст для лимита */
+	//  .userInfo__companyInfoTextLimit {}
+	//}
 }
+
 
 .userInfo__userPanelTextContainer {
 
-  /* Блок - текст юзера */
-  .userInfo__userNameText {
-    color: black;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.14px;
-    word-wrap: break-word;
+	/* Блок - текст юзера */
+	.userInfo__userNameText {
+		color: black;
+		font-size: 14px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.14px;
+		word-wrap: break-word;
 
-  }
-  /* Блок - текст выхода */
-  .userInfo__logoutText {
-    color: black;
-    opacity: 0.40;
-    font-size: 10px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
-    cursor: pointer;
-    margin-right: 29px;
-  }
+	}
+
+	/* Блок - текст выхода */
+	.userInfo__logoutText {
+		color: black;
+		opacity: 0.40;
+		font-size: 10px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		word-wrap: break-word;
+		cursor: pointer;
+		margin-right: 29px;
+	}
 
 
 }
 
-/* Блок - аватар */
-.userInfo__avatar {
-  // Стили для аватара
+@media (max-width: 767px) {
+	.userInfo {
+		display: none;
+
+		&__userPanel {
+			margin-right: 10px;
+		}
+	}
 }
-
-

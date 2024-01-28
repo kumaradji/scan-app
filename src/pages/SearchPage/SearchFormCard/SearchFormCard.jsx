@@ -38,12 +38,12 @@ function SearchFormCard() {
 
       {/*кнопка и надпись под ней*/}
       <section className={styles.searchButtonSection}>
-        <Button className={styles.searchButton} onClick={handleSearchClick}>
-          <div className={styles.searchButton__ButtonText}>
+        <Button className={styles.searchButtonSection__searchButton} onClick={handleSearchClick}>
+          <div className={styles.searchButtonSection__searchButton__ButtonText}>
             Поиск
           </div>
         </Button>
-        <div className={styles.rightBlockSmallText}>
+        <div className={styles.searchButtonSection__rightBlockSmallText}>
           * Обязательные к заполнению поля
         </div>
       </section>

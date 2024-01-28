@@ -5,8 +5,7 @@ import FooterLogoImg from '../../assets/images/Logo-footer.svg';
 const AppFooter = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.content}>
-        <span>
+        <span className={styles.logo}>
           <img src={FooterLogoImg} alt="Логотип футера" />
         </span>
 
@@ -21,7 +20,6 @@ const AppFooter = () => {
             <p className={styles.textCopyright}>Copyright. 2022</p>
           </div>
         </div>
-      </div>
     </footer>
   );
 };

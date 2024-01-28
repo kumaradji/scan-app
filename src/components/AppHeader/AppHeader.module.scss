@@ -3,6 +3,7 @@
 @import '../../styles/mixins/_var';
 
 .header {
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,9 +12,10 @@
   flex-shrink: 0;
   padding-right: 60px;
   padding-left: 60px;
+}
 
-  @media (max-width: 767px) {
-
+@media (max-width: 767px) {
+  .header {
     padding-right: 26px;
     padding-left: 15px;
   }

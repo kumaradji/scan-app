@@ -21,6 +21,7 @@ function SearchFormInputs() {
   return (
   <label className={styles.leftBlock}>
 
+    <section className={styles.leftBlock__inn}>
     <div className={styles.leftBlock__inn__label}>
       ИНН компании:*
     </div>
@@ -30,7 +31,9 @@ function SearchFormInputs() {
       value={inn}
       onChange={(e) => setInn(e.target.value)}
     />
+    </section>
 
+    <section className={styles.leftBlock__tonality}>
     <div className={styles.leftBlock__tonality__label}>
       Тональность
     </div>
@@ -40,7 +43,9 @@ function SearchFormInputs() {
       value={tonality}
       onChange={(e) => setTonality(e.target.value)}
     />
+    </section>
 
+    <section className={styles.leftBlock__documentCount}>
     <div className={styles.leftBlock__documentCount__label}>
       Количество документов в выдаче*
     </div>
@@ -50,6 +55,7 @@ function SearchFormInputs() {
       value={documentCount}
       onChange={(e) => setDocumentCount(e.target.value)}
     />
+    </section>
 
     <div className={styles.leftBlockLabel}>
       Диапазон поиска*

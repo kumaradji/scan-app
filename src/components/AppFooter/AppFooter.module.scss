@@ -1,41 +1,69 @@
-@import "../../styles/mixins/_typography";
-@import "../../styles/mixins/_var";
+@import '../../styles/mixins/_typography';
+@import '../../styles/mixins/_var';
 
 @mixin fontSize($size) {
-    font-size: $size;
-    letter-spacing: $size * 0.07;
+	font-size: $size;
+	letter-spacing: $size * 0.07;
 }
 
 .footer {
-    width: 1440px;
-    height: 137px;
-    flex-shrink: 0;
-    background-color: var($green);
+	max-width: 1440px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	height: 93px;
+	flex-shrink: 0;
+	padding-right: 60px;
+	padding-left: 60px;
+	background-color: $green;
+	color: $white;
+
+	.logo {
+		width: 141px;
+		height: 141px;
+	}
+
+	.textBlock {
+		width: 199px;
+		text-align: right;
+		@include footer-text;
+		@include fontSize(14px);
+		margin-right: 45px;
+	}
+
+	.textMoscow { // Исправлено на textMoscow (возможно опечатка)
+		@include footer-text;
+		@include fontSize(14px);
+		color: $white; // Используйте переменную $white
+	}
+
+	.textCopyright {
+		@extend .textMoscow; // Исправлено на textMoscow
+		@include fontSize(12px);
+	}
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 60px;
+// адаптивная верстка
+@media (max-width: 767px) {
+	.footer {
+		height: 137px;
+		width: 375px;
+		padding-left: 18px;
+		margin-top: 25px;
+	}
+
+	.logo {
+		margin-bottom: 30px;
+		width: 111px;
+		height: 111px;
+	}
+
+	.textBlock {
+		width: auto;
+		margin-right: -29px;
+		letter-spacing: 0.14px;
+	}
 }
 
-.textBlock {
-    width: 199px;
-    text-align: right;
-    @include footer-text;
-    @include fontSize(14px);
-    margin-right: 45px;
-}
-
-.textMoskow {
-    @include footer-text;
-    @include fontSize(14px);
-    color: var($white);
-}
-
-.textCopyright {
-    @extend .textMoskow;
-    @include fontSize(12px);
-}
 
