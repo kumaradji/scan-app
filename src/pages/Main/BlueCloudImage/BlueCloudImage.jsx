@@ -4,7 +4,7 @@ import styles from './BlueCloudImage.module.scss';
 import imgBlueCloud from '../../../../src/assets/images/Group 14.svg';
 
 
-const BlueCloudImage: string = () => {
+const BlueCloudImage = () => {
   return (
     <div className={styles.imgBlueCloudImage}>
       <img src={imgBlueCloud} alt="Blue-Cloud-Image" />

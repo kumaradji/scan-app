@@ -29,6 +29,7 @@
 
   @media (max-width: 767px) {
     flex-direction: column;
+    margin-top: -900px;
   }
 
   .document {
@@ -39,8 +40,9 @@
     @media (max-width: 767px) {
       width: 59px;
       height: 72px;
-      margin-left: 291px;
-      margin-top: -765px;
+      position: relative;
+      margin-left: 285px;
+      margin-top: 230px;
     }
   }
 
@@ -54,7 +56,6 @@
       display: none;
     }
   }
-
 }
 
 .leftTextUnderTitleBlock {

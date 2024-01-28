@@ -1,8 +1,5 @@
-@mixin textStyles {
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+@import "../../styles/mixins/_typography";
+@import "../../styles/mixins/_var";
 
 @mixin fontSize($size) {
     font-size: $size;
@@ -13,8 +10,8 @@
     width: 1440px;
     height: 137px;
     flex-shrink: 0;
-    background-color: #029491;
-    color: #FFF;
+    background-color: var($green);
+    color: var($white);
 }
 
 .content {
@@ -27,15 +24,15 @@
 .textBlock {
     width: 199px;
     text-align: right;
-    @include textStyles;
+    @include footer-text;
     @include fontSize(14px);
     margin-right: 45px;
 }
 
 .textMoskow {
-    @include textStyles;
+    @include footer-text;
     @include fontSize(14px);
-    color: #FFF;
+    color: var($white);
 }
 
 .textCopyright {

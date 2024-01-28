@@ -1,5 +1,13 @@
 // _typography.scss
 @import '../../styles/mixins/_var';
+
+// Миксин для текста футера
+@mixin footer-text {
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 // Миксин для общих стилей текста
 @mixin text-base {
   font-family: 'Inter', sans-serif;

@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 import AppHeader from './components/AppHeader/AppHeader';
 import MainPage from './pages/Main/MainPage';
 import AppFooter from './components/AppFooter/AppFooter';
 import LoginPage from './pages/LoginPage/LoginPage';
-import { AuthProvider } from './pages/LoginPage/Auth/AuthContext';
-import { useAuth } from './pages/LoginPage/Auth/AuthContext';
+import {AuthProvider, useAuth} from './pages/LoginPage/Auth/AuthContext';
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ResultPage from "./pages/ResultPage/ResultPage";
 
@@ -30,7 +29,7 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/results" element={<ResultPage />} />
         </Routes>
-        {/*<AppFooter />*/}
+        <AppFooter />
       </AuthProvider>
     </Router>
   );
