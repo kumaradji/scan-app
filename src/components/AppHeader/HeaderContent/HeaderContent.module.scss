@@ -4,75 +4,75 @@
 @import '../../../styles/mixins/_var';
 
 .header__content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: space-between;
+	align-items: center;
 
-  @media (max-width: 767px) {
-    display: inline-flex;
-    justify-content: flex-start;
-    gap: 194px;
-  }
+	&__burger {
+		display: none;
+	}
 
-  &__burger {
-    display: none;
+	&__logo {
+		width: 141px;
+		height: 141px;
 
-    @media (max-width: 767px) {
-      display: block;
-      width: 30px;
-      height: 25px;
-    }
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+	/* Блок - навигационные ссылки */
+	&__navLinks {
+		@include text-base;
 
-  &__logo {
-    width: 141px;
-    height: 141px;
+		a,
+		span {
+			@include link;
+			margin-right: 25px;
+			margin-left: 25px;
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
+			&:hover {
+				@include link;
+			}
+		}
 
-    @media (max-width: 767px) {
-      width: 111px;
-      height: 111px;
-    }
-  }
+		span:hover {
+			text-decoration: none;
+		}
+	}
+}
 
-  /* Блок - навигационные ссылки */
-  &__navLinks {
-    @include text-base;
-    a,
-    span {
-      @include link;
-      margin-right: 25px;
-      margin-left: 25px;
+.header__menu {
+}
 
-      &:hover {
-        @include link;
-      }
-    }
+// адаптивная верстка
+@media (max-width: 767px) {
+	.header__content {
+		display: inline-flex;
+		justify-content: flex-start;
+		gap: 194px;
 
-    span:hover {
-      text-decoration: none;
-    }
+		&__burger {
+			display: block;
+			width: 30px;
+			height: 25px;
+		}
+	}
 
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
+	&__logo {
+		width: 111px;
+		height: 111px;
+	}
+
+	/* Блок - навигационные ссылки */
+	&__navLinks {
+		display: none;
+	}
 
 }
 
 .header__menu {
-
-  @media (max-width: 767px) {
-    display: none;
-  }
+	display: none;
 }

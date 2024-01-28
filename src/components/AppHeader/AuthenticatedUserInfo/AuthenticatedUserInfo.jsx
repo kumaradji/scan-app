@@ -13,57 +13,55 @@ const AuthenticatedUserInfo = ({userInfo, handleLogout}) => {
   return (
     <div className={styles.userInfo}>
       <div className={styles.userInfo__userPanel}>
-        <div className={styles.userInfo__userPanelRect}>
-          {/* Фоновый прямоугольник */}
-          <img
-            className={styles.userInfo__userPanelRectImg}
-            src={userPanelRect}
-            alt="userPanelRect"
-          />
+        {/* Фоновый прямоугольник */}
+        <img
+          className={styles.userInfo__userPanel__userPanel_userPanelRectImg}
+          src={userPanelRect}
+          alt="userPanelRect"
+        />
 
-          {/* Текстовые элементы внутри фонового прямоугольника */}
-          {loading ? (
-            <Loader/>
-          ) : (
-            <>
-              {isLoggedIn && (
-                <div className={styles.userInfo__companyInfo}>
-                  <div className={styles.userInfo__companyInfoUsed}>
-                    {usedCompanies}
-                  </div>
-                  <div className={styles.userInfo__companyInfoLimit}>
-                    {companyLimit}
-                  </div>
-                  <div className={styles.userInfo__companyInfoTextUsed}>
-                    Использовано компаний
-                  </div>
-                  <div className={styles.userInfo__companyInfoTextLimit}>
-                    Лимит по компаниям
-                  </div>
+        {/* Текстовые элементы внутри фонового прямоугольника */}
+        {loading ? (
+          <Loader/>
+        ) : (
+          <>
+            {isLoggedIn && (
+              <div className={styles.userInfo__userPanel__companyInfo}>
+                <div className={styles.userInfo__userPanel__companyInfoUsed}>
+                  {usedCompanies}
                 </div>
-              )}
-            </>
-          )}
-        </div>
+                <div className={styles.userInfo__userPanel__companyInfoLimit}>
+                  {companyLimit}
+                </div>
+                <div className={styles.userInfo__userPanel__companyInfoTextUsed}>
+                  Использовано компаний
+                </div>
+                <div className={styles.userInfo__userPanel__companyInfoTextLimit}>
+                  Лимит по компаниям
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </div>
 
       <div className={styles.userInfo__userPanelTextContainer}>
-        <div className={styles.userInfo__userNameText}>
+        <div className={styles.userInfo__userPanelTextContainer__userNameText}>
           Алексей А.
         </div>
         <div
           onClick={handleLogout}
-          className={styles.userInfo__logoutText}
+          className={styles.userInfo__userPanelTextContainer__logoutText}
         >
           Выйти
         </div>
       </div>
 
-        <img
-          src={AvatarImg}
-          alt="Аватар"
-          className={styles.userInfo__avatar}
-        />
+      <img
+        src={AvatarImg}
+        alt="Аватар"
+        className={styles.userInfo__avatar}
+      />
     </div>
   );
 };
