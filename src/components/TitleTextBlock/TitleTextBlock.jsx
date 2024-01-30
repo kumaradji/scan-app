@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const TitleTextBlock = ({ text, additionalStyles }) => {
   return (
-    <div className={`${additionalStyles}`}>
+    <div className={`${additionalStyles}`} style={{whiteSpace: "pre-line"}}>
       {text}
     </div>
   );

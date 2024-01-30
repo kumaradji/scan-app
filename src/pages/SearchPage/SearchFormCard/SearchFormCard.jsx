@@ -1,7 +1,6 @@
 // SearchFormCard/SearchFormCard.jsx
 import React from 'react';
 import useSearchFormHook from '../../../hooks/useSearchFormHook';
-import Button from '../../../components/UI/Button';
 import CheckboxList from './CheckboxList/CheckboxList';
 import styles from './SearchFormCard.module.scss';
 import SearchFormInputs from "./SearchFormInputs/SearchFormInputs";
@@ -37,16 +36,16 @@ function SearchFormCard() {
       </label>
 
       {/*кнопка и надпись под ней*/}
-      <section className={styles.searchButtonSection}>
-        <Button className={styles.searchButtonSection__searchButton} onClick={handleSearchClick}>
-          <div className={styles.searchButtonSection__searchButton__ButtonText}>
-            Поиск
-          </div>
-        </Button>
-        <div className={styles.searchButtonSection__rightBlockSmallText}>
-          * Обязательные к заполнению поля
-        </div>
-      </section>
+      {/*<section className={styles.searchButtonSection}>*/}
+      {/*  <Button className={styles.searchButtonSection__searchButton} onClick={handleSearchClick}>*/}
+      {/*    <div className={styles.searchButtonSection__searchButton__ButtonText}>*/}
+      {/*      Поиск*/}
+      {/*    </div>*/}
+      {/*  </Button>*/}
+      {/*  <div className={styles.searchButtonSection__rightBlockSmallText}>*/}
+      {/*    * Обязательные к заполнению поля*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
     </div>
   );

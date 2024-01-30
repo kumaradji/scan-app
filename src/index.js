@@ -1,14 +1,17 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 import './styles/reset.css';
+import './styles/common.scss';
 
 import App from './App';
-import { AuthProvider } from './pages/LoginPage/Auth/AuthContext';
+import {AuthProvider} from './pages/LoginPage/Auth/AuthContext';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <div className="app">
+        <App/>
+      </div>
     </AuthProvider>
   </React.StrictMode>
 );

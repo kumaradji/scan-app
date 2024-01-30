@@ -4,19 +4,24 @@
 
 .header {
   max-width: 1440px;
+  height: 93px;
   display: flex;
-  justify-content: space-between;
+  flex-shrink: 0;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
-  height: 93px;
-  flex-shrink: 0;
   padding-right: 60px;
   padding-left: 60px;
 }
 
 @media (max-width: 767px) {
   .header {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    gap: 194px;
+    min-width: 335px;
     padding-right: 26px;
-    padding-left: 15px;
+    padding-left: 14px;
   }
 }

@@ -9,16 +9,10 @@
   align-items: center;
   position: relative;
   justify-content: space-between;
-  //margin-right: 230px;
-  //padding-left: 60px; // Добавим отступ слева
-  //padding-right: 60px; // Добавим отступ справа
-  //color: var($black);
-
 
   &_slash {
     margin-right: 20px;
     margin-left: 7px;
-
   }
 
   &_link {
@@ -34,11 +28,11 @@
     margin-top: 0;
     border-radius: 5px;
     background: #7CE3E1;
-
+    color: black; /* Цвет текста */
   }
   // Адаптивные стили
   @media (max-width: 767px) {
-    display: none; // Скрываем панель в мобильной версии
+    display: none;
   }
 }
 

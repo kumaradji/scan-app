@@ -1,18 +1,29 @@
 
 .titleTextBlock03 {
-  color: #000;
-  font-family: 'FerryBlack', sans-serif;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 900;
-  width: 800px;
-  position: relative;
-  line-height: normal;
-  letter-spacing: 0.45px;
-  margin-top: 69px;
-  margin-left: 60px;
+	color: #000;
+	font-family: 'FerryBlack', sans-serif;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 900;
+	width: 800px;
+	position: relative;
+	line-height: normal;
+	letter-spacing: 0.45px;
+	margin-top: 69px;
+	margin-left: 60px;
 
-  .title-text {
-    white-space: pre-wrap;
+	.title-text {
+		white-space: pre-wrap;
+	}
+}
+
+@media (max-width: 767px) {
+  .titleTextBlock03 {
+		width: 335px;
+		height: 104px;
+    font-size: 22px;
+    margin-top: 31px;
+    margin-left: 14px;
   }
+
 }
