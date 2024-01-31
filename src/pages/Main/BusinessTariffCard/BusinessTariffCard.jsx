@@ -13,7 +13,7 @@ function BusinessTariffCard() {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.blackTop} />
       <img className={styles.iconNotebook} src={NotebookTariffIcon} alt="=TargetTariff-Icon" />
       <div className={styles.moreBusinessButton} onClick={handleMoreButtonClick}>
@@ -60,7 +60,7 @@ function BusinessTariffCard() {
         </span>
 
       </div>
-    </div>
+    </section>
   );
 }
 

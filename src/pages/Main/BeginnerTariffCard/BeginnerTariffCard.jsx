@@ -3,59 +3,53 @@
 import React from 'react';
 import styles from './BeginnerTariffCard.module.scss';
 import LightBulbIcon from '../../../assets/icons/LightBulbTariff.svg';
-import icon1 from '../../../assets/icons/SmallVectorTariff.svg';
-import icon2 from '../../../assets/icons/SmallVectorTariff.svg';
-import icon3 from '../../../assets/icons/SmallVectorTariff.svg';
+import ItemsList from '../../../assets/images/BigginerTariffList.jpeg';
 
 function BeginnerTariffCard() {
+  const handleMoreButtonClick = () => {
+    // Пустая функция-заглушка для события клика кнопки
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles.orangeTop}/>
-      <img className={styles.iconLightBulb} src={LightBulbIcon} alt="=Lightbulb-Icon"/>
-      <div className={styles.blueStripe}/>
-      <div className={styles.personalCabinetButton}>
-        <div className={styles.personalCabinetText}>
+    <section className={styles.container}>
+      <div className={styles.container__orangeTop}/>
+      <img className={styles.container__orangeTop_iconLightBulb} src={LightBulbIcon} alt="Lightbulb-Icon"/>
+
+      <div className={styles.container__title}>
+        Beginner
+      </div>
+
+      <div className={styles.container__blueStripe}/>
+      <div className={styles.container__currentTariffLabel}>
+        Текущий тариф
+      </div>
+
+      <div className={styles.container__personalCabinetButton} onClick={handleMoreButtonClick}>
+        <div className={styles.container__personalCabinetButton_personalCabinetText}>
           Перейти в личный кабинет
         </div>
       </div>
-      <div className={styles.infoTextTitle}>
+
+      <div className={styles.container__infoTextTitle}>
         Для небольшого исследования
       </div>
-      <div className={styles.currentTariffLabel}>Текущий тариф</div>
 
-      <div className={styles.includedItems}>
-        <div className={styles.item}>
-          В тариф входит:
-        </div>
-        <div>
-          <img className={styles.icon} src={icon1} alt="icon" />
-          <span className={styles.item1} >
-            Безлимитная история запросов
-          </span>
-        </div>
-        <div>
-          <img className={styles.icon} src={icon2} alt="icon" />
-          <span className={styles.item2}>
-            Безопасная сделка
-          </span>
-        </div>
-        <div>
-          <img className={styles.icon} src={icon3} alt="icon" />
-          <span className={styles.item3}>
-            Поддержка 24/7
-          </span>
+      <div className={styles.container__currentTariffLabel}>
+        Текущий тариф
+      </div>
+
+      <div className={styles.container__priceTitle}>
+        <div className={styles.container__priceTitle_infoText}>
+          <span className={styles.container__priceTitle_price}>799 ₽</span>
+          <span className={styles.container__priceTitle_priceHigh}>1 200 ₽</span>
+          <p className={styles.container__priceTitle_currency}>
+            или 150 ₽/мес. при рассрочке на 24 мес.
+          </p>
         </div>
       </div>
-      <div className={styles.title}>Beginner</div>
-      <div className={styles.infoText}>
-        <span className={styles.price}>799 ₽</span>
-        <span className={styles.priceHigh}>1 200 ₽</span>
-        <p className={styles.currency}>
-          или 150 ₽/мес. при рассрочке на 24 мес.
-        </p>
 
-      </div>
-    </div>
+      <img className={styles.container__tariffItemsList} src={ItemsList} alt="ItenmsList"/>
+    </section>
   );
 }
 

@@ -4,79 +4,84 @@
 .userInfo {
 	display: flex;
 	align-items: center;
-}
 
-/* Блок - панель пользователя */
-.userInfo__userPanel {
-	position: relative;
-
-	/* Элемент - прямоугольник панели */
-	&__userPanel_userPanelRectImg {
-		width: 100%;
-		height: 100%;
+	/* Блок - панель пользователя */
+	.userInfo__userPanel {
 		position: relative;
-		margin-right: 160px;
-	}
+		width: 175px;
+		height: 63px;
+		margin-right: 128px;
 
-	/* Блок - контейнер информации о компании */
-	&__companyInfo {
-		/* Элементы - информация о компании */
-		&Used,
-		&Limit,
-		&TextUsed,
-		&TextLimit {
-			position: absolute;
+		/* Элемент - прямоугольник панели */
+		&__userPanel_userPanelRectImg {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			margin-right: 160px;
 		}
 
-		&Used {
-			left: 140px;
-			top: 12px;
-			color: black;
-			font-size: 14px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 700;
-			word-wrap: break-word;
+		/* Блок - контейнер информации о компании */
+		&__companyInfo {
+			/* Элементы - информация о компании */
+			&Used,
+			&Limit,
+			&TextUsed,
+			&TextLimit {
+				position: absolute;
+			}
+
+			&Used {
+				left: 140px;
+				top: 12px;
+				color: black;
+				font-size: 14px;
+				font-family: 'Inter', sans-serif;
+				font-weight: 700;
+				word-wrap: break-word;
+			}
+
+			&Limit {
+				left: 140px;
+				top: 31px;
+				color: #8AC540;
+				font-size: 14px;
+				font-family: 'Inter', sans-serif;
+				font-weight: 700;
+				word-wrap: break-word;
+			}
+
+			&TextUsed {
+				left: 10px;
+				top: 14px;
+				opacity: 0.40;
+				color: black;
+				font-size: 10px;
+				font-family: 'Inter', sans-serif;
+				font-weight: 400;
+				word-wrap: break-word;
+			}
+
+			&TextLimit {
+				left: 27px;
+				top: 33px;
+				opacity: 0.40;
+				color: black;
+				font-size: 10px;
+				font-family: 'Inter', sans-serif;
+				font-weight: 400;
+				word-wrap: break-word;
+			}
+
+			/* Элемент - текст для использованных компаний */
+			&TextUsed {}
+
+			/* Элемент - текст для лимита */
+			&TextLimit {}
 		}
-
-		&Limit {
-			left: 140px;
-			top: 31px;
-			color: #8AC540;
-			font-size: 14px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 700;
-			word-wrap: break-word;
-		}
-
-		&TextUsed {
-			left: 10px;
-			top: 14px;
-			opacity: 0.40;
-			color: black;
-			font-size: 10px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 400;
-			word-wrap: break-word;
-		}
-
-		&TextLimit {
-			left: 27px;
-			top: 33px;
-			opacity: 0.40;
-			color: black;
-			font-size: 10px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 400;
-			word-wrap: break-word;
-		}
-
-		/* Элемент - текст для использованных компаний */
-		&TextUsed {}
-
-		/* Элемент - текст для лимита */
-		&TextLimit {}
 	}
 }
+
+
 
 /* Блок - текстовый контейнер */
 .userInfo__userPanelTextContainer {

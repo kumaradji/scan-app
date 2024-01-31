@@ -31,7 +31,7 @@ const MainPage = () => {
 
   return (
     <div className={styles.mainPage}>
-      <div className={styles.upperBlocks}>
+      <div className={styles.mainPage__upperBlocks}>
         <LeftTextBlock />
         <ImageRightBlock />
       </div>
@@ -42,7 +42,7 @@ const MainPage = () => {
       <BlueCloudImage />
       <TitleTextBlock02 />
 
-      <section className={styles.tariffCardSection}>
+      <section className={styles.mainPage__tariffCardSection}>
         <BeginnerTariffCard />
         <ProTariffCard />
         <BusinessTariffCard />

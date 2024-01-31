@@ -16,6 +16,26 @@
   letter-spacing: 0.14px;
 }
 
+// Миксин для стилей карточек тарифов
+@mixin labelStyles {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  margin-top: 5px;
+}
+
+// Миксин для стилей текста в карточках тарифов
+@mixin itemStyles {
+  color: black;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.20px;
+  word-wrap: break-word;
+}
+
 // Миксин для стилей ссылок
 @mixin link {
   text-decoration: none;

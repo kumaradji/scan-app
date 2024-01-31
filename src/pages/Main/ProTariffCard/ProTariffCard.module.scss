@@ -1,18 +1,9 @@
 // ProTariffCard/ProTariffCard.module.scss
-
-@mixin labelStyles {
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.18px;
-  word-wrap: break-word;
-  margin-top: 5px;
-}
+@import '../../../styles/mixins/_typography';
 
 .container {
   width: 415px;
   height: 540px;
-  background: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   border: 2px #7ce3e1 solid;
@@ -22,7 +13,7 @@
 }
 
 .greenTop {
-  width: 415px;
+  width: 413px;
   height: 132px;
   background: #7ce3e1;
   border-top-left-radius: 10px;
@@ -54,7 +45,7 @@
 .moreButton {
   width: 355px;
   height: 59px;
-  background: #5970ff;
+  background: $blue;
   border-radius: 5px;
   position: absolute;
   top: 457px;
@@ -62,11 +53,11 @@
   transition: background-color 0.3s ease;  // Добавляем анимацию перехода цвета фона
 
   &:active {
-    background-color: darken(#5970ff, 10%);  // Затемняем цвет при нажатии
+    background-color: darken($blue, 10%);  // Затемняем цвет при нажатии
   }
 
   .moreText {
-    color: #ffffff;
+    color: $white;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -79,7 +70,7 @@
 }
 
 .title {
-  color: black;
+  color: $black;
   font-size: 30px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -91,7 +82,7 @@
 }
 
 .infoTextTitle {
-  color: black;
+  color: $black;
   font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -103,7 +94,7 @@
 }
 
 .infoText {
-  color: black;
+  color: $black;
   font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;

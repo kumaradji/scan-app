@@ -48,21 +48,21 @@
 @media (max-width: 767px) {
 	.footer {
 		height: 137px;
-		width: 335px;
-		padding-left: 18px;
-		margin-top: 600px;
-	}
+		width: 375px;
+		margin-top: -100  px;
+		padding: 0;
 
-	.logo {
-		margin-bottom: 30px;
-		width: 111px;
-		height: 111px;
-	}
+		.logo {
+			width: 111px;
+			height: 111px;
+			margin-left: 18px;
+			margin-bottom: 30px;
+		}
 
-	.textBlock {
-		width: auto;
-		margin-right: -29px;
-		letter-spacing: 0.14px;
+		.textBlock {
+			letter-spacing: 0.14px;
+			margin-right: 18px;
+		}
 	}
 }
 

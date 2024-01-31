@@ -4,8 +4,7 @@
 @import '../../../styles/mixins/_var';
 
 .header__content {
-	//display: grid;
-	//grid-template-columns: 2fr 1fr;
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -17,7 +16,7 @@
 	&__logo {
 		width: 141px;
 		height: 141px;
-		margin-right: 401px;
+		//margin-right: 401px;
 
 		img {
 			width: 100%;
@@ -26,8 +25,12 @@
 	}
 
 	/* Блок - навигационные ссылки */
-	&__navLinks {
+	&__menu {
 		@include text-base;
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-right: 94px;
+		padding-left: 340px;
 
 		a,
 		span {
@@ -44,10 +47,6 @@
 			text-decoration: none;
 		}
 	}
-}
-
-.header__menu {
-	display: flex;
 }
 
 // адаптивная верстка
@@ -97,10 +96,6 @@
 		&__navLinks {
 			display: none;
 		}
-	}
-
-	.header__menu {
-		display: none;
 	}
 }
 

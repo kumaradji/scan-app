@@ -1,25 +1,25 @@
 // LoginForm.module.scss
+@import "../../../styles/mixins/_var";
+@import "../../../styles/mixins/_typography";
+
 .cardContainer {
-	width: 100%;
-	height: 100%;
+	width: 429px;
+	height: 523px;
+	background: $white;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
 	position: relative;
+	margin-top: 65px;
+	margin-left: -170px;
 
 	.contentContainer {
-		width: 429px;
-		height: 523px;
-		left: 0;
-		top: 0;
-		margin-top: 65px;
-		background: white;
-		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-		border-radius: 10px;
-		position: relative;
+
 	}
 
 	.boldLine {
 		width: 151px;
 		height: 2px;
-		background: #029491;
+		background: $green;
 		position: absolute;
 		margin-top: 52px;
 		margin-left: 25px;
@@ -28,7 +28,7 @@
 	.line {
 		width: 213px;
 		height: 2px;
-		background: #c7c7c7;
+		background: $gray-light;
 		position: absolute;
 		margin-top: 52px;
 		margin-left: 188px;
@@ -45,7 +45,7 @@
 
 
 	.enter1 {
-		color: #029491;
+		color: $green;
 		font-family: 'Inter', sans-serif;
 		font-size: 16px;
 		font-weight: 400;
@@ -57,7 +57,7 @@
 	}
 
 	.enter2 {
-		color: #c7c7c7;
+		color: $gray-light;
 		font-family: 'Inter', sans-serif;
 		font-size: 16px;
 		font-weight: 400;
@@ -84,13 +84,14 @@
 		height: 59px;
 		flex-shrink: 0;
 		border-radius: 5px;
-		background: #5970ff;
+		background: $blue;
 		margin-left: 25px;
 		margin-top: 88px;
+		margin-bottom: 15px;
 	}
 
 	.buttonText {
-		color: #FFFFFF;
+		color: $white;
 		font-family: 'Inter', sans-serif;
 		font-size: 22px;
 		font-weight: 500;
@@ -99,7 +100,7 @@
 	}
 
 	.enterLoginText {
-		color: #029491;
+		color: $green;
 		font-family: 'Inter', sans-serif;
 		font-size: 16px;
 		font-weight: 400;
@@ -110,7 +111,7 @@
 	}
 
 	.enterPasswordText {
-		color: #029491;
+		color: $green;
 		font-family: 'Inter', sans-serif;
 		font-size: 16px;
 		font-weight: 400;
@@ -121,18 +122,15 @@
 	}
 
 	.recoverPass {
-		color: #5970ff;
-		font-family: 'Inter', sans-serif;
-		font-size: 14px;
-		font-weight: 400;
+		color: $blue;
+		@include text-base;
 		letter-spacing: 0.28px;
 		word-wrap: break-word;
-		margin-left: 25px;
-		margin-top: 40px;
+		margin-left: 140px;
 	}
 
 	.enterText {
-		color: #c7c7c7;
+		color: $gray-light;
 		font-family: 'Inter', sans-serif;
 		font-size: 16px;
 		font-weight: 400;
@@ -144,28 +142,28 @@
 
 	.socialIcons {
 		display: flex;
-	}
-
-	.google {
-		margin-left: 25px;
 		margin-bottom: 39px;
-	}
 
-	.facebook {
-		margin-left: 10px;
-		margin-bottom: 39px;
-	}
+		.google {
+			margin-left: 25px;
+		}
 
-	.yandex {
-		margin-left: 10px;
-		margin-bottom: 39px;
+		.facebook {
+			margin-left: 10px;
+		}
+
+		.yandex {
+			margin-left: 10px;
+		}
 	}
 }
 
 @media (max-width: 767px) {
 	.cardContainer {
-		margin-right: 26px;
+		width: 335px;
+		height: 504px;
 		margin-left: 14px;
+		margin-top: 145px;
 
 		.contentContainer {
 			width: 335px;
@@ -269,21 +267,17 @@
 			display: flex;
 			margin-bottom: 20px;
 
-		}
+			.google {
+				margin-left: 15px;
+			}
 
-		.google {
-			margin-left: 15px;
-		}
+			.facebook {
+				margin-left: 9px;
+			}
 
-
-		.facebook {
-			margin-left: 9px;
-		}
-
-
-		.yandex {
-			margin-left: 9px;
-
+			.yandex {
+				margin-left: 9px;
+			}
 		}
 	}
 }

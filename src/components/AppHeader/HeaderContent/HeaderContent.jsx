@@ -19,7 +19,7 @@ const HeaderContent = () => {
         <img  src={BurgerImg} alt="Логотип"/>
       </div>
 
-      <div className={styles.header__menu}>
+      <div className={styles.header__content__menu}>
         <NavigationLinks />
       </div>
 

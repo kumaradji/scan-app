@@ -10,8 +10,9 @@
 	background: #FFF;
 
 	&__padLock {
-		margin-left: 60px;
-		margin-top: -17px;
+		position: absolute;
+		margin-left: 800px;
+		margin-top: 20px;
 		z-index: 1;
 	}
 }
@@ -20,11 +21,15 @@
 	.loginPage {
 		display: block;
 
+		width: 375px;
+		height: 1380px;
+
 		&__padLock {
+			position: absolute;
 			width: 76px;
 			height: 92px;
 			margin-left: 95px;
-			margin-top: 45px;
+			margin-top: 69px;
 		}
 	}
 }
