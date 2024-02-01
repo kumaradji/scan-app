@@ -3,66 +3,48 @@
 import React from 'react';
 import styles from './ProTariffCard.module.scss';
 import TargetTariffIcon from '../../../assets/icons/TargetTariff.svg';
-import icon1 from '../../../assets/icons/SmallVectorTariff.svg';
-import icon2 from '../../../assets/icons/SmallVectorTariff.svg';
-import icon3 from '../../../assets/icons/SmallVectorTariff.svg';
+import ItemsList from "../../../assets/images/ProTariffList.jpeg";
 
 function ProTariffCard() {
   const handleMoreButtonClick = () => {
     // Пустая функция-заглушка для события клика кнопки
   };
   return (
-    <div className={styles.container}>
-      <div className={styles.greenTop}/>
-      <img className={styles.iconTarget} src={TargetTariffIcon} alt="=TargetTariff-Icon"/>
-      <div className={styles.moreButton} onClick={handleMoreButtonClick}>
-        <div className={styles.moreText}>
+    <section className={styles.container}>
+      <div className={styles.container__greenTop}/>
+      <img className={styles.container__greenTop_iconTarget} src={TargetTariffIcon} alt="=TargetTariff-Icon"/>
+
+      <div className={styles.container__title}>
+        Pro
+      </div>
+
+      <div className={styles.container__moreButton} onClick={handleMoreButtonClick}>
+        <div className={styles.container__moreButton_moreText}>
           Подробнее
         </div>
       </div>
-      <div className={styles.infoTextTitle}>
+
+      <div className={styles.container__infoTextTitle}>
         Для HR и фрилансеров
       </div>
 
-      <div className={styles.includedItems}>
-        <div className={styles.item}>
-          В тариф входит:
-        </div>
-        <div>
-          <img className={styles.icon} src={icon1} alt="icon" />
-          <span className={styles.item1} >
-            Все пункты тарифа Beginner
+      <div className={styles.container__priceTitle}>
+        <div className={styles.container__priceTitle_infoText}>
+          <span className={styles.container__priceTitle_price}>
+            1 299 ₽
           </span>
-        </div>
-        <div>
-          <img className={styles.icon} src={icon2} alt="icon" />
-          <span className={styles.item2}>
-            Экспорт истории
+          <span className={styles.container__priceTitle_priceHigh}>
+            2 600 ₽
           </span>
-        </div>
-        <div>
-          <img className={styles.icon} src={icon3} alt="icon" />
-          <span className={styles.item3}>
-            Рекомендации по приоритетам
-          </span>
+          <p className={styles.container__priceTitle_currency}>
+            или 279 ₽/мес. при рассрочке на 24 мес.
+          </p>
         </div>
       </div>
-      <div className={styles.title}>
-        Pro
-      </div>
-      <div className={styles.infoText}>
-        <span className={styles.price}>
-          1 299 ₽
-        </span>
-        <span className={styles.priceHigh}>
-          2 600 ₽
-        </span>
-        <p className={styles.currency}>
-          или 279 ₽/мес. при рассрочке на 24 мес.
-        </p>
 
-      </div>
-    </div>
+      <img className={styles.container__tariffItemsList} src={ItemsList} alt="ItenmsList"/>
+
+    </section>
   );
 }
 

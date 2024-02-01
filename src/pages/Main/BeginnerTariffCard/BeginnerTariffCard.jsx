@@ -40,8 +40,12 @@ function BeginnerTariffCard() {
 
       <div className={styles.container__priceTitle}>
         <div className={styles.container__priceTitle_infoText}>
-          <span className={styles.container__priceTitle_price}>799 ₽</span>
-          <span className={styles.container__priceTitle_priceHigh}>1 200 ₽</span>
+          <span className={styles.container__priceTitle_price}>
+            799 ₽
+          </span>
+          <span className={styles.container__priceTitle_priceHigh}>
+            1 200 ₽
+          </span>
           <p className={styles.container__priceTitle_currency}>
             или 150 ₽/мес. при рассрочке на 24 мес.
           </p>

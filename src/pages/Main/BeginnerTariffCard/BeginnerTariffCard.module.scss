@@ -6,7 +6,6 @@
 .container {
 	width: 415px;
 	height: 540px;
-	background: white;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	border-radius: 10px;
 	border: 2px #FFB64F solid;
@@ -78,6 +77,10 @@
 			font-weight: 400;
 			letter-spacing: 0.20px;
 			word-wrap: break-word;
+		}
+
+		&:active {
+			background-color: darken(#D2D2D2, 10%);
 		}
 	}
 
@@ -187,9 +190,6 @@
 			width: 273px;
 			margin-top: -330px;
 			margin-left: 24px;
-
-			&_currency {
-			}
 		}
 
 		&__tariffItemsList {
