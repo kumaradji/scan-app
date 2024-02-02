@@ -1,9 +1,11 @@
 /* BlueCloudImage/BlueCloudImage.module.scss */
 
 .imgBlueCloudImage {
+	display: flex;
 	margin-top: 50px;
 	margin-left: 51px;
 	margin-right: 82px;
+	object-fit: cover;
 }
 
 @media (max-width: 767px) {

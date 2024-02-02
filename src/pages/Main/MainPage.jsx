@@ -32,20 +32,23 @@ const MainPage = () => {
   return (
     <div className={styles.mainPage}>
       <div className={styles.mainPage__upperBlocks}>
-        <LeftTextBlock />
-        <ImageRightBlock />
+        <LeftTextBlock/>
+        <ImageRightBlock/>
       </div>
 
-      <MainTitleTextBlock />
-      <Carousel />
+      <MainTitleTextBlock/>
+      <Carousel/>
 
-      <BlueCloudImage />
-      <TitleTextBlock02 />
+      <BlueCloudImage/>
+
+      {/*<img className={styles.mainPage__blueCloudImageM} src={BlueCloudImageM} alt="BlueCloudImageM"/>*/}
+
+      <TitleTextBlock02/>
 
       <section className={styles.mainPage__tariffCardSection}>
-        <BeginnerTariffCard />
-        <ProTariffCard />
-        <BusinessTariffCard />
+        <BeginnerTariffCard/>
+        <ProTariffCard/>
+        <BusinessTariffCard/>
       </section>
 
     </div>

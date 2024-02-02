@@ -2,7 +2,7 @@
 @import "../../../../styles/mixins/typography";
 @import "../../../../styles/mixins/_var";
 
-.customDateInput {
+.container {
   &__inputContainer {
     @include input;
     width: 176px;
@@ -27,6 +27,37 @@
       top: 50%;
       right: 10px;
       transform: translateY(-50%);
+    }
+  }
+
+  &__datePickerContainer {
+    @include input;
+    width: 176px;
+    position: relative;
+    margin-bottom: 20px; // Добавьте расстояние между полями ввода
+
+    &:hover {
+      border-color: $blue;
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding-right: 10px;
+      transition: border-color 0.3s ease;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+
+    &_dateLabel {
+
     }
   }
 

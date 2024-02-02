@@ -3,9 +3,7 @@
 import React from 'react';
 import styles from './BusinessTariffCard.module.scss';
 import NotebookTariffIcon from '../../../assets/icons/NotebookTariff.svg';
-import icon1 from '../../../assets/icons/SmallVectorTariff.svg';
-import icon2 from '../../../assets/icons/SmallVectorTariff.svg';
-import icon3 from '../../../assets/icons/SmallVectorTariff.svg';
+import ItemsList from "../../../assets/images/BisinessTariffList.jpeg";
 
 function BusinessTariffCard() {
   const handleMoreButtonClick = () => {
@@ -14,52 +12,36 @@ function BusinessTariffCard() {
 
   return (
     <section className={styles.container}>
-      <div className={styles.blackTop} />
-      <img className={styles.iconNotebook} src={NotebookTariffIcon} alt="=TargetTariff-Icon" />
-      <div className={styles.moreBusinessButton} onClick={handleMoreButtonClick}>
-        <div className={styles.moreText}>
+      <div className={styles.container__blackTop}/>
+      <img className={styles.container__blackTop_iconNotebook} src={NotebookTariffIcon} alt="=TargetTariff-Icon"/>
+
+      <div className={styles.container__title}>
+        Business
+      </div>
+
+      <div className={styles.container__moreBusinessButton} onClick={handleMoreButtonClick}>
+        <div className={styles.container__moreBusinessButton_moreText}>
           Подробнее
         </div>
       </div>
-      <div className={styles.infoTextTitle}>
+
+      <div className={styles.container__infoTextTitle}>
         Для корпоративных клиентов
       </div>
 
-      <div className={styles.includedItems}>
-        <div className={styles.item}>
-          В тариф входит:
-        </div>
-        <div>
-          <img className={styles.icon} src={icon1} alt="icon" />
-          <span className={styles.item1} >
-            Все пункты тарифа Pro
+      <div className={styles.container__priceTitle}>
+        <div className={styles.container__priceTitle_infoText}>
+          <span className={styles.container__priceTitle_price}>
+            2 379 ₽
           </span>
-        </div>
-        <div>
-          <img className={styles.icon} src={icon2} alt="icon" />
-          <span className={styles.item2}>
-            Безлимитное количество запросов
-          </span>
-        </div>
-        <div>
-          <img className={styles.icon} src={icon3} alt="icon" />
-          <span className={styles.item3}>
-            Приоритетная поддержка
+          <span className={styles.container__priceTitle_priceHigh}>
+            3 700 ₽
           </span>
         </div>
       </div>
-      <div className={styles.title}>
-        Business
-      </div>
-      <div className={styles.infoText}>
-        <span className={styles.price}>
-          2 379 ₽
-        </span>
-        <span className={styles.priceHigh}>
-          3 700 ₽
-        </span>
 
-      </div>
+      <img className={styles.container__tariffItemsList} src={ItemsList} alt="ItenmsList"/>
+
     </section>
   );
 }

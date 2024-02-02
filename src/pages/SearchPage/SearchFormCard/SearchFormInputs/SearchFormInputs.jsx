@@ -12,10 +12,6 @@ function SearchFormInputs() {
     setTonality,
     documentCount,
     setDocumentCount,
-    startDate,
-    endDate,
-    handleStartDateChange,
-    handleEndDateChange,
   } = useSearchFormHook();
 
   return (
@@ -62,17 +58,9 @@ function SearchFormInputs() {
     </div>
 
     <div className={styles.leftBlock_dateInputs}>
-      <DateInput
-        selectedDate={startDate}
-        onChange={handleStartDateChange}
-        placeholder="Дата начала"
-      />
-
-      <DateInput
-        selectedDate={endDate}
-        onChange={handleEndDateChange}
-        placeholder="Дата конца"
-      />
+      <section className={styles.leftBlock_dateInputs}>
+        <DateInput/>
+      </section>
     </div>
   </label>
   )

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import CarouselCard from './CarouselCard';
 import CarouselArrowLeft from './arrows/CarouselArrowLeft';
 import CarouselArrowRight from './arrows/CarouselArrowRight';
-import { allCards } from './cardsData'; // Импорт данных
+import {allCards} from './cardsData'; // Импорт данных
 import styles from './Carousel.module.scss'; // Импорт стилей
 
 function Carousel() {
@@ -20,15 +20,22 @@ function Carousel() {
 
   return (
     <div className={styles.carousel}>
-      <CarouselArrowLeft onClick={prevCard} />
 
-      <div className={styles.cards} style={{ transform: `translateX(-${position * 430}px)` }}>
-        {allCards.map((card, index) => (
-          <CarouselCard key={index} {...card} />
-        ))}
+      <div className={styles.carousel__leftArrow}>
+        <CarouselArrowLeft onClick={prevCard}/>
       </div>
 
-      <CarouselArrowRight onClick={nextCard} />
+      <div className={styles.cardsWrapper}>
+        <div className={styles.cardsWrapper__cards} style={{transform: `translateX(-${position * 430}px)`}}>
+          {allCards.map((card, index) => (
+            <CarouselCard key={index} {...card} />
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.carousel__rightArrow}>
+        <CarouselArrowRight onClick={nextCard}/>
+      </div>
     </div>
   );
 }

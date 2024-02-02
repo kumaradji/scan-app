@@ -1,205 +1,180 @@
 /* BusinessTariffCard/BusinessTariffCard.module.scss */
 
 @import '../../../styles/mixins/_typography';
+@import '../../../styles/mixins/_var';
 
 .container {
   width: 415px;
   height: 540px;
-  background: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  border: 2px #000000 solid;
+  border: 2px #7ce3e1 solid;
   position: relative;
   margin-top: 70px;
-  margin-bottom: 118px;
-}
+  margin-bottom: 80px;
 
-.blackTop {
-  width: 413px;
-  height: 132px;
-  background: #000000;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+  &__blackTop {
+    width: 413px;
+    height: 132px;
+    background: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
-.iconNotebook {
-  width: 93px;
-  height: 84px;
-  position: absolute;
-  top: 11px;
-  left: 310px;
-}
-
-.moreBusinessButton {
-  width: 355px;
-  height: 59px;
-  background: #5970ff;
-  border-radius: 5px;
-  position: absolute;
-  top: 457px;
-  left: 30px;
-  transition: background-color 0.3s ease;
-
-  &:active {
-    background-color: darken(#5970ff, 10%);
+    &_iconNotebook {
+      width: 93px;
+      height: 84px;
+      margin-top: -120px;
+      margin-left: 310px;
+    }
   }
 
-  .moreText {
-    color: #ffffff;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.20px;
-    word-wrap: break-word;
-    position: absolute;
-    top: 18px;
-    left: 120px;
-  }
-}
-
-.title {
-  color: #ffffff;
-  font-size: 30px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.30px;
-  word-wrap: break-word;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
-
-.infoTextTitle {
-  color: #ffffff;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.18px;
-  word-wrap: break-word;
-  position: absolute;
-  top: 76px;
-  left: 30px;
-}
-
-.infoText {
-  color: black;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.18px;
-  word-wrap: break-word;
-  position: absolute;
-  top: 165px;
-  left: 30px;
-
-  .price {
-    margin-top: 33px;
-    color: black;
+  &__title {
+    color: $white;
     font-size: 30px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     letter-spacing: 0.30px;
     word-wrap: break-word;
+    position: absolute;
+    top: 30px;
+    left: 30px;
   }
 
-  .priceHigh {
-    margin-top: 168px;
-    margin-left: 19px;
-    color: black;
-    opacity: 0.50;
-    font-size: 25px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-style: inherit;
-    letter-spacing: 0.25px;
-    word-wrap: break-word;
-  }
-}
-
-.currentTariffLabel {
-  color: white;
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.14px;
-  word-wrap: break-word;
-  position: absolute;
-  top: 147px;
-  left: 284px;
-}
-
-.includedItems {
-  width: 341px;
-  height: 110px;
-  background: white;
-  border-radius: 10px;
-  position: absolute;
-  top: 292px;
-  left: 30px;
-
-  .item {
+  &__moreBusinessButton {
+    width: 355px;
+    height: 59px;
+    background: $blue;
+    border-radius: 5px;
+    margin-top: 305px;
+    margin-left: 30px;
     display: flex;
     align-items: center;
-    color: black;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.20px;
-    word-wrap: break-word;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    &_moreText {
+      color: $white;
+      font-size: 20px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.20px;
+      word-wrap: break-word;
+    }
+
+    &:active {
+      background-color: darken($blue, 10%);
+    }
   }
 
-  .icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-
-  .supportLabel {
-    color: black;
+  &__infoTextTitle {
+    color: $white;
     font-size: 18px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     letter-spacing: 0.18px;
     word-wrap: break-word;
     position: absolute;
-    top: 88px;
-    left: 28px;
+    top: 76px;
+    left: 30px;
   }
 
-  .item1 {
-    @include labelStyles;
-    top: 0;
-    left: 28px;
+  &__priceTitle {
+    color: black;
+    margin-top: -350px;
+    margin-left: 30px;
+
+    &_infoText {
+      color: black;
+      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.18px;
+      word-wrap: break-word;
+      top: 165px;
+      left: 30px;
+    }
+
+    &_price {
+      margin-top: 33px;
+      color: black;
+      font-size: 30px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.30px;
+      word-wrap: break-word;
+    }
+
+    &_priceHigh {
+      margin-top: 168px;
+      margin-left: 19px;
+      color: black;
+      opacity: 0.50;
+      font-size: 25px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.25px;
+      word-wrap: break-word;
+    }
   }
 
-  .item2 {
-    @include labelStyles;
-    top: 34px;
-    left: 28px;
+  &__tariffItemsList {
+    margin-top: 73px;
+    margin-left: 30px;
   }
+}
 
-  .item3 {
-    @include labelStyles;
-    top: 61px;
-    left: 28px;
-  }
+@media (max-width: 767px) {
+  .container {
+    width: 335px;
+    height: 472px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+    margin-left: 14px;
 
-  .icon1 {
-    top: 35px;
-    left: 0;
-  }
+    &__blackTop {
+      width: 333px;
+      height: 132px;
 
-  .icon2 {
-    top: 62px;
-    left: 0;
-  }
+      &_iconNotebook {
+        width: 69px;
+        height: 75px;
+        margin-top: -125px;
+        margin-left: 255px;
+      }
+    }
 
-  .icon3 {
-    top: 89px;
-    left: 0;
+    &__title {
+      font-size: 30px;
+      letter-spacing: 0.30px;
+      top: 30px;
+      left: 24px;
+    }
+
+    &__priceTitle {
+      width: 273px;
+      margin-top: -260px;
+      margin-left: 24px;
+    }
+
+    &__tariffItemsList {
+      width: 305px;
+      margin-top: 35px;
+      margin-left: 25px;
+    }
+
+    &__moreBusinessButton {
+      width: 287px;
+      margin-left: 24px;
+      margin-top: 220px;
+
+      &_moreText {
+        font-size: 18px;
+        letter-spacing: 0.18px;
+      }
+    }
+
+    &__infoTextTitle {
+      left: 24px;
+    }
   }
 }

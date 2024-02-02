@@ -20,17 +20,25 @@
 		margin-left: 60px;
 		margin-right: 60px;
 	}
+
+	&__blueCloudImageM {
+		display: none;
+	}
 }
 
 @media (max-width: 767px) {
 	.mainPage {
 		display: block;
-
 		width: 375px;
 		height: 3518px;
 
 		&__upperBlocks {
 			display: block;
+		}
+
+		&__blueCloudImageM {
+			width: 232px;
+			height: auto;
 		}
 
 		&__tariffCardSection {
