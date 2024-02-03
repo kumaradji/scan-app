@@ -6,7 +6,6 @@ import styles from "./DateInput.module.scss";
 import useSearchFormHook from "../../../../hooks/useSearchFormHook";
 
 function DateInput({ selectedDate, onChange, placeholder }) {
-
   const {
     handleEndDateChange,
     handleStartDateChange,
@@ -18,11 +17,10 @@ function DateInput({ selectedDate, onChange, placeholder }) {
         <label className={styles.container__datePickerContainer_dateLabel}>
           Дата начала:
         </label>
-
         <DatePicker
-          selected={startDate}
+          selected={selectedDate}
           onChange={handleStartDateChange}
-          placeholderText="Выберите дату"
+          placeholderText={placeholder}
         />
       </div>
 
@@ -30,11 +28,10 @@ function DateInput({ selectedDate, onChange, placeholder }) {
         <label className={styles.container__datePickerContainer_dateLabel}>
           Дата конца:
         </label>
-
         <DatePicker
-          selected={endDate}
+          selected={selectedDate}
           onChange={handleEndDateChange}
-          placeholderText="Выберите дату"
+          placeholderText={placeholder}
         />
       </div>
     </div>
@@ -42,4 +39,3 @@ function DateInput({ selectedDate, onChange, placeholder }) {
 }
 
 export default DateInput;
-

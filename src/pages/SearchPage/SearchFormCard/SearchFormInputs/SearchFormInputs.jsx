@@ -15,52 +15,50 @@ function SearchFormInputs() {
   } = useSearchFormHook();
 
   return (
-  <label className={styles.leftBlock}>
+  <label className={styles.container}>
 
-    <section className={styles.leftBlock__inn}>
-    <div className={styles.leftBlock__inn__label}>
+    <section className={styles.container__inn}>
+    <div className={styles.container__inn__label}>
       ИНН компании:*
     </div>
     <input
-      className={styles.leftBlock__inn__input}
+      className={styles.container__inn__input}
       type="text"
       value={inn}
       onChange={(e) => setInn(e.target.value)}
     />
     </section>
 
-    <section className={styles.leftBlock__tonality}>
-    <div className={styles.leftBlock__tonality__label}>
+    <section className={styles.container__tonality}>
+    <div className={styles.container__tonality__label}>
       Тональность
     </div>
     <input
-      className={styles.leftBlock__tonality__input}
+      className={styles.container__tonality__input}
       type="text"
       value={tonality}
       onChange={(e) => setTonality(e.target.value)}
     />
     </section>
 
-    <section className={styles.leftBlock__documentCount}>
-    <div className={styles.leftBlock__documentCount__label}>
+    <section className={styles.container__documentCount}>
+    <div className={styles.container__documentCount__label}>
       Количество документов в выдаче*
     </div>
     <input
-      className={styles.leftBlock__documentCount__input}
+      className={styles.container__documentCount__input}
       type="number"
       value={documentCount}
       onChange={(e) => setDocumentCount(e.target.value)}
     />
     </section>
 
-    <div className={styles.leftBlockLabel}>
+    <div className={styles.container__leftBlockLabel}>
       Диапазон поиска*
     </div>
 
-    <div className={styles.leftBlock_dateInputs}>
-      <section className={styles.leftBlock_dateInputs}>
+    <div className={styles.container__dateInputs}>
         <DateInput/>
-      </section>
     </div>
   </label>
   )
