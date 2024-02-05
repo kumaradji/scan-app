@@ -13,14 +13,12 @@ function SearchFormCard() {
     handleSearchClick,
   } = useSearchFormHook();
 
-  return (
-    <div className={styles.container}>
-
+  return <>
       {/*левая часть карточки*/}
       <SearchFormInputs />
 
       {/*правая часть картоки*/}
-      <label className={styles.rightBlock}>
+      <label className={styles.container__rightBlock}>
         <CheckboxList
           items={[
             'Признак максимальной полноты',
@@ -37,19 +35,16 @@ function SearchFormCard() {
       </label>
 
       {/*кнопка и надпись под ней*/}
-      <section className={styles.searchButtonSection}>
-        <Button className={styles.searchButtonSection__searchButton} onClick={handleSearchClick}>
-          <div className={styles.searchButtonSection__searchButton__ButtonText}>
-            Поиск
-          </div>
-        </Button>
-        <div className={styles.searchButtonSection__rightBlockSmallText}>
-          * Обязательные к заполнению поля
+      <Button className={styles.container__searchButton} onClick={handleSearchClick}>
+        <div className={styles.container__searchButton__ButtonText}>
+          Поиск
         </div>
-      </section>
+      </Button>
+      <div className={styles.container__rightBlockSmallText}>
+        * Обязательные к заполнению поля
+      </div>
 
-    </div>
-  );
+    </>;
 
 }
 

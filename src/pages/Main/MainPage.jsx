@@ -6,7 +6,7 @@ import ImageRightBlock from './ImageRightBlock/ImageRightBlock';
 import MainTitleTextBlock from './MainTitleTextBlock/MainTitleTextBlock';
 import Carousel from '../../components/Carousel/Carousel';
 import styles from './MainPage.module.scss';
-import '../../styles/fonts.scss';
+// import '../../styles/_fonts.scss';
 import BlueCloudImage from "./BlueCloudImage/BlueCloudImage";
 import TitleTextBlock02 from "./SecondTitleTextBlock/SecondTitleTextBlock";
 import BeginnerTariffCard from "./BeginnerTariffCard/BeginnerTariffCard";
@@ -40,9 +40,6 @@ const MainPage = () => {
       <Carousel/>
 
       <BlueCloudImage/>
-
-      {/*<img className={styles.mainPage__blueCloudImageM} src={BlueCloudImageM} alt="BlueCloudImageM"/>*/}
-
       <TitleTextBlock02/>
 
       <section className={styles.mainPage__tariffCardSection}>

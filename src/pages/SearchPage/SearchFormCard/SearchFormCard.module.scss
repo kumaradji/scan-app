@@ -5,16 +5,15 @@
 .container {
 	width: 872px;
 	height: 543px;
-	left: 0;
-	top: 0;
-	position: absolute;
-	background: $white;
+	//left: 0;
+	//top: 0;
+	position: relative;
 	box-shadow: 0 0 20px $shadow;
+	align-items: center;
 	border-radius: 10px;
 	margin-top: 20px;
 	margin-bottom: 64px;
 	margin-left: 53px;
-	align-items: center;
 
 	&__inn {
 		width: 100%;
@@ -112,31 +111,27 @@
 		margin-left: 44px;
 		margin-top: -1225px;
 	}
-}
 
-.rightBlock {
-	width: 428px;
-	height: auto;
-	left: 496px;
-	margin-top: 83px;
-	position: absolute;
+	&__rightBlock {
+		width: 428px;
+		height: auto;
+		left: 496px;
+		margin-top: -570px;
+		position: absolute;
 
-	.checkboxList {
-		li {
-			label {
-				input {
-				}
+		&__checkboxList {
+			li {
+				label {
+					input {
+					}
 
-				&:hover {
-					cursor: pointer;
+					&:hover {
+						cursor: pointer;
+					}
 				}
 			}
 		}
 	}
-}
-
-.searchButtonSection {
-	position: absolute;
 
 	&__rightBlockSmallText {
 		font-size: 14px;
@@ -145,8 +140,8 @@
 		font-weight: 400;
 		letter-spacing: 0.42px;
 		word-wrap: break-word;
-		margin-top: 524px;
-		margin-left: 560px;
+		margin-top: -115px;
+		margin-left: 580px;
 	}
 
 	&__searchButton {
@@ -156,8 +151,8 @@
 		position: absolute;
 		box-shadow: 0 0 20px $shadow-light;
 		border-radius: 5px;
-		margin-top: 460px;
-		margin-left: 581px;
+		margin-top: -190px;
+		margin-left: 580px;
 
 		&__ButtonText {
 			color: $white;
@@ -169,7 +164,6 @@
 		}
 	}
 }
-
 
 // адаптивная верстка
 @media (max-width: 767px) {

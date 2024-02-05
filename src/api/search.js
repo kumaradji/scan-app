@@ -1,38 +1,28 @@
 // api/search.js
+import axios from 'axios';
 
-import SwaggerClient from 'swagger-client';
-
-const swaggerSpec = await SwaggerClient.resolve({url: 'https://gateway.scan-interfax.ru/swagger/docs/v1'});
+const BASE_URL = 'https://gateway.scan-interfax.ru/api/v1';
 
 export const searchCompaniesByINN = async (inn, additionalFilters = {}) => {
-
   try {
-
     const token = localStorage.getItem('accessToken');
 
-    if(!token) {
-      throw new Error('Токен не найден');
+    if (!token) {
+      throw new Error('Токен доступа не найден');
     }
 
-    const params = {
+    const response = await axios.post(`${BASE_URL}/search/companies`, {
       companyCode: inn,
       excludeBranchCompanies: true,
-      ...additionalFilters
-    };
-
-    const response = await swaggerSpec.execute({
-      path: '/search/companies',
-      method: 'POST',
-      parameters: {
-        Authorization: `Bearer ${token}`
+      ...additionalFilters,
+    }, {
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
-      body: params
     });
 
     return response.data;
-
-  } catch(error) {
+  } catch (error) {
     throw error;
   }
-
 };

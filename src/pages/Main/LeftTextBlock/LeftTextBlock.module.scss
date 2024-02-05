@@ -1,16 +1,13 @@
 // LeftTextBlock.module.scss
 
 .leftTextBlock {
-	margin-top: 69px;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
 	min-width: 743px;
 	max-width: 950px;
-	padding-left: 60px;
-	position: relative;
-	right: -5px;
-	z-index: 1;
 
 	&__leftText {
-		width: auto;
 		color: #000;
 		font-family: 'FerryBlack', sans-serif;
 		font-size: 3.75rem;
@@ -22,13 +19,18 @@
 
 	&__leftSmallText {
 		width: 534px;
+		margin-top: 25px;
 		color: #000;
 		font-family: 'Inter', sans-serif;
-		font-size: 1.25rem; // Adjust font size using rem units
+		font-size: 1.25rem;
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
 		letter-spacing: 0.2px;
+	}
+
+	&__buttonBlue {
+		margin-top: 70px;
 	}
 
 	&__buttonBlueUnderText {
