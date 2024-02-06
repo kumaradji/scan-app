@@ -1,10 +1,14 @@
-/* Button.module.css */
+/* Button.module.scss */
 
 .button {
-    width: 335px;
-    height: 59px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: #5970FF;
-    box-shadow: 0 0 20px rgba(89, 112, 255, 0.2);
+  width: 335px;
+  height: 59px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #5970ff;
+  box-shadow: 0 0 20px rgba(89, 112, 255, 0.2);
+}
+
+.button_active {
+  background: #d63031;
 }

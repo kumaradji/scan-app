@@ -3,7 +3,7 @@
 @import '../../../styles/mixins/_typography';
 @import '../../../styles/mixins/_var';
 
-.container {
+.beginnerTariffCard {
 	width: 415px;
 	height: 540px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -12,207 +12,206 @@
 	position: relative;
 	margin-top: 70px;
 	margin-bottom: 80px;
+}
 
-	&__orangeTop {
-		width: 413px;
-		height: 132px;
-		background: #FFB64F;
-		border-top-left-radius: 10px;
-		border-top-right-radius: 10px;
+.beginnerTariffCard__orangeTop {
+	width: 413px;
+	height: 132px;
+	background: #FFB64F;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
 
-		&_iconLightBulb {
-			width: 93px;
-			height: 84px;
-			margin-top: -120px;
-			margin-left: 310px;
-		}
-	}
+.beginnerTariffCard__orangeTop_icon {
+	width: 93px;
+	height: 84px;
+	margin-top: -120px;
+	margin-left: 310px;
+}
 
-	&__title {
+.beginnerTariffCard__title {
+	color: black;
+	font-size: 30px;
+	font-family: 'Inter', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.30px;
+	word-wrap: break-word;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.beginnerTariffCard__blueStripe {
+	width: 134px;
+	height: 24px;
+	background: #3BA5E0;
+	border-radius: 10px;
+	position: absolute;
+	top: 144px;
+	left: 271px;
+}
+
+.beginnerTariffCard__currentTariffLabel {
+	@include text-base;
+	color: white;
+	position: absolute;
+	word-wrap: break-word;
+	margin-top: -367px;
+	margin-left: 284px;
+}
+
+.beginnerTariffCard__personalCabinetButton {
+	width: 355px;
+	height: 59px;
+	background: #D2D2D2;
+	border-radius: 5px;
+	margin-top: 305px;
+	margin-left: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.beginnerTariffCard__personalCabinetButton_active {
+	background-color: darken(#D2D2D2, 10%);
+}
+
+.beginnerTariffCard__personalCabinetButton_text {
 		color: black;
-		font-size: 30px;
+		font-size: 20px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.20px;
+		word-wrap: break-word;
+}
+
+.beginnerTariffCard__infoTitle {
+	color: black;
+	font-size: 18px;
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.18px;
+	word-wrap: break-word;
+	position: absolute;
+	top: 76px;
+	left: 30px;
+}
+
+.beginnerTariffCard__priceTitle {
+	color: black;
+	margin-top: -350px;
+	margin-left: 30px;
+}
+
+.beginnerTariffCard__priceTitle_infoText {
+	color: black;
+	font-size: 18px;
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.18px;
+	word-wrap: break-word;
+	top: 165px;
+	left: 30px;
+}
+
+.beginnerTariffCard__priceTitle_price {
+	margin-top: 33px;
+	color: black;
+	font-size: 30px;
+	font-family: 'Inter', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.30px;
+	word-wrap: break-word;
+}
+
+.beginnerTariffCard__priceTitle_priceHigh {
+		margin-top: 168px;
+		margin-left: 19px;
+		color: black;
+		opacity: 0.50;
+		font-size: 25px;
 		font-family: 'Inter', sans-serif;
 		font-weight: 500;
-		letter-spacing: 0.30px;
+		letter-spacing: 0.25px;
 		word-wrap: break-word;
-		position: absolute;
-		top: 30px;
-		left: 30px;
 	}
 
-	&__blueStripe {
-		width: 134px;
-		height: 24px;
-		background: #3BA5E0;
-		border-radius: 10px;
-		position: absolute;
-		top: 144px;
-		left: 271px;
-	}
-
-	&__currentTariffLabel {
-		@include text-base;
-		color: white;
-		position: absolute;
-		word-wrap: break-word;
-		margin-top: -367px;
-		margin-left: 284px;
-	}
-
-	&__personalCabinetButton {
-		width: 355px;
-		height: 59px;
-		background: #D2D2D2;
-		border-radius: 5px;
-		margin-top: 305px;
-		margin-left: 30px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		&_personalCabinetText {
-			color: black;
-			font-size: 20px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 400;
-			letter-spacing: 0.20px;
-			word-wrap: break-word;
-		}
-
-		&:active {
-			background-color: darken(#D2D2D2, 10%);
-		}
-	}
-
-	&__infoTextTitle {
+.beginnerTariffCard__priceTitle_currency {
 		color: black;
 		font-size: 18px;
 		font-family: 'Inter', sans-serif;
 		font-weight: 400;
 		letter-spacing: 0.18px;
 		word-wrap: break-word;
-		position: absolute;
-		top: 76px;
-		left: 30px;
 	}
 
-	&__priceTitle {
-		color: black;
-		margin-top: -350px;
-		margin-left: 30px;
-
-		&_infoText {
-			color: black;
-			font-size: 18px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 400;
-			letter-spacing: 0.18px;
-			word-wrap: break-word;
-			top: 165px;
-			left: 30px;
-		}
-
-		&_price {
-			margin-top: 33px;
-			color: black;
-			font-size: 30px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 500;
-			letter-spacing: 0.30px;
-			word-wrap: break-word;
-		}
-
-		&_priceHigh {
-			margin-top: 168px;
-			margin-left: 19px;
-			color: black;
-			opacity: 0.50;
-			font-size: 25px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 500;
-			letter-spacing: 0.25px;
-			word-wrap: break-word;
-		}
-
-		&_currency {
-			color: black;
-			font-size: 18px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 400;
-			letter-spacing: 0.18px;
-			word-wrap: break-word;
-		}
-	}
-
-	&__tariffItemsList {
-		margin-top: 73px;
-		margin-left: 30px;
-	}
+.beginnerTariffCard__tariffItemsList {
+	margin-top: 73px;
+	margin-left: 30px;
 }
 
 
 @media (max-width: 767px) {
-	.container {
+	.beginnerTariffCard {
 		width: 335px;
 		height: 512px;
 		margin-top: 70px;
 		margin-bottom: 80px;
 		margin-left: 14px;
+	}
 
-		&__orangeTop {
-			width: 333px;
-			height: 132px;
+	.beginnerTariffCard__orangeTop {
+		width: 333px;
+		height: 132px;
+	}
 
-			&_iconLightBulb {
-				width: 59px;
-				height: 54px;
-				margin-top: -120px;
-				margin-left: 265px;
-			}
-		}
+	.beginnerTariffCard__orangeTop_icon {
+		width: 59px;
+		height: 54px;
+		margin-top: -120px;
+		margin-left: 265px;
+	}
 
-		&__title {
-			font-size: 20px;
-			letter-spacing: 0.20px;
-			top: 30px;
-			left: 24px;
-		}
+	.beginnerTariffCard__title {
+		font-size: 20px;
+		letter-spacing: 0.20px;
+		top: 30px;
+		left: 24px;
+	}
 
-		&__blueStripe {
-			display: none;
-		}
+	.beginnerTariffCard__blueStripe {
+		display: none;
+	}
 
-		&__currentTariffLabel {
-			display: none;
-		}
+	.beginnerTariffCard__currentTariffLabel {
+		display: none;
+	}
 
-		&__priceTitle {
-			width: 273px;
-			margin-top: -330px;
-			margin-left: 24px;
-		}
+	.beginnerTariffCard__personalCabinetButton {
+		width: 287px;
+		margin-left: 24px;
+		margin-top: 275px;
+	}
 
-		&__tariffItemsList {
-			width: 305px;
-			margin-top: 55px;
-			margin-left: 25px;
-		}
+	.beginnerTariffCard__personalCabinetButton_text {
+		font-size: 18px;
+		letter-spacing: 0.18px;
+	}
 
-		&__personalCabinetButton {
-			width: 287px;
-			margin-left: 24px;
-			margin-top: 275px
-		;
+	.beginnerTariffCard__priceTitle {
+		width: 273px;
+		margin-top: -330px;
+		margin-left: 24px;
+	}
 
-			&_personalCabinetText {
-				font-size: 18px;
-				letter-spacing: 0.18px;
-			}
-		}
+	.beginnerTariffCard__tariffItemsList {
+		width: 305px;
+		margin-top: 55px;
+		margin-left: 25px;
+	}
 
-		&__infoTextTitle {
-			left: 24px;
-		}
+	.beginnerTariffCard__infoTitle {
+		left: 24px;
 	}
 }
 
