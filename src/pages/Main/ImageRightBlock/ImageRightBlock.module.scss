@@ -1,17 +1,20 @@
 /* ImageRightBlock/ImageRightBlock.module.css */
 
 .imageRightBlock {
+	position: absolute;
+	width: 629px;
+	height: 620px;
 	flex-shrink: 0;
-	margin-top: -10px;
-	margin-left: -220px;
+	left: 770px;
 }
 
 @media (max-width: 767px) {
 	.imageRightBlock {
+		position: relative;
+		left: 10px;
 		width: 348px;
 		height: 328px;
-		margin-left: 14px;
-		margin-top: 39px;
-	}
 
+	}
 }
+

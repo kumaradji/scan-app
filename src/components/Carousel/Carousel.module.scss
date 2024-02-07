@@ -3,39 +3,39 @@
 .carousel {
 	display: flex;
 	align-items: center;
-	max-width: 1340px;
+	//max-width: 1340px;
 	overflow: hidden;
-
-	&__leftArrow {
-		margin-right: -10px;
-	}
-
-	&__rightArrow {
-		margin-left: -10px;
-	}
 }
 
-.cardsWrapper {
-	width: 100%;
-	max-width: 1440px;
+.carousel__leftArrow {
+	margin-right: -10px;
+}
+
+.carousel__rightArrow {
+	margin-left: -10px;
+}
+
+.carousel__cardsWrapper {
+	display: flex;
+	width: 1290px;
+	flex-shrink: 0;
 	height: 260px;
 	align-items: center;
 	overflow: hidden;
-
-	&__cards {
-		display: flex;
-		flex-shrink: 0;
-		transition: transform 0.5s ease;
-		justify-content: flex-start;
-		align-items: center;
-		max-width: 1440px;
-		//position: relative;
-		//overflow: visible;
-	}
 }
 
+.carousel__cardsWrapper__cards {
+	display: flex;
+	flex-shrink: 0;
+	transition: transform 0.5s ease;
+	justify-content: flex-start;
+	align-items: center;
+	max-width: 1440px;
+	//position: relative;
+	//overflow: visible;
+}
 
-.card {
+.carousel__card {
 	width: 400px;
 	height: 225px;
 	margin-right: 15px;
@@ -45,7 +45,7 @@
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
 }
 
-.icon {
+.carousel__icon {
 	width: 65px;
 	height: 79px;
 	flex-shrink: 0;
@@ -53,7 +53,7 @@
 	margin-top: 22px;
 }
 
-.textBlock {
+.carousel__textBlock {
 	margin-left: 20px;
 	margin-bottom: 46px;
 	color: #000;
@@ -87,19 +87,18 @@
 		max-width: 375px;
 		margin-left: 0;
 		margin-right: 0;
-
-		&__leftArrow {
-			margin-right: 10px;
-		}
-
-		&__rightArrow {
-			margin-left: 0;
-		}
 	}
 
-	.card {
+	.carousel__leftArrow {
+		margin-right: 10px;
+	}
+
+	.carousel__rightArrow {
+		margin-left: 0;
+	}
+
+	.carousel__card {
 		width: 298px;
 		height: 188px;
 	}
-
-	}
+}

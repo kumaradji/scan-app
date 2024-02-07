@@ -15,7 +15,7 @@ const AuthenticatedUserInfo = ({userInfo, handleLogout}) => {
       <div className={styles.userInfo__userPanel}>
         {/* Фоновый прямоугольник */}
         <img
-          className={styles.userInfo__userPanel__userPanel_userPanelRectImg}
+          className={styles.userInfo__userPanelRect}
           src={userPanelRect}
           alt="userPanelRect"
         />
@@ -26,17 +26,17 @@ const AuthenticatedUserInfo = ({userInfo, handleLogout}) => {
         ) : (
           <>
             {isLoggedIn && (
-              <div className={styles.userInfo__userPanel__companyInfo}>
-                <div className={styles.userInfo__userPanel__companyInfoUsed}>
+              <div className={styles.userInfo__userPanelRect__companyInfo}>
+                <div className={styles.userInfo__userPanelRect__companyInfoUsed}>
                   {usedCompanies}
                 </div>
-                <div className={styles.userInfo__userPanel__companyInfoLimit}>
+                <div className={styles.userInfo__userPanelRect__companyInfoLimit}>
                   {companyLimit}
                 </div>
-                <div className={styles.userInfo__userPanel__companyInfoTextUsed}>
+                <div className={styles.userInfo__userPanelRect__companyInfoTextUsed}>
                   Использовано компаний
                 </div>
-                <div className={styles.userInfo__userPanel__companyInfoTextLimit}>
+                <div className={styles.userInfo__userPanelRect__companyInfoTextLimit}>
                   Лимит по компаниям
                 </div>
               </div>

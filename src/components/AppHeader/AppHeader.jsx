@@ -1,9 +1,8 @@
 // AppHeader.jsx
 
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './AppHeader.module.scss';
-import { logout, getUserInfo } from '../../api/auth';
-
+import {getUserInfo, logout} from '../../api/auth';
 import HeaderContent from './HeaderContent/HeaderContent';
 import AuthenticatedUserInfo from './AuthenticatedUserInfo/AuthenticatedUserInfo';
 import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/UnauthenticatedUserPanel';

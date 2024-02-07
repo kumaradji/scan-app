@@ -1,12 +1,11 @@
 // BeginnerTariffCard/BeginnerTariffCard.jsx
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./BeginnerTariffCard.module.scss";
 import LightBulbIcon from "../../../assets/icons/LightBulbTariff.svg";
 import ItemsList from "../../../assets/images/BigginerTariffList.jpeg";
 
 function BeginnerTariffCard() {
-
   const [isActive, setIsActive] = useState(false);
   const onMouseDown = () => {
     setIsActive(true);
@@ -17,7 +16,7 @@ function BeginnerTariffCard() {
 
   return (
     <section className={styles.beginnerTariffCard}>
-      <div className={styles.beginnerTariffCard__orangeTop}/>
+      <div className={styles.beginnerTariffCard__orangeTop} />
       <img
         className={styles.beginnerTariffCard__orangeTop_icon}
         src={LightBulbIcon}
@@ -26,7 +25,7 @@ function BeginnerTariffCard() {
 
       <div className={styles.beginnerTariffCard__title}>Beginner</div>
 
-      <div className={styles.beginnerTariffCard__blueStripe}/>
+      <div className={styles.beginnerTariffCard__blueStripe} />
 
       <div
         className={`

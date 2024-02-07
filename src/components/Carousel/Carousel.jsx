@@ -25,8 +25,11 @@ function Carousel() {
         <CarouselArrowLeft onClick={prevCard}/>
       </div>
 
-      <div className={styles.cardsWrapper}>
-        <div className={styles.cardsWrapper__cards} style={{transform: `translateX(-${position * 430}px)`}}>
+      <div className={styles.carousel__cardsWrapper}>
+        <div
+          className={styles.carousel__cardsWrapper__cards}
+          style={{transform: `translateX(-${position * 430}px)`}}
+        >
           {allCards.map((card, index) => (
             <CarouselCard key={index} {...card} />
           ))}

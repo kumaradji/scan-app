@@ -5,79 +5,66 @@
 	display: flex;
 	flex-shrink: 0;
 	align-items: center;
+}
 
-	/* Блок - панель пользователя */
-	.userInfo__userPanel {
-		position: relative;
-		width: 175px;
-		min-width: 175px;
-		height: 63px;
-		margin-right: 128px;
+/* Блок - панель пользователя */
+.userInfo__userPanel {
+	width: 175px;
+	min-width: 175px;
+	height: 63px;
+	margin-right: 128px;
+}
 
-		/* Элемент - прямоугольник панели */
-		&__userPanel_userPanelRectImg {
-			width: 100%;
-			height: auto;
-		}
+/* Элемент - прямоугольник панели */
+.userInfo__userPanelRect {
+	width: 100%;
+	height: auto;
+}
 
-		/* Блок - контейнер информации о компании */
-		&__companyInfo {
-			/* Элементы - информация о компании */
-			&Used,
-			&Limit,
-			&TextUsed,
-			&TextLimit {
-				position: absolute;
-			}
+/* Блок - контейнер информации о компании */
+.userInfo__userPanelRect__companyInfo {
 
-			&Used {
-				left: 140px;
-				top: 12px;
-				color: black;
-				font-size: 14px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 700;
-				word-wrap: break-word;
-			}
+	/* Элементы - информация о компании */
+	&Used {
+		margin-left: 140px;
+		margin-top: -50px;
+		color: black;
+		font-size: 14px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 700;
+		word-wrap: break-word;
+	}
 
-			&Limit {
-				left: 140px;
-				top: 31px;
-				color: #8AC540;
-				font-size: 14px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 700;
-				word-wrap: break-word;
-			}
+	&Limit {
+		margin-left: 140px;
+		margin-top: 0;
+		color: #8AC540;
+		font-size: 14px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 700;
+		word-wrap: break-word;
+	}
 
-			&TextUsed {
-				left: 10px;
-				top: 14px;
-				opacity: 0.40;
-				color: black;
-				font-size: 10px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 400;
-				word-wrap: break-word;
-			}
+	&TextUsed {
+		margin-left: 10px;
+		margin-top: -32px;
+		opacity: 0.40;
+		color: black;
+		font-size: 10px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		word-wrap: break-word;
+	}
 
-			&TextLimit {
-				left: 27px;
-				top: 33px;
-				opacity: 0.40;
-				color: black;
-				font-size: 10px;
-				font-family: 'Inter', sans-serif;
-				font-weight: 400;
-				word-wrap: break-word;
-			}
-
-			/* Элемент - текст для использованных компаний */
-			&TextUsed {}
-
-			/* Элемент - текст для лимита */
-			&TextLimit {}
-		}
+	&TextLimit {
+		margin-left: 27px;
+		margin-top: 5px;
+		opacity: 0.40;
+		color: black;
+		font-size: 10px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		word-wrap: break-word;
 	}
 }
 
@@ -86,7 +73,6 @@
 	/* Блок - текст юзера */
 	&__userNameText {
 		@include text-base;
-
 	}
 
 	/* Блок - текст выхода */
@@ -113,9 +99,6 @@
 @media (max-width: 767px) {
 	.userInfo {
 		display: none;
-
-		&__userPanel {
-			margin-right: 10px;
-		}
 	}
 }
+

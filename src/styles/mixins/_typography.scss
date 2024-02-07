@@ -26,6 +26,19 @@
   margin-top: 5px;
 }
 
+// Миксин для стилей ссылок
+@mixin link-disabled {
+  color: $gray-light;
+  text-decoration: none;
+  pointer-events: none;
+
+  &:hover {
+    color: $gray-light;
+    cursor: default;
+    text-decoration: none;
+  }
+}
+
 // Миксин для стилей текста в карточках тарифов
 @mixin itemStyles {
   color: black;

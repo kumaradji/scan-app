@@ -9,15 +9,15 @@ function CarouselCard({ icon, text }) {
   }
 
   return (
-    <div className={styles.card}>
-      <img src={icon} alt="Card Icon" className={styles.icon} />
-      <div className={styles.textBlock}>{text}</div>
+    <div className={styles.carousel__card}>
+      <img src={icon} alt="Card Icon" className={styles.carousel__icon} />
+      <div className={styles.carousel__textBlock}>{text}</div>
     </div>
   );
 }
 
 CarouselCard.propTypes = {
-  icon: PropTypes.string.isRequired, // Предполагается, что иконка предоставляется как строка с путем к изображению
+  icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };
 

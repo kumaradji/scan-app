@@ -7,7 +7,6 @@
 }
 
 .footer {
-	max-width: 1440px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -18,51 +17,50 @@
 	padding-left: 60px;
 	background-color: $green;
 	color: $white;
-
-	.logo {
-		width: 141px;
-		height: 141px;
-	}
-
-	.textBlock {
-		width: 199px;
-		text-align: right;
-		@include footer-text;
-		@include fontSize(14px);
-		margin-right: 45px;
-	}
-
-	.textMoscow { // Исправлено на textMoscow (возможно опечатка)
-		@include footer-text;
-		@include fontSize(14px);
-		color: $white; // Используйте переменную $white
-	}
-
-	.textCopyright {
-		@extend .textMoscow; // Исправлено на textMoscow
-		@include fontSize(12px);
-	}
 }
+
+.footer__logo {
+	width: 141px;
+	height: 141px;
+}
+
+.footer__textBlock {
+	@include footer-text;
+	@include fontSize(14px);
+	width: 199px;
+	text-align: right;
+}
+
+.footer__textCity {
+	@include footer-text;
+	@include fontSize(14px);
+	color: $white;
+}
+
+.footer__copyright {
+	@include fontSize(12px);
+}
+
 
 // адаптивная верстка
 @media (max-width: 767px) {
 	.footer {
 		height: 137px;
 		width: 375px;
-		margin-top: -100  px;
+		margin-top: -100 px;
 		padding: 0;
+	}
 
-		.logo {
-			width: 111px;
-			height: 111px;
-			margin-left: 18px;
-			margin-bottom: 30px;
-		}
+	.footer__logo {
+		width: 111px;
+		height: 111px;
+		margin-left: 18px;
+		margin-bottom: 30px;
+	}
 
-		.textBlock {
-			letter-spacing: 0.14px;
-			margin-right: 18px;
-		}
+	.footer__textBlock {
+		letter-spacing: 0.14px;
+		margin-right: 18px;
 	}
 }
 

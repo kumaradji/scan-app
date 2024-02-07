@@ -1,10 +1,8 @@
 // cardsData.js
-
 import icon1 from '../../assets/icons/card_01.png';
 import icon2 from '../../assets/icons/card_02.png';
 import icon3 from '../../assets/icons/card_03.png';
 import icon4 from '../../assets/icons/Vector.svg';
-
 
 const cards = [
   {

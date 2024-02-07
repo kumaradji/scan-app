@@ -1,102 +1,93 @@
 // HeaderContent.module.scss
 
-@import '../../../styles/mixins/_typography';
-@import '../../../styles/mixins/_var';
+@import "../../../styles/mixins/_typography";
+@import "../../../styles/mixins/_var";
 
-.header__content {
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	&__burger {
-		display: none;
-	}
-
-	&__logo {
-		width: 141px;
-		height: 141px;
-		//margin-right: 401px;
-
-		img {
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	/* Блок - навигационные ссылки */
-	&__menu {
-		@include text-base;
-		margin-left: 20px;
-		margin-right: 20px;
-		padding-right: 94px;
-		padding-left: 340px;
-
-		a,
-		span {
-			@include link;
-			color: #000;
-			margin-right: 25px;
-			margin-left: 25px;
-
-			&:hover {
-				@include link;
-			}
-		}
-
-		span:hover {
-			text-decoration: none;
-		}
-	}
+.headerContent {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.headerContent__burger {
+  display: none;
+}
+
+.headerContent__logo {
+  width: 141px;
+  height: 141px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Блок - навигационные ссылки */
+.headerContent__menu {
+  @include text-base;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-right: 94px;
+  padding-left: 340px;
+
+  a,
+  span {
+    @include link;
+    color: #000;
+    margin-right: 25px;
+    margin-left: 25px;
+
+    &:hover {
+      @include link;
+    }
+  }
+
+  span:hover {
+    text-decoration: none;
+  }
+}
+
+.headerContent__navLink {
+  @include link;
+
+  color: #000;
+  margin-right: 25px;
+  margin-left: 25px;
+
+  &:hover {
+    @include link;
+  }
+
+  &_disabled {
+    @include link-disabled;
+  }
+}
+
 
 // адаптивная верстка
 @media (max-width: 767px) {
-	.header__content {
-		display: flex;
-		align-items: center;
-		position: relative;
+  .headerContent {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
 
-		&__burger {
-			display: block;
-			//position: relative;
-			width: 30px;
-			height: 25px;
+  .headerContent__burger {
+    display: block;
+    width: 30px;
+    height: 25px;
+  }
 
-			//&:before,
-			//&:after,
-			//& span {
-			//	content: '';
-			//	position: absolute;
-			//	left: 0;
-			//	width: 100%;
-			//	height: 5px;
-			//	background: #029491;
-			//}
-			//
-			//&:before {
-			//	top: 0;
-			//}
-			//
-			//&:after {
-			//	bottom: 0;
-			//}
-			//
-			//& span {
-			//	top: 10px;
-			//}
-		}
+  .headerContent__logo {
+    width: 111px;
+    height: 111px;
+    margin-right: 194px;
+  }
 
-		&__logo {
-			width: 111px;
-			height: 111px;
-			margin-right: 194px;
-		}
-
-		/* Блок - навигационные ссылки */
-		&__navLinks {
-			display: none;
-		}
-	}
+  /* Блок - навигационные ссылки */
+  .headerContent__menu {
+    display: none;
+  }
 }
-

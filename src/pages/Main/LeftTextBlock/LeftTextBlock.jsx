@@ -12,7 +12,7 @@ const LeftTextBlock = () => {
 
   return (
     <section className={styles.leftTextBlock}>
-      <div className={styles.leftTextBlock__leftText}>
+      <div className={styles.leftTextBlock__title}>
         <p>
           сервис по поиску публикаций
           <br/>

@@ -1,55 +1,59 @@
 /* MainPage.module.scss */
 
 .mainPage {
-	display: flex;
-	flex-direction: column;
-	max-width: 100%;
-	height: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: auto;
+  padding: 20px 60px 0 60px;
+}
 
-	padding: 20px 60px 0 60px;
+.mainPage__upperBlocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1440px;
+  padding-bottom: 120px;
+}
 
-	&__upperBlocks {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		width: 100%;
-	}
+.mainPage__tariffCardSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
 
-	&__tariffCardSection {
-		display: flex;
-		justify-content: space-between;
-		//margin-left: 60px;
-		//margin-right: 60px;
-	}
-
-	&__blueCloudImageM {
-		display: none;
-	}
+.mainPage__blueCloudImage {
+  width: 1200px;
+  margin-top: 50px;
+  margin-left: 51px;
+  margin-right: 82px;
+  object-fit: cover;
 }
 
 @media (max-width: 767px) {
-	.mainPage {
-		display: block;
-		width: 375px;
-		height: 3518px;
+  .mainPage {
+    display: block;
+    width: 375px;
+    height: 3518px;
 
-		padding: 0 26px 0 14px;
+    padding: 0 26px 0 14px;
+  }
 
-		&__upperBlocks {
-			display: block;
-		}
+  .mainPage__upperBlocks {
+    display: block;
+  }
 
-		&__blueCloudImageM {
-			width: 232px;
-			height: auto;
-		}
+  .mainPage__tariffCardSection {
+    display: block;
+    margin-left: 14px;
+    margin-right: 26px;
+  }
 
-		&__tariffCardSection {
-			display: block;
-			margin-left: 14px;
-			margin-right: 26px;
-
-		}
-	}
-
+  .mainPage__blueCloudImage {
+    width: 891px;
+    height: 393px;
+    margin-top: 80px;
+    margin-right: -530px;
+    margin-left: 14px;
+  }
 }

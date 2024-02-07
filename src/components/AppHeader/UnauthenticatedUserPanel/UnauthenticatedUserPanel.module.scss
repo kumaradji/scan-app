@@ -3,37 +3,38 @@
 @import '../../../styles/mixins/_typography';
 @import '../../../styles/mixins/_var';
 
-.container {
+.unauthenticatedUser {
   @include text-base;
   display: flex;
   align-items: center;
   position: relative;
   justify-content: space-between;
+}
 
-  &_slash {
-    margin-right: 20px;
-    margin-left: 7px;
-  }
+.unauthenticatedUser__slash {
+  margin-right: 20px;
+  margin-left: 7px;
+}
 
-  &_link {
-    @include link;
-    margin-right: 49px;}
+.unauthenticatedUser__link {
+  @include link;
+  margin-right: 49px;
+}
 
+.unauthenticatedUser__button {
+  width: 65px;
+  height: 26px;
+  flex-shrink: 0;
+  margin-left: 11px;
+  margin-top: 0;
+  border-radius: 5px;
+  background: #7CE3E1;
+  color: black;
+}
 
-  &_button {
-    width: 65px;
-    height: 26px;
-    flex-shrink: 0;
-    margin-left: 11px;
-    margin-top: 0;
-    border-radius: 5px;
-    background: #7CE3E1;
-    color: black; /* Цвет текста */
-  }
-  // Адаптивные стили
-  @media (max-width: 767px) {
+// Адаптивные стили
+@media (max-width: 767px) {
+  .unauthenticatedUser {
     display: none;
   }
 }
-
-

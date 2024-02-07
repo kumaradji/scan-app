@@ -1,47 +1,48 @@
 // LeftTextBlock.module.scss
 
 .leftTextBlock {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
 	min-width: 743px;
-	max-width: 950px;
+	max-width: 550px;
+}
 
-	&__leftText {
-		color: #000;
-		font-family: 'FerryBlack', sans-serif;
-		font-size: 3.75rem;
-		font-style: normal;
-		font-weight: 900;
-		line-height: normal;
-		letter-spacing: 0.6px;
-	}
+.leftTextBlock__title {
+	color: #000;
+	font-family: 'FerryBlack', sans-serif;
+	font-size: 3.75rem;
+	font-style: normal;
+	font-weight: 900;
+	line-height: normal;
+	letter-spacing: 0.6px;
+}
 
-	&__leftSmallText {
-		width: 534px;
-		margin-top: 25px;
-		color: #000;
-		font-family: 'Inter', sans-serif;
-		font-size: 1.25rem;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-		letter-spacing: 0.2px;
-	}
+.leftTextBlock__leftSmallText {
+	width: 534px;
+	margin-top: 25px;
+	color: #000;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.25rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 0.2px;
+}
 
-	&__buttonBlue {
-		margin-top: 70px;
-	}
+.leftTextBlock__buttonBlue {
+	margin-top: 70px;
+}
 
-	&__buttonBlueUnderText {
-		color: #FFF;
-		font-family: 'Inter', sans-serif;
-		font-size: 1.375rem;
-		font-style: normal;
-		font-weight: 500;
-		line-height: normal;
-		letter-spacing: 0.22px;
-	}
+.leftTextBlock__buttonBlueUnderText {
+	color: #FFF;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.375rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 0.22px;
 }
 
 @media (max-width: 767px) {
@@ -49,27 +50,26 @@
 		display: block;
 		margin-top: 20px;
 		padding-left: 14px;
-
-		&__leftText {
-			width: 361px;
-			height: 136px;
-			font-size: 28px;
-			font-style: normal;
-			letter-spacing: 0.28px;
-		}
-
-		&__leftSmallText {
-			width: 327px;
-			height: 66px;
-			font-size: 18px;
-			letter-spacing: 0.18px;
-			margin-top: 19px;
-		}
-
-		&__buttonBlueUnderText {
-			font-size: 20px;
-			letter-spacing: 0.20px;
-		}
 	}
 
+	.leftTextBlock__title {
+		width: 361px;
+		height: 136px;
+		font-size: 28px;
+		font-style: normal;
+		letter-spacing: 0.28px;
+	}
+
+	.leftTextBlock__leftSmallText {
+		width: 327px;
+		height: 66px;
+		font-size: 18px;
+		letter-spacing: 0.18px;
+		margin-top: 19px;
+	}
+
+	.leftTextBlock__buttonBlueUnderText {
+		font-size: 20px;
+		letter-spacing: 0.20px;
+	}
 }
