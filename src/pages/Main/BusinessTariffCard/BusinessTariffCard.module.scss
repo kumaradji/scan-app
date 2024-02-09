@@ -1,7 +1,7 @@
 /* BusinessTariffCard/BusinessTariffCard.module.scss */
 
-@import '../../../styles/mixins/_typography';
-@import '../../../styles/mixins/_var';
+@import "../../../styles/mixins/_typography";
+@import "../../../styles/mixins/_var";
 
 .businessTariffCard {
   width: 415px;
@@ -32,9 +32,9 @@
 .businessTariffCard__title {
   color: $white;
   font-size: 30px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  letter-spacing: 0.30px;
+  letter-spacing: 0.3px;
   word-wrap: break-word;
   position: absolute;
   top: 30px;
@@ -46,12 +46,11 @@
   height: 59px;
   background: $blue;
   border-radius: 5px;
-  margin-top: 270px;
+  margin-top: 305px;
   margin-left: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
 }
 
 .businessTariffCard__moreBusinessButton_active {
@@ -61,48 +60,47 @@
 .businessTariffCard__moreText {
   color: $white;
   font-size: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
-  letter-spacing: 0.20px;
+  letter-spacing: 0.2px;
   word-wrap: break-word;
 }
 
 .businessTariffCard__moreBusinessButton_text {
-    color: $white;
-    font-size: 18px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.18px;
-    word-wrap: break-word;
-    position: absolute;
-    top: 76px;
-    left: 30px;
-  }
+  color: $white;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  word-wrap: break-word;
+  position: absolute;
+  top: 76px;
+  left: 30px;
+}
 
 .businessTariffCard__priceTitle {
   color: black;
-  margin-top: -330px;
+  margin-top: -360px;
   margin-left: 30px;
 }
 
 .businessTariffCard__infoText {
   color: black;
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   letter-spacing: 0.18px;
   word-wrap: break-word;
   margin-top: 13px;
-
 }
 
 .businessTariffCard__price {
   margin-top: 13px;
   color: black;
   font-size: 30px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  letter-spacing: 0.30px;
+  letter-spacing: 0.3px;
   word-wrap: break-word;
 }
 
@@ -110,9 +108,9 @@
   margin-top: 168px;
   margin-left: 19px;
   color: black;
-  opacity: 0.50;
+  opacity: 0.5;
   font-size: 25px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   letter-spacing: 0.25px;
   word-wrap: break-word;
@@ -124,57 +122,61 @@
 }
 
 @media (max-width: 767px) {
-  .container {
+  .businessTariffCard {
     width: 335px;
     height: 472px;
     margin-top: 70px;
     margin-bottom: 80px;
     margin-left: 14px;
+  }
 
-    &__blackTop {
-      width: 333px;
-      height: 132px;
+  .businessTariffCard__blackTop {
+    width: 333px;
+    height: 132px;
+  }
 
-      &_iconNotebook {
-        width: 69px;
-        height: 75px;
-        margin-top: -125px;
-        margin-left: 255px;
-      }
-    }
+  .businessTariffCard_iconNotebook {
+    width: 69px;
+    height: 75px;
+    margin-top: -125px;
+    margin-left: 255px;
+  }
 
-    &__title {
-      font-size: 30px;
-      letter-spacing: 0.30px;
-      top: 30px;
-      left: 24px;
-    }
+  .businessTariffCard__title {
+    font-size: 30px;
+    letter-spacing: 0.3px;
+    top: 30px;
+    left: 24px;
+  }
 
-    &__priceTitle {
-      width: 273px;
-      margin-top: -260px;
-      margin-left: 24px;
-    }
+  .businessTariffCard__moreBusinessButton {
+    width: 287px;
+    margin-left: 24px;
+    margin-top: 220px;
+  }
 
-    &__tariffItemsList {
-      width: 305px;
-      margin-top: 35px;
-      margin-left: 25px;
-    }
+  //.businessTariffCard__moreBusinessButton_active {
+  //  background-color: darken(blue, 10%);
+  //}
 
-    &__moreBusinessButton {
-      width: 287px;
-      margin-left: 24px;
-      margin-top: 220px;
+  .businessTariffCard__moreText {
+    font-size: 18px;
+    letter-spacing: 0.18px;
+  }
 
-      &_moreText {
-        font-size: 18px;
-        letter-spacing: 0.18px;
-      }
-    }
+  .businessTariffCard__priceTitle {
+    width: 273px;
+    margin-top: -260px;
+    margin-left: 24px;
+  }
 
-    &__infoTextTitle {
-      left: 24px;
-    }
+  .businessTariffCard__tariffItemsList {
+    width: 305px;
+    margin-top: 35px;
+    margin-left: 25px;
+  }
+
+  .businessTariffCard__infoText {
+    left: 24px;
   }
 }
