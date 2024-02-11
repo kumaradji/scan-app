@@ -1,6 +1,12 @@
 // ResultPage/TitleTextResultPage/TitleTextResultPage.module.scss
 
 .titleTextResultPage {
+
+  display: flex;
+  flex-direction: column;
+}
+
+.titleResultPage {
   max-width: 510px;
   color: #000;
   font-family: 'FerryBlack', sans-serif;
@@ -9,12 +15,22 @@
   font-weight: 900;
   line-height: normal;
   letter-spacing: 1.60px;
-  padding-top: 69px;
-  margin-left: 60px;
+}
 
-  .title-text {
-    white-space: pre-wrap;
-  }
+.titleTextResultPage__leftSmallText {
+  width: 533px;
+  //display: block;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  margin-top: 36px;
+}
 
 
+.titleTextResultPage__text {
+  white-space: pre-wrap;
 }

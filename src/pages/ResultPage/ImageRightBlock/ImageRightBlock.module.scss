@@ -1,10 +1,18 @@
 /* ResultPage/ImageRightBlock/ImageRightBlock.module.css */
 
 .imageRightBlock {
-    width: 533px;
-    height: 369px;
-    //margin-top: 25px;
-    margin-left: 190px;
-    padding-top: 25px;
-    margin-bottom: 84px;
+	width: 533px;
+	height: 369px;
+	margin-top: 25px;
+	margin-left: 190px;
+}
+
+
+@media (max-width: 767px) {
+	.imageRightBlock {
+		width: 533px;
+		height: 369px;
+		margin-left: 190px;
+		padding-top: 25px;
+	}
 }

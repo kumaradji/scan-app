@@ -1,8 +1,8 @@
-import React, { useReducer } from 'react';
+import React, {useReducer} from 'react';
 import CarouselCard from './CarouselCard';
-import CarouselArrowLeft from './arrows/CarouselArrowLeft';
-import CarouselArrowRight from './arrows/CarouselArrowRight';
-import { allCards } from './cardsData'; // Импорт данных
+import CarouselArrowLeft from './Arrows/CarouselArrowLeft';
+import CarouselArrowRight from './Arrows/CarouselArrowRight';
+import {allCards} from './cardsData'; // Импорт данных
 import styles from './Carousel.module.scss'; // Импорт стилей
 
 const initialState = {

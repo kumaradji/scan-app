@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import CarouselCard from './CarouselCard';
-import CarouselArrowLeft from './arrows/CarouselArrowLeft';
-import CarouselArrowRight from './arrows/CarouselArrowRight';
+import CarouselArrowLeft from './Arrows/CarouselArrowLeft';
+import CarouselArrowRight from './Arrows/CarouselArrowRight';
 import {allCards} from './cardsData'; // Импорт данных
 import styles from './Carousel.module.scss'; // Импорт стилей
 

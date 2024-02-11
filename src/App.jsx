@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<PrivateRoute element={<MainPage />} />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/results" element={<ResultPage />} />
+          <Route path="/result" element={<ResultPage />} />
         </Routes>
         <AppFooter />
       </AuthProvider>

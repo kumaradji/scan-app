@@ -42,20 +42,15 @@
 }
 
 .proTariffCard__moreButton {
+	@include moreButton;
 	width: 355px;
 	height: 59px;
-	background: $blue;
-	border-radius: 5px;
 	margin-top: 305px;
 	margin-left: 30px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: background-color 0.3s ease;
 }
 
 .proTariffCard__moreButton_active {
-	background-color: darken(blue, 10%);
+	background-color: darken($blue, 10%);
 }
 
 .proTariffCard__moreText {
@@ -68,30 +63,22 @@
 }
 
 .proTariffCard__infoTextTitle {
-	color: black;
-	font-size: 18px;
-	font-family: 'Inter', sans-serif;
-	font-weight: 400;
-	letter-spacing: 0.18px;
-	word-wrap: break-word;
+	@include labelStyles;
+	color: $black;
 	position: absolute;
 	top: 76px;
 	left: 30px;
 }
 
 .proTariffCard__priceTitle {
-	color: black;
+	@include labelStyles;
+	color: $black;
 	margin-top: -350px;
 	margin-left: 30px;
 }
 
 .proTariffCard__infoText {
 	color: black;
-	font-size: 18px;
-	font-family: 'Inter', sans-serif;
-	font-weight: 400;
-	letter-spacing: 0.18px;
-	word-wrap: break-word;
 	top: 165px;
 	left: 30px;
 }

@@ -1,29 +1,59 @@
 // pages/ResultPage/ResultPage.jsx
 
-import React from 'react';
+import React, {useState} from 'react';
 
 import styles from './ResultPage.module.scss';
 import TitleTextResultPage from "./TitleTextResultPage";
 import ImageRightBlock from "./ImageRightBlock";
-import LeftSmallText from "./LeftSmallText/LeftSmallText";
-import SecondTextResultPage from "./SecondTextResultPage/SecondTextResultPage";
+import TitleTextBlock from "../../components/TitleTextBlock/TitleTextBlock";
 
 const ResultPage = () => {
-
+  const [isActive, setIsActive] = useState(false);
+  const onMouseDown = () => {
+    setIsActive(true);
+  };
+  const onMouseUp = () => {
+    setIsActive(false);
+  };
 
   return (
-    <section className={styles.resultPage}>
-      <div className={styles.first_block}>
-        <TitleTextResultPage />
-        <ImageRightBlock />
-        <LeftSmallText />
-      </div>
-      <div className={styles.second_block}>
-        <SecondTextResultPage />
-
+    <main className={styles.resultPage}>
+      <div className={styles.resultPage__upperBlocks}>
+        <TitleTextResultPage/>
+        <ImageRightBlock/>
       </div>
 
-    </section>
+      <div className={styles.resultPage__secondBlock}>
+
+        <TitleTextBlock
+          text="Общая сводка"
+          additionalStyles={styles.resultPage__titleTextBlock01}
+        />
+
+        <TitleTextBlock
+          text="Список документов"
+          additionalStyles={styles.resultPage__titleTextBlock02}
+        />
+
+
+
+
+
+
+        <div
+          className={`
+          ${styles.resultPage__moreButton} 
+          ${isActive && styles.resultPage__moreButton_active}
+        `}
+          onMouseDown={onMouseDown}
+          onMouseUp={onMouseUp}
+        >
+          <div className={styles.resultPage__moreText}>
+            Показать больше
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 

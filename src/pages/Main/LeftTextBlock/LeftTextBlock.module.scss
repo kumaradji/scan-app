@@ -1,4 +1,6 @@
 // LeftTextBlock.module.scss
+@import "../../../styles/mixins/_typography";
+@import "../../../styles/mixins/_var";
 
 .leftTextBlock {
 	position: relative;
@@ -7,22 +9,24 @@
 	flex-shrink: 0;
 	min-width: 743px;
 	max-width: 550px;
+	margin-top: 45px;
 }
 
 .leftTextBlock__title {
-	color: #000;
+	color: $black;
 	font-family: 'FerryBlack', sans-serif;
 	font-size: 3.75rem;
 	font-style: normal;
 	font-weight: 900;
 	line-height: normal;
 	letter-spacing: 0.6px;
+	z-index: 1;
 }
 
 .leftTextBlock__leftSmallText {
 	width: 534px;
-	margin-top: 25px;
-	color: #000;
+	margin-top: 20px;
+	color: $black;
 	font-family: 'Inter', sans-serif;
 	font-size: 1.25rem;
 	font-style: normal;
@@ -31,12 +35,16 @@
 	letter-spacing: 0.2px;
 }
 
-.leftTextBlock__buttonBlue {
+.leftTextBlock__fetchButton {
 	margin-top: 70px;
 }
 
-.leftTextBlock__buttonBlueUnderText {
-	color: #FFF;
+.leftTextBlock__fetchButton_active {
+	background-color: darken($blue, 10%);
+}
+
+.leftTextBlock__fetchButton__text {
+	color: $white;
 	font-family: 'Inter', sans-serif;
 	font-size: 1.375rem;
 	font-style: normal;

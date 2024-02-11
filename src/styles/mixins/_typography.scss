@@ -1,5 +1,5 @@
 // _typography.scss
-@import '../../styles/mixins/_var';
+@import "../../styles/mixins/_var";
 
 // Миксин для текста футера
 @mixin footer-text {
@@ -10,20 +10,42 @@
 
 // Миксин для общих стилей текста
 @mixin text-base {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.14px;
 }
 
+// Миксин для стилей заголовков
+@mixin title-text-h2 {
+  color: $black;
+  font-family: "FerryBlack", sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 0.45px;
+}
+
 // Миксин для стилей карточек тарифов
 @mixin labelStyles {
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   letter-spacing: 0.18px;
   word-wrap: break-word;
   margin-top: 5px;
+}
+
+// Миксин для стилей заголовков
+@mixin h2 {
+  color: $black;
+  font-family: "FerryBlack", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 0.6px;
 }
 
 // Миксин для стилей ссылок
@@ -41,22 +63,22 @@
 
 // Миксин для стилей текста в карточках тарифов
 @mixin itemStyles {
-  color: black;
+  color: $black;
   font-size: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  letter-spacing: 0.20px;
+  letter-spacing: 0.2px;
   word-wrap: break-word;
 }
 
 // Миксин для стилей ссылок
 @mixin link {
   text-decoration: none;
-  color: #888;
+  color: $gray-color;
 
   &:hover {
     text-decoration: underline;
-    color: #000;
+    color: $black;
   }
 }
 
@@ -65,14 +87,22 @@
   width: 242px;
   height: 43px;
   position: absolute;
-  background: var($white);
+  background: $white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  border: 1px var($gray-light) solid;
-
+  border: 1px $gray-light solid;
 
   &::placeholder {
-    color: var($gray-medium);
+    color: $gray-medium;
   }
 }
 
+// Миксин для стилей кнопок
+@mixin moreButton {
+  background: $blue;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}

@@ -1,5 +1,5 @@
 
-.titleTextBlock03 {
+.titleTextBlock {
 	color: #000;
 	font-family: 'FerryBlack', sans-serif;
 	font-size: 40px;
@@ -11,14 +11,15 @@
 	letter-spacing: 0.45px;
 	margin-top: 69px;
 	margin-left: 60px;
-
-	.title-text {
-		white-space: pre-wrap;
-	}
 }
 
+.titleTextBlock__text {
+	white-space: pre-wrap;
+}
+
+
 @media (max-width: 767px) {
-  .titleTextBlock03 {
+  .titleTextBlock {
 		width: 335px;
 		height: 104px;
     font-size: 22px;

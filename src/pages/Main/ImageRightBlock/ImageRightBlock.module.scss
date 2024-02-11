@@ -3,9 +3,11 @@
 .imageRightBlock {
 	position: absolute;
 	width: 629px;
-	height: 620px;
-	flex-shrink: 0;
-	left: 770px;
+	height: 593px;
+	left: 751px;
+	right: -751px;
+	top: 144px;
+	bottom: -117px;
 }
 
 @media (max-width: 767px) {

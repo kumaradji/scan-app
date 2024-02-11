@@ -1,10 +1,10 @@
-// LoginPage/TitleTextBlock03/TitleTextBlock03.jsx
+// LoginPage/LoginTitleText/LoginTitleText.jsx
 
 import React from 'react';
 import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';
-import styles from './TitleTextBlock03.module.scss';
+import styles from './LoginTitleText.module.scss';
 
-const TitleTextBlock03 = () => {
+const LoginTitleText = () => {
 
   return (
     <TitleTextBlock
@@ -13,9 +13,9 @@ const TitleTextBlock03 = () => {
         на тариф, необходимо
         авторизоваться.
       `}
-      additionalStyles={styles.titleTextBlock03}
+      additionalStyles={styles.titleTextBlock}
     >
-      <span className="title-text">
+      <span className={styles.titleTextBlock__text}>
         {/* здесь текст не нужен */}
       </span>
     </TitleTextBlock>
@@ -23,4 +23,4 @@ const TitleTextBlock03 = () => {
 
 };
 
-export default TitleTextBlock03;
+export default LoginTitleText;

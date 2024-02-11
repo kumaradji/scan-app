@@ -3,16 +3,16 @@
 import React, {useEffect} from "react";
 import LeftTextBlock from "./LeftTextBlock/LeftTextBlock";
 import ImageRightBlock from "./ImageRightBlock/ImageRightBlock";
-import MainTitleTextBlock from "./MainTitleTextBlock/MainTitleTextBlock";
+import FirstTitleText from "./FirstTitleText/FirstTitleText";
 import Carousel from "../../components/Carousel/Carousel";
 import styles from "./MainPage.module.scss";
-import TitleTextBlock02 from "./SecondTitleTextBlock/SecondTitleTextBlock";
 import BeginnerTariffCard from "./BeginnerTariffCard/BeginnerTariffCard";
 import BusinessTariffCard from "./BusinessTariffCard/BusinessTariffCard";
 import ProTariffCard from "./ProTariffCard/ProTariffCard";
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../LoginPage/Auth/AuthContext";
-import imgBlueCloud from "../../../src/assets/images/blueCloudImage.svg";
+import imgBlueCloud from "../../../src/assets/images/blueCloudImage.jpg";
+import SecondTitleText from "./SecondTitleText";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -29,27 +29,27 @@ const MainPage = () => {
   }
 
   return (
-    <div className={styles.mainPage}>
+    <main className={styles.mainPage}>
       <div className={styles.mainPage__upperBlocks}>
         <LeftTextBlock />
         <ImageRightBlock />
       </div>
 
-      <MainTitleTextBlock />
+      <FirstTitleText />
       <Carousel />
 
       <div className={styles.mainPage__blueCloudImage}>
         <img src={imgBlueCloud} alt="Blue-Cloud-Image" />
       </div>
 
-      <TitleTextBlock02 />
+      <SecondTitleText />
 
       <section className={styles.mainPage__tariffCardSection}>
         <BeginnerTariffCard />
         <ProTariffCard />
         <BusinessTariffCard />
       </section>
-    </div>
+    </main>
   );
 };
 

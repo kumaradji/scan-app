@@ -3,21 +3,28 @@
 .carousel {
 	display: flex;
 	align-items: center;
-	//max-width: 1340px;
 	overflow: hidden;
 }
 
 .carousel__leftArrow {
-	margin-right: -10px;
+	width: 39px;
+	height: 39px;
+	position: absolute;
+	margin-left: 51px;
+
 }
 
 .carousel__rightArrow {
-	margin-left: -10px;
+	width: 39px;
+	height: 39px;
+	position: absolute;
+	margin-left: 1360px;
 }
 
 .carousel__cardsWrapper {
 	display: flex;
-	width: 1290px;
+	width: 1374px;
+	padding: 0 0 0 84px;
 	flex-shrink: 0;
 	height: 260px;
 	align-items: center;
@@ -31,8 +38,6 @@
 	justify-content: flex-start;
 	align-items: center;
 	max-width: 1440px;
-	//position: relative;
-	//overflow: visible;
 }
 
 .carousel__card {

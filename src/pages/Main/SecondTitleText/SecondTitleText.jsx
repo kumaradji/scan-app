@@ -1,10 +1,10 @@
-// Main/SecondTitleTextBlock/SecondTitleTextBlock.jsx
+// Main/SecondTitleText/SecondTitleText.jsx
 
 import React from 'react';
 import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';
-import styles from './SecondTitleTextBlock.module.scss';
+import styles from './SecondTitleText.module.scss';
 
-const SecondTitleTextBlock = () => {
+const SecondTitleText = () => {
   return (
     <TitleTextBlock
       text="наши тарифы"
@@ -13,4 +13,4 @@ const SecondTitleTextBlock = () => {
   );
 };
 
-export default SecondTitleTextBlock;
+export default SecondTitleText;

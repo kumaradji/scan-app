@@ -1,67 +1,75 @@
-@import '../../styles/mixins/_typography';
-@import '../../styles/mixins/_var';
+@import "../../styles/mixins/_typography";
+@import "../../styles/mixins/_var";
 
 @mixin fontSize($size) {
-	font-size: $size;
-	letter-spacing: $size * 0.07;
+  font-size: $size;
+  letter-spacing: $size * 0.07;
 }
 
 .footer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-	height: 93px;
-	flex-shrink: 0;
-	padding-right: 60px;
-	padding-left: 60px;
-	background-color: $green;
-	color: $white;
+  position: relative;
+  width: 1440px;
+  height: 137px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-shrink: 0;
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: $green;
+  color: $white;
 }
 
 .footer__logo {
-	width: 141px;
-	height: 141px;
+  width: 141px;
+  height: 141px;
 }
 
 .footer__textBlock {
-	@include footer-text;
-	@include fontSize(14px);
-	width: 199px;
-	text-align: right;
+  @include footer-text;
+  @include fontSize(14px);
+  display: flex;
+  flex-direction: column;
+  text-align: right;
 }
 
-.footer__textCity {
-	@include footer-text;
-	@include fontSize(14px);
-	color: $white;
+.footer__textAddress {
+  @include footer-text;
+  @include fontSize(14px);
+  color: $white;
+  line-height: 17px;
+  width: 199px;
+  height: 51px;
 }
 
 .footer__copyright {
-	@include fontSize(12px);
+  @include fontSize(12px);
+  /* Copyright. 2022 */
+  width: 92px;
+  height: 15px;
+  margin-left: 107px;
+  margin-top: 21px;
 }
-
 
 // адаптивная верстка
 @media (max-width: 767px) {
-	.footer {
-		height: 137px;
-		width: 375px;
-		margin-top: -100 px;
-		padding: 0;
-	}
+  .footer {
+    height: 137px;
+    width: 375px;
+    margin-top: -100 px;
+    padding: 0;
+  }
 
-	.footer__logo {
-		width: 111px;
-		height: 111px;
-		margin-left: 18px;
-		margin-bottom: 30px;
-	}
+  .footer__logo {
+    width: 111px;
+    height: 111px;
+    margin-left: 18px;
+    margin-bottom: 30px;
+  }
 
-	.footer__textBlock {
-		letter-spacing: 0.14px;
-		margin-right: 18px;
-	}
+  .footer__textBlock {
+    letter-spacing: 0.14px;
+    margin-right: 18px;
+  }
 }
-
-

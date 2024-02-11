@@ -1,0 +1,22 @@
+// FirstTitleText.module.scss
+@import "../../../styles/mixins/_typography";
+@import "../../../styles/mixins/_var";
+
+.titleTextBlock {
+	@include title-text-h2;
+	width: 743px;
+	height: 54px;
+	padding: 20px 0 0 60px;
+	margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+	.titleTextBlock {
+		width: 274px;
+		height: 68px;
+		font-size: 28px;
+		letter-spacing: 0.28px;
+		margin-left: 14px;
+		margin-top: 56px;
+	}
+}

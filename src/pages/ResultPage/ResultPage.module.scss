@@ -1,25 +1,107 @@
 /* ResultPage.module.scss */
+@import "../../styles/mixins/_var";
+@import "../../styles/mixins/_typography";
 
 .resultPage {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: auto;
+  padding: 20px 60px 0 60px;
+}
+
+.resultPage__upperBlocks {
+  display: flex;
+  flex-direction: row;
+  width: 1440px;
+}
+
+.resultPage__secondBlock {
+  display: block;
   align-items: flex-start;
   flex-shrink: 0;
-  background: #FFF;
+}
 
-  .first_block {
-    display: flex;
-    align-items: flex-start;
-    flex-shrink: 0;
-    background: #FFF;
-  }
+.resultPage__titleTextBlock01 {
+  @include h2;
+  width: 447px;
+  height: 36px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
 
-  .second_block {
-    display: flex;
-    align-items: flex-start;
-    flex-shrink: 0;
-  }
+.resultPage__titleTextBlock02 {
+  @include h2;
+  width: 447px;
+  height: 36px;
+  margin-top: 25px;
+}
 
+.resultPage__moreButton {
+  @include moreButton;
 
+  width: 305px;
+  height: 59px;
+  margin-top: 30px;
+  margin-bottom: 90px;
+  margin-left: 568px;
+}
 
+.resultPage__moreButton_active {
+  background-color: darken($blue, 10%);
+}
+
+.resultPage__moreText {
+  color: $white;
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  word-wrap: break-word;
 }
 
 
+@media (max-width: 767px) {
+  .resultPage {
+    padding: 0 24px 0 14px;
+  }
+
+  .resultPage__upperBlocks {
+    flex-direction: column;
+    min-width: 375px;
+  }
+
+  .resultPage__secondBlock {
+
+  }
+
+  .resultPage__titleTextBlock01 {
+
+  }
+
+  .resultPage__titleTextBlock02 {
+  }
+
+  .resultPage__moreButton {
+    @include moreButton;
+
+    width: 305px;
+    height: 59px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    margin-left: 568px;
+  }
+
+  .resultPage__moreButton_active {
+    background-color: darken($blue, 10%);
+  }
+
+  .resultPage__moreText {
+    color: $white;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    word-wrap: break-word;
+  }
+	}

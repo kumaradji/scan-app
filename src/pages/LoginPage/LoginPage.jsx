@@ -3,7 +3,7 @@ import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import styles from './LoginPage.module.scss';
 import LoginForm from './LoginForm/LoginForm';
-import TitleTextBlock03 from './TitleTextBlock03/TitleTextBlock03';
+import LoginTitleText from './LoginTitleText/LoginTitleText';
 import LoginPageCharacters from './LoginPageCharacters/LoginPageCharacters';
 import LogoImg from "../../assets/icons/padlock.svg";
 
@@ -19,7 +19,7 @@ const LoginPage = () => {
     <div className={styles.loginPage}>
 
       <div>
-        <TitleTextBlock03/>
+        <LoginTitleText/>
       </div>
 
       <img className={styles.loginPage__padLock}

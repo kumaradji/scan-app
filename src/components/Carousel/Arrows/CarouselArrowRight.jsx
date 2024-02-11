@@ -1,6 +1,6 @@
-// components/arrows/CarouselArrowRight.jsx
+// components/Arrows/CarouselArrowRight.jsx
 import React from 'react';
-import { ReactComponent as RightArrowIcon } from '../../../assets/icons/icons8-шеврон-вправо.svg';
+import {ReactComponent as RightArrowIcon} from '../../../assets/icons/icons8-шеврон-вправо.svg';
 
 const CarouselArrowRight = ({ onClick }) => {
   const handleClick = () => {

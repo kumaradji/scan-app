@@ -10,17 +10,16 @@ const AppFooter = () => {
         </span>
 
         <div className={styles.footer__textBlock}>
-          <span className={styles.footer__textCity}>
-            г. Москва,
-          </span>
-          <>
-            Цветной б-р, 40 <br />
+          <span className={styles.footer__textAddress}>
+            г. Москва, Цветной б-р, 40 <br />
             +7 495 771 21 11 <br />
             info@skan.ru
-          </>
+          </span>
+
           <p className={styles.footer__copyright}>
             Copyright. 2022
           </p>
+
         </div>
     </footer>
   );

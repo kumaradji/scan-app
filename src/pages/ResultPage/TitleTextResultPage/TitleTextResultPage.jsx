@@ -7,16 +7,24 @@ import styles from './TitleTextResultPage.module.scss';
 const TitleTextResultPage = () => {
 
   return (
-    <TitleTextBlock
-      text={`
+    <main className={styles.titleTextResultPage}>
+      <TitleTextBlock
+        text={`
         Ищем. Скоро будут результаты
       `}
-      additionalStyles={styles.titleTextResultPage}
-    >
-      <span className="title-text">
+        additionalStyles={styles.titleResultPage}
+      >
+      <span className={styles.titleTextResultPage__text}>
         {/* здесь текст не нужен */}
       </span>
-    </TitleTextBlock>
+      </TitleTextBlock>
+
+      <div className={styles.titleTextResultPage__leftSmallText}>
+        Поиск может занять некоторое время,
+        <br/>
+        просим сохранять терпение.
+      </div>
+    </main>
   )
 };
 

@@ -1,7 +1,7 @@
-// SearchTitleTextBlock-01.module.scss
+// SecondTitleText.module.scss
+
+
 .titleTextBlock {
-	width: 100%;
-	height: auto;
 	color: #000;
 	font-family: 'FerryBlack', sans-serif;
 	font-size: 45px;
@@ -9,13 +9,12 @@
 	font-weight: 900;
 	line-height: normal;
 	letter-spacing: 0.45px;
-	margin: 80px 0 50px 0;
+	margin-left: 60px;
+	margin-top: 90px;
 }
 
 @media (max-width: 767px) {
 	.titleTextBlock {
-		width: 274px;
-		height: 68px;
 		font-size: 28px;
 		letter-spacing: 0.28px;
 		margin-left: 14px;

@@ -12,5 +12,4 @@ const ImageRightBlock = () => {
   );
 };
 
-
 export default ImageRightBlock;

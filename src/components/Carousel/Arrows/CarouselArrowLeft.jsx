@@ -1,6 +1,6 @@
-// components/arrows/CarouselArrowLeft.jsx
+// components/Arrows/CarouselArrowLeft.jsx
 import React from 'react';
-import { ReactComponent as LeftArrowIcon } from '../../../assets/icons/icons8-шеврон-влево.svg';
+import {ReactComponent as LeftArrowIcon} from '../../../assets/icons/icons8-шеврон-влево.svg';
 
 const CarouselArrowLeft = ({ onClick }) => {
   const handleClick = () => {
@@ -9,7 +9,7 @@ const CarouselArrowLeft = ({ onClick }) => {
   };
 
   return (
-    <div className="arrow-left" onClick={handleClick}>
+    <div onClick={handleClick}>
       <LeftArrowIcon />
     </div>
   );

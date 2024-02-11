@@ -1,16 +1,16 @@
-//
+// Main/FirstTitleText/FirstTitleText.jsx
 
 import React from 'react';
 import TitleTextBlock from '../../../components/TitleTextBlock/TitleTextBlock';
-import styles from './SecondTextResultPage.module.scss';
+import styles from './FirstTitleText.module.scss';
 
-const SecondTextResultPage = () => {
+const FirstTitleText = () => {
   return (
     <TitleTextBlock
-      text="Общая сводка"
+      text="Почему именно мы"
       additionalStyles={styles.titleTextBlock}
     />
   );
 };
 
-export default SecondTextResultPage;
+export default FirstTitleText;
