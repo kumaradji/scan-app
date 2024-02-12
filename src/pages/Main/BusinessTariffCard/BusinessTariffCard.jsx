@@ -17,7 +17,7 @@ function BusinessTariffCard() {
   return (
     <section className={styles.businessTariffCard}>
       <div className={styles.businessTariffCard__blackTop}/>
-      <img className={styles.businessTariffCard__iconNotebook} src={NotebookTariffIcon} alt="=TargetTariff-Icon"/>
+        <img className={styles.businessTariffCard__iconNotebook} src={NotebookTariffIcon} alt="=TargetTariff-Icon"/>
 
       <div className={styles.businessTariffCard__title}>
         Business

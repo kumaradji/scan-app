@@ -2,6 +2,7 @@
 
 @import "../../../styles/mixins/_typography";
 @import "../../../styles/mixins/_var";
+@import "../../../styles/mixins/_mobile";
 
 .businessTariffCard {
   width: 415px;
@@ -123,11 +124,8 @@
 
 @media (max-width: 767px) {
   .businessTariffCard {
-    width: 335px;
+    @include tariff-card-mobile;
     height: 472px;
-    margin-top: 70px;
-    margin-bottom: 80px;
-    margin-left: 14px;
   }
 
   .businessTariffCard__blackTop {
@@ -135,7 +133,7 @@
     height: 132px;
   }
 
-  .businessTariffCard_iconNotebook {
+  .businessTariffCard__iconNotebook {
     width: 69px;
     height: 75px;
     margin-top: -125px;
@@ -154,10 +152,6 @@
     margin-left: 24px;
     margin-top: 220px;
   }
-
-  //.businessTariffCard__moreBusinessButton_active {
-  //  background-color: darken(blue, 10%);
-  //}
 
   .businessTariffCard__moreText {
     font-size: 18px;

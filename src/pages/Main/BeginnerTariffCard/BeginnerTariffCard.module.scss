@@ -2,6 +2,7 @@
 
 @import '../../../styles/mixins/_typography';
 @import '../../../styles/mixins/_var';
+@import '../../../styles/mixins/_mobile';
 
 .beginnerTariffCard {
 	width: 415px;
@@ -154,11 +155,7 @@
 
 @media (max-width: 767px) {
 	.beginnerTariffCard {
-		width: 335px;
-		height: 512px;
-		margin-top: 70px;
-		margin-bottom: 80px;
-		margin-left: 14px;
+		@include tariff-card-mobile;
 	}
 
 	.beginnerTariffCard__orangeTop {

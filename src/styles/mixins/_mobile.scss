@@ -1,0 +1,10 @@
+// _mobile.scss
+@import "../../styles/mixins/_var";
+@import "../../styles/mixins/_typography";
+
+// Миксин для стиля карточек тарифов
+@mixin tariff-card-mobile {
+	width: 335px;
+	height: 512px;
+	margin: 20px 0 20px 0;
+}
