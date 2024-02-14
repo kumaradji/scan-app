@@ -1,15 +1,14 @@
 // LoginForm.jsx
-import React, { useState } from 'react';
-import { useAuth } from '../Auth/AuthContext';
+import React, {useState} from 'react';
+import {useAuth} from '../Auth/AuthContext';
 import styles from './LoginForm.module.scss';
-import LoginInput from "./LoginInput/LoginInput";
-import PasswordInput from "./PasswordInput/PasswordInput";
-import Button from "../../../components/UI/Button";
+import AuthInput from './AuthInput/AuthInput';
+import Button from '../../../components/UI/Button';
 import BoldLine from '../../../assets/icons/BoldLine.svg';
-import Line from "../../../assets/icons/Line.svg";
-import imgGoogle from "../../../assets/images/Google.svg";
-import imgFacebook from "../../../assets/images/imgFacebook.svg";
-import imgYandex from "../../../assets/images/imgYandex.svg";
+import Line from '../../../assets/icons/Line.svg';
+import imgGoogle from '../../../assets/images/Google.svg';
+import imgFacebook from '../../../assets/images/imgFacebook.svg';
+import imgYandex from '../../../assets/images/imgYandex.svg';
 
 const LoginForm = ({ onSuccess }) => {
   const [login, setLogin] = useState('');
@@ -28,77 +27,47 @@ const LoginForm = ({ onSuccess }) => {
     }
   };
 
-  const handleLoginInputChange = (e) => {
-    setLogin(e.target.value);
-  };
-
-  const handlePasswordInputChange = (e) => {
-    setPassword(e.target.value);
-  };
-
   return (
     <div className={styles.cardContainer}>
       <div className={styles.contentContainer}>
         <div className={styles.enter}>
-          <div className={styles.enter1}>
-            Войти
-          </div>
-          <img className={styles.boldLine}
-               src={BoldLine}
-               alt="Line"
-          />
-          <div className={styles.enter2}>
-            Зарегистрироваться
-          </div>
-          <img className={styles.line}
-               src={Line}
-               alt="line"
-          />
+          <div className={styles.enter1}>Войти</div>
+          <img className={styles.boldLine} src={BoldLine} alt="Line" />
+          <div className={styles.enter2}>Зарегистрироваться</div>
+          <img className={styles.line} src={Line} alt="line" />
         </div>
 
         <label>
-          <div className={styles.enterLoginText}>
-            Логин или номер телефона:
-          </div>
-          <LoginInput value={login} onChange={handleLoginInputChange}/>
+          <AuthInput
+            type="text"
+            value={login}
+            onChange={(value) => setLogin(value)}
+            label="Логин или номер телефона:"
+          />
         </label>
-        <br/>
+        <br />
         <label>
-          <div className={styles.enterPasswordText}>
-            Пароль:
-          </div>
-          <PasswordInput value={password} onChange={handlePasswordInputChange}/>
+          <AuthInput
+            type="password"
+            value={password}
+            onChange={(value) => setPassword(value)}
+            label="Пароль:"
+          />
         </label>
-        <br/>
+        <br />
 
         <Button className={styles.button} onClick={handleLoginClick}>
-          <div className={styles.buttonText}>
-            Войти
-          </div>
+          <div className={styles.buttonText}>Войти</div>
         </Button>
 
-        <span className={`${styles.recoverPass} ${styles.disabled}`}>
-            Восстановить пароль
-        </span>
+        <span className={`${styles.recoverPass} ${styles.disabled}`}>Восстановить пароль</span>
 
-        <div className={styles.enterText}>
-          Войти через
-        </div>
+        <div className={styles.enterText}>Войти через</div>
 
         <div className={styles.socialIcons}>
-          <img className={styles.google}
-               src={imgGoogle}
-               alt="imgGoogle"
-          />
-          <img className={styles.facebook}
-               src={imgFacebook}
-               alt="imgFacebook"
-          />
-          <img className={styles.yandex}
-               src={imgYandex}
-               alt="imgYandex"
-          />
-
+          <img className={styles.google} src={imgGoogle} alt="imgGoogle" />
+          <img className={styles.facebook} src={imgFacebook} alt="imgFacebook" />
+          <img className={styles.yandex} src={imgYandex} alt="imgYandex" />
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './CheckboxList.module.scss';
 import imgTicket from '../../../../assets/icons/Vector.svg';
 
-
 const CheckboxList = ({ items, checkedItems, onToggle }) => (
   <ul className={styles.checkboxList}>
     {items.map((item, index) => (

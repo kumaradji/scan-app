@@ -1,11 +1,13 @@
 /* SearchPage.module.scss */
 
 .container {
-	position: relative;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	width: 1440px;
+	height: 1122px;
+	align-items: flex-start;
 	flex-shrink: 0;
+	background: #FFF;
 
 	&__leftColumn {
 		height: 100vh;
