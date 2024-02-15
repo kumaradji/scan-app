@@ -2,95 +2,76 @@
 @import "../../../styles/mixins/_var";
 @import "../../../styles/mixins/_typography";
 
-.cardContainer {
+.loginForm {
 	width: 429px;
 	height: 523px;
 	background: $white;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	border-radius: 10px;
 	position: relative;
-	margin-top: 65px;
-	margin-left: -170px;
+	margin-top: 69px;
+	margin-left: -95px;
+}
 
-	.contentContainer {
+.loginForm__enterText {
+	display: flex;
+	position: relative;
+	margin-bottom: 60px;
+}
 
-	}
+.loginForm__login {
+	color: $green;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.16px;
+	word-wrap: break-word;
+	margin-left: 77px;
+	margin-top: 25px;
+	position: relative;
+}
 
-	.boldLine {
-		width: 151px;
-		height: 2px;
-		background: $green;
-		position: absolute;
-		margin-top: 52px;
-		margin-left: 25px;
-	}
+.loginForm__boldLine {
+	width: 151px;
+	height: 2px;
+	background: $green;
+	position: absolute;
+	margin-top: 52px;
+	margin-left: 25px;
+}
 
-	.line {
-		width: 213px;
-		height: 2px;
-		background: $gray-light;
-		position: absolute;
-		margin-top: 52px;
-		margin-left: 188px;
-	}
+.loginForm__signup {
+	color: $gray-light;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.16px;
+	word-wrap: break-word;
+	margin-left: 77px;
+	margin-top: 25px;
+	position: relative;
+}
 
-	.enter {
-		display: flex;
-		position: relative;
-	}
+.loginForm__line {
+	width: 213px;
+	height: 2px;
+	background: $gray-light;
+	position: absolute;
+	margin-top: 52px;
+	margin-left: 188px;
+}
 
-	.enterHr {
-		display: flex;
-	}
+.loginForm__button {
+	width: 379px;
+	height: 59px;
+	flex-shrink: 0;
+	border-radius: 5px;
+	background: $blue;
+	margin-left: 25px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 
-
-	.enter1 {
-		color: $green;
-		font-family: 'Inter', sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		letter-spacing: 0.16px;
-		word-wrap: break-word;
-		margin-left: 77px;
-		margin-top: 25px;
-		position: relative; /* Added position relative for ::after to position absolutely */
-	}
-
-	.enter2 {
-		color: $gray-light;
-		font-family: 'Inter', sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		letter-spacing: 0.16px;
-		word-wrap: break-word;
-		margin-left: 77px;
-		margin-top: 25px;
-		position: relative; /* Added position relative for ::after to position absolutely */
-	}
-
-
-	.input {
-		width: 379px;
-		height: 43px;
-		flex-shrink: 0;
-		border-radius: 5px;
-		//background: #c7c7c7;
-		margin-left: 25px;
-		margin-top: 28px;
-	}
-
-	.button {
-		width: 379px;
-		height: 59px;
-		flex-shrink: 0;
-		border-radius: 5px;
-		background: $blue;
-		margin-left: 25px;
-		margin-top: 88px;
-		margin-bottom: 15px;
-	}
-
-	.buttonText {
+	.loginForm__button_text {
 		color: $white;
 		font-family: 'Inter', sans-serif;
 		font-size: 22px;
@@ -98,65 +79,46 @@
 		letter-spacing: 0.22px;
 		word-wrap: break-word;
 	}
+}
 
-	.enterLoginText {
-		color: $green;
-		font-family: 'Inter', sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		letter-spacing: 0.32px;
-		word-wrap: break-word;
+.loginForm__recoverPass {
+	color: $blue;
+	@include text-base;
+	letter-spacing: 0.28px;
+	word-wrap: break-word;
+	margin-left: 140px;
+}
+
+.loginForm__enterSmallText {
+	color: $gray-light;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.32px;
+	word-wrap: break-word;
+	margin-top: 20px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+.loginForm__socialIcons {
+	display: flex;
+	margin-bottom: 39px;
+
+	.loginForm__socialIcons_google {
 		margin-left: 25px;
-		margin-top: 40px;
 	}
 
-	.enterPasswordText {
-		color: $green;
-		font-family: 'Inter', sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		letter-spacing: 0.32px;
-		word-wrap: break-word;
-		margin-left: 25px;
-		margin-top: 20px;
+	.loginForm__socialIcons_facebook {
+		margin-left: 10px;
 	}
 
-	.recoverPass {
-		color: $blue;
-		@include text-base;
-		letter-spacing: 0.28px;
-		word-wrap: break-word;
-		margin-left: 140px;
-	}
-
-	.enterText {
-		color: $gray-light;
-		font-family: 'Inter', sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		letter-spacing: 0.32px;
-		word-wrap: break-word;
-		margin-left: 25px;
-		margin-bottom: 10px;
-	}
-
-	.socialIcons {
-		display: flex;
-		margin-bottom: 39px;
-
-		.google {
-			margin-left: 25px;
-		}
-
-		.facebook {
-			margin-left: 10px;
-		}
-
-		.yandex {
-			margin-left: 10px;
-		}
+	.loginForm__socialIcons_yandex {
+		margin-left: 10px;
 	}
 }
+
+
 
 @media (max-width: 767px) {
 	.cardContainer {
@@ -216,7 +178,7 @@
 			margin-top: 28px;
 		}
 
-		.button {
+		.loginForm__button {
 			width: 305px;
 			height: 59px;
 			margin: 40px 15px 15px;

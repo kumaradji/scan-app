@@ -10,10 +10,10 @@ import imgGoogle from '../../../assets/images/Google.svg';
 import imgFacebook from '../../../assets/images/imgFacebook.svg';
 import imgYandex from '../../../assets/images/imgYandex.svg';
 
-const LoginForm = ({ onSuccess }) => {
+const LoginForm = ({onSuccess}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const { handleLogin } = useAuth();
+  const {handleLogin} = useAuth();
 
   const handleLoginClick = async () => {
     if (!handleLogin) {
@@ -28,49 +28,86 @@ const LoginForm = ({ onSuccess }) => {
   };
 
   return (
-    <div className={styles.cardContainer}>
-      <div className={styles.contentContainer}>
-        <div className={styles.enter}>
-          <div className={styles.enter1}>Войти</div>
-          <img className={styles.boldLine} src={BoldLine} alt="Line" />
-          <div className={styles.enter2}>Зарегистрироваться</div>
-          <img className={styles.line} src={Line} alt="line" />
+    <section className={styles.loginForm}>
+      <div className={styles.loginForm__enterText}>
+        <div className={styles.loginForm__login}>
+          Войти
         </div>
+        <img
+          className={styles.loginForm__boldLine}
+          src={BoldLine}
+          alt="Line"
+        />
 
-        <label>
-          <AuthInput
-            type="text"
-            value={login}
-            onChange={(value) => setLogin(value)}
-            label="Логин или номер телефона:"
-          />
-        </label>
-        <br />
-        <label>
-          <AuthInput
-            type="password"
-            value={password}
-            onChange={(value) => setPassword(value)}
-            label="Пароль:"
-          />
-        </label>
-        <br />
-
-        <Button className={styles.button} onClick={handleLoginClick}>
-          <div className={styles.buttonText}>Войти</div>
-        </Button>
-
-        <span className={`${styles.recoverPass} ${styles.disabled}`}>Восстановить пароль</span>
-
-        <div className={styles.enterText}>Войти через</div>
-
-        <div className={styles.socialIcons}>
-          <img className={styles.google} src={imgGoogle} alt="imgGoogle" />
-          <img className={styles.facebook} src={imgFacebook} alt="imgFacebook" />
-          <img className={styles.yandex} src={imgYandex} alt="imgYandex" />
+        <div className={styles.loginForm__signup}>
+          Зарегистрироваться
         </div>
+        <img
+          className={styles.loginForm__line}
+          src={Line}
+          alt="line"
+        />
       </div>
-    </div>
+
+      <label>
+        <AuthInput
+          type="text"
+          value={login}
+          onChange={(value) => setLogin(value)}
+          label="Логин или номер телефона:"
+        />
+      </label>
+      <br/>
+      <label>
+        <AuthInput
+          type="password"
+          value={password}
+          onChange={(value) => setPassword(value)}
+          label="Пароль:"
+        />
+      </label>
+      <br/>
+
+      <Button
+        className={styles.loginForm__button}
+        onClick={handleLoginClick}
+      >
+        <div className={styles.loginForm__button_text}>
+          Войти
+        </div>
+      </Button>
+
+      <span
+        className={`
+        ${styles.loginForm__recoverPass} 
+        ${styles.disabled}
+        `}
+      >
+        Восстановить пароль
+      </span>
+
+      <div className={styles.loginForm__enterSmallText}>
+        Войти через
+      </div>
+
+      <div className={styles.loginForm__socialIcons}>
+        <img
+          className={styles.loginForm__socialIcons_google}
+          src={imgGoogle}
+          alt="imgGoogle"
+        />
+        <img
+          className={styles.loginForm__socialIcons_facebook}
+          src={imgFacebook}
+          alt="imgFacebook"
+        />
+        <img
+          className={styles.loginForm__socialIcons_yandex}
+          src={imgYandex}
+          alt="imgYandex"
+        />
+      </div>
+    </section>
   );
 };
 
