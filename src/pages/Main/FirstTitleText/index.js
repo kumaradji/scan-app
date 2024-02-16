@@ -1,4 +1,4 @@
-// FirstTitleText/index.js
+// FirstTitleText/apiInstance.js
 import FirstTitleText from './FirstTitleText';
 
 export default FirstTitleText;

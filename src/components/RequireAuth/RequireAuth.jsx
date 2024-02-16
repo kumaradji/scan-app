@@ -1,12 +1,12 @@
-// RequireAuth/RequireAuth.jsx
+// RequireAuth.jsx
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
+import {useAuth} from '../../pages/LoginPage/Auth/AuthContext';
 
-export function RequireAuth({ isAuthenticated, children }) {
-  console.log('Is Authenticated:', isAuthenticated);
+export function RequireAuth({ children }) {
+  const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    console.log('Неаутентифицированный пользователь, перенаправление на страницу входа');
     return <Navigate to="/login" />;
   }
 

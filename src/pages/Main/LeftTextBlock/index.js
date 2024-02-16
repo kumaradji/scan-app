@@ -1,4 +1,4 @@
-// LeftTextBlock/index.js
+// LeftTextBlock/apiInstance.js
 import LeftTextBlock from './LeftTextBlock';
 
 export default LeftTextBlock;

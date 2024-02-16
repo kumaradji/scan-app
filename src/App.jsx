@@ -1,22 +1,13 @@
 import React from 'react';
-import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AppHeader from './components/AppHeader/AppHeader';
 import MainPage from './pages/Main/MainPage';
 import AppFooter from './components/AppFooter/AppFooter';
 import LoginPage from './pages/LoginPage/LoginPage';
-import {AuthProvider, useAuth} from './pages/LoginPage/Auth/AuthContext';
+import {AuthProvider} from './pages/LoginPage/Auth/AuthContext';
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ResultPage from "./pages/ResultPage/ResultPage";
-
-const PrivateRoute = ({ element, ...props }) => {
-  const { isAuthenticated } = useAuth();
-
-  return isAuthenticated ? (
-    element
-  ) : (
-    <Navigate to="/login" replace state={{ from: props.location }} />
-  );
-};
+import {RequireAuth} from "./components/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -24,7 +15,10 @@ function App() {
       <AuthProvider>
         <AppHeader />
         <Routes>
-          <Route path="/" element={<PrivateRoute element={<MainPage />} />} />
+          <Route
+            path="/"
+            element={<RequireAuth>{<MainPage />}</RequireAuth>}
+          />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/result" element={<ResultPage />} />

@@ -1,4 +1,4 @@
-// SearchPageCharacters/index.js
+// SearchPageCharacters/apiInstance.js
 import SearchPageCharacters from './SearchPageCharacters';
 
 export default SearchPageCharacters;

@@ -1,6 +1,6 @@
 // Auth/AuthForm.jsx
-import React, { useState } from 'react';
-import { useAuth } from '/Users/kumar_air/WebstormProjects/scan-app/src/pages/LoginPage/Auth/AuthContext.jsx';
+import React, {useState} from 'react';
+import {useAuth} from '../Auth/AuthContext';
 
 const AuthForm = ({ onLoginSuccess }) => {
   const [login, setLogin] = useState('');

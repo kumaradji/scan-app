@@ -1,4 +1,4 @@
-// LoginInput/index.js
+// LoginInput/apiInstance.js
 import LoginInput from "./LoginInput";
 
 export default LoginInput;
