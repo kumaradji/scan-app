@@ -2,13 +2,14 @@
 import React, {useState} from 'react';
 import {useAuth} from '../Auth/AuthContext';
 import styles from './LoginForm.module.scss';
-import AuthInput from './AuthInput/AuthInput';
 import Button from '../../../components/UI/Button';
 import BoldLine from '../../../assets/icons/BoldLine.svg';
 import Line from '../../../assets/icons/Line.svg';
 import imgGoogle from '../../../assets/images/Google.svg';
 import imgFacebook from '../../../assets/images/imgFacebook.svg';
 import imgYandex from '../../../assets/images/imgYandex.svg';
+import LoginInput from "./LoginInput";
+import PasswordInput from "./PasswordInput/PasswordInput";
 
 const LoginForm = ({onSuccess}) => {
   const [login, setLogin] = useState('');
@@ -25,6 +26,14 @@ const LoginForm = ({onSuccess}) => {
     if (onSuccess) {
       onSuccess();
     }
+  };
+
+  const handleLoginInputChange = (e) => {
+    setLogin(e.target.value);
+  };
+
+  const handlePasswordInputChange = (e) => {
+    setPassword(e.target.value);
   };
 
   return (
@@ -50,20 +59,23 @@ const LoginForm = ({onSuccess}) => {
       </div>
 
       <label>
-        <AuthInput
-          type="text"
+        <div className={styles.loginForm__enterLoginText}>
+          Логин или номер телефона:
+        </div>
+        <LoginInput
           value={login}
-          onChange={(value) => setLogin(value)}
-          label="Логин или номер телефона:"
+          onChange={handleLoginInputChange}
         />
+
       </label>
       <br/>
       <label>
-        <AuthInput
-          type="password"
+        <div className={styles.loginForm__enterPasswordText}>
+          Пароль:
+        </div>
+        <PasswordInput
           value={password}
-          onChange={(value) => setPassword(value)}
-          label="Пароль:"
+          onChange={handlePasswordInputChange}
         />
       </label>
       <br/>

@@ -16,6 +16,15 @@
   letter-spacing: 0.14px;
 }
 
+// Миксин для текста логин формы
+@mixin login-form-text {
+  color: $green;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+}
+
 // Миксин для стилей заголовков
 @mixin title-text-h2 {
   color: $black;
