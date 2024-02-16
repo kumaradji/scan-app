@@ -1,8 +1,25 @@
-// api/auth.js
-
 import axios from 'axios';
 
 const BASE_URL = 'https://gateway.scan-interfax.ru/api/v1';
+
+// Функция для выполнения запроса авторизации
+export const loginUser = async (loginData) => {
+  try {
+    const response = await axios.post(
+      `${BASE_URL}/account/login`,
+      loginData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 
 export const getUserInfo = async () => {
   try {
@@ -17,6 +34,8 @@ export const getUserInfo = async () => {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    console.log('User info response:', response.data);
 
     return response.data;
   } catch (error) {

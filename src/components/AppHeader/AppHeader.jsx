@@ -9,13 +9,15 @@ import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/Unauthenticated
 
 const AppHeader = () => {
   const [loading, setLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState({ username: 'sf_student1' });
+  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
         const response = await getUserInfo();
-        setUserInfo(response.data);
+        console.log('User info from AppHeader:', response);
+        setUserInfo(response.data.eventFiltersInfo);
+        console.log('userInfo after set:', userInfo);
       } catch (error) {
         console.error('Error fetching user info:', error);
       } finally {
@@ -30,9 +32,15 @@ const AppHeader = () => {
     console.log('Logging out...');
     logout();
     console.log('User info set to null');
-    setUserInfo(null);
-    console.log('User info:', userInfo);
+    setUserInfo(null, () => {
+      console.log('User info:', userInfo);
+    });
   };
+
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <header className={styles.header}>
@@ -40,11 +48,13 @@ const AppHeader = () => {
         <HeaderContent />
 
         {userInfo ? (
-          <AuthenticatedUserInfo userInfo={userInfo} handleLogout={handleLogout} />
+          <AuthenticatedUserInfo
+            userInfo={userInfo}
+            handleLogout={handleLogout}
+          />
         ) : (
           <UnauthenticatedUserPanel />
         )}
-
       </>
     </header>
   );

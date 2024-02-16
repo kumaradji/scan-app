@@ -1,53 +1,71 @@
-import React from 'react';
+// AuthenticatedUserInfo.jsx
+
+import React, {useEffect, useState} from 'react';
 import styles from './AuthenticatedUserInfo.module.scss';
 import AvatarImg from '../../../assets/images/Avatar.svg';
 import userPanelRect from '../../../assets/images/userPanelRect.svg';
 import Loader from "../../Loader/Loader";
+import {getUserInfo} from '../../../api/auth';
 
-const AuthenticatedUserInfo = ({userInfo, handleLogout}) => {
-  const isLoggedIn = !!userInfo;
-  const loading = false;
-  const usedCompanies = 34;
-  const companyLimit = 100;
+const AuthenticatedUserInfo = ({ handleLogout }) => {
+  const [loading, setLoading] = useState(true);
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const response = await getUserInfo();
+        console.log('Response from server:', response); // Выводим ответ сервера в консоль
+        setUserInfo(response.data.eventFiltersInfo);
+        
+      } catch (error) {
+        console.error('Error fetching user info:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (!userInfo) {
+    return <p>Информация о пользователе не найдена.</p>;
+  }
 
   return (
     <div className={styles.userInfo}>
       <div className={styles.userInfo__userPanel}>
-        {/* Фоновый прямоугольник */}
         <img
           className={styles.userInfo__userPanelRect}
           src={userPanelRect}
           alt="userPanelRect"
         />
 
-        {/* Текстовые элементы внутри фонового прямоугольника */}
-        {loading ? (
-          <Loader/>
-        ) : (
-          <>
-            {isLoggedIn && (
-              <div className={styles.userInfo__userPanelRect__companyInfo}>
-                <div className={styles.userInfo__userPanelRect__companyInfoUsed}>
-                  {usedCompanies}
-                </div>
-                <div className={styles.userInfo__userPanelRect__companyInfoLimit}>
-                  {companyLimit}
-                </div>
-                <div className={styles.userInfo__userPanelRect__companyInfoTextUsed}>
-                  Использовано компаний
-                </div>
-                <div className={styles.userInfo__userPanelRect__companyInfoTextLimit}>
-                  Лимит по компаниям
-                </div>
-              </div>
-            )}
-          </>
+        {userInfo && (
+          <div className={styles.userInfo__userPanelRect__companyInfo}>
+            <div className={styles.userInfo__userPanelRect__companyInfoUsed}>
+              {userInfo.usedCompanyCount}
+            </div>
+            <div className={styles.userInfo__userPanelRect__companyInfoLimit}>
+              {userInfo.companyLimit}
+            </div>
+            <div className={styles.userInfo__userPanelRect__companyInfoTextUsed}>
+              Использовано компаний
+            </div>
+            <div className={styles.userInfo__userPanelRect__companyInfoTextLimit}>
+              Лимит по компаниям
+            </div>
+          </div>
         )}
       </div>
 
       <div className={styles.userInfo__userPanelTextContainer}>
         <div className={styles.userInfo__userPanelTextContainer__userNameText}>
-          Алексей А.
+          {userInfo.userName}
         </div>
         <div
           onClick={handleLogout}
