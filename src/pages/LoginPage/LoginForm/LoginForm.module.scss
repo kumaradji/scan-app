@@ -119,127 +119,92 @@
 }
 
 
-
 @media (max-width: 767px) {
-	.cardContainer {
+	.loginForm {
 		width: 335px;
 		height: 504px;
 		margin-left: 14px;
 		margin-top: 145px;
+	}
 
-		.contentContainer {
-			width: 335px;
-			height: 504px;
-		}
+	.loginForm__enterText {
+		display: flex;
+		position: relative;
+	}
 
-		.boldLine {
-			width: 103px;
-			margin-top: 52px;
-			margin-left: 15px;
-		}
+	.loginForm__login {
+		font-size: 14px;
+		letter-spacing: 0.28px;
+		margin-left: 46px;
+		margin-top: 25px;
+	}
 
-		.line {
-			width: 182px;
-			margin-top: 52px;
-			margin-left: 138px;
-		}
+	.loginForm__boldLine {
+		width: 103px;
+		margin-top: 52px;
+		margin-left: 15px;
+	}
 
-		.enter {
-			display: flex;
-			position: relative;
-		}
+	.loginForm__signup {
+		font-size: 14px;
+		letter-spacing: 0.28px;
+		margin-left: 70px;
+		margin-top: 25px;
+	}
 
-		.enterHr {
-			display: flex;
-		}
+	.loginForm__line {
+		width: 182px;
+		margin-top: 52px;
+		margin-left: 138px;
+	}
 
+	.loginForm__button {
+		width: 305px;
+		height: 59px;
+		margin: 40px 15px 15px;
 
-		.enter1 {
-			font-size: 14px;
-			letter-spacing: 0.28px;
-			margin-left: 46px;
-			margin-top: 25px;
-		}
-
-		.enter2 {
-			font-size: 14px;
-			letter-spacing: 0.28px;
-			margin-left: 70px;
-			margin-top: 25px;
-		}
-
-		.input {
-			width: 379px;
-			height: 43px;
-			flex-shrink: 0;
-			border-radius: 5px;
-			//background: #c7c7c7;
-			margin-left: 25px;
-			margin-top: 28px;
-		}
-
-		.loginForm__button {
-			width: 305px;
-			height: 59px;
-			margin: 40px 15px 15px;
-		}
-
-		.buttonText {
+		.loginForm__button_text {
 			font-size: 20px;
 			letter-spacing: 0.40px;
 		}
+	}
 
-		.enterLoginText {
-			font-size: 16px;
-			font-weight: 400;
-			letter-spacing: 0.32px;
-			word-wrap: break-word;
-			margin-left: 25px;
-			margin-top: 40px;
-		}
+	.enterHr {
+		display: flex;
+	}
 
-		.enterPasswordText {
-			font-size: 16px;
-			font-weight: 400;
-			letter-spacing: 0.32px;
-			word-wrap: break-word;
-			margin-left: 25px;
-			margin-top: 20px;
-		}
+	.loginForm__recoverPass {
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.28px;
+		word-wrap: break-word;
+		margin-left: 90px;
+	}
 
-		.recoverPass {
-			font-size: 14px;
-			font-weight: 400;
-			letter-spacing: 0.28px;
-			word-wrap: break-word;
-			margin-left: 90px;
-		}
+	.loginForm__enterSmallText {
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.32px;
+		word-wrap: break-word;
+		margin-left: 15px;
+		margin-top: 20px;
+		margin-bottom: 15px;
+	}
 
-		.enterText {
-			font-size: 16px;
-			font-weight: 400;
-			letter-spacing: 0.32px;
-			word-wrap: break-word;
+	.loginForm__socialIcons {
+		display: flex;
+		margin-bottom: 20px;
+
+		.loginForm__socialIcons_google {
 			margin-left: 15px;
-			margin-top: 20px;
-			margin-bottom: 15px;
 		}
 
-		.socialIcons {
-			display: flex;
-			margin-bottom: 20px;
+		.loginForm__socialIcons_facebook {
+			margin-left: 9px;
+		}
 
-			.google {
-				margin-left: 15px;
-			}
-
-			.facebook {
-				margin-left: 9px;
-			}
-
-			.yandex {
-				margin-left: 9px;
-			}
+		.loginForm__socialIcons_yandex {
+			margin-left: 9px;
 		}
 	}
 }
