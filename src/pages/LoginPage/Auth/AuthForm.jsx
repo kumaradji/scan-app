@@ -1,6 +1,6 @@
 // Auth/AuthForm.jsx
 import React, {useState} from 'react';
-import {useAuth} from '../Auth/AuthContext';
+import {useAuth} from "./AuthContext";
 
 const AuthForm = ({ onLoginSuccess }) => {
   const [login, setLogin] = useState('');
@@ -14,7 +14,6 @@ const AuthForm = ({ onLoginSuccess }) => {
     }
 
     await handleLogin(login, password);
-
     // После успешного входа вызываем onLoginSuccess, если пользователь аутентифицирован
     if (isAuth) {
       onLoginSuccess();

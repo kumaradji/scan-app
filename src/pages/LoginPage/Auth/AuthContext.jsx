@@ -1,6 +1,7 @@
 // AuthContext.jsx
 import React, {createContext, useContext, useState} from 'react';
 import * as authApi from '../../../api/auth';
+import {getUserInfo, login} from '../../../api/auth';
 
 const AuthContext = createContext();
 
@@ -9,17 +10,14 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogin = async (loginData) => {
     try {
-      // Ваша реальная логика аутентификации
-      // Например, отправка запроса на сервер
-
       // Получаем токен после успешной аутентификации
-      const token = '...'; // Замените на вашу логику получения токена
+      const token = await login(loginData);
 
       // Сохраняем токен в localStorage
       localStorage.setItem('accessToken', token);
 
       // Передаем токен в getUserInfo
-      const userInfo = await authApi.getUserInfo();
+      const userInfo = await getUserInfo(token);
 
       // Устанавливаем пользователя в state
       setUser(userInfo);
