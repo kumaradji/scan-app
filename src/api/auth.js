@@ -1,24 +1,20 @@
 // api/auth.js
 import axios from 'axios';
 
-export const login = async (credentials) => {
+const BASE_URL = 'https://gateway.scan-interfax.ru/api/v1';
 
+export const login = async ({ login, password }) => {
   try {
-    const response = await axios.post(`${BASE_URL}/account/login`, credentials);
-
-    // Сохраняем токен в хранилище
-    if(response.data.token) {
-      localStorage.setItem('accessToken', response.data.token);
-    }
+    const response = await axios.post(`${BASE_URL}/account/login`, {
+      login,
+      password,
+    });
 
     return response.data;
-
   } catch (error) {
     throw error;
   }
-}
-
-const BASE_URL = 'https://gateway.scan-interfax.ru/api/v1';
+};
 
 export const getUserInfo = async () => {
   try {

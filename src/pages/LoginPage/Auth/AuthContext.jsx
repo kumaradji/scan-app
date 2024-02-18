@@ -1,42 +1,28 @@
 // AuthContext.jsx
 import React, {createContext, useContext, useState} from 'react';
-import * as authApi from '../../../api/auth';
-import {getUserInfo, login} from '../../../api/auth';
+import AuthService from '../Auth/AuthService';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const handleLogin = async (loginData) => {
+  const handleLogin = async (username, password) => {
     try {
-      // Получаем токен после успешной аутентификации
-      const token = await login(loginData);
-
-      // Сохраняем токен в localStorage
-      localStorage.setItem('accessToken', token);
-
-      // Передаем токен в getUserInfo
-      const userInfo = await getUserInfo(token);
-
-      // Устанавливаем пользователя в state
-      setUser(userInfo);
-
-      console.log('Logging in with:', loginData);
+      const response = await AuthService.login(username, password);
+      setUser(response.data);
     } catch (error) {
       console.error('Error during login:', error);
-      // Обработка ошибок, например, отображение сообщения об ошибке пользователю
     }
   };
 
-  const logout = () => {
-    // Вызываем logout из api/auth.js
-    authApi.logout(() => {
-      // Сбрасываем состояние аутентификации
+  const logout = async () => {
+    try {
+      await AuthService.logout();
       setUser(null);
-    });
-
-    console.log('Logging out');
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
   };
 
   return (

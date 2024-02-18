@@ -17,14 +17,15 @@ const LoginForm = ({onSuccess}) => {
   const {handleLogin} = useAuth();
 
   const handleLoginClick = async () => {
-    if (!handleLogin) {
-      console.error('handleLogin method is not defined.');
-      return;
-    }
-
-    await handleLogin(login, password);
-    if (onSuccess) {
-      onSuccess();
+    try {
+      await handleLogin(login, password);
+      console.log('Logging in with:', login, password); // Проверка значений
+      if (onSuccess) {
+        onSuccess();
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      // Добавьте обработку ошибки, например, отображение сообщения пользователю
     }
   };
 
@@ -33,7 +34,9 @@ const LoginForm = ({onSuccess}) => {
   };
 
   const handlePasswordInputChange = (e) => {
+    const newPassword = e.target.value;
     setPassword(e.target.value);
+    console.log('Current password:', newPassword);
   };
 
   return (

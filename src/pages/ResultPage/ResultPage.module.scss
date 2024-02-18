@@ -34,7 +34,21 @@
   @include h2;
   width: 447px;
   height: 36px;
+  margin-top: 107px;
+  margin-bottom: 58px;
+}
+
+.resultPage__resultsCountText {
+  @include login-form-text;
+  font-size: 18px;
+  width: 234px;
+  height: 22px;
   margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.resultPage__resultRectLoading {
+
 }
 
 .resultPage__moreButton {
