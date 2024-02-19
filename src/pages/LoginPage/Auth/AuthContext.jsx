@@ -10,6 +10,9 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = async (username, password) => {
     try {
       const response = await AuthService.login(username, password);
+      // Сохранение токена
+      localStorage.setItem('accessToken', response.data.accessToken);
+      
       setUser(response.data);
     } catch (error) {
       console.error('Error during login:', error);
