@@ -11,10 +11,10 @@ import imgYandex from '../../../assets/images/imgYandex.svg';
 import LoginInput from "./LoginInput";
 import PasswordInput from "./PasswordInput/PasswordInput";
 
-const LoginForm = ({onSuccess}) => {
+const LoginForm = ({ onSuccess }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const {handleLogin} = useAuth();
+  const { handleLogin } = useAuth();
 
   const handleLoginClick = async () => {
     try {
@@ -35,7 +35,7 @@ const LoginForm = ({onSuccess}) => {
 
   const handlePasswordInputChange = (e) => {
     const newPassword = e.target.value;
-    setPassword(e.target.value);
+    setPassword(newPassword);
     console.log('Current password:', newPassword);
   };
 
@@ -78,8 +78,13 @@ const LoginForm = ({onSuccess}) => {
         </div>
         <PasswordInput
           value={password}
-          onChange={handlePasswordInputChange}
+          onChange={setPassword}
         />
+
+        {/*<PasswordInput*/}
+        {/*  value={password}*/}
+        {/*  onChange={handlePasswordInputChange}*/}
+        {/*/>*/}
       </label>
       <br/>
 

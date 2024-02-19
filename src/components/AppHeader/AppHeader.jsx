@@ -1,41 +1,63 @@
 // AppHeader.jsx
 
-import {useAuth} from "../../pages/LoginPage/Auth/AuthContext";
-import HeaderContent from "../AppHeader/HeaderContent/HeaderContent";
-import AuthenticatedUserInfo from "../AppHeader/AuthenticatedUserInfo/AuthenticatedUserInfo";
-import UnauthenticatedUserPanel from "../AppHeader/UnauthenticatedUserPanel/UnauthenticatedUserPanel";
+import React, {useEffect, useState} from 'react';
+import styles from './AppHeader.module.scss';
+import {getUserInfo, logout} from '../../api/auth';
+import HeaderContent from './HeaderContent/HeaderContent';
+import AuthenticatedUserInfo from './AuthenticatedUserInfo/AuthenticatedUserInfo';
+import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/UnauthenticatedUserPanel';
 
-function AppHeader() {
+const AppHeader = () => {
+  const [loading, setLoading] = useState(true);
+  const [userInfo, setUserInfo] = useState(null);
 
-  const { user, logout } = useAuth();
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const response = await getUserInfo();
+        console.log('User info from AppHeader:', response);
+        setUserInfo(response.data.eventFiltersInfo);
+        console.log('userInfo after set:', userInfo);
+      } catch (error) {
+        console.error('Error fetching user info:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  function AuthenticatedUserInfo({ user, onLogout }) {
+    fetchUserInfo();
+  }, []);
 
-    return (
-      <div>
-        <div>{user.name}</div>
-        <button onClick={onLogout}>Выйти</button>
-      </div>
-    );
+  const handleLogout = () => {
+    console.log('Logging out...');
+    logout();
+    console.log('User info set to null');
+    setUserInfo(null, () => {
+      console.log('User info:', userInfo);
+    });
+  };
 
-  if (user) {
-    return (
-      <header>
-        <HeaderContent />
-        <AuthenticatedUserInfo user={user} onLogout={logout} />
-      </header>
-    );
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
   return (
-    <header>
-      <HeaderContent />
-      <UnauthenticatedUserPanel />
+    <header className={styles.header}>
+      <>
+        <HeaderContent />
+
+        {userInfo ? (
+          <AuthenticatedUserInfo
+            userInfo={userInfo}
+            handleLogout={handleLogout}
+          />
+        ) : (
+          <UnauthenticatedUserPanel />
+        )}
+      </>
     </header>
   );
-
-}
-
-}
+};
 
 export default AppHeader;

@@ -1,20 +1,18 @@
 // PasswordInput/PasswordInput.jsx
 
-import React, {useState} from 'react';
+import React from 'react';
 import styles from '../LoginForm.module.scss';
 
-function PasswordInput() {
-  const [password, setPassword] = useState('');
-
+function PasswordInput({ value, onChange }) {
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    onChange(e.target.value);
   };
 
   return (
     <input
       type="password"
       className={styles.loginForm__inputField}
-      value={password}
+      value={value}
       onChange={handlePasswordChange}
     />
   );
