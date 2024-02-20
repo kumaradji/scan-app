@@ -16,14 +16,21 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
       try {
         const response = await getUserInfo();
         console.log('Response from server:', response); // Выводим ответ сервера в консоль
-        setUserInfo(response.data.eventFiltersInfo);
-        
+
+        // Проверяем структуру ответа и наличие свойства eventFiltersInfo
+        if (response.data && response.data.eventFiltersInfo) {
+          setUserInfo(response.data.eventFiltersInfo);
+        } else {
+          console.error('eventFiltersInfo is not available in the server response.');
+          setUserInfo(null); // Обнуляем userInfo, чтобы избежать ошибок далее
+        }
       } catch (error) {
         console.error('Error fetching user info:', error);
       } finally {
         setLoading(false);
       }
     };
+
 
     fetchUserInfo();
   }, []);
