@@ -2,11 +2,20 @@
 import api from '../../../api/api';
 
 export default class AuthService {
-  static async login(username, password) {
+  static async login(login, password) {
     try {
-      const response = await api.post('/auth', {username, password});
+      const response = await api.post('account/login', {
+        login: login,
+        password: password
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+      });
 
       localStorage.setItem('accessToken', response.data.accessToken);
+      console.log(response.data.accessToken);
 
       return response.data;
     } catch (error) {
@@ -18,10 +27,6 @@ export default class AuthService {
   static async logout() {
     try {
       const response = await api.post('account/logout', null, {
-        headers: {
-          'Content-Type': 'application/json-patch+json',
-          'Accept': 'application/json',
-        },
       });
 
       console.log(response);

@@ -2,25 +2,29 @@
 
 import React, {useEffect, useState} from 'react';
 import styles from './AppHeader.module.scss';
-import {getUserInfo, logout} from '../../api/auth';
+import {useAuth} from '../../pages/LoginPage/Auth/AuthContext'; // Импортируем useAuth
 import HeaderContent from './HeaderContent/HeaderContent';
 import AuthenticatedUserInfo from './AuthenticatedUserInfo/AuthenticatedUserInfo';
 import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/UnauthenticatedUserPanel';
 
 const AppHeader = () => {
+  const { user, logout } = useAuth(); // Используем хук useAuth
+
   const [loading, setLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const response = await getUserInfo();
-        console.log('User info from AppHeader:', response);
-        setUserInfo(response.data.eventFiltersInfo);
-        console.log('userInfo after set:', userInfo);
+        // По мере необходимости, можно использовать user из контекста,
+        // но здесь, вероятно, вы хотите снова использовать getUserInfo
+        // для актуальных данных пользователя после входа
+        // const response = await getUserInfo();
+        // setUserInfo(response.data.eventFiltersInfo);
+
+        // Замечание: Здесь также необходимо обновить состояние пользователя
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching user info:', error);
-      } finally {
         setLoading(false);
       }
     };
@@ -30,13 +34,9 @@ const AppHeader = () => {
 
   const handleLogout = () => {
     console.log('Logging out...');
-    logout();
-    console.log('User info set to null');
-    setUserInfo(null, () => {
-      console.log('User info:', userInfo);
-    });
+    logout(); // Используем logout из контекста
+    setLoading(false);
   };
-
 
   if (loading) {
     return <div>Loading...</div>;
@@ -47,9 +47,9 @@ const AppHeader = () => {
       <>
         <HeaderContent />
 
-        {userInfo ? (
+        {user ? (
           <AuthenticatedUserInfo
-            userInfo={userInfo}
+            userInfo={user} // Используем информацию о пользователе из контекста
             handleLogout={handleLogout}
           />
         ) : (

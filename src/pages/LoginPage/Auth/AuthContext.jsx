@@ -10,15 +10,19 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = async (username, password) => {
     try {
       const response = await AuthService.login(username, password);
-      // Сохранение токена
-      localStorage.setItem('accessToken', response.data.accessToken);
-      
-      setUser(response.data);
+
+      if (response && response.data && response.data.accessToken) {
+        localStorage.setItem('accessToken', response.data.accessToken);
+        setUser(response.data);
+      } else {
+        console.error('Invalid response format:', response);
+        throw new Error('Invalid response format');
+      }
     } catch (error) {
       console.error('Error during login:', error);
     }
   };
-
+  
   const logout = async () => {
     try {
       await AuthService.logout();

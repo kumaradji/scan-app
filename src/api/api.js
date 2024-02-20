@@ -1,24 +1,18 @@
 // api.js
-import axios from 'axios';
+// Axios создает экземпляр API с указанием базового URL и настройками, такими как использование куки
+import axios from "axios";
 
-export const API_URL = 'https://gateway.scan-interfax.ru/api/v1/';
-
-// const accessToken =
-// 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIwYzI5NDI0NC1jYzgyLWVkMTEtODI3NS04NzJjODBhZjI3NTMiLCJuYmYiOjE3MDgzMjQ4ODcsImV4cCI6MTcwODQxMTI4NywiaXNzIjoiU2NhbkdhdGV3YXkiLCJhdWQiOiJzZl9zdHVkZW50MSJ9.fSCyYaXYgMTxA2aKAY3tfbpQcReOr7xGsg08pc0_qdc';
+export const API_URL = "https://gateway.scan-interfax.ru/api/v1/"
 
 const api = axios.create({
-  withCredentials: true,
+  withCredentials: false,
   baseURL: API_URL,
-});
+})
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('accessToken');
-
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-
+  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`
+  console.log('Запрос работает')
   return config;
-});
+})
 
 export default api;
