@@ -22,6 +22,8 @@ const LoginForm = ({ onSuccess }) => {
       console.log('Logging in with:', login, password); // Проверка значений
       if (onSuccess) {
         onSuccess();
+
+        console.log('Login success!');
       }
     } catch (error) {
       console.error('Error during login:', error);

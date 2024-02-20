@@ -10,19 +10,26 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = async (username, password) => {
     try {
       const response = await AuthService.login(username, password);
-
-      if (response && response.data && response.data.accessToken) {
-        localStorage.setItem('accessToken', response.data.accessToken);
-        setUser(response.data);
-      } else {
-        console.error('Invalid response format:', response);
-        throw new Error('Invalid response format');
-      }
+      localStorage.setItem('accessToken', response.data.accessToken);
+      setUser(response.data);
+      console.log('Login success!');
     } catch (error) {
       console.error('Error during login:', error);
+
+      if (error.response && error.response.status === 401) {
+        // В случае ошибки 401 (Unauthorized) добавляем дополнительные действия
+        console.error('Authentication failed. Invalid username or password.');
+
+        // Здесь вы можете бросить исключение, чтобы обработать его в компоненте LoginForm
+        throw new Error('Authentication failed. Invalid username or password.');
+      } else {
+        // Если это не ошибка 401, просто логируем ошибку
+        console.error('Server response data:', error.response?.data);
+      }
     }
   };
-  
+
+
   const logout = async () => {
     try {
       await AuthService.logout();
