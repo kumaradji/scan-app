@@ -16,20 +16,19 @@ const LoginForm = ({ onSuccess }) => {
   const [password, setPassword] = useState('');
   const { handleLogin } = useAuth();
 
-  const handleLoginClick = async () => {
+  const handleLoginFormSubmit = async () => {
     try {
       await handleLogin(login, password);
-      console.log('Logging in with:', login, password); // Проверка значений
+      console.log('Logging in with:', login, password);
       if (onSuccess) {
         onSuccess();
-
-        console.log('Login success!');
+        console.log('__________LoginForm: Удачно вошли!_____________');
       }
     } catch (error) {
       console.error('Error during login:', error);
-      // Добавьте обработку ошибки, например, отображение сообщения пользователю
     }
   };
+
 
   const handleLoginInputChange = (e) => {
     setLogin(e.target.value);
@@ -92,7 +91,7 @@ const LoginForm = ({ onSuccess }) => {
 
       <Button
         className={styles.loginForm__button}
-        onClick={handleLoginClick}
+        onClick={handleLoginFormSubmit}
       >
         <div className={styles.loginForm__button_text}>
           Войти

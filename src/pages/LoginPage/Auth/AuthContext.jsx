@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
       const response = await AuthService.login(username, password);
       localStorage.setItem('accessToken', response.accessToken);
       setUser(response.data || {});
-      console.log('Login success!');
+      console.log('_____________AuthContext: Login success!______________');
     } catch (error) {
       console.error('Error during login:', error);
 

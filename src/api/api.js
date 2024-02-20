@@ -10,7 +10,7 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const accessToken = localStorage.getItem('accessToken'); // Используйте 'accessToken' вместо 'token'
+  const accessToken = localStorage.getItem('accessToken');
   config.headers.Authorization = `Bearer ${accessToken}`;
   console.log('Запрос работает');
   return config;

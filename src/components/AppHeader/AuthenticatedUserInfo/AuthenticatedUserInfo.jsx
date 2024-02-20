@@ -18,8 +18,8 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
         console.log('Response from server:', response); // Выводим ответ сервера в консоль
 
         // Проверяем структуру ответа и наличие свойства eventFiltersInfo
-        if (response.data && response.data.eventFiltersInfo) {
-          setUserInfo(response.data.eventFiltersInfo);
+        if (response && response.eventFiltersInfo) {
+          setUserInfo(response.eventFiltersInfo);
         } else {
           console.error('eventFiltersInfo is not available in the server response.');
           setUserInfo(null); // Обнуляем userInfo, чтобы избежать ошибок далее
