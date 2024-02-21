@@ -43,8 +43,3 @@ export const getUserInfo = async () => {
     throw error;
   }
 };
-
-export const logout = (callback) => {
-  localStorage.removeItem('accessToken');
-  callback();
-};

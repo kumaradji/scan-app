@@ -24,16 +24,10 @@ export default class AuthService {
     }
   }
 
-  static async logout() {
-    try {
-      const response = await api.post('account/logout', null, {
-      });
-
-      console.log(response);
-      localStorage.removeItem('accessToken');
-    } catch (error) {
-      console.error('Error during logout:', error);
-      throw error;
-    }
+  static logout() {
+    // Реализуйте ваш код для выхода
+    // Например, удалите токен из localStorage и другие необходимые действия
+    localStorage.removeItem('accessToken');
+    console.log('Logged out successfully');
   }
 }

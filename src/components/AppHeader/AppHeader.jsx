@@ -30,7 +30,6 @@ const AppHeader = () => {
   const handleLogout = () => {
     console.log('Logging out...');
     logout();
-    setLoading(false);
   };
 
   if (loading) {

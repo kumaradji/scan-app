@@ -15,9 +15,7 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
     const fetchUserInfo = async () => {
       try {
         const response = await getUserInfo();
-        console.log('Response from server (AuthenticatedUserInfo):', response); // Выводим ответ сервера в консоль
-
-        // Проверяем структуру ответа и наличие свойства eventFiltersInfo
+        console.log('Response from server (AuthenticatedUserInfo):', response);
         if (response && response.eventFiltersInfo) {
           setUserInfo(response.eventFiltersInfo);
         } else {
