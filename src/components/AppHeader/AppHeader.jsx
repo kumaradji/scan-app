@@ -19,7 +19,7 @@ const AppHeader = () => {
         // но здесь, вероятно, вы хотите снова использовать getUserInfo
         // для актуальных данных пользователя после входа
         // const response = await getUserInfo();
-        // setUserInfo(response.data.eventFiltersInfo);
+        // setUserInfo(response.eventFiltersInfo);
 
         // Замечание: Здесь также необходимо обновить состояние пользователя
         setLoading(false);
