@@ -14,7 +14,7 @@ import PasswordInput from "./PasswordInput/PasswordInput";
 const LoginForm = ({ onSuccess }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const { handleLogin } = useAuth();
+  const {handleLogin, logout} = useAuth();
 
   const handleLoginFormSubmit = async () => {
     try {
@@ -29,16 +29,14 @@ const LoginForm = ({ onSuccess }) => {
     }
   };
 
-
   const handleLoginInputChange = (e) => {
     setLogin(e.target.value);
   };
 
-  const handlePasswordInputChange = (e) => {
-    const newPassword = e.target.value;
+  const handlePasswordInputChange = (event) => {
+    const newPassword = event.target.value;
     setPassword(newPassword);
-    console.log('Current password:', newPassword);
-  };
+  }
 
   return (
     <section className={styles.loginForm}>
@@ -79,13 +77,9 @@ const LoginForm = ({ onSuccess }) => {
         </div>
         <PasswordInput
           value={password}
-          onChange={setPassword}
+          onChange={handlePasswordInputChange}
         />
 
-        {/*<PasswordInput*/}
-        {/*  value={password}*/}
-        {/*  onChange={handlePasswordInputChange}*/}
-        {/*/>*/}
       </label>
       <br/>
 

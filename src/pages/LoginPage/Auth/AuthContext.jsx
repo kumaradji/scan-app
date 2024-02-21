@@ -6,10 +6,12 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = async (username, password) => {
     try {
       const response = await AuthService.login(username, password);
+      setIsAuthenticated(true);
       localStorage.setItem('accessToken', response.accessToken);
       setUser(response.data || {});
       console.log('_____________AuthContext: Login success!______________');
@@ -29,7 +31,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-
   const logout = async () => {
     try {
       await AuthService.logout();
@@ -40,11 +41,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, handleLogin, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, handleLogin, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
 
 export const useAuth = () => {
   const context = useContext(AuthContext);

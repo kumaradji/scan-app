@@ -1,3 +1,5 @@
+// App.jsx
+
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AppHeader from './components/AppHeader/AppHeader';
@@ -15,13 +17,10 @@ function App() {
       <AuthProvider>
         <AppHeader />
         <Routes>
-          <Route
-            path="/"
-            element={<RequireAuth>{<MainPage />}</RequireAuth>}
-          />
+          <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/result" element={<ResultPage />} />
+          <Route path="/search" element={<RequireAuth><SearchPage /></RequireAuth>} />
+          <Route path="/result" element={<RequireAuth><ResultPage /></RequireAuth>} />
         </Routes>
         <AppFooter />
       </AuthProvider>
