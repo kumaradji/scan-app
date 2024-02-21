@@ -22,13 +22,11 @@ const LoginForm = ({ onSuccess }) => {
       console.log('Logging in with:', login, password);
       if (onSuccess) {
         onSuccess();
-        console.log('__________LoginForm: Удачно вошли!_____________');
       }
     } catch (error) {
       console.error('Error during login:', error);
     }
   };
-
 
   const handleLoginInputChange = (e) => {
     setLogin(e.target.value);
