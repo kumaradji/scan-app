@@ -14,17 +14,14 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(true);
       localStorage.setItem('accessToken', response.accessToken);
       setUser(response.data || {});
+      console.log('_____________AuthContext: Login success!______________');
     } catch (error) {
       console.error('Error during login:', error);
 
       if (error.response && error.response.status === 401) {
-        // В случае ошибки 401 (Unauthorized) добавляем дополнительные действия
         console.error('Authentication failed. Invalid username or password.');
-
-        // Здесь вы можете бросить исключение, чтобы обработать его в компоненте LoginForm
         throw new Error('Authentication failed. Invalid username or password.');
       } else {
-        // Если это не ошибка 401, просто логируем ошибку
         console.error('Server response data:', error.response?.data);
       }
     }
@@ -40,12 +37,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, handleLogin, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, handleLogin, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
 
 export const useAuth = () => {
   const context = useContext(AuthContext);

@@ -12,9 +12,10 @@ export const login = async (credentials) => {
 
     return response.data;
   } catch (error) {
+    console.error('Error in login:', error);
     throw error;
   }
-}
+};
 
 export const getUserInfo = async () => {
   try {
@@ -30,8 +31,15 @@ export const getUserInfo = async () => {
       },
     });
 
+    console.log('Response from server (getUserInfo):', response.data);
+
+    if (!response.data) {
+      throw new Error('Данные пользователя не получены от сервера');
+    }
+
     return response.data;
   } catch (error) {
+    console.error('Error in getUserInfo:', error);
     throw error;
   }
 };

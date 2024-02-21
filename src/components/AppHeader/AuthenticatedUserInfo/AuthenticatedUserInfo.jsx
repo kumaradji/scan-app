@@ -4,8 +4,8 @@ import React, {useEffect, useState} from 'react';
 import styles from './AuthenticatedUserInfo.module.scss';
 import AvatarImg from '../../../assets/images/Avatar.svg';
 import userPanelRect from '../../../assets/images/userPanelRect.svg';
-import Loader from "../../Loader/Loader";
 import {getUserInfo} from '../../../api/auth';
+import Loader from "../../Loader/Loader";
 
 const AuthenticatedUserInfo = ({ handleLogout }) => {
   const [loading, setLoading] = useState(true);
@@ -15,22 +15,21 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
     const fetchUserInfo = async () => {
       try {
         const response = await getUserInfo();
-        console.log('Response from server:', response); // Выводим ответ сервера в консоль
+        console.log('Response from server (AuthenticatedUserInfo):', response); // Выводим ответ сервера в консоль
 
         // Проверяем структуру ответа и наличие свойства eventFiltersInfo
-        // if (response && response.eventFiltersInfo) {
-        //   setUserInfo(response.eventFiltersInfo);
-        // } else {
-        //   console.error('eventFiltersInfo is not available in the server response.');
-        //   setUserInfo(null); // Обнуляем userInfo, чтобы избежать ошибок далее
-        // }
+        if (response && response.eventFiltersInfo) {
+          setUserInfo(response.eventFiltersInfo);
+        } else {
+          console.error('eventFiltersInfo is not available in the server response.');
+          setUserInfo(null); // Обнуляем userInfo, чтобы избежать ошибок далее
+        }
       } catch (error) {
         console.error('Error fetching user info:', error);
       } finally {
         setLoading(false);
       }
     };
-
 
     fetchUserInfo();
   }, []);
@@ -42,6 +41,7 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
   if (!userInfo) {
     return <p>Информация о пользователе не найдена.</p>;
   }
+
 
   return (
     <div className={styles.userInfo}>

@@ -16,8 +16,6 @@ function Carousel() {
     setPosition((prevPosition) => (prevPosition + 1) % allCards.length);
   };
 
-  console.log(allCards);
-
   return (
     <div className={styles.carousel}>
 
