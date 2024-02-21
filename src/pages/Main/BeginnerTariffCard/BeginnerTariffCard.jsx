@@ -1,51 +1,58 @@
 // BeginnerTariffCard/BeginnerTariffCard.jsx
 
-import React, { useState } from "react";
 import styles from "./BeginnerTariffCard.module.scss";
+import Button from "../../../components/UI/Button/Button";
 import LightBulbIcon from "../../../assets/icons/LightBulbTariff.svg";
 import ItemsList from "../../../assets/images/BigginerTariffList.jpeg";
+import {useCabinet} from "../../../hooks/useCabinet";
 
-function BeginnerTariffCard() {
-  const [isActive, setIsActive] = useState(false);
-  const onMouseDown = () => {
-    setIsActive(true);
-  };
-  const onMouseUp = () => {
-    setIsActive(false);
-  };
+function BeginnerTariffCard({ token }) {
+  const {showCabinet} = useCabinet(token);
 
   return (
     <section className={styles.beginnerTariffCard}>
-      <div className={styles.beginnerTariffCard__orangeTop} />
+      <div className={styles.beginnerTariffCard__orangeTop}/>
       <img
         className={styles.beginnerTariffCard__orangeTop_icon}
         src={LightBulbIcon}
         alt="Lightbulb-Icon"
       />
 
-      <div className={styles.beginnerTariffCard__title}>Beginner</div>
+      <div className={styles.beginnerTariffCard__title}>
+        Beginner
+      </div>
 
-      <div className={styles.beginnerTariffCard__blueStripe} />
+      <div>
+        {showCabinet ? (
+          <>
+            <div className={styles.beginnerTariffCard__blueStripe}/>
+            <div className={styles.beginnerTariffCard__currentTariffLabel}>
+              Текущий тариф
+            </div>
+          </>
+        ) : null}
+      </div>
 
-      <div
-        className={`
-          ${styles.beginnerTariffCard__personalCabinetButton} 
-          ${isActive && styles.beginnerTariffCard__personalCabinetButton_active}
-        `}
-        onMouseDown={onMouseDown}
-        onMouseUp={onMouseUp}
-      >
-        <div className={styles.beginnerTariffCard__personalCabinetButton_text}>
-          Перейти в личный кабинет
-        </div>
+      <div>
+        {showCabinet ? (
+          // Если пользователь авторизован, отображаем кнопку для личного кабинета
+          <div className={styles.beginnerTariffCard__personalCabinetButton}>
+            <Button className={styles.beginnerTariffCard__personalCabinetButton_text}>
+              Перейти в личный кабинет
+            </Button>
+          </div>
+        ) : (
+          // Иначе отображаем кнопку "Подробнее"
+          <div className={styles.beginnerTariffCard__moreButton}>
+            <Button className={styles.beginnerTariffCard__moreButton_text}>
+              Подробнее
+            </Button>
+          </div>
+        )}
       </div>
 
       <div className={styles.beginnerTariffCard__infoTitle}>
         Для небольшого исследования
-      </div>
-
-      <div className={styles.beginnerTariffCard__currentTariffLabel}>
-        Текущий тариф
       </div>
 
       <div className={styles.beginnerTariffCard__priceTitle}>

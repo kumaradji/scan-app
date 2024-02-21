@@ -21,7 +21,6 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
           console.error('eventFiltersInfo is not available in the server response.');
           setUserInfo(null); // Обнуляем userInfo, чтобы избежать ошибок далее
         }
-
       } catch (error) {
         console.error('Error fetching user info:', error);
       } finally {
