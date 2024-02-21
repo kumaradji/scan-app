@@ -25,8 +25,7 @@ export default class AuthService {
   }
 
   static logout() {
-    // Реализуйте ваш код для выхода
-    // Например, удалите токен из localStorage и другие необходимые действия
+    // Просто удаляем токен из localStorage
     localStorage.removeItem('accessToken');
     console.log('Logged out successfully');
   }

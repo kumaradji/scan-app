@@ -1,21 +1,21 @@
 // components/LeftTextBlock/LeftTextBlock.jsx
 
-import React, {useState} from "react";
 import styles from "./LeftTextBlock.module.scss";
 import Button from "../../../components/UI/Button/Button";
 import {Link} from "react-router-dom";
 import {RequireAuth} from "../../../components/RequireAuth/RequireAuth";
 import {useAuth} from "../../LoginPage/Auth/AuthContext";
+import {useEffect, useState} from "react";
 
 const LeftTextBlock = () => {
-  const { isAuthenticated } = useAuth();
-  const [isActive, setIsActive] = useState(false);
-  const onMouseDown = () => {
-    setIsActive(true);
-  };
-  const onMouseUp = () => {
-    setIsActive(false);
-  };
+  const { isAuthenticated, user } = useAuth();
+  const [hasToken, setHasToken] = useState(false);
+
+  useEffect(() => {
+    // Проверяем наличие токена в localStorage
+    const token = localStorage.getItem("accessToken");
+    setHasToken(!!token);
+  }, []);
 
   return (
     <main className={styles.leftTextBlock}>
@@ -34,20 +34,16 @@ const LeftTextBlock = () => {
       </div>
 
       <RequireAuth isAuthenticated={isAuthenticated}>
-        <Link to="/search">
-          <Button
-            className={`
-            ${styles.leftTextBlock__fetchButton}
-            ${isActive && styles.leftTextBlock__fetchButton_active}
-            `}
-            onMouseDown={onMouseDown}
-            onMouseUp={onMouseUp}
-          >
-            <div className={styles.leftTextBlock__fetchButton__text}>
-              Запросить данные
-            </div>
-          </Button>
-        </Link>
+        {/* Проверяем наличие токена в localStorage */}
+        {hasToken && (
+          <Link to="/search">
+            <Button className={styles.leftTextBlock__fetchButton}>
+              <div className={styles.leftTextBlock__fetchButton__text}>
+                Запросить данные
+              </div>
+            </Button>
+          </Link>
+        )}
       </RequireAuth>
     </main>
   );

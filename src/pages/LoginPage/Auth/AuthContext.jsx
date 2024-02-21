@@ -27,13 +27,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = async () => {
-    try {
-      await AuthService.logout();
-      setUser(null);
-    } catch (error) {
-      console.error('Error during logout:', error);
-    }
+  const logout = () => {
+    // Обновляем состояние пользователя при выходе
+    setUser(null);
+    localStorage.removeItem('accessToken');
+    console.log('Logged out successfully');
   };
 
   return (

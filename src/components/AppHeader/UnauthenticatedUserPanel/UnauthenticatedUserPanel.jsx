@@ -7,7 +7,7 @@ import SlashImg from '../../../assets/images/Slash.svg';
 const UnauthenticatedUserPanel = () => {
   return (
     <div className={styles.unauthenticatedUser}>
-      <NavLink to="/login" className={styles.unauthenticatedUser__link}>
+      <NavLink to="" className={styles.unauthenticatedUser__link}>
         Зарегистрироваться
       </NavLink>
       <span>

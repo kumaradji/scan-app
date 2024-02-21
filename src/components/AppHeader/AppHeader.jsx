@@ -1,5 +1,4 @@
 // AppHeader.jsx
-
 import React, {useEffect, useState} from 'react';
 import styles from './AppHeader.module.scss';
 import {useAuth} from '../../pages/LoginPage/Auth/AuthContext';
@@ -15,8 +14,15 @@ const AppHeader = () => {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const response = await getUserInfo();
-        setLoading(false);
+        // Проверяем наличие токена перед вызовом getUserInfo
+        const token = localStorage.getItem('accessToken');
+        if (token) {
+          const response = await getUserInfo();
+          setLoading(false);
+        } else {
+          console.error('Access token not found');
+          setLoading(false);
+        }
       } catch (error) {
         console.error('Error fetching user info:', error);
         setLoading(false);
@@ -26,15 +32,10 @@ const AppHeader = () => {
     fetchUserInfo();
   }, []);
 
-
   const handleLogout = () => {
     console.log('Logging out...');
     logout();
   };
-
-  if (loading) {
-    return <div>Loading user info...</div>;
-  }
 
   return (
     <header className={styles.header}>

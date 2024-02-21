@@ -15,13 +15,13 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
     const fetchUserInfo = async () => {
       try {
         const response = await getUserInfo();
-        console.log('Response from server (AuthenticatedUserInfo):', response);
         if (response && response.eventFiltersInfo) {
           setUserInfo(response.eventFiltersInfo);
         } else {
           console.error('eventFiltersInfo is not available in the server response.');
           setUserInfo(null); // Обнуляем userInfo, чтобы избежать ошибок далее
         }
+
       } catch (error) {
         console.error('Error fetching user info:', error);
       } finally {
@@ -70,7 +70,8 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
 
       <div className={styles.userInfo__userPanelTextContainer}>
         <div className={styles.userInfo__userPanelTextContainer__userNameText}>
-          {userInfo.user}
+          {/*{userInfo.name}*/}
+          Алексей А.
         </div>
         <div
           onClick={handleLogout}

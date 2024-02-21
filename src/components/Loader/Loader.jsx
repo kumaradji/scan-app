@@ -1,13 +1,12 @@
 // Loader.jsx
 import React from 'react';
 import styles from './Loader.module.scss';
+import LoaderImg from "../../assets/images/Header-Loader.svg";
 
 const Loader = () => (
   <div className={styles.loader}>
-    <div className={styles.loaderContainer}>
-      <div className={styles.loaderImage}>
-        <img src="/src/assets/images/Header-Loader.svg" alt="Loading Animation" />
-      </div>
+    <div className={styles.loader__loaderImage}>
+      <img src={LoaderImg} alt="Loading Animation"/>
     </div>
   </div>
 );
