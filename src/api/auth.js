@@ -1,13 +1,17 @@
 // api/auth.js
 import api from './api';
+import {useCabinet} from "../hooks/useCabinet";
 
 export const login = async (credentials) => {
   try {
+    const { setTokenInCabinet } = useCabinet();
     const response = await api.post('account/login', credentials);
-
     // Сохраняем токен в хранилище
     if (response.data.accessToken) {
       localStorage.setItem('accessToken', response.data.accessToken);
+
+      // Устанавливаем токен в кабинете
+      setTokenInCabinet(response.data.accessToken);
     }
 
     return response.data;

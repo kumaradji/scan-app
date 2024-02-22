@@ -6,8 +6,14 @@ import LightBulbIcon from "../../../assets/icons/LightBulbTariff.svg";
 import ItemsList from "../../../assets/images/BigginerTariffList.jpeg";
 import {useCabinet} from "../../../hooks/useCabinet";
 
-function BeginnerTariffCard({ token }) {
-  const {showCabinet} = useCabinet(token);
+function BeginnerTariffCard({ tokenFromProps }) {
+  const {showCabinet} = useCabinet(tokenFromProps);
+
+  // return (
+  //   <div>
+  //     {showCabinet ? 'Показать кабинет' : 'Скрыть кабинет'}
+  //   </div>
+  // );
 
   return (
     <section className={styles.beginnerTariffCard}>
