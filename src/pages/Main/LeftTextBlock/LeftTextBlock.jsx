@@ -1,24 +1,12 @@
 // components/LeftTextBlock/LeftTextBlock.jsx
 
 import {useAuth} from "../../LoginPage/Auth/AuthContext";
-import {useEffect} from "react";
-import {useCabinet} from "../../../hooks/useCabinet";
 import {Link} from "react-router-dom";
 import Button from "../../../components/UI/Button";
 import styles from './LeftTextBlock.module.scss';
 
 function LeftTextBlock() {
-  const { user, logout } = useAuth();
-  const { showCabinet, setShowCabinet } = useCabinet();
-
-  useEffect(() => {
-    console.log(showCabinet);
-  }, [showCabinet]);
-
-  const handleLogout = () => {
-    logout();
-    setShowCabinet(false);
-  }
+  const { isAuthenticated } = useAuth();
 
   return (
     <main className={styles.leftTextBlock}>
@@ -36,7 +24,7 @@ function LeftTextBlock() {
         электронную почту.
       </div>
 
-      {showCabinet && (
+      {isAuthenticated ? (
         <Link to="/search">
           <Button className={styles.leftTextBlock__fetchButton}>
             <div className={styles.leftTextBlock__fetchButton__text}>
@@ -44,7 +32,7 @@ function LeftTextBlock() {
             </div>
           </Button>
         </Link>
-      )}
+      ) : null}
     </main>
   );
 }

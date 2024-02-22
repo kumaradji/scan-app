@@ -4,16 +4,10 @@ import styles from "./BeginnerTariffCard.module.scss";
 import Button from "../../../components/UI/Button/Button";
 import LightBulbIcon from "../../../assets/icons/LightBulbTariff.svg";
 import ItemsList from "../../../assets/images/BigginerTariffList.jpeg";
-import {useCabinet} from "../../../hooks/useCabinet";
+import {useAuth} from "../../LoginPage/Auth/AuthContext";
 
 function BeginnerTariffCard({ tokenFromProps }) {
-  const {showCabinet} = useCabinet(tokenFromProps);
-
-  // return (
-  //   <div>
-  //     {showCabinet ? 'Показать кабинет' : 'Скрыть кабинет'}
-  //   </div>
-  // );
+  const { isAuthenticated } = useAuth();
 
   return (
     <section className={styles.beginnerTariffCard}>
@@ -29,7 +23,7 @@ function BeginnerTariffCard({ tokenFromProps }) {
       </div>
 
       <div>
-        {showCabinet ? (
+        {isAuthenticated ? (
           <>
             <div className={styles.beginnerTariffCard__blueStripe}/>
             <div className={styles.beginnerTariffCard__currentTariffLabel}>
@@ -40,7 +34,7 @@ function BeginnerTariffCard({ tokenFromProps }) {
       </div>
 
       <div>
-        {showCabinet ? (
+        {isAuthenticated ? (
           // Если пользователь авторизован, отображаем кнопку для личного кабинета
           <div className={styles.beginnerTariffCard__personalCabinetButton}>
             <Button className={styles.beginnerTariffCard__personalCabinetButton_text}>
