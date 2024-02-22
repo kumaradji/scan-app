@@ -15,7 +15,6 @@ function LeftTextBlock() {
     console.log(showCabinet);
   }, [showCabinet]);
 
-
   const handleLogout = () => {
     logout();
     setShowCabinet(false);

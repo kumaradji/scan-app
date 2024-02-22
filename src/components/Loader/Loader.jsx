@@ -1,7 +1,7 @@
 // Loader.jsx
 import React from 'react';
 import styles from './Loader.module.scss';
-import LoaderImg from "../../assets/images/Header-Loader.svg";
+import LoaderImg from "../../assets/images/Loader.svg";
 
 const Loader = () => (
   <div className={styles.loader}>
