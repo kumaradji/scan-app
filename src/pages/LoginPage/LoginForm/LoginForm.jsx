@@ -2,7 +2,6 @@
 import React, {useState} from 'react';
 import {useAuth} from '../Auth/AuthContext';
 import styles from './LoginForm.module.scss';
-import Button from '../../../components/UI/Button';
 import BoldLine from '../../../assets/icons/BoldLine.svg';
 import Line from '../../../assets/icons/Line.svg';
 import imgGoogle from '../../../assets/images/Google.svg';
@@ -12,11 +11,13 @@ import LoginInput from "./LoginInput";
 import PasswordInput from "./PasswordInput/PasswordInput";
 
 const LoginForm = ({ onSuccess }) => {
+  const {handleLogin} = useAuth();
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const {handleLogin, logout} = useAuth();
+  const [isFormValid, setIsFormValid] = useState(false);
 
-  const handleLoginFormSubmit = async () => {
+  const handleLoginFormSubmit = async (e) => {
+    e.preventDefault();
     try {
       await handleLogin(login, password);
       console.log('Logging in with:', login, password);
@@ -30,12 +31,22 @@ const LoginForm = ({ onSuccess }) => {
 
   const handleLoginInputChange = (e) => {
     setLogin(e.target.value);
+    validateForm(e.target.value, password);
   };
 
-  const handlePasswordInputChange = (event) => {
-    const newPassword = event.target.value;
+  const handlePasswordInputChange = (e) => {
+    const newPassword = e.target.value;
     setPassword(newPassword);
+    validateForm(login, newPassword);
   }
+
+  const validateForm = (loginValue, passwordValue) => {
+    const isLoginNotEmpty = loginValue.trim() !== '';
+    const isPasswordNotEmpty = passwordValue.trim() !== '';
+
+    setIsFormValid(isLoginNotEmpty && isPasswordNotEmpty);
+  }
+
 
   return (
     <section className={styles.loginForm}>
@@ -82,14 +93,15 @@ const LoginForm = ({ onSuccess }) => {
       </label>
       <br/>
 
-      <Button
+      <button
         className={styles.loginForm__button}
         onClick={handleLoginFormSubmit}
+        disabled={!isFormValid}
       >
         <div className={styles.loginForm__button_text}>
           Войти
         </div>
-      </Button>
+      </button>
 
       <span
         className={`

@@ -9,7 +9,10 @@ const Button = ({ children, className, onClick }) => {
   const buttonClasses = classNames(styles.button, className);
 
   return (
-    <button className={buttonClasses} onClick={onClick}>
+    <button
+      className={buttonClasses}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
