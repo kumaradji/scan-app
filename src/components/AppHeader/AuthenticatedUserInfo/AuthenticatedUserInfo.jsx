@@ -6,10 +6,12 @@ import AvatarImg from '../../../assets/images/Avatar.svg';
 import userPanelRect from '../../../assets/images/userPanelRect.svg';
 import {getUserInfo} from '../../../api/auth';
 import Loader from "../../Loader/Loader";
+import {useAuth} from "../../../pages/LoginPage/Auth/AuthContext";
 
-const AuthenticatedUserInfo = ({ handleLogout }) => {
+const AuthenticatedUserInfo = () => {
   const [loading, setLoading] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
+  const { handleLogout } = useAuth();
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -38,7 +40,6 @@ const AuthenticatedUserInfo = ({ handleLogout }) => {
   if (!userInfo) {
     return <p>Информация о пользователе не найдена.</p>;
   }
-
 
   return (
     <div className={styles.userInfo}>

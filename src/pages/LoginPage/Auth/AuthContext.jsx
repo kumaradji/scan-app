@@ -27,15 +27,16 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = () => {
+  const handleLogout = () => {
     // Обновляем состояние пользователя при выходе
+    setIsAuthenticated(false);
     setUser(null);
     localStorage.removeItem('accessToken');
     console.log('Logged out successfully');
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, handleLogin, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, handleLogin, handleLogout }}>
       {children}
     </AuthContext.Provider>
   );

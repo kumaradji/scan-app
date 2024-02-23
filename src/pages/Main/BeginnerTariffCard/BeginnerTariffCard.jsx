@@ -6,7 +6,7 @@ import LightBulbIcon from "../../../assets/icons/LightBulbTariff.svg";
 import ItemsList from "../../../assets/images/BigginerTariffList.jpeg";
 import {useAuth} from "../../LoginPage/Auth/AuthContext";
 
-function BeginnerTariffCard({ tokenFromProps }) {
+function BeginnerTariffCard() {
   const { isAuthenticated } = useAuth();
 
   return (
@@ -22,6 +22,7 @@ function BeginnerTariffCard({ tokenFromProps }) {
         Beginner
       </div>
 
+
       <div>
         {isAuthenticated ? (
           <>
@@ -32,6 +33,7 @@ function BeginnerTariffCard({ tokenFromProps }) {
           </>
         ) : null}
       </div>
+      
 
       <div>
         {isAuthenticated ? (

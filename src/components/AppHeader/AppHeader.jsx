@@ -8,7 +8,7 @@ import UnauthenticatedUserPanel from './UnauthenticatedUserPanel/Unauthenticated
 import {getUserInfo} from "../../api/auth";
 
 const AppHeader = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -32,17 +32,12 @@ const AppHeader = () => {
     fetchUserInfo();
   }, []);
 
-  const handleLogout = () => {
-    console.log('Logging out...');
-    logout();
-  };
-
   return (
     <header className={styles.header}>
       <>
         <HeaderContent />
         {user ? (
-          <AuthenticatedUserInfo userInfo={user} handleLogout={handleLogout} />
+          <AuthenticatedUserInfo userInfo={user} />
         ) : (
           <UnauthenticatedUserPanel />
         )}

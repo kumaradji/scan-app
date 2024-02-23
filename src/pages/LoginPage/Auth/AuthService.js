@@ -23,10 +23,4 @@ export default class AuthService {
       throw error;
     }
   }
-
-  static logout() {
-    // Просто удаляем токен из localStorage
-    localStorage.removeItem('accessToken');
-    console.log('Logged out successfully');
-  }
 }
