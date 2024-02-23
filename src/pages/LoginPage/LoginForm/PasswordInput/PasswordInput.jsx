@@ -8,7 +8,7 @@ function PasswordInput({ value, onChange, error }) {
     <>
       <input
         type="password"
-        className={styles.loginForm__inputField}
+        className={`${styles.loginForm__inputField} ${error ? styles.loginForm__inputField_error : ''}`}
         value={value}
         onChange={onChange}
       />

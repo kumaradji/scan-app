@@ -6,7 +6,7 @@ function LoginInput({value, onChange, error}) {
   return (
     <>
       <input
-        className={styles.loginForm__inputField}
+        className={`${styles.loginForm__inputField} ${error ? styles.loginForm__inputField_error : ''}`}
         value={value}
         onChange={onChange}
       />

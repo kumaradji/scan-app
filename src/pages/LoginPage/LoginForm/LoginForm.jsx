@@ -50,20 +50,44 @@ const LoginForm = ({ onSuccess }) => {
   return (
     <section className={styles.loginForm}>
       <div className={styles.loginForm__enterText}>
-        <div className={styles.loginForm__login}>Войти</div>
-        <img className={styles.loginForm__boldLine} src={BoldLine} alt="Line" />
-        <div className={styles.loginForm__signup}>Зарегистрироваться</div>
-        <img className={styles.loginForm__line} src={Line} alt="line" />
+        <div className={styles.loginForm__login}>
+          Войти
+        </div>
+        <img
+          className={styles.loginForm__boldLine}
+          src={BoldLine}
+          alt="Line"
+        />
+        <div className={styles.loginForm__signup}>
+          Зарегистрироваться
+        </div>
+        <img
+          className={styles.loginForm__line}
+          src={Line}
+          alt="line"
+        />
       </div>
 
       <label>
-        <div className={styles.loginForm__enterLoginText}>Логин или номер телефона:</div>
-        <LoginInput value={login} onChange={handleLoginInputChange} error={loginError} />
+        <div className={styles.loginForm__enterLoginText}>
+          Логин или номер телефона:
+        </div>
+        <LoginInput
+          value={login}
+          onChange={handleLoginInputChange}
+          error={loginError}
+        />
       </label>
       <br />
       <label>
-        <div className={styles.loginForm__enterPasswordText}>Пароль:</div>
-        <PasswordInput value={password} onChange={handlePasswordInputChange} error={passwordError} />
+        <div className={styles.loginForm__enterPasswordText}>
+          Пароль:
+        </div>
+        <PasswordInput
+          value={password}
+          onChange={handlePasswordInputChange}
+          error={passwordError}
+        />
       </label>
       <br />
 
@@ -72,19 +96,33 @@ const LoginForm = ({ onSuccess }) => {
         onClick={handleLoginFormSubmit}
         disabled={!isFormValid}
       >
-        <div className={styles.loginForm__button_text}>Войти</div>
+        <div className={styles.loginForm__button_text}>
+          Войти
+        </div>
       </button>
 
-      <span className={`${styles.loginForm__recoverPass} ${styles.disabled}`}>
+      <span className={styles.loginForm__recoverPass}>
         Восстановить пароль
       </span>
 
       <div className={styles.loginForm__enterSmallText}>Войти через</div>
 
       <div className={styles.loginForm__socialIcons}>
-        <img className={styles.loginForm__socialIcons_google} src={imgGoogle} alt="imgGoogle" />
-        <img className={styles.loginForm__socialIcons_facebook} src={imgFacebook} alt="imgFacebook" />
-        <img className={styles.loginForm__socialIcons_yandex} src={imgYandex} alt="imgYandex" />
+        <img
+          className={styles.loginForm__socialIcons_google}
+          src={imgGoogle}
+          alt="imgGoogle"
+        />
+        <img
+          className={styles.loginForm__socialIcons_facebook}
+          src={imgFacebook}
+          alt="imgFacebook"
+        />
+        <img
+          className={styles.loginForm__socialIcons_yandex}
+          src={imgYandex}
+          alt="imgYandex"
+        />
       </div>
     </section>
   );
