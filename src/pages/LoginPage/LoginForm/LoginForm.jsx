@@ -15,9 +15,11 @@ const LoginForm = ({ onSuccess }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
+  const [error, setError] = useState('');
 
   const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
+    validateForm();
     try {
       await handleLogin(login, password);
       console.log('Logging in with:', login, password);
@@ -26,27 +28,28 @@ const LoginForm = ({ onSuccess }) => {
       }
     } catch (error) {
       console.error('Error during login:', error);
+      setError('Произошла ошибка во время входа'); // Пример обработки ошибки
     }
   };
 
   const handleLoginInputChange = (e) => {
     setLogin(e.target.value);
+    setError(''); // Очищаем ошибку при изменении поля ввода
     validateForm(e.target.value, password);
   };
 
   const handlePasswordInputChange = (e) => {
     const newPassword = e.target.value;
     setPassword(newPassword);
+    setError(''); // Очищаем ошибку при изменении поля ввода
     validateForm(login, newPassword);
   }
 
   const validateForm = (loginValue, passwordValue) => {
-    const isLoginNotEmpty = loginValue.trim() !== '';
-    const isPasswordNotEmpty = passwordValue.trim() !== '';
-
+    const isLoginNotEmpty = typeof loginValue === 'string' && loginValue.trim() !== '';
+    const isPasswordNotEmpty = typeof passwordValue === 'string' && passwordValue.trim() !== '';
     setIsFormValid(isLoginNotEmpty && isPasswordNotEmpty);
   }
-
 
   return (
     <section className={styles.loginForm}>
@@ -78,6 +81,7 @@ const LoginForm = ({ onSuccess }) => {
           value={login}
           onChange={handleLoginInputChange}
         />
+        {error && <div className={styles.loginForm__errorLoginText}>{error}</div>}
 
       </label>
       <br/>
@@ -89,6 +93,7 @@ const LoginForm = ({ onSuccess }) => {
           value={password}
           onChange={handlePasswordInputChange}
         />
+        {error && <div className={styles.loginForm__errorPasswordText}>{error}</div>}
 
       </label>
       <br/>

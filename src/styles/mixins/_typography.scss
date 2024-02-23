@@ -80,6 +80,16 @@
   word-wrap: break-word;
 }
 
+// Миксин для стилей ошибок
+@mixin error-login-text {
+  color: $red;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+  word-wrap: break-word;
+}
+
 // Миксин для стилей ссылок
 @mixin link {
   text-decoration: none;

@@ -4,14 +4,18 @@ import React from 'react';
 import styles from '../LoginForm.module.scss';
 
 function PasswordInput({ value, onChange }) {
-  // Функция для обработки изменения значения в поле ввода пароля
   return (
-    <input
-      type="password"
-      className={styles.loginForm__inputField}
-      value={value}
-      onChange={onChange}
-    />
+    <>
+      <input
+        type="password"
+        className={styles.loginForm__inputField}
+        value={value}
+        onChange={onChange}
+      />
+      <div className={styles.loginForm__errorPasswordText}>
+        Неправильный пароль
+      </div>
+    </>
   );
 }
 

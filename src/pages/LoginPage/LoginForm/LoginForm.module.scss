@@ -66,6 +66,20 @@
 	margin-top: 60px;
 }
 
+.loginForm__errorLoginText {
+	@include error-login-text;
+	position: absolute;
+	top: 190px;
+	left: 110px;
+}
+
+.loginForm__errorPasswordText {
+	@include error-login-text;
+	position: absolute;
+	top: 285px;
+	left: 130px;
+}
+
 .loginForm__enterPasswordText {
 	@include login-form-text;
 	margin-left: 25px;
