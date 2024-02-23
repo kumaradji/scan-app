@@ -33,24 +33,26 @@ function BeginnerTariffCard() {
           </>
         ) : null}
       </div>
-      
+
 
       <div>
         {isAuthenticated ? (
           // Если пользователь авторизован, отображаем кнопку для личного кабинета
           <div className={styles.beginnerTariffCard__personalCabinetButton}>
-            <Button className={styles.beginnerTariffCard__personalCabinetButton_text}>
+            <button className={styles.beginnerTariffCard__personalCabinetButton_text}>
               Перейти в личный кабинет
-            </Button>
+            </button>
           </div>
-        ) : (
+        ) : null}
+
+        {!isAuthenticated ? (
           // Иначе отображаем кнопку "Подробнее"
           <div className={styles.beginnerTariffCard__moreButton}>
             <Button className={styles.beginnerTariffCard__moreButton_text}>
               Подробнее
             </Button>
           </div>
-        )}
+        ) : null}
       </div>
 
       <div className={styles.beginnerTariffCard__infoTitle}>
