@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from '../LoginForm.module.scss';
 
-function PasswordInput({ value, onChange }) {
+function PasswordInput({ value, onChange, error }) {
   return (
     <>
       <input
@@ -12,9 +12,10 @@ function PasswordInput({ value, onChange }) {
         value={value}
         onChange={onChange}
       />
-      <div className={styles.loginForm__errorPasswordText}>
+      {error &&
+        <div className={styles.loginForm__errorPasswordText}>
         Неправильный пароль
-      </div>
+      </div>}
     </>
   );
 }

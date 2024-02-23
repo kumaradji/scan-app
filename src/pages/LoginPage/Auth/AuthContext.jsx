@@ -1,5 +1,5 @@
 // AuthContext.jsx
-import React, {createContext, useContext, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 import AuthService from '../Auth/AuthService';
 
 const AuthContext = createContext();
@@ -7,23 +7,32 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loginError, setLoginError] = useState(null);
+  const [passwordError, setPasswordError] = useState(null);
 
   const handleLogin = async (username, password) => {
     try {
+      // Очищаем ошибки перед запросом
+      setLoginError(null);
+      setPasswordError(null);
+
       const response = await AuthService.login(username, password);
       setIsAuthenticated(true);
       localStorage.setItem('accessToken', response.accessToken);
       setUser(response.data || {});
-      console.log('_____________AuthContext: Login success!______________');
     } catch (error) {
       console.error('Error during login:', error);
 
       if (error.response && error.response.status === 401) {
         console.error('Authentication failed. Invalid username or password.');
-        throw new Error('Authentication failed. Invalid username or password.');
+        setLoginError('Authentication failed. Invalid username or password.');
       } else {
         console.error('Server response data:', error.response?.data);
+        setPasswordError('Server error during login.');
       }
+
+      // Прокидываем ошибку наружу для обработки в компоненте
+      throw error;
     }
   };
 
@@ -35,8 +44,14 @@ export const AuthProvider = ({ children }) => {
     console.log('Logged out successfully');
   };
 
+  useEffect(() => {
+    // Сбрасываем ошибки при монтировании компонента
+    setLoginError(null);
+    setPasswordError(null);
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, handleLogin, handleLogout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, handleLogin, handleLogout, loginError, passwordError }}>
       {children}
     </AuthContext.Provider>
   );

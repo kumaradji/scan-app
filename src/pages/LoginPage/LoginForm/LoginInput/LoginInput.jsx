@@ -2,7 +2,7 @@
 
 import styles from '../LoginForm.module.scss';
 
-function LoginInput({value, onChange}) {
+function LoginInput({value, onChange, error}) {
   return (
     <>
       <input
@@ -10,9 +10,10 @@ function LoginInput({value, onChange}) {
         value={value}
         onChange={onChange}
       />
-      <div className={styles.loginForm__errorLoginText}>
+      {error &&
+        <div className={styles.loginForm__errorLoginText}>
         Введите корректные данные
-      </div>
+      </div>}
     </>
   );
 }
