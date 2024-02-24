@@ -48,10 +48,9 @@ function SearchFormInputs() {
           value={tonality}
           onChange={(e) => setTonality(e.target.value)}
         >
-          <option value="">Выберите тональность</option>
+          <option value="any">Любая</option>
           <option value="positive">Позитивная</option>
           <option value="negative">Негативная</option>
-          <option value="any">Любая</option>
         </select>
       </section>
       

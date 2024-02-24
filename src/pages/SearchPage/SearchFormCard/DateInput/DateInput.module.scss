@@ -2,62 +2,58 @@
 @import "../../../../styles/mixins/typography";
 @import "../../../../styles/mixins/_var";
 
-.container {
-  &__inputContainer {
+.dateInput {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+
+  &__dateLabel {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: $gray-light;
+    margin-bottom: 10px;
+  }
+
+  &__firstDate {
     @include input;
+    flex: 1;
     width: 176px;
     position: relative;
-    margin-bottom: 20px; // Добавьте расстояние между полями ввода
+    margin-right: 20px;
 
     &:hover {
       border-color: $blue;
-    }
-
-    input {
-      width: 100%;
-      height: 100%;
-      padding-right: 10px;
-      transition: border-color 0.3s ease;
-    }
-
-    img {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
     }
   }
 
-  &__datePickerContainer {
+  &__inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__dateInputIcon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+
+  &__placeholder {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: $gray-light;
+    margin-bottom: 10px;
+  }
+
+  &__secondDate {
     @include input;
     width: 176px;
     position: relative;
-    margin-bottom: 20px; // Добавьте расстояние между полями ввода
 
     &:hover {
       border-color: $blue;
-    }
-
-    input {
-      width: 100%;
-      height: 100%;
-      padding-right: 10px;
-      transition: border-color 0.3s ease;
-    }
-
-    img {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-    }
-
-    &_dateLabel {
-
     }
   }
 
@@ -66,10 +62,6 @@
   }
 
   .react-datepicker {
-    &__input-container {
-      //display: none;
-    }
-
     &__portal {
       width: 100%;
       position: absolute;

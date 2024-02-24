@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./DateInput.module.scss";
+import dateInputIcon from "../../../../assets/icons/dateInputIcon.svg";
 
 function DateInput() {
   const [startDate, setStartDate] = useState(null);
@@ -17,27 +18,41 @@ function DateInput() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.container__inputContainer}>
-        <label className={styles.container__datePickerContainer_dateLabel}>
-          Дата начала:
-        </label>
-        <DatePicker
-          selected={startDate}
-          onChange={handleStartDateChange}
-          placeholderText="Выберите дату начала"
-        />
+    <div className={styles.dateInput}>
+      <div className={styles.dateInput__firstDate}>
+        {/*<label className={styles.dateInput__dateLabel}>Дата начала:</label>*/}
+        <div className={styles.dateInput__inputWrapper}>
+          <DatePicker
+            selected={startDate}
+            onChange={handleStartDateChange}
+            placeholderText={
+              <span className={styles.dateInput__placeholder}>Дата начала</span>
+            }
+          />
+          <img
+            className={styles.dateInput__dateInputIcon}
+            src={dateInputIcon}
+            alt=""
+          />
+        </div>
       </div>
 
-      <div className={styles.container__datePickerContainer}>
-        <label className={styles.container__datePickerContainer_dateLabel}>
-          Дата конца:
-        </label>
-        <DatePicker
-          selected={endDate}
-          onChange={handleEndDateChange}
-          placeholderText="Выберите дату конца"
-        />
+      <div className={styles.dateInput__secondDate}>
+        {/*<label className={styles.dateInput__dateLabel}>Дата конца:</label>*/}
+        <div className={styles.dateInput__inputWrapper}>
+          <DatePicker
+            selected={endDate}
+            onChange={handleEndDateChange}
+            placeholderText={
+              <span className={styles.dateInput__placeholder}>Дата конца</span>
+            }
+          />
+          <img
+            className={styles.dateInput__dateInputIcon}
+            src={dateInputIcon}
+            alt=""
+          />
+        </div>
       </div>
     </div>
   );
