@@ -1,15 +1,16 @@
 // useSearchFormHook.js
 import {useState} from 'react';
-import * as SearchForm from "../api/search";
+import {searchCompaniesByINN} from '../api/search';
 
 const useSearchFormHook = () => {
   const [inn, setInn] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [tonality, setTonality] = useState('');
-  const [documentCount, setDocumentCount] = useState('');
+  const [documentCount, setDocumentCount] = useState(0); // Изменил значение по умолчанию на 0
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [checkedItems, setCheckedItems] = useState(Array(7).fill(false));
+  const [error, setError] = useState(null); // Новое состояние для отслеживания ошибок
 
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -27,9 +28,11 @@ const useSearchFormHook = () => {
 
   const handleSearchClick = async () => {
     try {
-      const results = await SearchForm.searchCompaniesByINN(inn, { /* дополнительные фильтры */ });
+      setError(null); // Очистка предыдущих ошибок при новом поиске
+      const results = await searchCompaniesByINN(inn, { /* дополнительные фильтры */ });
       setSearchResults(results);
     } catch (error) {
+      setError('Ошибка при поиске компаний. Пожалуйста, попробуйте еще раз.'); // Обработка ошибок
       console.error('Ошибка при поиске компаний:', error);
     }
   };
@@ -49,6 +52,7 @@ const useSearchFormHook = () => {
     setEndDate,
     checkedItems,
     setCheckedItems,
+    error, // Передаем ошибку внутри хука
     handleStartDateChange,
     handleEndDateChange,
     handleToggle,

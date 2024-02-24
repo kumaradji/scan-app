@@ -2,34 +2,47 @@
 @import "../../../../styles/mixins/_var";
 
 .checkboxList {
-  &__item {
-    &__label {
-      position: relative;
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px; /* Пример отступа между чекбоксами */
+	&__label {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-bottom: 15px;
+		cursor: pointer;
 
-      &__input {
-        margin-right: 8px;
-        margin-top: 5px; /* Скорректирован отступ для более центрированного вида */
-      }
+		&_checked {
+			.checkboxList__text {
+				color: $black;
+			}
+		}
+	}
 
-      &__text {
-        font-size: 18px;
-        font-family: 'Inter', sans-serif;
-        color: $black; /* Замените $black на ваш цвет текста */
-        margin-left: 10px; /* Пример отступа между чекбоксом и текстом */
-      }
+	&__checkbox {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		border: 1px solid $gray-light;
+		border-radius: 4px;
+		margin-right: 10px;
 
-      &__icon {
-        width: 14px;
-        height: 14px;
-        margin-left: 5px; /* Пример отступа между текстом и иконкой галочки */
-      }
+		&_checked {
+			border-color: $black;
+		}
+	}
 
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
+	&__text {
+		font-size: 18px;
+		font-family: 'Inter', sans-serif;
+		color: $gray-light;
+		margin-left: 10px;
+
+		&_checked {
+			color: $black;
+		}
+	}
+
+	&__icon {
+		width: 14px;
+		height: 14px;
+		margin-left: 1px; /* Пример отступа между текстом и иконкой галочки */
+	}
 }

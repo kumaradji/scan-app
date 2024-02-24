@@ -1,15 +1,20 @@
 // DateInput.jsx
-import React from "react";
+import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./DateInput.module.scss";
-import useSearchFormHook from "../../../../hooks/useSearchFormHook";
 
-function DateInput({ selectedDate, onChange, placeholder }) {
-  const {
-    handleEndDateChange,
-    handleStartDateChange,
-  } = useSearchFormHook();
+function DateInput() {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
+  };
+
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+  };
 
   return (
     <div className={styles.container}>
@@ -18,9 +23,9 @@ function DateInput({ selectedDate, onChange, placeholder }) {
           Дата начала:
         </label>
         <DatePicker
-          selected={selectedDate}
+          selected={startDate}
           onChange={handleStartDateChange}
-          placeholderText={placeholder}
+          placeholderText="Выберите дату начала"
         />
       </div>
 
@@ -29,9 +34,9 @@ function DateInput({ selectedDate, onChange, placeholder }) {
           Дата конца:
         </label>
         <DatePicker
-          selected={selectedDate}
+          selected={endDate}
           onChange={handleEndDateChange}
-          placeholderText={placeholder}
+          placeholderText="Выберите дату конца"
         />
       </div>
     </div>

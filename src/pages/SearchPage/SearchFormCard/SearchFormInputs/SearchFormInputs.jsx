@@ -14,53 +14,67 @@ function SearchFormInputs() {
     setDocumentCount,
   } = useSearchFormHook();
 
+  const validateInn = (input) => {
+    const innRegExp = /^\d{10}|\d{12}$/; // Регулярное выражение для ИНН (10 или 12 цифр)
+    return innRegExp.test(input);
+  };
+
+  const handleInnChange = (e) => {
+    const inputValue = e.target.value;
+    if (validateInn(inputValue) || inputValue === '') {
+      setInn(inputValue);
+    }
+  };
+
+
   return (
-  <section className={styles.container}>
-    <section className={styles.container__inn}>
-      <div className={styles.container__inn__label}>
-        ИНН компании:*
+    <section className={styles.container}>
+      <section className={styles.container__inn}>
+        <div className={styles.container__inn__label}>
+          ИНН компании:*
+        </div>
+        <input
+          className={styles.container__inn__input}
+          type="text"
+          value={inn}
+          onChange={(e) => setInn(e.target.value)}
+        />
+      </section>
+
+      <section className={styles.container__tonality}>
+        <div className={styles.container__tonality__label}>Тональность</div>
+        <select
+          className={styles.container__tonality__input}
+          value={tonality}
+          onChange={(e) => setTonality(e.target.value)}
+        >
+          <option value="">Выберите тональность</option>
+          <option value="positive">Позитивная</option>
+          <option value="negative">Негативная</option>
+          <option value="any">Любая</option>
+        </select>
+      </section>
+      
+      <section className={styles.container__documentCount}>
+        <div className={styles.container__documentCount__label}>
+          Количество документов в выдаче*
+        </div>
+        <input
+          className={styles.container__documentCount__input}
+          type="number"
+          value={documentCount}
+          onChange={(e) => setDocumentCount(e.target.value)}
+        />
+      </section>
+
+      <div className={styles.container__leftBlockLabel}>
+        Диапазон поиска*
       </div>
-      <input
-        className={styles.container__inn__input}
-        type="text"
-        value={inn}
-        onChange={(e) => setInn(e.target.value)}
-      />
-    </section>
 
-    <section className={styles.container__tonality}>
-      <div className={styles.container__tonality__label}>
-        Тональность
-      </div>
-
-      <input
-        className={styles.container__tonality__input}
-        type="text"
-        value={tonality}
-        onChange={(e) => setTonality(e.target.value)}
-      />
-    </section>
-
-    <section className={styles.container__documentCount}>
-    <div className={styles.container__documentCount__label}>
-      Количество документов в выдаче*
-    </div>
-    <input
-      className={styles.container__documentCount__input}
-      type="number"
-      value={documentCount}
-      onChange={(e) => setDocumentCount(e.target.value)}
-    />
-    </section>
-
-    <div className={styles.container__leftBlockLabel}>
-      Диапазон поиска*
-    </div>
-
-    <div className={styles.container__dateInputs}>
+      <div className={styles.container__dateInputs}>
         <DateInput/>
-    </div>
-  </section>
+      </div>
+    </section>
   )
 }
 

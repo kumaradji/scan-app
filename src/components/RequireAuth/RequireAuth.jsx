@@ -12,7 +12,7 @@ export function RequireAuth({ children }) {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login"/>;
+    return <Navigate to="/"/>;
   }
 
 }
