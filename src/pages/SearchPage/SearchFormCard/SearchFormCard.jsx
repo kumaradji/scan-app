@@ -18,7 +18,7 @@ function SearchFormCard() {
       <SearchFormInputs />
 
       {/*правая часть картоки*/}
-      <label className={styles.container__rightBlock}>
+      <label className={styles.searchFormCard__rightBlock}>
         <CheckboxList
           items={[
             'Признак максимальной полноты',
@@ -35,12 +35,15 @@ function SearchFormCard() {
       </label>
 
       {/*кнопка и надпись под ней*/}
-      <Button className={styles.container__searchButton} onClick={handleSearchClick}>
-        <div className={styles.container__searchButton__ButtonText}>
+      <Button
+        className={styles.searchFormCard__searchButton}
+        onClick={handleSearchClick}
+      >
+        <div className={styles.searchFormCard__searchButton__ButtonText}>
           Поиск
         </div>
       </Button>
-      <div className={styles.container__rightBlockSmallText}>
+      <div className={styles.searchFormCard__rightBlockSmallText}>
         * Обязательные к заполнению поля
       </div>
 

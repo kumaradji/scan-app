@@ -19,14 +19,20 @@ function DateInput() {
 
   return (
     <div className={styles.dateInput}>
-      <div className={styles.dateInput__firstDate}>
-        {/*<label className={styles.dateInput__dateLabel}>Дата начала:</label>*/}
+
+      <div className={styles.dateInput__errorLabel}>
+        Введите корректные данные
+      </div>
+
+      <div className={styles.dateInput__startDate}>
         <div className={styles.dateInput__inputWrapper}>
           <DatePicker
             selected={startDate}
             onChange={handleStartDateChange}
-            placeholderText={
-              <span className={styles.dateInput__placeholder}>Дата начала</span>
+            customInput={
+              <span className={styles.dateInput__placeholder}>
+                {startDate ? `${startDate.getDate()}.${startDate.getMonth() + 1}.${startDate.getFullYear()}` : 'Дата начала'}
+              </span>
             }
           />
           <img
@@ -37,14 +43,15 @@ function DateInput() {
         </div>
       </div>
 
-      <div className={styles.dateInput__secondDate}>
-        {/*<label className={styles.dateInput__dateLabel}>Дата конца:</label>*/}
+      <div className={styles.dateInput__endDate}>
         <div className={styles.dateInput__inputWrapper}>
           <DatePicker
             selected={endDate}
             onChange={handleEndDateChange}
-            placeholderText={
-              <span className={styles.dateInput__placeholder}>Дата конца</span>
+            customInput={
+              <span className={styles.dateInput__placeholder}>
+                {endDate ? `${endDate.getDate()}.${endDate.getMonth() + 1}.${endDate.getFullYear()}` : 'Дата конца'}
+              </span>
             }
           />
           <img

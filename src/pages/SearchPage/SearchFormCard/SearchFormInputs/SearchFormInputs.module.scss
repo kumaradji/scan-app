@@ -1,0 +1,114 @@
+@import "../../../../styles/mixins/_typography";
+@import "../../../../styles/mixins/_var";
+@import "../../../../styles/mixins/_media";
+
+.searchFormCard {
+	width: 872px;
+	height: 543px;
+	position: relative;
+	box-shadow: 0 0 20px $shadow;
+	align-items: center;
+	border-radius: 10px;
+	margin-top: 20px;
+	margin-bottom: 64px;
+	margin-left: 53px;
+}
+
+.searchFormCard__inn_label {
+	left: 0;
+	top: 8px;
+	position: absolute;
+	color: $black;
+	font-size: 18px;
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.54px;
+	word-wrap: break-word;
+	margin-top: 29px;
+	margin-left: 44px;
+}
+
+.searchFormCard__inn_input {
+	@include input;
+	top: 71px;
+	left: 44px;
+}
+
+.searchFormCard__tonality {
+	width: 100%;
+	height: 100%;
+
+	&_label {
+		left: 0;
+		top: 8px;
+		position: absolute;
+		color: $black;
+		font-size: 18px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.54px;
+		word-wrap: break-word;
+		margin-top: 144px;
+		margin-left: 44px;
+	}
+
+	&_input {
+		@include input;
+		top: 186px;
+		left: 44px;
+	}
+}
+
+.searchFormCard__documentCount__errorLabel {
+	@include error-login-text;
+	position: absolute;
+	margin-top: -190px;
+	margin-left: 90px;
+
+}
+.searchFormCard__documentCount {
+	width: 100%;
+	height: 100%;
+
+	&_label {
+		left: 0;
+		top: 8px;
+		position: absolute;
+		color: $black;
+		font-size: 18px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.54px;
+		word-wrap: break-word;
+		margin-top: 259px;
+		margin-left: 44px;
+	}
+
+	&_input {
+		@include input;
+		top: 301px;
+		left: 44px;
+	}
+}
+
+// Диапазон поиска*
+.searchFormCard__leftBlockLabel {
+	left: 0;
+	top: 8px;
+	position: absolute;
+	color: $black;
+	font-size: 18px;
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.54px;
+	word-wrap: break-word;
+	margin-top: 383px;
+	margin-left: 44px;
+}
+
+.searchFormCard__dateInputs {
+	display: flex;
+	flex-direction: row;
+	margin-left: 44px;
+	margin-top: -1225px;
+}
