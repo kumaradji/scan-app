@@ -1,46 +1,76 @@
 // SearchFormInputs.jsx
-import React from 'react';
+import React, {useState} from 'react';
 import useSearchFormHook from "../../../../hooks/useSearchFormHook";
 import DateInput from '../DateInput/DateInput';
 import styles from './SearchFormInputs.module.scss';
 
 function SearchFormInputs() {
+  // Импортируем константы из хука
   const {
-    inn,
-    setInn,
     tonality,
     setTonality,
     documentCount,
-    setDocumentCount,
+    setDocumentCount
   } = useSearchFormHook();
 
-  const validateInn = (input) => {
-    const innRegExp = /^\d{10}|\d{12}$/; // Регулярное выражение для ИНН (10 или 12 цифр)
-    return innRegExp.test(input);
-  };
+  // State для Inn из кастомного хука
+  const {inn, setInn} = useSearchFormHook();
+
+  // Локальный state для ошибки валидации
+  const [innError, setInnError] = useState(false);
+
+  // Функция валидации ИНН
+  const validateInn = (value) => {
+    if(!/^\d+$/.test(value)) {
+      // Если есть не цифры - ошибка
+      return false;
+    }
+
+    if(value.length !== 10 && value.length !== 12) {
+      // Неправильная длина
+      return false;
+    }
+
+    return true;
+  }
 
   const handleInnChange = (e) => {
-    const inputValue = e.target.value;
-    if (validateInn(inputValue) || inputValue === '') {
-      setInn(inputValue);
+    setInn(e.target.value);
+  }
+
+  const handleInnBlur = () => {
+    if(!validateInn(inn)) {
+      setInnError(true);
+    } else {
+      setInnError(false);
     }
-  };
+  }
 
   return (
     <section className={styles.searchFormCard}>
       <label>
-        <div className={styles.searchFormCard__inn_label}>
-          ИНН компании:*
+        <div className={styles.searchFormCard__inn}>
+          <div className={styles.searchFormCard__inn_label}>
+            ИНН компании
+          </div>
+          <div className={styles.searchFormCard__inn_label_star}>
+            *
+          </div>
         </div>
         <input
           className={styles.searchFormCard__inn_input}
           type="text"
           value={inn}
-          onChange={(e) => setInn(e.target.value)}
+          onChange={handleInnChange}
+          onBlur={handleInnBlur}
         />
+        {innError && <div
+          className={styles.searchFormCard__inn__errorLabel}>
+          Введите корректные данные
+        </div>}
       </label>
 
-      <section className={styles.searchFormCard__tonality}>
+      <label>
         <div className={styles.searchFormCard__tonality_label}>
           Тональность
         </div>
@@ -53,34 +83,33 @@ function SearchFormInputs() {
           <option value="positive">Позитивная</option>
           <option value="negative">Негативная</option>
         </select>
-      </section>
+      </label>
 
-      <section className={styles.searchFormCard__documentCount}>
-        <div className={styles.searchFormCard__documentCount_label}>
-          Количество документов в выдаче*
+      <label>
+        <div className={styles.searchFormCard__documentCount}>
+          <div className={styles.searchFormCard__documentCount_label}>
+            Количество документов в выдаче
+          </div>
+          <div className={styles.searchFormCard__documentCount_label_star}>
+            *
+          </div>
         </div>
-
-        <div className={styles.searchFormCard__documentCount__errorLabel}>
-          Обязательное поле
-        </div>
-
         <input
           className={styles.searchFormCard__documentCount_input}
           type="number"
           value={documentCount}
           onChange={(e) => setDocumentCount(e.target.value)}
         />
-      </section>
-
-      <div className={styles.searchFormCard__leftBlockLabel}>
-        Диапазон поиска*
-      </div>
+        <div className={styles.searchFormCard__documentCount__errorLabel}>
+          Обязательное поле
+        </div>
+      </label>
 
       <div className={styles.searchFormCard__dateInputs}>
-        <DateInput/>
+        <DateInput />
       </div>
     </section>
-  )
+  );
 }
 
 export default SearchFormInputs;

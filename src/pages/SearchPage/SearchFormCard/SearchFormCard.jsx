@@ -14,40 +14,53 @@ function SearchFormCard() {
   } = useSearchFormHook();
 
   return <>
-      {/*левая часть карточки*/}
-      <SearchFormInputs />
+    {/*левая часть карточки*/}
+    <SearchFormInputs/>
 
-      {/*правая часть картоки*/}
-      <label className={styles.searchFormCard__rightBlock}>
-        <CheckboxList
-          items={[
-            'Признак максимальной полноты',
-            'Упоминания в бизнес-контексте',
-            'Главная роль в публикации',
-            'Публикации только с риск-факторами',
-            'Включать технические новости рынков',
-            'Включать анонсы и календари',
-            'Включать сводки новостей',
-          ]}
-          checkedItems={checkedItems}
-          onToggle={handleToggle}
-        />
-      </label>
+    <div className={styles.searchFormCard__errorLabel}>
+      Введите корректные данные
+    </div>
 
-      {/*кнопка и надпись под ней*/}
-      <Button
-        className={styles.searchFormCard__searchButton}
-        onClick={handleSearchClick}
-      >
-        <div className={styles.searchFormCard__searchButton__ButtonText}>
-          Поиск
-        </div>
-      </Button>
-      <div className={styles.searchFormCard__rightBlockSmallText}>
-        * Обязательные к заполнению поля
+    <div className={styles.searchFormCard__searchAreaLabel}>
+      <div className={styles.searchFormCard__searchAreaLabel_label}>
+        Диапазон поиска
       </div>
+      <div className={styles.searchFormCard__searchAreaLabel_star}>
+        *
+      </div>
+    </div>
 
-    </>;
+    {/*правая часть картоки*/}
+    <label className={styles.searchFormCard__rightBlock}>
+      <CheckboxList
+        items={[
+          'Признак максимальной полноты',
+          'Упоминания в бизнес-контексте',
+          'Главная роль в публикации',
+          'Публикации только с риск-факторами',
+          'Включать технические новости рынков',
+          'Включать анонсы и календари',
+          'Включать сводки новостей',
+        ]}
+        checkedItems={checkedItems}
+        onToggle={handleToggle}
+      />
+    </label>
+
+    {/*кнопка и надпись под ней*/}
+    <Button
+      className={styles.searchFormCard__searchButton}
+      onClick={handleSearchClick}
+    >
+      <div className={styles.searchFormCard__searchButton__ButtonText}>
+        Поиск
+      </div>
+    </Button>
+    <div className={styles.searchFormCard__rightBlockSmallText}>
+      * Обязательные к заполнению поля
+    </div>
+
+  </>;
 
 }
 

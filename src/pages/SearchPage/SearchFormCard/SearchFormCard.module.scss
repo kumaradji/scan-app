@@ -2,6 +2,28 @@
 @import "../../../styles/mixins/_var";
 @import "../../../styles/mixins/_media";
 
+.searchFormCard__errorLabel {
+	@include error-login-text;
+	margin-top: 20px;
+}
+
+.searchFormCard__searchAreaLabel {
+	display: flex;
+}
+
+.searchFormCard__searchAreaLabel_label {
+	@include title-search-label;
+	margin-top: -260px;
+	margin-left: 95px;
+}
+
+.searchFormCard__searchAreaLabel_star {
+	@include title-search-label-star;
+	margin-top: -270px;
+	margin-left: 0;
+}
+
+
 .searchFormCard__rightBlock {
 	width: 428px;
 	height: auto;
