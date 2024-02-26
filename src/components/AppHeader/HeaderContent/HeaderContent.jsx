@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './HeaderContent.module.scss';
 import LogoImg from '../../../assets/images/Logo.svg';
 import BurgerImg from '../../../assets/icons/BublikMenu-mobile.svg';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const HeaderContent = () => {
   return (
@@ -20,16 +20,17 @@ const HeaderContent = () => {
       </div>
 
       <div className={styles.headerContent__menu}>
-        <Link to="/" className={styles.headerContent__navLink}>
+        <NavLink to="/" className={styles.headerContent__navLink}>
           Главная
-        </Link>
+        </NavLink>
         <span className={styles.headerContent__navLink_disabled}>
           Тарифы
         </span>
         <span className={styles.headerContent__navLink_disabled}>
-         FAQ
+          FAQ
         </span>
       </div>
+
     </section>
   );
 };

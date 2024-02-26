@@ -4,16 +4,12 @@ import {Navigate} from 'react-router-dom';
 import {useAuth} from '../../pages/LoginPage/Auth/AuthContext';
 
 export function RequireAuth({ children }) {
-
   const { isAuthenticated } = useAuth();
-
-  if (isAuthenticated) {
-    return <>{children}</>;
-  }
+  console.log('Redirecting to login...');
 
   if (!isAuthenticated) {
-    return <Navigate to="/"/>;
+    return <Navigate to="/login" />;
   }
 
+  return children;
 }
-
