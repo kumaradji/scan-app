@@ -4,7 +4,9 @@
 
 .searchFormCard__errorLabel {
 	@include error-login-text;
-	margin-top: 20px;
+	position: absolute;
+	top: 790px;
+	left: 180px;
 }
 
 .searchFormCard__searchAreaLabel {

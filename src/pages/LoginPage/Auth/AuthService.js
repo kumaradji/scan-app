@@ -15,7 +15,7 @@ export default class AuthService {
       });
 
       localStorage.setItem('accessToken', response.data.accessToken);
-      console.log(response.data.accessToken);
+      console.log('SAVE:',response.data.accessToken);
 
       return response.data;
     } catch (error) {

@@ -30,11 +30,15 @@ export const AuthProvider = ({ children }) => {
         console.error('Server response data:', error.response?.data);
         setPasswordError('Server error during login.');
       }
-
       // Прокидываем ошибку наружу для обработки в компоненте
       throw error;
     }
   };
+
+  useEffect(() => {
+    console.log('handleLogin', isAuthenticated);
+  }, [isAuthenticated]);
+
 
   const handleLogout = () => {
     // Обновляем состояние пользователя при выходе

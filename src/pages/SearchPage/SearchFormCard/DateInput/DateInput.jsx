@@ -21,7 +21,7 @@ function DateInput() {
     <>
       {startDate ?
         `${startDate.getDate()<10?'0'+startDate.getDate():startDate.getDate()}.${(startDate.getMonth() + 1)<10?'0'+(startDate.getMonth() + 1):(startDate.getMonth() + 1)}.${startDate.getFullYear()}`
-        : 'Дата начала'}
+        : ''}
 
       <section className={styles.dateInput}>
         <div className={styles.dateInput__startDate}>
@@ -45,7 +45,7 @@ function DateInput() {
 
         {endDate ?
           `${endDate.getDate()<10?'0'+endDate.getDate():endDate.getDate()}.${(endDate.getMonth() + 1)<10?'0'+(endDate.getMonth() + 1):(endDate.getMonth() + 1)}.${endDate.getFullYear()}`
-          : 'Дата конца'}
+          : ''}
 
 
         <div className={styles.dateInput__endDate}>
