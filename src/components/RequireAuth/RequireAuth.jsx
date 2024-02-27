@@ -1,23 +1,33 @@
 // RequireAuth.jsx
-import React from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import {Navigate, useLocation} from 'react-router-dom';
-import {useAuth} from '../../pages/LoginPage/Auth/AuthContext';
+import {useAuth} from "../../pages/LoginPage/Auth/AuthContext";
 
-let renderDepth = 0;
-export function RequireAuth({ children }) {
-
-  renderDepth++;
-  console.log(`Render depth: ${renderDepth}`);
-
-  const { isAuthenticated } = useAuth();
-  console.log('RequireAuth - isAuthenticated:', isAuthenticated);
-  console.log('Redirecting to login...');
+export function RequireAuth({children}) {
 
   const location = useLocation();
+  const {isAuthenticated} = useAuth();
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: location }} />;
-  }
+  const firstRender = useRef(true);
 
-  return children;
+  const navigate = useCallback(() => {
+    if (!isAuthenticated) {
+      return <Navigate to="/login" state={{from: location}}/>;
+    }
+  }, [isAuthenticated, location]);
+
+  useEffect(() => {
+    if (!firstRender.current) {
+      navigate();
+    }
+
+    firstRender.current = false;
+  }, [navigate]);
+
+  return (
+    <>
+      {firstRender.current ? null : navigate()}
+      {children}
+    </>
+  );
 }
