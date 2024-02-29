@@ -7,44 +7,43 @@ import styles from './SearchFormInputs.module.scss';
 function SearchFormInputs() {
   // Импортируем константы из хука
   const {
+    inn,
+    setInn,
     tonality,
     setTonality,
     documentCount,
-    setDocumentCount
+    setDocumentCount,
   } = useSearchFormHook();
-
-  // State для Inn из кастомного хука
-  const {inn, setInn} = useSearchFormHook();
 
   // Локальный state для ошибки валидации
   const [innError, setInnError] = useState(false);
 
   // Функция валидации ИНН
   const validateInn = (value) => {
-    if(!/^\d+$/.test(value)) {
+    if (!/^\d+$/.test(value)) {
       // Если есть не цифры - ошибка
       return false;
     }
 
-    if(value.length !== 10 && value.length !== 12) {
+    if (value.length !== 10 && value.length !== 12) {
       // Неправильная длина
       return false;
     }
 
     return true;
-  }
+  };
 
   const handleInnChange = (e) => {
     setInn(e.target.value);
-  }
+  };
 
   const handleInnBlur = () => {
-    if(!validateInn(inn)) {
+    if (!validateInn(inn)) {
       setInnError(true);
     } else {
       setInnError(false);
     }
-  }
+  };
 
   return (
     <section className={styles.searchFormCard}>

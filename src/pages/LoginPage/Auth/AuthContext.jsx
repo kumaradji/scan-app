@@ -2,7 +2,7 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import AuthService from '../Auth/AuthService';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -35,6 +35,12 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const getToken = () => {
+    const token = localStorage.getItem('accessToken');
+    console.log('getToken------->', token);
+    return token;
+  };
+
   useEffect(() => {
     console.log('handleLogin', isAuthenticated);
   }, [isAuthenticated]);
@@ -62,7 +68,8 @@ export const AuthProvider = ({ children }) => {
         handleLogin,
         handleLogout,
         loginError,
-        passwordError
+        passwordError,
+        getToken
     }}>
       {children}
     </AuthContext.Provider>

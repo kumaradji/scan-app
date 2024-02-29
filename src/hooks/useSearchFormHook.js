@@ -1,16 +1,16 @@
 // useSearchFormHook.js
 import {useState} from 'react';
-import {searchCompaniesByINN} from '../api/search';
+import {getHistograms, searchCompaniesByINN} from '../api/search';
 
 const useSearchFormHook = () => {
   const [inn, setInn] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [tonality, setTonality] = useState('');
-  const [documentCount, setDocumentCount] = useState(0); // Изменил значение по умолчанию на 0
+  const [documentCount, setDocumentCount] = useState(0);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [checkedItems, setCheckedItems] = useState(Array(7).fill(false));
-  const [error, setError] = useState(null); // Новое состояние для отслеживания ошибок
+  const [error, setError] = useState(null);
 
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -28,11 +28,33 @@ const useSearchFormHook = () => {
 
   const handleSearchClick = async () => {
     try {
-      setError(null); // Очистка предыдущих ошибок при новом поиске
-      const results = await searchCompaniesByINN(inn, { /* дополнительные фильтры */ });
+      setError(null);
+
+      // Формирование объекта для гистограмм
+      const histogramsSearchParams = {
+        tonality,
+        documentCount,
+        startDate,
+        endDate,
+      };
+
+      // Вызов функции для получения гистограмм
+      const histogramsData = await getHistograms(histogramsSearchParams);
+
+      // Выведем данные гистограмм в консоль для примера
+      console.log('Histograms Data:', histogramsData);
+
+      // Вызов функции для поиска компаний
+      const results = await searchCompaniesByINN(inn, {
+        tonality,
+        documentCount,
+        startDate,
+        endDate,
+      });
+
       setSearchResults(results);
     } catch (error) {
-      setError('Ошибка при поиске компаний. Пожалуйста, попробуйте еще раз.'); // Обработка ошибок
+      setError('Ошибка при поиске компаний. Пожалуйста, попробуйте еще раз.');
       console.error('Ошибка при поиске компаний:', error);
     }
   };
@@ -52,7 +74,7 @@ const useSearchFormHook = () => {
     setEndDate,
     checkedItems,
     setCheckedItems,
-    error, // Передаем ошибку внутри хука
+    error,
     handleStartDateChange,
     handleEndDateChange,
     handleToggle,
