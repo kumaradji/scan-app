@@ -1,6 +1,6 @@
 // useSearchFormHook.js
 import {useState} from 'react';
-import {getHistograms, searchCompaniesByINN} from '../api/search';
+import {searchCompaniesByINN} from "../api/search";
 
 const useSearchFormHook = () => {
   const [inn, setInn] = useState('');
@@ -28,36 +28,34 @@ const useSearchFormHook = () => {
 
   const handleSearchClick = async () => {
     try {
-      setError(null);
+      // Формирование объекта searchRequest
+      const searchRequest = {
+        issueDateInterval: {
+          startDate,
+          endDate
+        },
 
-      // Формирование объекта для гистограмм
-      const histogramsSearchParams = {
-        tonality,
-        documentCount,
-        startDate,
-        endDate,
-      };
+        searchContext: {
+          targetSearchEntitiesContext: {
+            tonality,
+          }
+        },
 
-      // Вызов функции для получения гистограмм
-      const histogramsData = await getHistograms(histogramsSearchParams);
+        attributeFilters: {
+          excludeTechNews: true,
+          documentCount,
+        }
+      }
 
-      // Выведем данные гистограмм в консоль для примера
-      console.log('Histograms Data:', histogramsData);
-
-      // Вызов функции для поиска компаний
-      const results = await searchCompaniesByINN(inn, {
-        tonality,
-        documentCount,
-        startDate,
-        endDate,
-      });
-
+      // Вызов функции для поиска
+      const results = await searchCompaniesByINN(inn, searchRequest);
       setSearchResults(results);
+
     } catch (error) {
       setError('Ошибка при поиске компаний. Пожалуйста, попробуйте еще раз.');
       console.error('Ошибка при поиске компаний:', error);
     }
-  };
+  }
 
   return {
     inn,

@@ -1,15 +1,12 @@
 // api/auth.js
 import api from './api';
 
-export const login = async (credentials, setTokenInCabinet) => {
+export const login = async (credentials) => {
   try {
     const response = await api.post('account/login', credentials);
     // Сохраняем токен в хранилище
     if (response.data.accessToken) {
       localStorage.setItem('accessToken', response.data.accessToken);
-
-      // Устанавливаем токен в кабинете
-      setTokenInCabinet(response.data.accessToken);
     }
 
     return response.data;
