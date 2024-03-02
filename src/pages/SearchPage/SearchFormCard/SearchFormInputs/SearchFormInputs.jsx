@@ -104,8 +104,8 @@ function SearchFormInputs() {
         </div>
       </label>
 
-      <div className={styles.searchFormCard__dateInputs}>
-        <DateInput />
+      <div>
+        <DateInput/>
       </div>
     </section>
   );

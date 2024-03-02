@@ -2,12 +2,12 @@
 @import "../../../styles/mixins/_var";
 @import "../../../styles/mixins/_media";
 
-.searchFormCard__errorLabel {
-	@include error-login-text;
-	position: absolute;
-	top: 790px;
-	left: 180px;
-}
+//.searchFormCard__errorLabel {
+//	@include error-login-text;
+//	position: absolute;
+//	top: 790px;
+//	left: 180px;
+//}
 
 .searchFormCard__searchAreaLabel {
 	display: flex;

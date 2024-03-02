@@ -5,11 +5,17 @@
 .dateInput {
   display: flex;
   flex-direction: row;
+  //padding: 65px 120px 0 44px;
+  margin-top: 70px;
+  margin-left: 44px;
+  margin-right: 460px;
+
 
   &__startDate,
   &__endDate {
     @include input;
     width: 176px;
+    height: 43px;
 
     &:hover {
       border-color: $blue;
@@ -24,23 +30,38 @@
   &__inputWrapper {
     display: flex;
     align-items: center;
+
   }
 
   &__dateInputIcon {
     width: 20px;
     height: 20px;
-    margin-left: 65px;
+    margin-left: 50px;
     margin-top: 10px;
   }
 
+  &__dateInputs {
+    display: flex;
+    flex-direction: row;
+    margin-left: 44px;
+    margin-top: 185px;
+  }
+
   &__placeholder {
-    //text-align: center;
+    text-align: center;
     font-size: 14px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: $gray-light;
-    //transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     margin-left: 20px;
+  }
+
+  &__errorLabel {
+    @include error-login-text;
+    position: absolute;
+    top: 790px;
+    left: 180px;
   }
 
   .react-datepicker-wrapper {

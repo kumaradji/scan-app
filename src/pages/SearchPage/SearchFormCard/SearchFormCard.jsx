@@ -17,10 +17,6 @@ function SearchFormCard() {
     {/*левая часть карточки*/}
     <SearchFormInputs/>
 
-    <div className={styles.searchFormCard__errorLabel}>
-      Введите корректные данные
-    </div>
-
     <div className={styles.searchFormCard__searchAreaLabel}>
       <div className={styles.searchFormCard__searchAreaLabel_label}>
         Диапазон поиска

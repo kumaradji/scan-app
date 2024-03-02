@@ -34,28 +34,27 @@ const useSearchFormHook = () => {
           startDate,
           endDate
         },
-
         searchContext: {
           targetSearchEntitiesContext: {
             tonality,
           }
         },
-
         attributeFilters: {
           excludeTechNews: true,
           documentCount,
-        }
+        },
+        intervalType: "month",  // явное указание intervalType
       }
 
       // Вызов функции для поиска
       const results = await searchCompaniesByINN(inn, searchRequest);
       setSearchResults(results);
-
     } catch (error) {
       setError('Ошибка при поиске компаний. Пожалуйста, попробуйте еще раз.');
       console.error('Ошибка при поиске компаний:', error);
     }
   }
+
 
   return {
     inn,

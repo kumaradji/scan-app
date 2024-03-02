@@ -1,39 +1,55 @@
 // DateInput.jsx
 import React, {useState} from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import {parse} from 'date-fns';
 import styles from "./DateInput.module.scss";
 import dateInputIcon from "../../../../assets/icons/dateInputIcon.svg";
 
 function DateInput() {
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [error, setError] = useState('');
 
-  const handleStartDateChange = (date) => {
-    setStartDate(date);
+  const handleStartDateChange = (e) => {
+    setStartDate(e.target.value);
+    setError('');
   };
 
-  const handleEndDateChange = (date) => {
-    setEndDate(date);
+  const handleEndDateChange = (e) => {
+    setEndDate(e.target.value);
+    setError('');
+  };
+
+  const validateDate = (date) => {
+    const today = new Date();
+    return date <= today;
+  };
+
+  const validateDateRange = (start, end) => {
+    return start <= end;
+  };
+
+  const handleBlur = () => {
+    const startDateIsValid = validateDate(parse(startDate, 'dd.MM.yyyy', new Date()));
+    const endDateIsValid = validateDate(parse(endDate, 'dd.MM.yyyy', new Date()));
+    const dateRangeIsValid = validateDateRange(parse(startDate, 'dd.MM.yyyy', new Date()), parse(endDate, 'dd.MM.yyyy', new Date()));
+
+    if (!startDateIsValid || !endDateIsValid || !dateRangeIsValid) {
+      setError('Введите корректные данные');
+    }
   };
 
   return (
     <>
-      {startDate ?
-        `${startDate.getDate()<10?'0'+startDate.getDate():startDate.getDate()}.${(startDate.getMonth() + 1)<10?'0'+(startDate.getMonth() + 1):(startDate.getMonth() + 1)}.${startDate.getFullYear()}`
-        : ''}
-
       <section className={styles.dateInput}>
         <div className={styles.dateInput__startDate}>
           <div className={styles.dateInput__inputWrapper}>
-            <DatePicker
-              selected={startDate}
+            <input
+              type="text"
+              value={startDate}
               onChange={handleStartDateChange}
-              customInput={
-                <span className={styles.dateInput__placeholder}>
-                {startDate ? `${startDate.getDate()}.${startDate.getMonth() + 1}.${startDate.getFullYear()}` : 'Дата начала'}
-              </span>
-              }
+              onBlur={handleBlur}
+              placeholder="Дата начала"
+              className={`${styles.dateInput__placeholder} ${error ? styles.error : ''}`}
             />
             <img
               className={styles.dateInput__dateInputIcon}
@@ -42,22 +58,16 @@ function DateInput() {
             />
           </div>
         </div>
-
-        {endDate ?
-          `${endDate.getDate()<10?'0'+endDate.getDate():endDate.getDate()}.${(endDate.getMonth() + 1)<10?'0'+(endDate.getMonth() + 1):(endDate.getMonth() + 1)}.${endDate.getFullYear()}`
-          : ''}
-
 
         <div className={styles.dateInput__endDate}>
           <div className={styles.dateInput__inputWrapper}>
-            <DatePicker
-              selected={endDate}
+            <input
+              type="text"
+              value={endDate}
               onChange={handleEndDateChange}
-              customInput={
-                <span className={styles.dateInput__placeholder}>
-                {endDate ? `${endDate.getDate()}.${endDate.getMonth() + 1}.${endDate.getFullYear()}` : 'Дата конца'}
-              </span>
-              }
+              onBlur={handleBlur}
+              placeholder="Дата конца"
+              className={`${styles.dateInput__placeholder} ${error ? styles.error : ''}`}
             />
             <img
               className={styles.dateInput__dateInputIcon}
@@ -66,9 +76,16 @@ function DateInput() {
             />
           </div>
         </div>
+        {error &&
+          <div className={styles.dateInput__errorLabel}>
+            {error}
+          </div>
+        }
       </section>
     </>
   );
 }
 
 export default DateInput;
+
+

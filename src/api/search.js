@@ -12,7 +12,7 @@ export const getHistograms = async (searchParams) => {
   }
 };
 
-export const searchCompaniesByINN = async (inn, additionalFilters = {}) => {
+export const searchCompaniesByINN = async (inn, searchRequest) => {
   try {
     const histogramsSearchParams = {
       intervalType: "month"
@@ -23,16 +23,13 @@ export const searchCompaniesByINN = async (inn, additionalFilters = {}) => {
     console.log('Histograms Data:', histogramsData);
 
     const response = await api.post('/objectsearch/histograms', {
-      // companyCode: inn,
-      // excludeBranchCompanies: true,
-      // ...additionalFilters,
-      intervalType: "month",
+      ...searchRequest,
       "targetSearchEntities": [
         {
           "type": "company",
           "sparkId": null,
           "entityId": null,
-          "inn": 7710137066,
+          "inn": inn,
           "maxFullness": true,
           "inBusinessNews": null
         }
