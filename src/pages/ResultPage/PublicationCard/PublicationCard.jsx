@@ -47,7 +47,7 @@ const PublicationCard = ({ publication }) => {
       </div>
       <h2>{title.text}</h2>
       <div className="tags">{renderTags()}</div>
-      <div className="content">{content.markup}</div>
+      <div className="content" dangerouslySetInnerHTML={{ __html: content.markup }} />
       <div className="footer">
         <button onClick={openOriginalArticle}>Читать в источнике</button>
         <p>Количество слов: {wordCount}</p>

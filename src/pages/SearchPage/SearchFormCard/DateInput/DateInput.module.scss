@@ -14,8 +14,6 @@
   &__startDate,
   &__endDate {
     @include input;
-    width: 176px;
-    height: 43px;
 
     &:hover {
       border-color: $blue;
@@ -30,14 +28,14 @@
   &__inputWrapper {
     display: flex;
     align-items: center;
-
+    width: 176px;
+    height: 43px;
   }
 
   &__dateInputIcon {
     width: 20px;
     height: 20px;
-    margin-left: 50px;
-    margin-top: 10px;
+    margin-left: -35px;
   }
 
   &__dateInputs {
@@ -48,12 +46,12 @@
   }
 
   &__placeholder {
-    text-align: center;
+    //text-align: center;
     font-size: 14px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: $gray-light;
-    transform: translate(-50%, -50%);
+    //transform: translate(-50%, -50%);
     margin-left: 20px;
   }
 

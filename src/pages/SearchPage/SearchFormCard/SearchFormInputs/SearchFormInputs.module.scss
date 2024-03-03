@@ -75,20 +75,13 @@
 .searchFormCard__documentCount__errorLabel {
 	@include error-login-text;
 	position: absolute;
-	margin-top: -110px;
+	margin-top: 5px;
 	margin-left: 90px;
 }
 
 // Диапазон поиска*
 .searchFormCard__leftBlockLabel {
 	@include title-search-label;
-	margin-top: 383px;
+	margin-top: 483px;
 	margin-left: 44px;
 }
-
-//.searchFormCard__dateInputs {
-//	display: flex;
-//	flex-direction: row;
-//	margin-left: 44px;
-//	margin-top: 175px;
-//}
