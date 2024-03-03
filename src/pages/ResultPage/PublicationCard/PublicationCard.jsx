@@ -3,14 +3,17 @@ import React from 'react';
 
 const PublicationCard = ({ publication }) => {
   const {
-    date,
-    sourceName,
-    sourceLink,
-    title,
-    tags,
-    attributes: { isTechNews, isAnnouncement, isDigest, influence, wordCount, coverage },
-    content,
+    ok: {
+      issueDate,
+      source,
+      title,
+      tags,
+      attributes: { isTechNews, isAnnouncement, isDigest, influence, wordCount, coverage },
+      content,
+    },
   } = publication;
+
+  const { name: sourceName, link: sourceLink } = source;
 
   const renderTags = () => {
     const tagsArray = [];
@@ -37,14 +40,14 @@ const PublicationCard = ({ publication }) => {
   return (
     <div className="publication-card">
       <div className="header">
-        <p>{date}</p>
+        <p>{issueDate}</p>
         <a href={sourceLink} target="_blank" rel="noopener noreferrer">
           {sourceName}
         </a>
       </div>
-      <h2>{title}</h2>
+      <h2>{title.text}</h2>
       <div className="tags">{renderTags()}</div>
-      <div className="content">{content}</div>
+      <div className="content">{content.markup}</div>
       <div className="footer">
         <button onClick={openOriginalArticle}>Читать в источнике</button>
         <p>Количество слов: {wordCount}</p>
