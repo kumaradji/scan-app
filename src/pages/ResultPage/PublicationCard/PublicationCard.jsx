@@ -128,12 +128,22 @@ const PublicationCard = () => {
         </button>
       </div>
 
-     
-      <div className="content" dangerouslySetInnerHTML={{ __html: title.markup }} />
-      <div className="footer">
-        <button onClick={openOriginalArticle}>Читать в источнике</button>
-        <p>Количество слов: {wordCount}</p>
+      {/*<div className="content" dangerouslySetInnerHTML={{ __html: title.markup }} />*/}
+      <div className={styles.publicationCard__button}>
+        <button
+          className={styles.publicationCard__button_text}
+          onClick={openOriginalArticle}>
+          Читать в источнике
+        </button>
       </div>
+
+
+      <div
+        className={styles.publicationCard__countWords}>
+        {wordCount}
+        &nbsp;слова
+      </div>
+
     </section>
   );
 };

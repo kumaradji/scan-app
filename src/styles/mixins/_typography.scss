@@ -144,3 +144,12 @@
   justify-content: center;
   transition: background-color 0.3s ease;
 }
+
+// Миксин для стилей текста в карточках результата
+@mixin resultCardText {
+  color: #949494FF;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}

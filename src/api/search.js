@@ -15,26 +15,51 @@ export const getHistograms = async (searchParams) => {
 export const searchCompaniesByINN = async (inn, searchRequest) => {
   try {
     const histogramsSearchParams = {
-      intervalType: "month"
+      intervalType: "month",
+      histogramTypes: ["totalDocuments"],
+      issueDateInterval: {
+        startDate: new Date().toISOString(),
+        endDate: new Date().toISOString(),
+      },
+      searchContext: {
+        targetSearchEntitiesContext: {
+          targetSearchEntities: [
+            {
+              type: "company",
+              inn: inn,
+              maxFullness: true,
+              inBusinessNews: null,
+            },
+          ],
+          onlyMainRole: true,
+          tonality: "any",
+          onlyWithRiskFactors: true,
+          riskFactors: {
+            and: [],
+            or: [],
+            not: [],
+          },
+          themes: {
+            and: [],
+            or: [],
+            not: [],
+          },
+        },
+        searchEntitiesFilter: {
+          and: [{ type: "company" }],
+          or: [{ type: "company" }],
+          not: [{ type: "company" }],
+        },
+      },
+      attributeFilters: {
+        excludeTechNews: true,
+        excludeAnnouncements: true,
+        excludeDigests: true,
+      },
+      similarMode: "none",
     };
 
-    const histogramsData = await getHistograms(histogramsSearchParams);
-
-    console.log('Histograms Data:', histogramsData);
-
-    const response = await api.post('/objectsearch/histograms', {
-      ...searchRequest,
-      "targetSearchEntities": [
-        {
-          "type": "company",
-          "sparkId": null,
-          "entityId": null,
-          "inn": inn,
-          "maxFullness": true,
-          "inBusinessNews": null
-        }
-      ],
-    });
+    const response = await api.post('/objectsearch/histograms', histogramsSearchParams);
 
     console.log('searchCompaniesByINN - response data:', response.data);
     return response.data;
