@@ -1,79 +1,49 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import {SearchFormContext} from '../../SearchPage/SearchFormCard/SearchFormContext';
 
 const SearchResults = () => {
-  const [histogramData, setHistogramData] = useState(null);
-  const [documentIds, setDocumentIds] = useState([]);
+  const { searchQuery } = useContext(SearchFormContext);
+  const { searchResults } = searchQuery;
   const [loadedDocuments, setLoadedDocuments] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [showMoreButton, setShowMoreButton] = useState(true);
 
   useEffect(() => {
-    // Здесь вы получаете данные из API или другого источника
-    const fetchedHistogramData = [
-      {
-        ok: {
-          // ... данные гистограммы ...
-        },
-      },
-    ];
-    const fetchedDocumentIds = [
-      '1:0JPQqdGM0JNWCdCzf2Jt0LHQotGV0ZUh0ZbRlBXCt0Je0JHQruKAnDcUXkZQ0YvQscKn0KjQlsKu0K%2FSkdGXfOKAsF3QkjrRnCRmGCFFBybQoNGL0ZMhEFkC4oCYaNC9a9GO0KFYwqwOeNGO0JdUDGzihKJXTNC%2B0ZzRinE%3D',
-      // ... другие ID документов ...
-    ];
-    setHistogramData(fetchedHistogramData);
-    setDocumentIds(fetchedDocumentIds);
-    setLoadedDocuments([
-      {
-        ok: {
-          // ... данные первого документа ...
-        },
-      },
-    ]);
-    setIsLoading(false);
-  }, []);
-
-  const loadMoreDocuments = () => {
-    // Здесь вы загружаете следующую партию документов по их ID
-    const nextBatch = [
-      {
-        ok: {
-          // ... данные следующего документа ...
-        },
-      },
-    ];
-    setLoadedDocuments([...loadedDocuments, ...nextBatch]);
-    if (nextBatch.length < 10) {
+    if (searchResults.length > 0) {
+      setLoadedDocuments(searchResults.slice(0, 10)); // Загрузить первые 10 документов
+      setShowMoreButton(searchResults.length > 10); // Показать кнопку "Показать больше", если есть больше документов
+    } else {
+      setLoadedDocuments([]);
       setShowMoreButton(false);
     }
+    setIsLoading(false);
+  }, [searchResults]);
+
+  const loadMoreDocuments = () => {
+    const nextBatch = searchResults.slice(loadedDocuments.length, loadedDocuments.length + 10);
+    setLoadedDocuments([...loadedDocuments, ...nextBatch]);
+    setShowMoreButton(nextBatch.length === 10);
   };
 
   return (
     <div>
       {isLoading && <div>Загрузка...</div>}
-      {!isLoading && histogramData && (
-        <div>
-          {histogramData.map((item, index) => (
-            <div key={index}>
-              {/* Отобразите информацию о гистограмме */}
-              <h2>{item.ok.title}</h2>
-              <p>{item.ok.content}</p>
-            </div>
-          ))}
-        </div>
-      )}
-      {!isLoading && documentIds.length > 0 && (
+      {!isLoading && searchResults.length > 0 && (
         <div>
           {loadedDocuments.map((document, index) => (
             <div key={index}>
               {/* Отобразите информацию о документе */}
-              <h2>{document.ok.title.text}</h2>
-              <p dangerouslySetInnerHTML={{ __html: document.ok.content.markup }} />
+              <h2>{document.title}</h2>
+              <p>{document.content}</p>
             </div>
           ))}
           {showMoreButton && (
             <button onClick={loadMoreDocuments}>Показать больше</button>
           )}
         </div>
+      )}
+      {!isLoading && searchResults.length === 0 && (
+        <div>Нет результатов</div>
       )}
     </div>
   );

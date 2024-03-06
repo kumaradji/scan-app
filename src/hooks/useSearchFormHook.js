@@ -1,13 +1,19 @@
 // useSearchFormHook.js
-// Этот хук управляет состояниями и обработчиками для формы поиска компаний по ИНН 
-import {useState} from 'react';
+// Этот хук управляет состояниями и обработчиками для формы поиска компаний по ИНН
+import {useContext, useState} from 'react';
 import {searchCompaniesByINN} from "../api/search";
+import {SearchFormContext} from "../pages/SearchPage/SearchFormCard/SearchFormContext";
 
 const useSearchFormHook = () => {
-  const [inn, setInn] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [tonality, setTonality] = useState('');
-  const [documentCount, setDocumentCount] = useState(0);
+  const { searchQuery, updateSearchQuery } = useContext(SearchFormContext);
+  const {
+    inn: defaultInn,
+    tonality: defaultTonality,
+    documentCount: defaultDocumentCount,
+  } = searchQuery;
+  const [inn, setInn] = useState(defaultInn);
+  const [tonality, setTonality] = useState(defaultTonality);
+  const [documentCount, setDocumentCount] = useState(defaultDocumentCount);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [checkedItems, setCheckedItems] = useState(Array(7).fill(false));
@@ -49,7 +55,7 @@ const useSearchFormHook = () => {
 
       // Вызов функции для поиска
       const results = await searchCompaniesByINN(inn, searchRequest);
-      setSearchResults(results);
+      updateSearchQuery({ searchResults: results });
     } catch (error) {
       setError('Ошибка при поиске компаний. Пожалуйста, попробуйте еще раз.');
       console.error('Ошибка при поиске компаний:', error);
@@ -60,8 +66,6 @@ const useSearchFormHook = () => {
   return {
     inn,
     setInn,
-    searchResults,
-    setSearchResults,
     tonality,
     setTonality,
     documentCount,
