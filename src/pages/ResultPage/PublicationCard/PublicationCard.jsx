@@ -1,5 +1,7 @@
 // PublicationCard.jsx
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {format, parse} from 'date-fns';
+import styles from './PublicationCard.module.scss';
 
 const PublicationCard = () => {
   const newsData = {
@@ -59,6 +61,22 @@ const PublicationCard = () => {
   } = newsData;
 
   const { name: sourceName, link: sourceLink } = source;
+  const [tagsArray, setTagsArray] = useState([]);
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    if (isTechNews) {
+      setTagsArray(['Технические новости']);
+    } else if (isAnnouncement) {
+      setTagsArray(['Анонсы и события']);
+    } else if (isDigest) {
+      setTagsArray(['Сводки новостей']);
+    }
+  }, [isTechNews, isAnnouncement, isDigest]);
+
+  useEffect(() => {
+    setFormattedDate(formatDate(issueDate));
+  }, [issueDate]);
 
   const renderTags = () => {
     const tagsArray = [];
@@ -82,22 +100,41 @@ const PublicationCard = () => {
     window.open(sourceLink, '_blank');
   };
 
+  const formatDate = (dateString) => {
+    const date = parse(dateString, 'yyyy-MM-dd\'T\'HH:mm:ssxxx', new Date());
+    return format(date, 'dd.MM.yyyy');
+  };
+
   return (
-    <div className="publication-card">
-      <div className="header">
-        <p>{issueDate}</p>
-        <a href={sourceLink} target="_blank" rel="noopener noreferrer">
+    <section className={styles.publicationCard}>
+      <div className={styles.publicationCard__title}>
+        {formattedDate}
+        <a
+          className={styles.publicationCard__title_link}
+          href={sourceLink}
+          target="_blank"
+          rel="noopener noreferrer">
           {sourceName}
         </a>
       </div>
-      <h2>{title.text}</h2>
-      <div className="tags">{renderTags()}</div>
+
+      <div className={styles.publicationCard__titleMain}>
+        {title.text}
+      </div>
+
+      <div className={styles.publicationCard__buttonNews}>
+        <button className={styles.publicationCard__buttonNews_text}>
+          {tagsArray.length > 0 ? tagsArray[0] : 'Без тега'}
+        </button>
+      </div>
+
+     
       <div className="content" dangerouslySetInnerHTML={{ __html: title.markup }} />
       <div className="footer">
         <button onClick={openOriginalArticle}>Читать в источнике</button>
         <p>Количество слов: {wordCount}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

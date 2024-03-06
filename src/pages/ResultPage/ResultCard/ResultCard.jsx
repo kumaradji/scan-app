@@ -1,6 +1,4 @@
 import React from 'react';
-import styles from './ResultCard.module.scss';
-import ResultCardRect from "../../../assets/images/ResultCard/ResultCardRect.png";
 import PublicationCard from "../PublicationCard/PublicationCard";
 
 function ResultCard({ publication = {} }) {
@@ -39,14 +37,7 @@ function ResultCard({ publication = {} }) {
   } = attributes;
 
   return (
-    <section className={styles.resultCard}>
-      <img
-        className={styles.resultCard__resultCardRect}
-        src={ResultCardRect}
-        alt="ResultCard"
-      />
-
-      {/* Pass the necessary variables to PublicationCard */}
+    <>
       <PublicationCard
         publication={{
           ok: {
@@ -72,7 +63,7 @@ function ResultCard({ publication = {} }) {
           }
         }}
       />
-    </section>
+    </>
   );
 }
 
