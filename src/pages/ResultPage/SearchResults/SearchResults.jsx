@@ -1,6 +1,4 @@
-// src/pages/ResultPage/SearchResults/SearchResults.jsx
-
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 
 const SearchResults = () => {
   const [histogramData, setHistogramData] = useState(null);
@@ -10,51 +8,42 @@ const SearchResults = () => {
   const [showMoreButton, setShowMoreButton] = useState(true);
 
   useEffect(() => {
-    // Шаг 1: Запрос на получение сводки
-    // Используйте async/await или .then для обработки ответа
-    const fetchHistogramData = async () => {
-      // ...ваш код для отправки запроса
-      // const response = await fetch('objectsearch/histograms', { method: 'POST', ... });
-      // const data = await response.json();
-
-      // Замените следующей строкой, чтобы использовать данные из ответа
-      const data = /* ... */;
-
-      setHistogramData(data);
-      setIsLoading(false);
-    };
-
-    fetchHistogramData();
+    // Здесь вы получаете данные из API или другого источника
+    const fetchedHistogramData = [
+      {
+        ok: {
+          // ... данные гистограммы ...
+        },
+      },
+    ];
+    const fetchedDocumentIds = [
+      '1:0JPQqdGM0JNWCdCzf2Jt0LHQotGV0ZUh0ZbRlBXCt0Je0JHQruKAnDcUXkZQ0YvQscKn0KjQlsKu0K%2FSkdGXfOKAsF3QkjrRnCRmGCFFBybQoNGL0ZMhEFkC4oCYaNC9a9GO0KFYwqwOeNGO0JdUDGzihKJXTNC%2B0ZzRinE%3D',
+      // ... другие ID документов ...
+    ];
+    setHistogramData(fetchedHistogramData);
+    setDocumentIds(fetchedDocumentIds);
+    setLoadedDocuments([
+      {
+        ok: {
+          // ... данные первого документа ...
+        },
+      },
+    ]);
+    setIsLoading(false);
   }, []);
 
-  useEffect(() => {
-    // Шаг 2: Запрос на получение списка ID документов
-    // Используйте async/await или .then для обработки ответа
-    const fetchDocumentIds = async () => {
-      // ...ваш код для отправки запроса
-      // const response = await fetch('objectsearch', { method: 'POST', ... });
-      // const data = await response.json();
-
-      // Замените следующей строкой, чтобы использовать данные из ответа
-      const data = /* ... */;
-
-      setDocumentIds(data.ids);
-    };
-
-    if (!isLoading) {
-      fetchDocumentIds();
-    }
-  }, [isLoading]);
-
   const loadMoreDocuments = () => {
-    // Шаг 3: Ленивая загрузка содержимого документов
-    const nextBatch = documentIds.slice(loadedDocuments.length, loadedDocuments.length + 10);
-
-    // ...ваш код для загрузки содержимого документов по их ID
-    // Обновите состояние loadedDocuments после успешного получения данных
-
-    if (nextBatch.length === 0) {
-      setShowMoreButton(false); // Скрываем кнопку после загрузки всех документов
+    // Здесь вы загружаете следующую партию документов по их ID
+    const nextBatch = [
+      {
+        ok: {
+          // ... данные следующего документа ...
+        },
+      },
+    ];
+    setLoadedDocuments([...loadedDocuments, ...nextBatch]);
+    if (nextBatch.length < 10) {
+      setShowMoreButton(false);
     }
   };
 
@@ -62,21 +51,28 @@ const SearchResults = () => {
     <div>
       {isLoading && <div>Загрузка...</div>}
       {!isLoading && histogramData && (
-        // Отобразите сводку в карусели
         <div>
-          {histogramData.periods.map((period) => (
-            <div key={period.id}>{/* Отобразите информацию о периоде в карусели */}</div>
+          {histogramData.map((item, index) => (
+            <div key={index}>
+              {/* Отобразите информацию о гистограмме */}
+              <h2>{item.ok.title}</h2>
+              <p>{item.ok.content}</p>
+            </div>
           ))}
         </div>
       )}
-
       {!isLoading && documentIds.length > 0 && (
-        // Отобразите первые 10 результатов
         <div>
-          {loadedDocuments.map((document) => (
-            <div key={document.id}>{/* Отобразите информацию о документе */}</div>
+          {loadedDocuments.map((document, index) => (
+            <div key={index}>
+              {/* Отобразите информацию о документе */}
+              <h2>{document.ok.title.text}</h2>
+              <p dangerouslySetInnerHTML={{ __html: document.ok.content.markup }} />
+            </div>
           ))}
-          {showMoreButton && <button onClick={loadMoreDocuments}>Показать больше</button>}
+          {showMoreButton && (
+            <button onClick={loadMoreDocuments}>Показать больше</button>
+          )}
         </div>
       )}
     </div>

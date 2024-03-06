@@ -1,4 +1,5 @@
 // useSearchFormHook.js
+// Этот хук управляет состояниями и обработчиками для формы поиска компаний по ИНН 
 import {useState} from 'react';
 import {searchCompaniesByINN} from "../api/search";
 
