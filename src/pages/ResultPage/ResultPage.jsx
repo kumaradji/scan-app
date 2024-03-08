@@ -1,7 +1,6 @@
 // pages/ResultPage/ResultPage.jsx
 
 import React, {useState} from 'react';
-
 import styles from './ResultPage.module.scss';
 import TitleTextResultPage from "./TitleTextResultPage";
 import ImageRightBlock from "./ImageRightBlock";

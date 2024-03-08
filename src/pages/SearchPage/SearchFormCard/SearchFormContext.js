@@ -5,11 +5,10 @@ export const SearchFormContext = createContext();
 
 export const SearchFormProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState({
-    inn: '',
+    inn: null, // Изменено значение по умолчанию на null
     tonality: 'any',
-    documentCount: '',
-    searchResults: [], // Добавлено поле searchResults в состояние формы
-    // другие поля формы
+    documentCount: null, // Изменено значение по умолчанию на null
+    searchResults: [],
   });
 
   const updateSearchQuery = (newValues) => {

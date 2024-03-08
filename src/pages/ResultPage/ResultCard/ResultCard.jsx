@@ -1,3 +1,4 @@
+// ResultCard.jsx
 import React from 'react';
 import PublicationCard from "../PublicationCard/PublicationCard";
 

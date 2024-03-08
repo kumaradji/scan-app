@@ -13,6 +13,7 @@ api.interceptors.request.use((config) => {
   const accessToken = localStorage.getItem('accessToken');
   config.headers.Authorization = `Bearer ${accessToken}`;
   console.log('Запрос работает');
+  console.log('Request Config:', config);
   return config;
 });
 
