@@ -5,9 +5,11 @@ export const SearchFormContext = createContext();
 
 export const SearchFormProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState({
-    inn: null, // Изменено значение по умолчанию на null
+    inn: null,
     tonality: 'any',
-    documentCount: null, // Изменено значение по умолчанию на null
+    documentCount: null,
+    startDate: null,
+    endDate: null,
     searchResults: [],
   });
 
@@ -18,8 +20,15 @@ export const SearchFormProvider = ({ children }) => {
     }));
   };
 
+  const updateSearchFormContext = (values) => {
+    setSearchQuery((prevState) => ({
+      ...prevState,
+      ...values,
+    }));
+  };
+
   return (
-    <SearchFormContext.Provider value={{ searchQuery, updateSearchQuery }}>
+    <SearchFormContext.Provider value={{ searchQuery, updateSearchQuery, updateSearchFormContext }}>
       {children}
     </SearchFormContext.Provider>
   );

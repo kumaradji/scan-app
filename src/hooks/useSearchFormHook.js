@@ -1,25 +1,27 @@
 // useSearchFormHook.js
 import {useContext, useState} from 'react';
-import {SearchFormContext} from "../pages/SearchPage/SearchFormCard/SearchFormContext";
-import {useNavigate} from "react-router-dom";
-import api from "../api/api";
+import {SearchFormContext} from '../pages/SearchPage/SearchFormCard/SearchFormContext';
+import {useNavigate} from 'react-router-dom';
+import api from '../api/api';
 
 const useSearchFormHook = () => {
   const { searchQuery, updateSearchQuery } = useContext(SearchFormContext);
   const {
-    inn: defaultInn = '', // Установите начальное значение как пустую строку
-    tonality: defaultTonality = 'any', // Установите начальное значение, например, 'any'
-    documentCount: defaultDocumentCount = '', // Установите начальное значение как пустую строку
+    inn: defaultInn = '',
+    tonality: defaultTonality = 'any',
+    documentCount: defaultDocumentCount = '',
+    startDate: defaultStartDate = null,
+    endDate: defaultEndDate = null,
   } = searchQuery;
+
   const [inn, setInn] = useState(defaultInn);
   const [tonality, setTonality] = useState(defaultTonality);
   const [documentCount, setDocumentCount] = useState(defaultDocumentCount);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState(defaultStartDate);
+  const [endDate, setEndDate] = useState(defaultEndDate);
   const [checkedItems, setCheckedItems] = useState(Array(7).fill(false));
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
 
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -43,16 +45,15 @@ const useSearchFormHook = () => {
         inn: inn !== null ? inn : null,
         issueDateInterval: {
           startDate,
-          endDate
+          endDate,
         },
         searchContext: {
           targetSearchEntitiesContext: {
             tonality,
-          }
+          },
         },
         attributeFilters: {
           excludeTechNews: true,
-          // Если documentCount не null, используем его значение, иначе пустая строка
           documentCount: documentCount !== null ? documentCount : null,
         },
         intervalType: "month",
@@ -75,7 +76,7 @@ const useSearchFormHook = () => {
       }
 
       const publicationIdsData = publicationIdsResponse.data;
-      const publicationIds = publicationIdsData.items.map(item => item.encodedId);
+      const publicationIds = publicationIdsData.items.map((item) => item.encodedId);
 
       // Передача histogramData и publicationIds в состояние и переход на страницу результатов
       navigate('/search-results', { state: { searchParams: searchRequest, histogramData, publicationIds } });

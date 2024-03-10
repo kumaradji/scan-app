@@ -2,24 +2,29 @@
 import React, {useState} from 'react';
 import DateInput from '../DateInput/DateInput';
 import styles from './SearchFormInputs.module.scss';
-import useSearchFormHook from "../../../../hooks/useSearchFormHook"; // Импортируем хук
+import useSearchFormHook from "../../../../hooks/useSearchFormHook";
 
 function SearchFormInputs() {
-  // Импортируем константы из хука
-  const { inn, setInn, tonality, setTonality, documentCount, setDocumentCount } = useSearchFormHook(); // Подключаемся к контексту
-
-  // Локальный state для ошибки валидации
+  const {
+    inn,
+    setInn,
+    tonality,
+    setTonality,
+    documentCount,
+    setDocumentCount,
+    startDate,
+    setStartDate,
+    endDate,
+    setEndDate,
+  } = useSearchFormHook();
   const [innError, setInnError] = useState(false);
 
-  // Функция валидации ИНН
   const validateInn = (value) => {
     if (!/^\d+$/.test(value)) {
-      // Если есть не цифры - ошибка
       return false;
     }
 
     if (value.length !== 10 && value.length !== 12) {
-      // Неправильная длина
       return false;
     }
 
@@ -28,7 +33,6 @@ function SearchFormInputs() {
 
   const handleInnChange = (e) => {
     setInn(e.target.value);
-    // Сброс сообщения об ошибке при изменении значения ИНН
     setInnError(false);
   };
 
@@ -53,6 +57,7 @@ function SearchFormInputs() {
           value={inn}
           onChange={handleInnChange}
           onBlur={handleInnBlur}
+          placeholder="10 или 12 цифр"
         />
         {innError && (
           <div className={styles.searchFormCard__inn__errorLabel}>Введите корректные данные</div>
@@ -87,7 +92,12 @@ function SearchFormInputs() {
       </label>
 
       <div>
-        <DateInput />
+        <DateInput
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+        />
       </div>
     </section>
   );

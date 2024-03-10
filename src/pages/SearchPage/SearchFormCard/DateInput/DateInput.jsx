@@ -1,40 +1,29 @@
 // DateInput.jsx
-import React, {useState} from "react";
-import {parse} from 'date-fns';
+import React, {useEffect, useState} from "react";
 import styles from "./DateInput.module.scss";
 import dateInputIcon from "../../../../assets/icons/dateInputIcon.svg";
 
-function DateInput() {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+const DateInput = ({ startDate, setStartDate, endDate, setEndDate }) => {
   const [error, setError] = useState('');
+  const [inputTypeStart, setInputTypeStart] = useState('text');
+  const [inputTypeEnd, setInputTypeEnd] = useState('text');
 
-  const handleStartDateChange = (e) => {
-    setStartDate(e.target.value);
-    setError('');
-  };
+  useEffect(() => {
+    validateDateRange();
+  }, [startDate, endDate]);
 
-  const handleEndDateChange = (e) => {
-    setEndDate(e.target.value);
-    setError('');
-  };
+  const validateDateRange = () => {
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
 
-  const validateDate = (date) => {
-    const today = new Date();
-    return date <= today;
-  };
-
-  const validateDateRange = (start, end) => {
-    return start <= end;
-  };
-
-  const handleBlur = () => {
-    const startDateIsValid = validateDate(parse(startDate, 'dd.MM.yyyy', new Date()));
-    const endDateIsValid = validateDate(parse(endDate, 'dd.MM.yyyy', new Date()));
-    const dateRangeIsValid = validateDateRange(parse(startDate, 'dd.MM.yyyy', new Date()), parse(endDate, 'dd.MM.yyyy', new Date()));
-
-    if (!startDateIsValid || !endDateIsValid || !dateRangeIsValid) {
-      setError('Введите корректные данные');
+    if (!startDate || !endDate) {
+      setError("Обязательное поле");
+    } else if (new Date(startDate) > new Date(endDate)) {
+      setError("Введите корректные данные");
+    } else if (new Date(startDate) > currentDate || new Date(endDate) > currentDate) {
+      setError("Дата не может быть позже текущей даты");
+    } else {
+      setError("");
     }
   };
 
@@ -44,12 +33,18 @@ function DateInput() {
         <div className={styles.dateInput__startDate}>
           <div className={styles.dateInput__inputWrapper}>
             <input
-              type="text"
-              value={startDate}
-              onChange={handleStartDateChange}
-              onBlur={handleBlur}
+              type={inputTypeStart}
+              onFocus={() => setInputTypeStart('date')}
+              onBlur={() => {
+                validateDateRange();
+                if (!startDate) setInputTypeStart('text');
+              }}
+              id="startDate"
+              name="startDate"
               placeholder="Дата начала"
-              className={`${styles.dateInput__placeholder} ${error ? styles.error : ''}`}
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className={error ? 'error' : ''}
             />
             <img
               className={styles.dateInput__dateInputIcon}
@@ -61,13 +56,19 @@ function DateInput() {
 
         <div className={styles.dateInput__endDate}>
           <div className={styles.dateInput__inputWrapper}>
-            <input
-              type="text"
-              value={endDate}
-              onChange={handleEndDateChange}
-              onBlur={handleBlur}
+          <input
+              type={inputTypeEnd}
+              onFocus={() => setInputTypeEnd('date')}
+              onBlur={() => {
+                validateDateRange();
+                if (!endDate) setInputTypeEnd('text');
+              }}
+              id="endDate"
+              name="endDate"
               placeholder="Дата конца"
-              className={`${styles.dateInput__placeholder} ${error ? styles.error : ''}`}
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className={error ? 'error' : ''}
             />
             <img
               className={styles.dateInput__dateInputIcon}
