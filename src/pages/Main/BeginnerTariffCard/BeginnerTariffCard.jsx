@@ -1,7 +1,6 @@
 // BeginnerTariffCard/BeginnerTariffCard.jsx
 
 import styles from "./BeginnerTariffCard.module.scss";
-import Button from "../../../components/UI/Button/Button";
 import LightBulbIcon from "../../../assets/icons/LightBulbTariff.svg";
 import ItemsList from "../../../assets/images/BigginerTariffList.jpeg";
 import {useAuth} from "../../LoginPage/Auth/AuthContext";
@@ -48,9 +47,9 @@ function BeginnerTariffCard() {
         {!isAuthenticated ? (
           // Иначе отображаем кнопку "Подробнее"
           <div className={styles.beginnerTariffCard__moreButton}>
-            <Button className={styles.beginnerTariffCard__moreButton_text}>
+            <button className={styles.beginnerTariffCard__moreButton_text}>
               Подробнее
-            </Button>
+            </button>
           </div>
         ) : null}
       </div>

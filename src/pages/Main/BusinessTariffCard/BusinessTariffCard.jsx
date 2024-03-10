@@ -1,6 +1,6 @@
 // BusinessTariffCard/BusinessTariffCard.jsx
 
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styles from "./BusinessTariffCard.module.scss";
 
 import NotebookTariffIcon from "../../../assets/icons/NotebookTariff.svg";
@@ -17,7 +17,7 @@ function BusinessTariffCard() {
 
   return (
     <section className={styles.businessTariffCard}>
-      <div className={styles.businessTariffCard__blackTop} />
+      <div className={styles.businessTariffCard__blackTop}/>
       <img
         className={styles.businessTariffCard__iconNotebook}
         src={NotebookTariffIcon}
@@ -25,6 +25,10 @@ function BusinessTariffCard() {
       />
 
       <div className={styles.businessTariffCard__title}>Business</div>
+
+      <div className={styles.businessTariffCard__infoTextTitle}>
+        Для корпоративных клиентов
+      </div>
 
       <div
         className={`

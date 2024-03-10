@@ -11,15 +11,15 @@ import TitleTextBlock from "../../components/TitleTextBlock/TitleTextBlock";
 
 const SearchPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.container__leftColumn}>
+    <div className={styles.searchPage}>
+      <div className={styles.searchPage__leftColumn}>
 
         <TitleTextBlock
           text="Найдите необходимые данные в пару кликов."
-          additionalStyles={styles.container__leftColumn_titleSearchTextBlock}
+          additionalStyles={styles.searchPage__leftColumn_titleSearchTextBlock}
         />
 
-        <div className={styles.container__leftColumn_leftTextUnderTitleBlock}>
+        <div className={styles.searchPage__leftColumn_leftTextUnderTitleBlock}>
           Задайте параметры поиска.
           <br/>
           Чем больше заполните, тем точнее поиск
@@ -29,11 +29,11 @@ const SearchPage = () => {
           <SearchFormCard/>
         </div>
       </div>
-      <div className={styles.container__rightColumn}>
-        <div className={styles.container__rightColumn_document}>
+      <div className={styles.searchPage__rightColumn}>
+        <div className={styles.searchPage__rightColumn_document}>
           <img src={Document} alt="Document"/>
         </div>
-        <div className={styles.container__rightColumn_folders}>
+        <div className={styles.searchPage__rightColumn_folders}>
           <img src={Folders} alt="Folders"/>
         </div>
       </div>

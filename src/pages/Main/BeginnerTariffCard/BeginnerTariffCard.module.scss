@@ -112,7 +112,7 @@
 	letter-spacing: 0.18px;
 	word-wrap: break-word;
 	position: absolute;
-	top: 76px;
+	top: 82px;
 	left: 30px;
 }
 
@@ -200,6 +200,17 @@
 
 	.beginnerTariffCard__currentTariffLabel {
 		display: none;
+	}
+
+	.beginnerTariffCard__moreButton {
+		width: 287px;
+		margin-left: 24px;
+		margin-top: 275px;
+	}
+
+	.beginnerTariffCard__moreButton_text {
+		font-size: 18px;
+		letter-spacing: 0.18px;
 	}
 
 	.beginnerTariffCard__personalCabinetButton {
