@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './AppFooter.module.scss';
+import styles from './Footer.module.scss';
 import FooterLogo from '../../assets/scan_logo_white.svg';
 
-const AppFooter = () => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <img src={FooterLogo} alt="Scan logo"/>
@@ -17,4 +17,4 @@ const AppFooter = () => {
   );
 };
 
-export default AppFooter;
+export default Footer;

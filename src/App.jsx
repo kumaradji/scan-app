@@ -1,33 +1,48 @@
 // App.jsx
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
-import AppHeader from './components/AppHeader/AppHeader';
-import MainPage from './pages/Main/MainPage';
-import AppFooter from './components/AppFooter/AppFooter';
-import LoginPage from './pages/LoginPage/LoginPage';
-import SearchPage from './pages/SearchPage/SearchPage';
-import ResultPage from './pages/ResultPage/ResultPage';
-import {AuthProvider} from './pages/LoginPage/Auth/AuthContext';
-import {RequireAuth} from './components/RequireAuth/RequireAuth';
-import {SearchFormProvider} from './pages/SearchPage/SearchFormCard/SearchFormContext';
+
+import {useAuth} from "./hooks/AuthContext";
+
+
+import Footer from './components/Footer/Footer';
+import user_pic_example from './assets/user_pic_example.png';
 import '../src/styles/App.css';
 
+import './fonts/ferry.otf';
+import './fonts/InterRegular.ttf';
+import './fonts/InterMedium.ttf';
+import './fonts/InterBold.ttf';
+import Authorization from "./components/Authorization/Authorization";
+import Header from "./components/Header";
+
 function App() {
+  const { isLoggedIn, checkAuthStatus } = useAuth();
+  const [userTariff, setUserTariff] = useState('beginner');
+  const [userName, setUserName] = useState('');
+  const [userPicture, setUserPicture] = useState(user_pic_example);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      console.log("Пользователь не вошёл");
+    }
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    checkAuthStatus();
+  }, [checkAuthStatus]);
+
   return (
     <Router>
-      <AuthProvider>
-        <SearchFormProvider>
-          <AppHeader />
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/search" element={<RequireAuth><SearchPage /></RequireAuth>} />
-            <Route path="/result" element={<RequireAuth><ResultPage /></RequireAuth>} />
-            <Route path="*" element={<Navigate to="/login" />} />
-          </Routes>
-          <AppFooter />
-        </SearchFormProvider>
-      </AuthProvider>
+      <Header isLoggedIn={isLoggedIn} userName={userName} setUserName={setUserName} userPicture={userPicture} setUserPicture={setUserPicture} />
+      <Routes>
+        <Route path="/" element={<Main isLoggedIn={isLoggedIn} userTariff={userTariff} />} />
+        <Route path="/auth" element={<Authorization />} />
+        <Route path="/search" element={isLoggedIn ? <Search /> : <Authorization redirectBack="/search" />} />
+        <Route path="/results" element={isLoggedIn ? <SearchResults /> : <Authorization redirectBack="/results" />} />
+        <Route path="*" element={<Navigate to="/auth" />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

@@ -1,4 +1,4 @@
-// AppFooter/apiInstance.js
-import AppFooter from './AppFooter';
+// Footer/apiInstance.js
+import AppFooter from './Footer';
 
 export default AppFooter;
