@@ -10,6 +10,7 @@ import ResultPage from './pages/ResultPage/ResultPage';
 import {AuthProvider} from './pages/LoginPage/Auth/AuthContext';
 import {RequireAuth} from './components/RequireAuth/RequireAuth';
 import {SearchFormProvider} from './pages/SearchPage/SearchFormCard/SearchFormContext';
+import '../src/styles/App.css';
 
 function App() {
   return (

@@ -1,26 +1,18 @@
 import React from 'react';
 import styles from './AppFooter.module.scss';
-import FooterLogoImg from '../../assets/images/Logo-footer.svg';
+import FooterLogo from '../../assets/scan_logo_white.svg';
 
 const AppFooter = () => {
   return (
     <footer className={styles.footer}>
-        <span className={styles.footer__logo}>
-          <img src={FooterLogoImg} alt="Логотип футера" />
-        </span>
+      <img src={FooterLogo} alt="Scan logo"/>
 
-        <div className={styles.footer__textBlock}>
-          <span className={styles.footer__textAddress}>
-            г. Москва, Цветной б-р, 40 <br />
-            +7 495 771 21 11 <br />
-            info@skan.ru
-          </span>
-
-          <p className={styles.footer__copyright}>
-            Copyright. 2022
-          </p>
-
-        </div>
+      <div className={styles.footer__textBlock}>
+        <p className={styles.footer__text}>г. Москва, Цветной б-р, 40</p>
+        <p className={styles.footer__text}>+7 495 771 21 11</p>
+        <p className={styles.footer__text}>info@skan.ru</p>
+        <p className={styles.footer__copyright}>Copyright. 2022</p>
+      </div>
     </footer>
   );
 };

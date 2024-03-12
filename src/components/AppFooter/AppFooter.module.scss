@@ -1,76 +1,42 @@
-@import "../../styles/mixins/_typography";
-@import "../../styles/mixins/_var";
-
-@mixin fontSize($size) {
-  font-size: $size;
-  letter-spacing: $size * 0.07;
+footer {
+  width: 100%;
+  background-color: var(--scan-green);
 }
 
 .footer {
-  position: relative;
-  width: 1440px;
-  height: 137px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  flex-shrink: 0;
-  padding-right: 60px;
-  padding-left: 60px;
-  background-color: $green;
-  color: $white;
-}
-
-.footer__logo {
-  width: 141px;
-  height: 141px;
+  height: 137px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
 }
 
 .footer__textBlock {
-  @include footer-text;
-  @include fontSize(14px);
-  display: flex;
-  flex-direction: column;
   text-align: right;
-  margin-right: -15px;
+  line-height: 0.1;
+  color: var(--scan-white);
 }
 
-.footer__textAddress {
-  @include footer-text;
-  @include fontSize(14px);
-  color: $white;
+.footer__text {
+  font-size: 14px;
+  font-weight: 400;
   line-height: 17px;
-  width: 199px;
-  height: 51px;
 }
 
 .footer__copyright {
-  @include fontSize(12px);
-  /* Copyright. 2022 */
-  width: 92px;
-  height: 15px;
-  margin-left: 107px;
+  font-size: 12px;
+  line-height: 15px;
   margin-top: 21px;
 }
 
+
 // адаптивная верстка
-@media (max-width: 767px) {
+@media (max-width: 1360px) {
+
   .footer {
-    height: 137px;
-    width: 375px;
-    margin-top: -100 px;
-    padding: 0;
-  }
-
-  .footer__logo {
-    width: 111px;
-    height: 111px;
-    margin-left: 18px;
-    margin-bottom: 30px;
-  }
-
-  .footer__textBlock {
-    letter-spacing: 0.14px;
-    margin-right: 18px;
+    max-width: 375px;
+    padding: 0 20px;
   }
 }
